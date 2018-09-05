@@ -2,6 +2,10 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Outbound Funds %28Core%29</fullName>
     <types>
+        <members>disbursementsCreateController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>disbursementsCreate</members>
         <name>AuraDefinitionBundle</name>
     </types>
@@ -115,6 +119,7 @@
     </types>
     <types>
         <members>Funding_Program__c.Program_Totals</members>
+        <members>Funding_Request__c.Create_Bulk_Disbursements</members>
         <members>Funding_Request__c.Disbursment_Information</members>
         <members>LogACall</members>
         <members>NewTask</members>
