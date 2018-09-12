@@ -72,6 +72,8 @@ public with sharing class disbursementsCreateController {
         @AuraEnabled
         public Decimal requestedAmount;
         @AuraEnabled
+        public Decimal awardedAmount;
+        @AuraEnabled
         public Decimal totalDisbursed;
         @AuraEnabled
         public Decimal totalRemaining;
@@ -80,6 +82,7 @@ public with sharing class disbursementsCreateController {
             this.recordId = r.Id;
             this.contactName = r.Applying_Contact__r.Name;
             this.requestedAmount = r.Requested_Amount__c;
+            this.awardedAmount = r.Awarded_Amount__c;
             this.totalDisbursed = r.Total_Disbursed__c;
             this.totalRemaining = r.Total_Remaining__c;
         }
@@ -99,7 +102,6 @@ public with sharing class disbursementsCreateController {
         public Date dispDate;
         public String method;
         public Id requestId;
-        public Decimal totalRemaining;
         public Date scheduleDate;
         public String status;
         public String type;

@@ -5,6 +5,9 @@
     "enabled": [
       "S1DesktopEnabled",
       "ChatterEnabled"
+    ],
+    "disabled": [
+      "S1EncryptedStoragePref2"
     ]
   }
 }

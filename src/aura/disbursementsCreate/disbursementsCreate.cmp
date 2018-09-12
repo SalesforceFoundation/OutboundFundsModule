@@ -1,4 +1,4 @@
-<aura:component controller="disbursementsCreateController" implements="force:lightningQuickAction,flexipage:availableForAllPageTypes,force:hasRecordId">
+<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,force:hasRecordId">
 
     <!-- Init -->
     <aura:handler name="init" value="{!this}"
@@ -6,9 +6,26 @@
 
     <aura:attribute type="Map" name="model" />
     <aura:attribute type="Map" name="data"
-        default="{formData: {paymentCount: 1,firstDate: null,intervalCount: 1,intervalType: 'Month'},intervalTypes:null,disps:[]}"
+        default="{
+            formData: {
+                paymentCount: 4,
+                firstDate: null,
+                intervalCount: 1,
+                intervalType: 'Month'
+            },
+            intervalTypes:null,
+            columns: [],
+            disbursements:[]}"
     />
-    <div id="wrap">
+
+    <aura:handler name="change" value="{!v.data.disbursements}" action="{!c.disbursementsChange}"/>
+
+    <div class="wrap">
+
+        <!-- Header -->
+        <h2 class="slds-text-heading_medium slds-hyphenate slds-m-bottom--large">Schedule Bulk Disbursements</h2>
+
+        <!-- Body -->
         <div class="slds-section slds-is-open">
             <h3 class="slds-section__title slds-theme_shade">
                 <span class="slds-truncate slds-p-horizontal_small" title="Basics">Funding Request Information</span>
@@ -20,17 +37,23 @@
                         <dl class="slds-list_horizontal slds-wrap">
                             <dt class="slds-item_label slds-text-color_weak slds-truncate">Contact:</dt>
                             <dd class="slds-item_detail slds-truncate">{!v.model.fundingRequest.contactName}</dd>
-                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Requested Amount:</dt>
-                            <dd class="slds-item_detail slds-truncate">{!v.model.fundingRequest.requestedAmount}</dd>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Awarded Amount:</dt>
+                            <dd class="slds-item_detail slds-truncate">
+                                <ui:outputCurrency value="{!v.model.fundingRequest.awardedAmount}"/>
+                            </dd>
                         </dl>
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
                         <dl class="slds-list_horizontal slds-wrap">
                             <dt class="slds-item_label slds-text-color_weak slds-truncate">Total Disbursed:</dt>
-                            <dd class="slds-item_detail slds-truncate">{!v.model.fundingRequest.totalDisbursed}</dd>
+                            <dd class="slds-item_detail slds-truncate">
+                                <ui:outputCurrency value="{!v.model.fundingRequest.totalDisbursed}"/>
+                            </dd>
                             <dt class="slds-item_label slds-text-color_weak slds-truncate">Amount Remaining:</dt>
-                            <dd class="slds-item_detail slds-truncate">{!v.model.fundingRequest.totalRemaining}</dd>
+                            <dd class="slds-item_detail slds-truncate">
+                                <ui:outputCurrency value="{!v.model.fundingRequest.totalRemaining}"/>
+                            </dd>
                         </dl>
                     </div>
                 </div>
@@ -42,18 +65,18 @@
 
         <div class="slds-section slds-is-open">
             <h3 class="slds-section__title slds-theme_shade">
-                <span class="slds-truncate slds-p-horizontal_small" title="Basics">Calculate Payments</span>
+                <span class="slds-truncate slds-p-horizontal_small" title="Basics">Calculate Disbursements</span>
             </h3>
             <div class="slds-section__content">
 
                 <div class="slds-grid slds-grid_pull-padded-medium">
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input name="paymentCount" label="Number of Payments" type="number" value="{!v.data.formData.paymentCount}"/>
+                        <lightning:input name="paymentCount" label="Number of Disbursements" type="number" value="{!v.data.formData.paymentCount}"/>
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input label="First Payment Date" name="firstDate" type="date" value="{!v.data.formData.firstDate}"/>
+                        <lightning:input label="First Date" name="firstDate" type="date" value="{!v.data.formData.firstDate}"/>
                     </div>
                 </div>
 
@@ -88,6 +111,27 @@
 
             </div>
         </div>
-    </div>
 
+        <!-- Disbursement Review Table -->
+        <aura:if isTrue="{!not(empty(v.data.disbursements))}">
+            <div class="slds-section slds-is-open">
+                <div class="slds-section__content">
+                    <lightning:datatable
+                            keyField="id"
+                            data="{! v.data.disbursements }"
+                            columns="{! v.data.columns }"
+                            hideCheckboxColumn="true"
+                            oncellchange="{!c.handleRowChange}"
+                            aura:id="disbursementTable"
+                    />
+                </div>
+            </div>
+        </aura:if>
+
+        <!-- Footer -->
+        <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
+            <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleCancel}" />
+            <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" />
+        </div>
+    </div>
 </aura:component>
