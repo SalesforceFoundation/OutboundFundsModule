@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Remaining__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Amount remaining to be disbursed or cancelled.</description>
+    <externalId>false</externalId>
+    <formula>Awarded_Amount__c - Total_Disbursed__c -  Total_Cancelled__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Remaining</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
