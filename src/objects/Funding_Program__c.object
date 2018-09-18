@@ -52,7 +52,6 @@
         <label>Funding Program Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableChangeDataCapture>false</enableChangeDataCapture>
@@ -64,7 +63,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Available_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <description>Total cash available in the program. Takes the total program amount and subtracts the amount disbursed and the amount to be disbursed.</description>
         <externalId>false</externalId>
         <formula>Total_Program_Amount__c - Disbursed_Total__c - Pending_Disbursement_Total__c</formula>
@@ -79,7 +77,6 @@
     </fields>
     <fields>
         <fullName>Awarded_Total__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Awarded Total</label>
         <summarizedField>Funding_Request__c.Awarded_Amount__c</summarizedField>
@@ -91,7 +88,6 @@
     </fields>
     <fields>
         <fullName>Description__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Description</label>
         <length>131072</length>
@@ -103,7 +99,6 @@
     </fields>
     <fields>
         <fullName>Disbursed_Total__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Disbursed Total</label>
         <summarizedField>Funding_Request__c.Total_Disbursed__c</summarizedField>
@@ -115,7 +110,6 @@
     </fields>
     <fields>
         <fullName>End_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>End Date</label>
         <required>false</required>
@@ -127,7 +121,6 @@
     <fields>
         <fullName>Funding_Program_Manager__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>This person is the supervisor/director/manager of the Funding Program. Often, they are also the final approver of Funding Requests.</inlineHelpText>
         <label>Funding Program Manager</label>
@@ -142,7 +135,6 @@
     <fields>
         <fullName>Parent_Funding_Program__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <description>Lookup to create a hierarchy of Funding Programs.</description>
         <externalId>false</externalId>
         <label>Parent Funding Program</label>
@@ -157,7 +149,6 @@
     </fields>
     <fields>
         <fullName>Pending_Disbursement_Total__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Pending Disbursement Total</label>
         <summarizedField>Funding_Request__c.Total_Remaining__c</summarizedField>
@@ -169,7 +160,6 @@
     </fields>
     <fields>
         <fullName>Requested_Total__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Requested Total</label>
         <summarizedField>Funding_Request__c.Requested_Amount__c</summarizedField>
@@ -181,7 +171,6 @@
     </fields>
     <fields>
         <fullName>Start_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Start Date</label>
         <required>false</required>
@@ -192,7 +181,6 @@
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
@@ -229,7 +217,6 @@
     <fields>
         <fullName>Top_Level__c</fullName>
         <defaultValue>false</defaultValue>
-        <deprecated>false</deprecated>
         <description>Indicates Top Level in Hierarchy</description>
         <externalId>false</externalId>
         <inlineHelpText>Check if this Funding Program is the top level in a program hierarchy.</inlineHelpText>
@@ -241,7 +228,6 @@
     </fields>
     <fields>
         <fullName>Total_Program_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <description>Total amount of fund available in this program</description>
         <externalId>false</externalId>
         <label>Total Program Amount</label>

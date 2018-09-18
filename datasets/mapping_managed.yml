@@ -1,0 +1,119 @@
+Accounts:
+    sf_object: Account
+    table: accounts
+    fields:
+        Id: sf_id
+        Name: name
+
+Contacts:
+    sf_object: Contact
+    table: contacts
+    fields:
+        Id: sf_id
+        Salutation: salutation
+        FirstName: first_name
+        LastName: last_name
+        Email: email
+        Phone: phone
+        Title: job_title
+    lookups:
+        AccountId:
+            key_field: account_id
+            table: accounts
+            join_field: id
+            value_field: sf_id
+
+Funding Programs:
+    sf_object: outfunds__Funding_Program__c
+    table: funding_programs
+    fields:
+        Id: sf_id
+        Name: name
+        outfunds__Description__c: description
+        outfunds__End_Date__c: end_date
+        outfunds__Start_Date__c: start_date
+        outfunds__Status__c: status
+        outfunds__Total_Program_Amount__c: total_program_amount
+
+Funding Requests:
+    sf_object: outfunds__Funding_Request__c
+    table: funding_requests
+    fields:
+        Id: sf_id
+        Name: name
+        outfunds__Application_Date__c: application_date
+        outfunds__Awarded_Amount__c: awarded_amount
+        outfunds__Awarded_Date__c: awarded_date
+        outfunds__Close_Date__c: close_date
+        outfunds__Closed_reason__c: closed_reason
+        outfunds__Geographical_Area_Served__c: geographical_area_served
+        outfunds__Population_Served__c: population_served
+        outfunds__Recommended_Amount__c: recommended_amount
+        outfunds__Requested_Amount__c: requested_amount
+        outfunds__Requested_For__c: requested_for
+        outfunds__Status__c: status
+        outfunds__Term_End_Date__c: term_end_date
+        outfunds__Term_Start_Date__c: term_start_date
+        outfunds__Terms__c: terms
+    lookups:
+        outfunds__Applying_Contact__c:
+            key_field: applying_contact_id
+            table: contacts
+            join_field: id
+            value_field: sf_id
+        outfunds__Applying_Organization__c:
+            key_field: applying_organization_id
+            table: accounts
+            join_field: id
+            value_field: sf_id
+        outfunds__Funding_Program__c:
+            key_field: funding_program_id
+            table: funding_programs
+            join_field: id
+            value_field: sf_id
+
+Disbursements:
+    sf_object: outfunds__Disbursement__c
+    table: disbursements
+    fields:
+        Id: sf_id
+        outfunds__Amount__c: amount
+        outfunds__Disbursement_Date__c: disbursement_date
+        outfunds__Disbursement_Method__c: disbursement_method
+        outfunds__Scheduled_Date__c: scheduled_date
+        outfunds__Status__c: status
+        outfunds__Type__c: type
+    lookups:
+        outfunds__Funding_Request__c:
+            key_field: funding_request_id
+            table: funding_requests
+            join_field: id
+            value_field: sf_id
+
+Requirements:
+    sf_object: outfunds__Requirement__c
+    table: requirements
+    fields:
+        Id: sf_id
+        Name: name
+        outfunds__Completed_Date__c: completed_date
+        outfunds__Due_Date__c: due_date
+        outfunds__Requirements__c: requirements
+        outfunds__Status__c: status
+        outfunds__Type__c: type
+    lookups:
+        outfunds__Disbursement__c:
+            key_field: disbursement_id
+            table: disbursements
+            join_field: id
+            value_field: sf_id
+        outfunds__Funding_Request__c:
+            key_field: funding_request_id
+            table: funding_requests
+            join_field: id
+            value_field: sf_id
+        outfunds__Primary_Contact__c:
+            key_field: primary_contact_id
+            table: contacts
+            join_field: id
+            value_field: sf_id

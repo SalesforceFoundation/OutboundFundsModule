@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Population_Served__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Population Served</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adults</fullName>
+                <default>false</default>
+                <label>Adults</label>
+            </value>
+            <value>
+                <fullName>Below Poverty level</fullName>
+                <default>false</default>
+                <label>Below Poverty level</label>
+            </value>
+            <value>
+                <fullName>Caregivers</fullName>
+                <default>false</default>
+                <label>Caregivers</label>
+            </value>
+            <value>
+                <fullName>Children and Youth</fullName>
+                <default>false</default>
+                <label>Children and Youth</label>
+            </value>
+            <value>
+                <fullName>Economically Disadvantaged People</fullName>
+                <default>false</default>
+                <label>Economically Disadvantaged People</label>
+            </value>
+            <value>
+                <fullName>Ethnic and racial groups</fullName>
+                <default>false</default>
+                <label>Ethnic and racial groups</label>
+            </value>
+            <value>
+                <fullName>Families</fullName>
+                <default>false</default>
+                <label>Families</label>
+            </value>
+            <value>
+                <fullName>Heterosexuals</fullName>
+                <default>false</default>
+                <label>Heterosexuals</label>
+            </value>
+            <value>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+                <label>Homeless</label>
+            </value>
+            <value>
+                <fullName>Immigrants and Refugees</fullName>
+                <default>false</default>
+                <label>Immigrants and Refugees</label>
+            </value>
+            <value>
+                <fullName>Incarcerated People</fullName>
+                <default>false</default>
+                <label>Incarcerated People</label>
+            </value>
+            <value>
+                <fullName>LGBTQ</fullName>
+                <default>false</default>
+                <label>LGBTQ</label>
+            </value>
+            <value>
+                <fullName>Men</fullName>
+                <default>false</default>
+                <label>Men</label>
+            </value>
+            <value>
+                <fullName>People with Disabilities</fullName>
+                <default>false</default>
+                <label>People with Disabilities</label>
+            </value>
+            <value>
+                <fullName>People with Diseases and Illnesses</fullName>
+                <default>false</default>
+                <label>People with Diseases and Illnesses</label>
+            </value>
+            <value>
+                <fullName>Religious Groups</fullName>
+                <default>false</default>
+                <label>Religious Groups</label>
+            </value>
+            <value>
+                <fullName>Veteran</fullName>
+                <default>false</default>
+                <label>Veteran</label>
+            </value>
+            <value>
+                <fullName>Victims and Oppressed People</fullName>
+                <default>false</default>
+                <label>Victims and Oppressed People</label>
+            </value>
+            <value>
+                <fullName>Women</fullName>
+                <default>false</default>
+                <label>Women</label>
+            </value>
+            <value>
+                <fullName>Youth at Risk</fullName>
+                <default>false</default>
+                <label>Youth at Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>
