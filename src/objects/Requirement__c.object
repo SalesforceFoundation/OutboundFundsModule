@@ -57,7 +57,6 @@
         <label>Milestone Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>Record for any documented requirement for the application or awarded funds.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -71,7 +70,6 @@
     <fields>
         <fullName>Assigned__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Assigned</label>
         <referenceTo>User</referenceTo>
@@ -83,7 +81,6 @@
     </fields>
     <fields>
         <fullName>Completed_Date__c</fullName>
-        <deprecated>false</deprecated>
         <description>Date the milestone is completed</description>
         <externalId>false</externalId>
         <label>Completed Date</label>
@@ -95,7 +92,6 @@
     <fields>
         <fullName>Disbursement__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Disbursement</label>
         <referenceTo>Disbursement__c</referenceTo>
@@ -107,7 +103,6 @@
     </fields>
     <fields>
         <fullName>Due_Date__c</fullName>
-        <deprecated>false</deprecated>
         <description>Date the milestone is due.</description>
         <externalId>false</externalId>
         <label>Due Date</label>
@@ -119,7 +114,6 @@
     <fields>
         <fullName>Funding_Request__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
-        <deprecated>false</deprecated>
         <description>Relationship to the Funding Request.</description>
         <externalId>false</externalId>
         <label>Funding Request</label>
@@ -133,7 +127,6 @@
     <fields>
         <fullName>Primary_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Primary Contact</label>
         <referenceTo>Contact</referenceTo>
@@ -145,7 +138,6 @@
     </fields>
     <fields>
         <fullName>Requirements__c</fullName>
-        <deprecated>false</deprecated>
         <description>Document all milestone requirements.</description>
         <externalId>false</externalId>
         <label>Requirements</label>
@@ -157,7 +149,6 @@
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <deprecated>false</deprecated>
         <description>Shows current status of the milestone.</description>
         <externalId>false</externalId>
         <label>Status</label>
@@ -208,7 +199,6 @@
     </fields>
     <fields>
         <fullName>Type__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Type</label>
         <required>false</required>
