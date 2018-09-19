@@ -13,3 +13,39 @@ orgs:
             config_file: orgs/dev.json
             days: 7
             namespaced: True
+
+
+tasks:
+
+    demo_data_query:
+        description: Load the demo data set into the org
+        class_path: cumulusci.tasks.bulkdata.QueryData
+        options:
+            database_url: 'sqlite:///datasets/demo/data.db'
+            mapping: 'datasets/mapping.yml'
+            
+    demo_data_load:
+        description: Load the demo data set into the org
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        options:
+            database_url: 'sqlite:///datasets/demo/data.db'
+            mapping: 'datasets/mapping.yml'  
+                 
+    demo_data_delete:
+        description: 'WARNING: Deletes all data in the objects specified in the objects option.'
+        class_path: cumulusci.tasks.bulkdata.DeleteData
+        options:
+            objects:
+                - Requirement__c
+                - Disbursement__c
+                - Funding_Request__c
+                - Funding_Program__c
+                - Contact
+                - Account
+
+flows:
+
+    config_qa:
+        steps:
+            3:
+                task: demo_data_load
