@@ -51,7 +51,6 @@
         <label>Disbursement Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableChangeDataCapture>false</enableChangeDataCapture>
@@ -63,7 +62,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Amount</label>
         <precision>18</precision>
@@ -75,7 +73,6 @@
     </fields>
     <fields>
         <fullName>Disbursement_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Disbursement Date</label>
         <required>false</required>
@@ -85,7 +82,6 @@
     </fields>
     <fields>
         <fullName>Disbursement_Method__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Disbursement Method</label>
         <required>false</required>
@@ -115,7 +111,6 @@
     </fields>
     <fields>
         <fullName>Funding_Request__c</fullName>
-        <deprecated>false</deprecated>
         <description>Relationship to the Funding Request.</description>
         <externalId>false</externalId>
         <label>Funding Request</label>
@@ -131,7 +126,6 @@
     </fields>
     <fields>
         <fullName>Scheduled_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Scheduled Date</label>
         <required>false</required>
@@ -141,7 +135,6 @@
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
@@ -181,7 +174,6 @@
     </fields>
     <fields>
         <fullName>Type__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Type</label>
         <required>false</required>
