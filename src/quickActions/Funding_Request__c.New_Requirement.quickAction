@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldOverrides>
-        <field>Assigned__c</field>
-        <formula>Funding_Request__c.Applying_Employee__c</formula>
-    </fieldOverrides>
-    <fieldOverrides>
-        <field>Primary_Contact__c</field>
-        <formula>Funding_Request__c.Applying_Contact__c</formula>
-    </fieldOverrides>
-    <fieldOverrides>
         <field>Status__c</field>
         <literalValue>Open</literalValue>
     </fieldOverrides>
