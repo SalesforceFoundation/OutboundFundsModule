@@ -121,6 +121,7 @@
         <members>Funding_Program__c.Program_Totals</members>
         <members>Funding_Request__c.Create_Bulk_Disbursements</members>
         <members>Funding_Request__c.Disbursment_Information</members>
+        <members>Funding_Request__c.New_Requirement</members>
         <members>LogACall</members>
         <members>NewTask</members>
         <members>SendEmail</members>

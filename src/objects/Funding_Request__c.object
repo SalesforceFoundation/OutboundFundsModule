@@ -51,7 +51,6 @@
         <label>Funding Request Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>Record of request for outbound financial funding - can be used for both internal and external purposes.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -64,7 +63,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Application_Date__c</fullName>
-        <deprecated>false</deprecated>
         <description>Date the application has been submitted.</description>
         <externalId>false</externalId>
         <label>Application Date</label>
@@ -76,7 +74,6 @@
     <fields>
         <fullName>Applying_Contact__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Applying Contact</label>
         <referenceTo>Contact</referenceTo>
@@ -90,7 +87,6 @@
     <fields>
         <fullName>Applying_Employee__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Applying Employee</label>
         <referenceTo>User</referenceTo>
@@ -103,7 +99,6 @@
     <fields>
         <fullName>Applying_Organization__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Applying Organization</label>
         <referenceTo>Account</referenceTo>
@@ -116,7 +111,6 @@
     </fields>
     <fields>
         <fullName>Awarded_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Awarded Amount</label>
         <precision>18</precision>
@@ -128,7 +122,6 @@
     </fields>
     <fields>
         <fullName>Awarded_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Awarded Date</label>
         <required>false</required>
@@ -138,7 +131,6 @@
     </fields>
     <fields>
         <fullName>Close_Date__c</fullName>
-        <deprecated>false</deprecated>
         <description>Date the application is fully closed - either awarded and fully disbursed, declined or withdrawn.</description>
         <externalId>false</externalId>
         <label>Close Date</label>
@@ -149,7 +141,6 @@
     </fields>
     <fields>
         <fullName>Closed_reason__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Closed reason</label>
         <length>255</length>
@@ -161,7 +152,6 @@
     </fields>
     <fields>
         <fullName>Funding_Program__c</fullName>
-        <deprecated>false</deprecated>
         <description>Lookup to the funding program from which funds are being requested.</description>
         <externalId>false</externalId>
         <label>Funding Program</label>
@@ -177,7 +167,6 @@
     </fields>
     <fields>
         <fullName>Geographical_Area_Served__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Geographical Area Served</label>
         <required>false</required>
@@ -212,7 +201,6 @@
     </fields>
     <fields>
         <fullName>Population_Served__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Population Served</label>
         <required>false</required>
@@ -328,7 +316,6 @@
     </fields>
     <fields>
         <fullName>Recommended_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Recommended Amount</label>
         <precision>18</precision>
@@ -340,7 +327,6 @@
     </fields>
     <fields>
         <fullName>Requested_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Requested Amount</label>
         <precision>18</precision>
@@ -352,7 +338,6 @@
     </fields>
     <fields>
         <fullName>Requested_For__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Requested For</label>
         <length>131072</length>
@@ -363,7 +348,6 @@
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <deprecated>false</deprecated>
         <description>Shows current status of the application.</description>
         <externalId>false</externalId>
         <label>Status</label>
@@ -429,7 +413,6 @@
     </fields>
     <fields>
         <fullName>Term_End_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Term End Date</label>
         <required>false</required>
@@ -439,7 +422,6 @@
     </fields>
     <fields>
         <fullName>Term_Start_Date__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Term Start Date</label>
         <required>false</required>
@@ -449,7 +431,6 @@
     </fields>
     <fields>
         <fullName>Terms__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Terms</label>
         <required>false</required>
@@ -459,7 +440,6 @@
     </fields>
     <fields>
         <fullName>Total_Cancelled__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Total Cancelled</label>
         <summarizedField>Disbursement__c.Amount__c</summarizedField>
@@ -475,7 +455,6 @@
     </fields>
     <fields>
         <fullName>Total_Disbursed__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Total Disbursed</label>
         <summarizedField>Disbursement__c.Amount__c</summarizedField>
@@ -491,7 +470,6 @@
     </fields>
     <fields>
         <fullName>Total_Remaining__c</fullName>
-        <deprecated>false</deprecated>
         <description>Amount remaining to be disbursed or cancelled.</description>
         <externalId>false</externalId>
         <formula>Awarded_Amount__c - Total_Disbursed__c -  Total_Cancelled__c</formula>
