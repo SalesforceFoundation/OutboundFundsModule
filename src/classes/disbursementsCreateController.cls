@@ -18,6 +18,7 @@ public with sharing class disbursementsCreateController {
         }
 
         insert newDispList;
+
         return newDispList;
     }
 
@@ -46,7 +47,7 @@ public with sharing class disbursementsCreateController {
     }
 
     private static Disbursement__c mapDisbursement(Disbursement d) {
-        System.debug('******** mapDisbursement *******');
+
         return new Disbursement__c(
             Amount__c = d.amount,
             Funding_Request__c = d.requestId,

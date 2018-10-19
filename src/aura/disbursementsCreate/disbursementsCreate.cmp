@@ -1,4 +1,6 @@
-<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader">
+<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader, force:hasRecordId">
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
 
     <!-- Init -->
     <aura:handler name="init" value="{!this}"
@@ -8,7 +10,7 @@
     <aura:attribute type="Map" name="data"
         default="{
             formData: {
-                paymentCount: 4,
+                paymentCount: 1,
                 paymentTotal: 0,
                 firstDate: null,
                 intervalCount: 1,

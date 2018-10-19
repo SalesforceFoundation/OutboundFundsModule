@@ -4,15 +4,15 @@
         {   label: 'Amount',
             fieldName: 'amount',
             type: 'currency',
-            editable: false,
+            editable: true,
             cellAttributes: {
                 alignment: 'center'
             }
         },
         {   label: 'Scheduled Date',
             fieldName: 'scheduleDate',
-            //type: 'date-local',
-            type: 'date',
+            type: 'date-local',
+            // type: 'date',
             typeAttributes: {
                 year: 'numeric',
                 month: 'numeric',
@@ -26,12 +26,12 @@
     ],
 
     init: function (cmp) {
-        // Get the data from the database
+        // Get the data from the database using the record id from force:hasRecordId
         var recordId = cmp.get("v.recordId");
         if(recordId!=null) {
             this.getModel(cmp);
         }
-        cmp.set('v.data.formData.firstDate', new Date().toISOString());
+        cmp.set('v.data.formData.firstDate', new Date().toLocaleDateString());
         cmp.set('v.data.intervalTypes', this.INTERVAL_TYPES);
         cmp.set('v.data.columns', this.COLUMN_DEF);
     },
@@ -40,6 +40,8 @@
         var params = { objectId: cmp.get("v.recordId") };
         this.callServer(cmp,'c.getViewModel',params, function (r) {
             cmp.set('v.model',r);
+
+            // After the model is loaded set the default total
             cmp.set('v.data.formData.paymentTotal', cmp.get('v.model.fundingRequest.totalRemaining'));
         });
     },
@@ -53,6 +55,7 @@
 
         var paymentAmt = d.paymentTotal / paymentCount;
         var intervalType = d.intervalType;
+
         var startDate = new Date( d.firstDate );
 
         var intervalNum = d.intervalCount;
@@ -63,13 +66,16 @@
         for (var i = 0; i < paymentCount; i++) {
             var thisPayment = paymentAmt;
             var dateObject = new Date(startDate);
+
             if(i > 0){
+
                 var interval = i*intervalNum;
+
                 // Figure out what the date should be
                 if(intervalType == 'Week'){
                     dateObject.setDate(dateObject.getDate() + interval * 7);
                 } else if(intervalType == 'Month'){
-                    dateObject.setMonth(dateObject.getMonth() + interval);
+                    dateObject = this.addMonths(dateObject, interval);
                 } else if(intervalType == 'Year'){
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
@@ -93,7 +99,6 @@
                 requestId: m.fundingRequest.recordId
             });
         }
-
         cmp.set('v.data.disbursements',disbursements);
     },
 
@@ -124,10 +129,7 @@
         var dspsString =  JSON.stringify( this.processDatesForAex(dsps) );
         var params = { dispListString: dspsString  };
         this.callServer(cmp,'c.saveDisbursements',params, function (r) {
-            console.log(r);
-
             $A.get("e.force:closeQuickAction").fire();
-
             this.showToast('Disbursements successfully saved.','success');
         });
     },
@@ -141,6 +143,14 @@
         return disbursements;
     },
 
+    addMonths: function(date, months) {
+        var d = date.getDate();
+        date.setMonth(date.getMonth() + +months);
+        if (date.getDate() != d) {
+            date.setDate(0);
+        }
+        return date;
+    },
 
     callServer: function (cmp, method, params, callback) {
         var action = cmp.get(method);
@@ -154,12 +164,12 @@
                 }
             } else {
                 var errors = a.getError();
-                var message = 'Error';
+                var message = 'Unknown Error.';
                 if (errors && Array.isArray(errors) && errors.length) {
                     message = errors[0].message;
                 }
 
-                this.showToast(message,'error');
+                this.showToast(message,'error',cmp);
             }
         });
 
@@ -167,12 +177,26 @@
     },
 
     // Types:  'error', 'warning', 'success', or 'info'
-    showToast: function(message, type) {
-        var toastEvent = $A.get("e.force:showToast");
-        toastEvent.setParams({
-            type: type,
-            message: message
-        });
-        toastEvent.fire();
+    showToast: function(message, type, cmp) {
+
+        // Need this workaround because e.force:showToast toasts are hidden behind quick actions
+        if(type=='error' && typeof cmp != "undefined"){
+
+            cmp.find('notifLib').showNotice({
+                "variant": 'error',
+                "header": 'Error',
+                "message": message
+            });
+
+        } else {
+
+            var toastEvent = $A.get("e.force:showToast");
+            toastEvent.setParams({
+                type: type,
+                message: message
+            });
+            toastEvent.fire();
+
+        }
     },
 })
