@@ -1,11 +1,24 @@
 public with sharing class disbursementsCreateController {
 
-    // Picklist Fields that will be displayed in UI
-    private static final Set<String> PICKLIST_FIELDS = new Set<String>{'Disbursement_Method__c', 'Type__c'};
-
     @AuraEnabled
     public static dispViewModel getViewModel(Id objectId) {
         return buildModel(objectId);
+    }
+
+    @AuraEnabled
+    public static List<Disbursement__c> saveDisbursements(String dispListString) {
+
+        List<Disbursement> dList = (List<Disbursement>)
+            JSON.deserialize(dispListString, List<Disbursement>.class);
+
+        List<Disbursement__c> newDispList = new List<Disbursement__c>();
+
+        for (Disbursement d : dList) {
+            newDispList.add( mapDisbursement(d) );
+        }
+
+        insert newDispList;
+        return newDispList;
     }
 
     private static dispViewModel buildModel(Id reqId) {
@@ -32,20 +45,14 @@ public with sharing class disbursementsCreateController {
         return new Request(fr);
     }
 
-    private static Map<String, List<String>> getPicklistOptions(){
-        Map<String, List<String>> optMap = new Map<String, List<String>>();
-
-        Map<String,Schema.SObjectField> fieldMap = SObjectType.Disbursement__c.fields.getMap();
-
-        for(Schema.SObjectField field : fieldMap.values() ) {
-            DescribeFieldResult dfr = field.getDescribe();
-
-            if(dfr.type == Schema.DisplayType.PICKLIST) {
-
-            }
-        }
-
-        return optMap;
+    private static Disbursement__c mapDisbursement(Disbursement d) {
+        System.debug('******** mapDisbursement *******');
+        return new Disbursement__c(
+            Amount__c = d.amount,
+            Funding_Request__c = d.requestId,
+            Scheduled_Date__c = d.scheduleDate,
+            Status__c = 'Scheduled'
+        );
     }
 
     /*** Models ***/
@@ -90,21 +97,10 @@ public with sharing class disbursementsCreateController {
 
     public Class Disbursement {
 
-        // Amount__c
-        // Disbursement_Date__c
-        // Disbursement_Method__c
-        // Funding_Request__c
-        // Scheduled_Date__c
-        // Status__c
-        // Type__c
-
         public Decimal amount;
-        public Date dispDate;
-        public String method;
         public Id requestId;
         public Date scheduleDate;
         public String status;
-        public String type;
 
         public Disbursement() {}
     }

@@ -1,4 +1,4 @@
-<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,force:hasRecordId">
+<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader">
 
     <!-- Init -->
     <aura:handler name="init" value="{!this}"
@@ -9,6 +9,7 @@
         default="{
             formData: {
                 paymentCount: 4,
+                paymentTotal: 0,
                 firstDate: null,
                 intervalCount: 1,
                 intervalType: 'Month'
@@ -17,8 +18,6 @@
             columns: [],
             disbursements:[]}"
     />
-
-    <aura:handler name="change" value="{!v.data.disbursements}" action="{!c.disbursementsChange}"/>
 
     <div class="wrap">
 
@@ -91,6 +90,10 @@
                             </aura:iteration>
                         </lightning:select>
                     </div>
+
+                    <div class="slds-p-horizontal_medium slds-size_1-of-2">
+                        <lightning:input label="Amount" name="paymentTotal" type="number" value="{!v.data.formData.paymentTotal}" max="{!v.model.fundingRequest.totalRemaining}"/>
+                    </div>
                 </div>
 
             </div>
@@ -126,12 +129,12 @@
                     />
                 </div>
             </div>
-        </aura:if>
 
-        <!-- Footer -->
-        <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
-            <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleCancel}" />
-            <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" />
-        </div>
+            <!-- Footer -->
+            <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
+                <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleCancel}" />
+                <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.data.disbursements)}"/>
+            </div>
+        </aura:if>
     </div>
 </aura:component>

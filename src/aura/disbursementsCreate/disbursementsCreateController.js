@@ -1,32 +1,26 @@
 ({
-    doInit: function (component, event, helper) {
-        helper.init(component);
+    doInit: function (cmp, event, helper) {
+        helper.init(cmp);
     },
-    calculate: function (component, event, helper) {
-        helper.calcDisp(component);
+
+    calculate: function (cmp, event, helper) {
+        helper.calcDisp(cmp);
     },
-    disbursementsChange: function (component, event, helper) {
-        var columnsDef = [
-            { label: 'Amount', fieldName: 'amount', type: 'currency', cellAttributes: { alignment: 'center' }},
-            { label: 'Disbursement Date', fieldName: 'dispDate', type: 'date-local', editable: true, cellAttributes: { alignment: 'center' }},
-            { label: 'Scheduled Date', fieldName: 'scheduleDate', type: 'date-local', editable: true, cellAttributes: { alignment: 'center' }}
-        ];
-        component.set('v.data.columns', columnsDef);
-        console.log( JSON.stringify( component.get('v.data.disbursements') )  );
-    },
-    handleRowChange: function (component, event, helper) {
+
+    handleRowChange: function (cmp, event, helper) {
         var draftValues = event.getParam('draftValues');
 
-        console.log( draftValues );
-
-        // We want any edits to be saved immediately to the in-memory disbursement
-        helper.setDispursementProperty(component, draftValues[0]);
-
-        debugger;
+        // Edits to be saved immediately to the in-memory disbursement
+        helper.setDispursementProperty(cmp, draftValues[0]);
 
         // Since we live edit the pending disbursements, we'll clear the drafts
-        component.find('disbursementTable').set('v.draftValues', null);
+        cmp.find('disbursementTable').set('v.draftValues', null);
     },
+
+    handleSave: function (cmp, event, helper) {
+        helper.saveDisps(cmp)
+    },
+
     handleCancel: function () {
         $A.get("e.force:closeQuickAction").fire();
     }

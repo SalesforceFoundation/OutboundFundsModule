@@ -1,35 +1,57 @@
 ({
     INTERVAL_TYPES: ['Week','Month','Year'],
-    init: function (component) {
-        // Get the data from the database
-        var recordId = component.get("v.recordId");
-        if(recordId!=null) {
-            this.getModel(component);
+    COLUMN_DEF: [
+        {   label: 'Amount',
+            fieldName: 'amount',
+            type: 'currency',
+            editable: false,
+            cellAttributes: {
+                alignment: 'center'
+            }
+        },
+        {   label: 'Scheduled Date',
+            fieldName: 'scheduleDate',
+            //type: 'date-local',
+            type: 'date',
+            typeAttributes: {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            },
+            editable: true,
+            cellAttributes: {
+                alignment: 'center'
+            }
         }
+    ],
 
-        component.set('v.data.formData.firstDate', new Date().toISOString());
-        component.set('v.data.intervalTypes', this.INTERVAL_TYPES);
-
-        // debugger;
+    init: function (cmp) {
+        // Get the data from the database
+        var recordId = cmp.get("v.recordId");
+        if(recordId!=null) {
+            this.getModel(cmp);
+        }
+        cmp.set('v.data.formData.firstDate', new Date().toISOString());
+        cmp.set('v.data.intervalTypes', this.INTERVAL_TYPES);
+        cmp.set('v.data.columns', this.COLUMN_DEF);
     },
-    getModel: function (component) {
-        var params = { objectId: component.get("v.recordId") };
-        var helper = this;
-        this.callServer(component,'c.getViewModel',params, function (r) {
-            component.set('v.model',r);
+
+    getModel: function (cmp) {
+        var params = { objectId: cmp.get("v.recordId") };
+        this.callServer(cmp,'c.getViewModel',params, function (r) {
+            cmp.set('v.model',r);
+            cmp.set('v.data.formData.paymentTotal', cmp.get('v.model.fundingRequest.totalRemaining'));
         });
     },
 
-    calcDisp: function (component) {
+    calcDisp: function (cmp) {
 
-        var d = component.get('v.data').formData;
-        var m = component.get('v.model');
-
-        // console.log( JSON.stringify(d) );
+        var d = cmp.get('v.data').formData;
+        var m = cmp.get('v.model');
 
         var paymentCount = d.paymentCount;
 
-        var paymentAmt = m.fundingRequest.awardedAmount / paymentCount;
+        var paymentAmt = d.paymentTotal / paymentCount;
         var intervalType = d.intervalType;
         var startDate = new Date( d.firstDate );
 
@@ -67,17 +89,12 @@
                 // Calculated Properties
                 id: ''+i,
                 amount: thisPayment,
-                dispDate: dateObject.toISOString(),
-
-                scheduleDate: new Date().toISOString(),
+                scheduleDate: dateObject,
                 requestId: m.fundingRequest.recordId
             });
         }
 
-        // debugger;
-        component.set('v.data.disbursements',disbursements);
-
-        // {"paymentCount":1,"intervalCount":1,"intervalType":"Month","intervalTypes":["Month","Year"],"firstDate":"2018-08-01T21:33:11.531Z"}
+        cmp.set('v.data.disbursements',disbursements);
     },
 
     countDecimals: function(value) {
@@ -85,23 +102,45 @@
         return value.toString().split(".")[1].length || 0;
     },
 
-    setDispursementProperty: function(component, changedField) {
-        let disps = component.get('v.data.disbursements');
+    setDispursementProperty: function(cmp, changedField) {
+        var disps = cmp.get('v.data.disbursements');
 
         disps.forEach(function(el) {
             if(el.id == changedField.id) {
 
                 // the order of objects passed into assign matters
-                let updatedDisbursement = Object.assign(el, changedField);
+                var updatedDisbursement = Object.assign(el, changedField);
 
                 // Put the newly updated disbursement into the datamodel
                 disps.splice(parseInt(el.id),1,updatedDisbursement)
 
-                component.set('v.data.disbursements', disps);
-
+                cmp.set('v.data.disbursements', disps);
             }
         });
     },
+
+    saveDisps: function(cmp) {
+        var dsps = cmp.get("v.data.disbursements");
+        var dspsString =  JSON.stringify( this.processDatesForAex(dsps) );
+        var params = { dispListString: dspsString  };
+        this.callServer(cmp,'c.saveDisbursements',params, function (r) {
+            console.log(r);
+
+            $A.get("e.force:closeQuickAction").fire();
+
+            this.showToast('Disbursements successfully saved.','success');
+        });
+    },
+
+    processDatesForAex: function(disbursements) {
+        disbursements.forEach(function(d) {
+            // Using a pre-determined date format that the APEX JSON parser will be able to understand,
+            d.scheduleDate = $A.localizationService.formatDate(d.scheduleDate, "yyyy-MM-dd");
+        });
+
+        return disbursements;
+    },
+
 
     callServer: function (cmp, method, params, callback) {
         var action = cmp.get(method);
@@ -115,28 +154,25 @@
                 }
             } else {
                 var errors = a.getError();
-                var message = 'Unknown error';
+                var message = 'Error';
                 if (errors && Array.isArray(errors) && errors.length) {
                     message = errors[0].message;
                 }
 
-                this.showToastError(message);
+                this.showToast(message,'error');
             }
         });
 
         $A.enqueueAction(action);
     },
 
-    showToastError : function (errorMessage) {
-        var showToast = $A.get('e.force:showToast');
-        showToast.setParams(
-            {
-                'title': 'Error: ',
-                'message': errorMessage,
-                'type': 'error'
-            }
-        );
-        showToast.fire();
-
+    // Types:  'error', 'warning', 'success', or 'info'
+    showToast: function(message, type) {
+        var toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            type: type,
+            message: message
+        });
+        toastEvent.fire();
     },
 })
