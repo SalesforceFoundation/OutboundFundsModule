@@ -1,17 +1,11 @@
-.THIS {
-
-}
+.THIS {}
 
 .THIS.wrap {
-    /*width: 550px;*/
-    /*overflow-y: scroll;*/
     position: relative;
     display: block;
-    /*height: 650px;*/
     position: relative;
     width: 100%;
     min-width: 550px;
-    /*min-height: 650px;*/
 }
 
 .THIS .slds-item_label {
@@ -20,10 +14,6 @@
 
 .THIS .slds-item_detail {
     width: 50%;
-}
-
-.THIS .slds-section__title {
-    /*margin: 0 -20px;*/
 }
 
 .THIS .inline_block {
