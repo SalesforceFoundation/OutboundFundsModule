@@ -79,6 +79,7 @@
                 } else if(intervalType == 'Year'){
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
+
             }
 
             if(this.countDecimals(thisPayment) > 2 ){
@@ -128,9 +129,11 @@
         var dsps = cmp.get("v.data.disbursements");
         var dspsString =  JSON.stringify( this.processDatesForAex(dsps) );
         var params = { dispListString: dspsString  };
+        var that = this;
         this.callServer(cmp,'c.saveDisbursements',params, function (r) {
+            that.showToast('Disbursements successfully saved.','success', cmp);
+            $A.get("e.force:refreshView").fire();
             $A.get("e.force:closeQuickAction").fire();
-            this.showToast('Disbursements successfully saved.','success');
         });
     },
 
@@ -143,13 +146,16 @@
         return disbursements;
     },
 
-    addMonths: function(date, months) {
-        var d = date.getDate();
-        date.setMonth(date.getMonth() + +months);
-        if (date.getDate() != d) {
-            date.setDate(0);
+    addMonths: function(date, count) {
+        if (date && count) {
+            var m, d = (date = new Date(+date)).getUTCDate()
+
+            date.setUTCMonth(date.getUTCMonth() + count, 1)
+            m = date.getUTCMonth()
+            date.setUTCDate(d)
+            if (date.getUTCMonth() !== m) date.setUTCDate(0)
         }
-        return date;
+        return date
     },
 
     callServer: function (cmp, method, params, callback) {
