@@ -3,19 +3,6 @@
 .THIS.wrap {
     position: relative;
     display: block;
-    position: relative;
     width: 100%;
     min-width: 550px;
-}
-
-.THIS .slds-item_label {
-    width: 50%;
-}
-
-.THIS .slds-item_detail {
-    width: 50%;
-}
-
-.THIS .inline_block {
-    display: inline-block;
 }

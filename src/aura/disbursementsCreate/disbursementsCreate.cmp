@@ -34,26 +34,26 @@
             <div class="slds-section__content">
                 <div class="slds-grid slds-grid_pull-padded-medium slds-m-bottom_large">
 
-                    <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <dl class="slds-list_horizontal slds-wrap">
-                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Contact:</dt>
-                            <dd class="slds-item_detail slds-truncate">{!v.model.fundingRequest.contactName}</dd>
-                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Awarded Amount:</dt>
-                            <dd class="slds-item_detail slds-truncate">
-                                <ui:outputCurrency value="{!v.model.fundingRequest.awardedAmount}"/>
+                    <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow">
+                        <dl class="slds-dl_inline slds-wrap">
+                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Contact:</dt>
+                            <dd class="slds-dl_inline__detail slds-truncate">{!v.model.fundingRequest.contactName}</dd>
+                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Awarded Amount:</dt>
+                            <dd class="slds-dl_inline__detail slds-truncate">
+                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.awardedAmount}"/>
                             </dd>
                         </dl>
                     </div>
 
-                    <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <dl class="slds-list_horizontal slds-wrap">
-                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Total Disbursed:</dt>
-                            <dd class="slds-item_detail slds-truncate">
-                                <ui:outputCurrency value="{!v.model.fundingRequest.totalDisbursed}"/>
+                    <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow">
+                        <dl class="slds-dl_inline slds-wrap">
+                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Total Disbursed:</dt>
+                            <dd class="slds-dl_inline__detail slds-truncate">
+                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.totalDisbursed}"/>
                             </dd>
-                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Amount Remaining:</dt>
-                            <dd class="slds-item_detail slds-truncate">
-                                <ui:outputCurrency value="{!v.model.fundingRequest.totalRemaining}"/>
+                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Amount Remaining:</dt>
+                            <dd class="slds-dl_inline__detail slds-truncate">
+                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.totalRemaining}"/>
                             </dd>
                         </dl>
                     </div>
@@ -83,10 +83,10 @@
 
                 <div class="slds-grid slds-grid_pull-padded-medium">
 
-                    <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input type="number" name="intervalCount" label="Interval" value="{!v.data.formData.intervalCount}" class="slds-size_1-of-3 inline_block slds-p-right_small"/>
+                    <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-grid">
+                        <lightning:input type="number" name="intervalCount" label="Interval" value="{!v.data.formData.intervalCount}" class="slds-size_1-of-3 slds-p-right_small"/>
 
-                        <lightning:select label="Type" name="intervalType" value="{!v.data.formData.intervalType}" class="slds-size_2-of-3 inline_block">
+                        <lightning:select label="Type" name="intervalType" value="{!v.data.formData.intervalType}" class="slds-size_2-of-3 ">
                             <aura:iteration items="{!v.data.intervalTypes}" var="o">
                                 <option text="{!o}"></option>
                             </aura:iteration>
