@@ -1,55 +1,69 @@
 ({
-    INTERVAL_TYPES: ['Week','Month','Year'],
-    COLUMN_DEF: [
-        {   label: 'Amount',
-            fieldName: 'amount',
-            type: 'currency',
-            editable: true,
-            cellAttributes: {
-                alignment: 'center'
-            }
+    VIEW_MODEL: {
+        request: null,
+        formData: {
+            paymentCount: 1,
+            paymentTotal: 0,
+            firstDate: null,
+            intervalCount: 1,
+            intervalType: 'Month'
         },
-        {   label: 'Scheduled Date',
-            fieldName: 'scheduleDate',
-            type: 'date-local',
-            // type: 'date',
-            typeAttributes: {
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric'
-            },
-            editable: true,
-            cellAttributes: {
-                alignment: 'center'
-            }
-        }
-    ],
+        formDefaults: {
+            intervalTypes: ['Week','Month','Year'],
+            columns: [
+                {   label: 'Amount',
+                    fieldName: 'amount',
+                    type: 'currency',
+                    editable: true,
+                    cellAttributes: {
+                        alignment: 'left'
+                    }
+                },
+                {   label: 'Scheduled Date',
+                    fieldName: 'scheduleDate',
+                    type: 'date-local',
+                    // type: 'date',
+                    typeAttributes: {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric'
+                    },
+                    editable: true,
+                    cellAttributes: {
+                        alignment: 'left'
+                    }
+                }
+            ],
+        },
+        disbursements:[]
+    },
 
     init: function (cmp) {
+        // Set the view model
+        cmp.set('v.model', this.VIEW_MODEL);
+
         // Get the data from the database using the record id from force:hasRecordId
         var recordId = cmp.get("v.recordId");
         if(recordId!=null) {
-            this.getModel(cmp);
+            this.getRequestData(cmp);
         }
-        cmp.set('v.data.formData.firstDate', new Date().toLocaleDateString());
-        cmp.set('v.data.intervalTypes', this.INTERVAL_TYPES);
-        cmp.set('v.data.columns', this.COLUMN_DEF);
+        cmp.set('v.model.formData.firstDate', new Date().toLocaleDateString());
     },
 
-    getModel: function (cmp) {
-        var params = { objectId: cmp.get("v.recordId") };
-        this.callServer(cmp,'c.getViewModel',params, function (r) {
-            cmp.set('v.model',r);
+    getRequestData: function (cmp) {
+        var params = { reqId: cmp.get("v.recordId") };
+        this.callServer(cmp,'c.getFundRequest',params, function (r) {
+            cmp.set('v.model.request',r);
 
             // After the model is loaded set the default total
-            cmp.set('v.data.formData.paymentTotal', cmp.get('v.model.fundingRequest.totalRemaining'));
+            cmp.set('v.model.formData.paymentTotal', cmp.get('v.model.request.totalRemaining'));
         });
     },
 
     calcDisp: function (cmp) {
 
-        var d = cmp.get('v.data').formData;
         var m = cmp.get('v.model');
+        var d = m.formData;
 
         var paymentCount = d.paymentCount;
 
@@ -94,13 +108,13 @@
 
             disbursements.push({
                 // Calculated Properties
-                id: ''+i,
+                id: ''+i, // A workaround to force the datatable to see this id as a string
                 amount: thisPayment,
                 scheduleDate: dateObject,
-                requestId: m.fundingRequest.recordId
+                requestId: m.request.recordId
             });
         }
-        cmp.set('v.data.disbursements',disbursements);
+        cmp.set('v.model.disbursements',disbursements);
     },
 
     countDecimals: function(value) {
@@ -109,7 +123,7 @@
     },
 
     setDispursementProperty: function(cmp, changedField) {
-        var disps = cmp.get('v.data.disbursements');
+        var disps = cmp.get('v.model.disbursements');
 
         disps.forEach(function(el) {
             if(el.id == changedField.id) {
@@ -120,20 +134,24 @@
                 // Put the newly updated disbursement into the datamodel
                 disps.splice(parseInt(el.id),1,updatedDisbursement)
 
-                cmp.set('v.data.disbursements', disps);
+                cmp.set('v.model.disbursements', disps);
             }
         });
     },
 
     saveDisps: function(cmp) {
-        var dsps = cmp.get("v.data.disbursements");
+        var dsps = cmp.get("v.model.disbursements");
         var dspsString =  JSON.stringify( this.processDatesForAex(dsps) );
         var params = { dispListString: dspsString  };
         var that = this;
-        this.callServer(cmp,'c.saveDisbursements',params, function (r) {
+        this.callServer(cmp,'c.saveDisbursements',params, function () {
             that.showToast('Disbursements successfully saved.','success', cmp);
             $A.get("e.force:refreshView").fire();
             $A.get("e.force:closeQuickAction").fire();
+
+            // Clear these out after saved
+            cmp.set('v.model.disbursements',null);
+
         });
     },
 

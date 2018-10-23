@@ -6,20 +6,8 @@
     <aura:handler name="init" value="{!this}"
                   action="{!c.doInit}"/>
 
+    <!-- Default model set in helper -->
     <aura:attribute type="Map" name="model" />
-    <aura:attribute type="Map" name="data"
-        default="{
-            formData: {
-                paymentCount: 1,
-                paymentTotal: 0,
-                firstDate: null,
-                intervalCount: 1,
-                intervalType: 'Month'
-            },
-            intervalTypes:null,
-            columns: [],
-            disbursements:[]}"
-    />
 
     <div class="wrap">
 
@@ -37,10 +25,10 @@
                     <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow">
                         <dl class="slds-dl_inline slds-wrap">
                             <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Contact:</dt>
-                            <dd class="slds-dl_inline__detail slds-truncate">{!v.model.fundingRequest.contactName}</dd>
+                            <dd class="slds-dl_inline__detail slds-truncate">{!v.model.request.contactName}</dd>
                             <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Awarded Amount:</dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.awardedAmount}"/>
+                                <lightning:formattedNumber style="currency" value="{!v.model.request.awardedAmount}"/>
                             </dd>
                         </dl>
                     </div>
@@ -49,11 +37,11 @@
                         <dl class="slds-dl_inline slds-wrap">
                             <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Total Disbursed:</dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.totalDisbursed}"/>
+                                <lightning:formattedNumber style="currency" value="{!v.model.request.totalDisbursed}"/>
                             </dd>
                             <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">Amount Remaining:</dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.fundingRequest.totalRemaining}"/>
+                                <lightning:formattedNumber style="currency" value="{!v.model.request.totalRemaining}"/>
                             </dd>
                         </dl>
                     </div>
@@ -73,28 +61,28 @@
                 <div class="slds-grid slds-grid_pull-padded-medium">
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input name="paymentCount" label="Number of Disbursements" type="number" value="{!v.data.formData.paymentCount}"/>
+                        <lightning:input name="paymentCount" label="Number of Disbursements" type="number" value="{!v.model.formData.paymentCount}"/>
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input label="First Date" name="firstDate" type="date" value="{!v.data.formData.firstDate}"/>
+                        <lightning:input label="First Date" name="firstDate" type="date" value="{!v.model.formData.firstDate}"/>
                     </div>
                 </div>
 
                 <div class="slds-grid slds-grid_pull-padded-medium">
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-grid">
-                        <lightning:input type="number" name="intervalCount" label="Interval" value="{!v.data.formData.intervalCount}" class="slds-size_1-of-3 slds-p-right_small"/>
+                        <lightning:input type="number" name="intervalCount" label="Interval" value="{!v.model.formData.intervalCount}" class="slds-size_1-of-3 slds-p-right_small"/>
 
-                        <lightning:select label="Type" name="intervalType" value="{!v.data.formData.intervalType}" class="slds-size_2-of-3 ">
-                            <aura:iteration items="{!v.data.intervalTypes}" var="o">
+                        <lightning:select label="Type" name="intervalType" value="{!v.model.formData.intervalType}" class="slds-size_2-of-3 ">
+                            <aura:iteration items="{!v.model.formDefaults.intervalTypes}" var="o">
                                 <option text="{!o}"></option>
                             </aura:iteration>
                         </lightning:select>
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input label="Amount" name="paymentTotal" type="number" value="{!v.data.formData.paymentTotal}" max="{!v.model.fundingRequest.totalRemaining}"/>
+                        <lightning:input label="Amount" name="paymentTotal" type="number" value="{!v.model.formData.paymentTotal}" max="{!v.model.request.totalRemaining}"/>
                     </div>
                 </div>
 
@@ -118,13 +106,13 @@
         </div>
 
         <!-- Disbursement Review Table -->
-        <aura:if isTrue="{!not(empty(v.data.disbursements))}">
+        <aura:if isTrue="{!not(empty(v.model.disbursements))}">
             <div class="slds-section slds-is-open">
                 <div class="slds-section__content">
                     <lightning:datatable
                             keyField="id"
-                            data="{! v.data.disbursements }"
-                            columns="{! v.data.columns }"
+                            data="{! v.model.disbursements }"
+                            columns="{! v.model.formDefaults.columns }"
                             hideCheckboxColumn="true"
                             oncellchange="{!c.handleRowChange}"
                             aura:id="disbursementTable"
@@ -135,7 +123,7 @@
             <!-- Footer -->
             <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
                 <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleCancel}" />
-                <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.data.disbursements)}"/>
+                <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.model.disbursements)}"/>
             </div>
         </aura:if>
     </div>

@@ -1,12 +1,14 @@
 public with sharing class disbursementsCreateController {
 
     @AuraEnabled
-    public static dispViewModel getViewModel(Id objectId) {
-        return buildModel(objectId);
+    public static Request getFundRequest(Id reqId) {
+        return getRequest(reqId);
     }
 
     @AuraEnabled
-    public static List<Disbursement__c> saveDisbursements(String dispListString) {
+    public static void saveDisbursements(String dispListString) {
+
+        System.debug(dispListString);
 
         List<Disbursement> dList = (List<Disbursement>)
             JSON.deserialize(dispListString, List<Disbursement>.class);
@@ -18,14 +20,6 @@ public with sharing class disbursementsCreateController {
         }
 
         insert newDispList;
-
-        return newDispList;
-    }
-
-    private static dispViewModel buildModel(Id reqId) {
-        dispViewModel vm = new dispViewModel();
-        vm.fundingRequest = getRequest(reqId);
-        return vm;
     }
 
     private static Request getRequest(Id reqId) {
@@ -57,19 +51,6 @@ public with sharing class disbursementsCreateController {
     }
 
     /*** Models ***/
-
-    public Class dispViewModel {
-
-        @AuraEnabled
-        public Id requestId;
-        @AuraEnabled
-        public Request fundingRequest;
-
-        @AuraEnabled
-        public Map<String, List<String>> formOptions;
-
-        public dispViewModel() {}
-    }
 
     public Class Request {
 
