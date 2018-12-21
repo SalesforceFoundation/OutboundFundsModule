@@ -8,8 +8,6 @@ public with sharing class disbursementsCreateController {
     @AuraEnabled
     public static void saveDisbursements(String dispListString) {
 
-        System.debug(dispListString);
-
         List<Disbursement> dList = (List<Disbursement>)
             JSON.deserialize(dispListString, List<Disbursement>.class);
 
