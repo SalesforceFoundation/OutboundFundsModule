@@ -18,10 +18,15 @@
     },
 
     handleSave: function (cmp, event, helper) {
-        helper.saveDisps(cmp)
+        helper.saveDisps(cmp);
+    },
+
+    inputBlur: function (cmp, event, helper) {
+        helper.validate(cmp);
     },
 
     handleCancel: function () {
         $A.get("e.force:closeQuickAction").fire();
-    }
+    },
+
 })

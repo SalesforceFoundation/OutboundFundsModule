@@ -14,8 +14,9 @@
         <!-- Header -->
         <h2 class="slds-text-heading_medium slds-hyphenate slds-m-bottom--large">Schedule Bulk Disbursements</h2>
 
-        <!-- Body -->
         <div class="slds-section slds-is-open">
+
+            <!-- Funding Request Data -->
             <h3 class="slds-section__title slds-theme_shade">
                 <span class="slds-truncate slds-p-horizontal_small" title="Basics">Funding Request Information</span>
             </h3>
@@ -50,6 +51,18 @@
 
                 </div>
             </div>
+
+            <!-- UI Messages -->
+            <aura:if isTrue="{!not(empty(v.model.uiMessages))}">
+                <aura:iteration items="{!v.model.uiMessages}" var="m">
+                    <ui:message title="{!m.title}"
+                                severity="{!m.severity}"
+                                closable="{!m.closeable}">
+                        {!m.message}
+                    </ui:message>
+                </aura:iteration>
+            </aura:if>
+
         </div>
 
         <div class="slds-section slds-is-open">
@@ -82,7 +95,12 @@
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input label="Amount" name="paymentTotal" type="number" value="{!v.model.formData.paymentTotal}" max="{!v.model.request.totalRemaining}"/>
+                        <lightning:input type="number" label="Amount"
+                                         name="paymentTotal"
+                                         value="{!v.model.formData.paymentTotal}"
+                                         max="{!v.model.request.totalRemaining}"
+                                         onblur="{!c.inputBlur}"
+                                         />
                     </div>
                 </div>
 
@@ -98,7 +116,9 @@
                         <lightning:button name="calculate" type="button"
                               onclick="{!c.calculate}"
                               label="Calculate"
-                              class="slds-align_absolute-center" />
+                              class="slds-align_absolute-center"
+                              disabled="{!not(empty(v.model.uiMessages))}"
+                        />
                     </div>
                 </div>
 

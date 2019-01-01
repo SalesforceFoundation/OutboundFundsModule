@@ -1,12 +1,12 @@
 ({
-    VIEW_MODEL: {
+    DEFAULT_MODEL: {
         request: null,
         formData: {
             paymentCount: 1,
             paymentTotal: 0,
             firstDate: null,
             intervalCount: 1,
-            intervalType: 'Month'
+            intervalType: 'Month',
         },
         formDefaults: {
             intervalTypes: ['Week','Month','Year'],
@@ -35,16 +35,23 @@
                 }
             ],
         },
-        disbursements:[]
+        disbursements:[],
+        uiMessages: [],
     },
 
+    VIEW_MODEL: {},
+
     init: function (cmp) {
+
+        // reset VM every load
+        this.VIEW_MODEL = this.DEFAULT_MODEL;
+
         // Set the view model
         cmp.set('v.model', this.VIEW_MODEL);
 
         // Get the data from the database using the record id from force:hasRecordId
         var recordId = cmp.get("v.recordId");
-        if(recordId!=null) {
+        if(recordId != null) {
             this.getRequestData(cmp);
         }
         cmp.set('v.model.formData.firstDate', new Date().toLocaleDateString());
@@ -52,11 +59,14 @@
 
     getRequestData: function (cmp) {
         var params = { reqId: cmp.get("v.recordId") };
+        var parent = this;
         this.callServer(cmp,'c.getFundRequest',params, function (r) {
             cmp.set('v.model.request',r);
 
             // After the model is loaded set the default total
             cmp.set('v.model.formData.paymentTotal', cmp.get('v.model.request.totalRemaining'));
+
+            parent.validate(cmp);
         });
     },
 
@@ -146,12 +156,13 @@
         var that = this;
         this.callServer(cmp,'c.saveDisbursements',params, function () {
             that.showToast('Disbursements successfully saved.','success', cmp);
-            $A.get("e.force:refreshView").fire();
-            $A.get("e.force:closeQuickAction").fire();
-
             // Clear these out after saved
             cmp.set('v.model.disbursements',null);
 
+            // Refresh Record Page
+            $A.get("e.force:refreshView").fire();
+
+            $A.get("e.force:closeQuickAction").fire();
         });
     },
 
@@ -174,6 +185,10 @@
             if (date.getUTCMonth() !== m) date.setUTCDate(0)
         }
         return date
+    },
+
+    inputBlur: function(cmp) {
+        this.validateTotal(cmp);
     },
 
     callServer: function (cmp, method, params, callback) {
@@ -222,5 +237,46 @@
             toastEvent.fire();
 
         }
+    },
+
+    validate: function(cmp){
+
+        // Reset the messages each time we validate
+        cmp.set('v.model.uiMessages', []);
+
+        // Verify Amount remaining
+        this.validateAmountRemaining(cmp);
+
+        this.validateTotal(cmp);
+    },
+
+    validateAmountRemaining: function(cmp){
+        var r = cmp.get('v.model.request');
+
+        if(r.totalRemaining <= 0) {
+            this.addMessage(cmp, 'Error','error', 'There are not enough funds remaining to create disbursements');
+        }
+    },
+
+    validateTotal: function(cmp){
+        var m = cmp.get('v.model');
+        var remaining = m.request.totalRemaining;
+        var total = m.formData.paymentTotal;
+
+        if(total > remaining) {
+            this.addMessage(cmp, 'Error','error', 'The amount of payments cannot exceed available funds.', true);
+        }
+    },
+
+    addMessage: function(cmp, title, severity, message, closeable) {
+        var m = cmp.get('v.model');
+        m.uiMessages.push({
+            title: title,
+            severity: severity,
+            message: message,
+            closeable: closeable || false,
+        });
+
+        cmp.set('v.model', m);
     },
 })

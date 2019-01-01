@@ -1,10 +1,27 @@
+/**
+ * Controller for disbursementsCreate Lightning Component.
+ * This class is contains some basic Models that Are used to
+ * display Data in the UI, as well as handles the requests from the UI.
+ */
 public with sharing class disbursementsCreateController {
 
+    /**
+     * This Method is the entry point for the Lightning Component to receive data about the funding request
+     *
+     * @param reqId - The Id of the funding request parent of the discbursements that will be created.
+     *
+     * @return Request - the request model
+     */
     @AuraEnabled
     public static Request getFundRequest(Id reqId) {
         return getRequest(reqId);
     }
 
+    /**
+     * This method is called to save a list of disbursements to the database
+     *
+     * @param dispListString - A serialized string which is a list of Disbursements
+     */
     @AuraEnabled
     public static void saveDisbursements(String dispListString) {
 
@@ -20,6 +37,13 @@ public with sharing class disbursementsCreateController {
         insert newDispList;
     }
 
+    /**
+     * Return a Request from the database. THis method also functions as a mapper to separate the database from the front end.
+     *
+     * @param reqId - Id of the request we want information about
+     *
+     * @return - Request model
+     */
     private static Request getRequest(Id reqId) {
         Funding_Request__c fr = [
             SELECT
@@ -38,6 +62,13 @@ public with sharing class disbursementsCreateController {
         return new Request(fr);
     }
 
+    /**
+     * A quick mapper method to convert a Disbursement into a Disbursement__c
+     *
+     * @param d - Disbursement
+     *
+     * @return - Disbursement__c
+     */
     private static Disbursement__c mapDisbursement(Disbursement d) {
 
         return new Disbursement__c(
