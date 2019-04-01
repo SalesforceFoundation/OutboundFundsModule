@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
-    <name>NPSP Outbound Fund Reports</name>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>test-ctz4mcnf0i5p@example.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>Outbound Fund Reports</name>
 </ReportFolder>

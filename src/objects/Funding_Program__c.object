@@ -48,7 +48,6 @@
         <fields>Status__c</fields>
         <fields>Start_Date__c</fields>
         <fields>End_Date__c</fields>
-        <fields>Available_Amount__c</fields>
         <label>Funding Program Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -62,31 +61,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Available_Amount__c</fullName>
-        <description>Total cash available in the program. Takes the total program amount and subtracts the amount disbursed and the amount to be disbursed.</description>
-        <externalId>false</externalId>
-        <formula>Total_Program_Amount__c - Disbursed_Total__c - Pending_Disbursement_Total__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Available Amount</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Awarded_Total__c</fullName>
-        <externalId>false</externalId>
-        <label>Awarded Total</label>
-        <summarizedField>Funding_Request__c.Awarded_Amount__c</summarizedField>
-        <summaryForeignKey>Funding_Request__c.Funding_Program__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Summary</type>
-    </fields>
-    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -96,17 +70,6 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Disbursed_Total__c</fullName>
-        <externalId>false</externalId>
-        <label>Disbursed Total</label>
-        <summarizedField>Funding_Request__c.Total_Disbursed__c</summarizedField>
-        <summaryForeignKey>Funding_Request__c.Funding_Program__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Summary</type>
     </fields>
     <fields>
         <fullName>End_Date__c</fullName>
@@ -146,28 +109,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Pending_Disbursement_Total__c</fullName>
-        <externalId>false</externalId>
-        <label>Pending Disbursement Total</label>
-        <summarizedField>Funding_Request__c.Total_Remaining__c</summarizedField>
-        <summaryForeignKey>Funding_Request__c.Funding_Program__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Requested_Total__c</fullName>
-        <externalId>false</externalId>
-        <label>Requested Total</label>
-        <summarizedField>Funding_Request__c.Requested_Amount__c</summarizedField>
-        <summaryForeignKey>Funding_Request__c.Funding_Program__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Start_Date__c</fullName>
@@ -248,7 +189,6 @@
         <columns>Start_Date__c</columns>
         <columns>End_Date__c</columns>
         <columns>Total_Program_Amount__c</columns>
-        <columns>Available_Amount__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -260,7 +200,6 @@
         <columns>Start_Date__c</columns>
         <columns>End_Date__c</columns>
         <columns>Total_Program_Amount__c</columns>
-        <columns>Available_Amount__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Status__c</field>
@@ -277,7 +216,6 @@
         <columns>Start_Date__c</columns>
         <columns>End_Date__c</columns>
         <columns>Total_Program_Amount__c</columns>
-        <columns>Available_Amount__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Top_Level__c</field>
@@ -300,7 +238,6 @@
         <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Total_Program_Amount__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Available_Amount__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
@@ -310,7 +247,6 @@
         <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Total_Program_Amount__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Available_Amount__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

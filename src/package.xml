@@ -20,15 +20,10 @@
         <members>Disbursement__c.Scheduled_Date__c</members>
         <members>Disbursement__c.Status__c</members>
         <members>Disbursement__c.Type__c</members>
-        <members>Funding_Program__c.Available_Amount__c</members>
-        <members>Funding_Program__c.Awarded_Total__c</members>
         <members>Funding_Program__c.Description__c</members>
-        <members>Funding_Program__c.Disbursed_Total__c</members>
         <members>Funding_Program__c.End_Date__c</members>
         <members>Funding_Program__c.Funding_Program_Manager__c</members>
         <members>Funding_Program__c.Parent_Funding_Program__c</members>
-        <members>Funding_Program__c.Pending_Disbursement_Total__c</members>
-        <members>Funding_Program__c.Requested_Total__c</members>
         <members>Funding_Program__c.Start_Date__c</members>
         <members>Funding_Program__c.Status__c</members>
         <members>Funding_Program__c.Top_Level__c</members>
@@ -112,7 +107,6 @@
     <types>
         <members>Funding_Program__c.Program_Totals</members>
         <members>Funding_Request__c.Disbursment_Information</members>
-        <members>Funding_Request__c.New_Requirement</members>
         <members>LogACall</members>
         <members>NewTask</members>
         <members>SendEmail</members>
@@ -120,17 +114,18 @@
     </types>
     <types>
         <members>NPSP_Outbound_Fund_Reports</members>
-        <members>NPSP_Outbound_Fund_Reports/Awarded_Requests_Sorted_by_Program_Codes</members>
-        <members>NPSP_Outbound_Fund_Reports/Awarded_Requests_by_Year_by_Program</members>
-        <members>NPSP_Outbound_Fund_Reports/Funding_Program_Analytics</members>
-        <members>NPSP_Outbound_Fund_Reports/Funding_Requests_by_Program_Status</members>
-        <members>NPSP_Outbound_Fund_Reports/Parent_Funding_Program_Analytics</members>
+        <members>NPSP_Outbound_Fund_Reports/Awarded_Requests_Sorted_by_Program_Codes_Du9</members>
+        <members>NPSP_Outbound_Fund_Reports/Awarded_Requests_by_Year_by_Program_bE6</members>
+        <members>NPSP_Outbound_Fund_Reports/Funding_Program_Analytics_GZQ</members>
+        <members>NPSP_Outbound_Fund_Reports/Funding_Requests_by_Program_Status_Czj</members>
+        <members>NPSP_Outbound_Fund_Reports/Parent_Funding_Program_Analytics_aPS</members>
         <members>NPSP_Outbound_Fund_Reports/Requests_with_Open_Disbursements</members>
         <members>NPSP_Outbound_Fund_Reports/Requests_with_Upcoming_Milestones</members>
         <name>Report</name>
     </types>
     <types>
         <members>Funding_Programs_with_Funding_Requests_with_Disbursements</members>
+        <members>Funding_Requests_w_Funding_Programs_w_Parent_Progr</members>
         <name>ReportType</name>
     </types>
     <version>42.0</version>
