@@ -61,6 +61,10 @@
                 <value>Program Amounts</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
+                <name>reportFilter</name>
+                <value>FK_CUSTENT_ID</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>reportName</name>
                 <value>Funding_Program_Analytics_GZQ</value>
             </componentInstanceProperties>
