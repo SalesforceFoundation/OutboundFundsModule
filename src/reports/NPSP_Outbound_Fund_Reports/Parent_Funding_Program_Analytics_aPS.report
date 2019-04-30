@@ -71,10 +71,10 @@
         <value>1</value>
     </params>
     <reportType>Funding_Requests_w_Funding_Programs_w_Parent_Progr__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <timeFrameFilter>
         <dateColumn>Funding_Program__c$CreatedDate</dateColumn>
-        <interval>INTERVAL_CURRENT</interval>
+        <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
