@@ -7,28 +7,19 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Total_Program_Amount__c</column>
+            <column>Funding_Request__c.Requested_Amount__c</column>
         </chartSummaries>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Awarded_Total__c</column>
-        </chartSummaries>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Available_Amount__c</column>
-        </chartSummaries>
-        <chartType>VerticalColumn</chartType>
+        <chartType>VerticalColumnGrouped</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>CUST_NAME</groupingColumn>
+        <groupingColumn>FK_NAME</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>Funding_Request__c.Status__c</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
-        <showValues>true</showValues>
+        <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
@@ -37,48 +28,56 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>Funding_Program__c.Parent_Funding_Program__c</field>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Funding_Request__c.Applying_Organization__c</field>
+    </columns>
+    <columns>
+        <field>Funding_Request__c.Application_Date__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Total_Program_Amount__c</field>
+        <field>Funding_Request__c.Requested_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Requested_Total__c</field>
+        <field>Funding_Request__c.Awarded_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Awarded_Total__c</field>
+        <field>Funding_Request__c.Total_Disbursed__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Disbursed_Total__c</field>
+        <field>Funding_Request__c.Geographical_Area_Served__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Pending_Disbursement_Total__c</field>
+        <field>Funding_Request__c.Population_Served__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Available_Amount__c</field>
-    </columns>
+    <description>List of Requests by program and status</description>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>CUST_NAME</field>
+        <field>FK_NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Funding Program Analytics</name>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Funding_Request__c.Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Funding Requests by Program &amp; Status</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntity$Funding_Program__c</reportType>
+    <reportType>CustomEntity$Funding_Request__c@Funding_Request__c.Funding_Program__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
-        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <dateColumn>Funding_Request__c.Application_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

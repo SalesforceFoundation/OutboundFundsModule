@@ -32,11 +32,11 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>reportFilter</name>
-                <value>FK_CUSTENT_ID</value>
+                <value>Funding_Program__c.Id</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>reportName</name>
-                <value>Parent_Funding_Program_Analytics</value>
+                <value>Parent_Funding_Program_Analytics_aPS</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>showRefreshButton</name>
@@ -62,11 +62,11 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>reportFilter</name>
-                <value>CUST_ID</value>
+                <value>FK_CUSTENT_ID</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>reportName</name>
-                <value>Funding_Program_Analytics</value>
+                <value>Funding_Program_Analytics_GZQ</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>showRefreshButton</name>

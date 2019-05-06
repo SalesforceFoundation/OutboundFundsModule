@@ -134,6 +134,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Awarded_Amount__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
@@ -144,7 +149,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Recommended_Amount__c</field>
+            <field>Applying_Contact__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Applying_Employee__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Applying_Organization__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
         <columns>
@@ -154,12 +169,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Requested_Amount__c</field>
+            <field>Close_Date__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Close_Date__c</field>
+            <field>Closed_reason__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Funding_Program__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Geographical_Area_Served__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Recommended_Amount__c</field>
+            <table>Funding_Program__c.Funding_Requests__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Requested_Amount__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
         <columns>
@@ -184,37 +219,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Geographical_Area_Served__c</field>
-            <table>Funding_Program__c.Funding_Requests__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Status__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Terms__c</field>
-            <table>Funding_Program__c.Funding_Requests__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Closed_reason__c</field>
-            <table>Funding_Program__c.Funding_Requests__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Applying_Organization__c</field>
-            <table>Funding_Program__c.Funding_Requests__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Applying_Contact__c</field>
-            <table>Funding_Program__c.Funding_Requests__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Applying_Employee__c</field>
             <table>Funding_Program__c.Funding_Requests__r</table>
         </columns>
         <columns>
@@ -283,6 +293,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Disbursement_Date__c</field>
+            <table>Funding_Program__c.Funding_Requests__r.Disbursements__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Funding_Request__c</field>
             <table>Funding_Program__c.Funding_Requests__r.Disbursements__r</table>
         </columns>
         <columns>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>CHILD_NAME</field>
+        <field>CUST_NAME</field>
     </columns>
     <columns>
         <field>Funding_Request__c.Applying_Organization__c</field>
     </columns>
     <columns>
-        <field>CUST_NAME</field>
+        <field>FK_NAME</field>
     </columns>
     <columns>
         <field>Funding_Request__c.Application_Date__c</field>
@@ -49,11 +49,11 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntityCustomEntity$Funding_Program__c$Funding_Request__c</reportType>
+    <reportType>CustomEntity$Funding_Request__c@Funding_Request__c.Funding_Program__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <timeFrameFilter>
-        <dateColumn>CHILD_CREATED_DATE</dateColumn>
+        <dateColumn>Funding_Request__c.Application_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

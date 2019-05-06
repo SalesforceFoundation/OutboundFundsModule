@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Funding_Program__c2.Total_Program_Amount__c:SUM - Funding_Request__c.Total_Disbursed__c:SUM -Funding_Request__c.Total_Remaining__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Available Amount</masterLabel>
+        <scale>2</scale>
+    </aggregates>
     <chart>
         <backgroundColor1>#FFFFFF</backgroundColor1>
         <backgroundColor2>#FFFFFF</backgroundColor2>
@@ -7,28 +16,22 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Total_Program_Amount__c</column>
+            <column>Funding_Program__c.Funding_Programs__r$Total_Program_Amount__c</column>
         </chartSummaries>
         <chartSummaries>
-            <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Awarded_Total__c</column>
-        </chartSummaries>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
-            <column>Funding_Program__c.Available_Amount__c</column>
+            <column>FORMULA1</column>
         </chartSummaries>
         <chartType>VerticalColumn</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>FK_NAME</groupingColumn>
+        <groupingColumn>Funding_Program__c$Name</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
-        <showValues>true</showValues>
+        <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
@@ -37,36 +40,29 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>CUST_NAME</field>
+        <field>Funding_Program__c.Funding_Programs__r$Name</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Total_Program_Amount__c</field>
+        <field>Funding_Program__c.Funding_Programs__r$Total_Program_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Requested_Total__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Requested_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Awarded_Total__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Total_Disbursed__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Disbursed_Total__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Total_Remaining__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Pending_Disbursement_Total__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Available_Amount__c</field>
-    </columns>
+    <description>Funding Request Totals by Parent Funding Program.  Used in Lightning Report Chart.</description>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>FK_NAME</field>
+        <field>Funding_Program__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Parent Funding Program Analytics</name>
@@ -74,11 +70,11 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntity$Funding_Program__c@Funding_Program__c.Parent_Funding_Program__c</reportType>
+    <reportType>Funding_Requests_w_Funding_Programs_w_Parent_Progr__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <timeFrameFilter>
-        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <dateColumn>Funding_Program__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
