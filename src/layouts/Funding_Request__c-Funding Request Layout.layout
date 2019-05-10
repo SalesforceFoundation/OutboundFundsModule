@@ -23,7 +23,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Funding_Program__c</field>
+                <field>FundingProgram__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

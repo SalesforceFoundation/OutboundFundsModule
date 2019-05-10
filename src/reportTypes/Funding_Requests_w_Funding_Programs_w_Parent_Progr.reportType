@@ -7,7 +7,7 @@
     <join>
         <join>
             <outerJoin>false</outerJoin>
-            <relationship>Funding_Requests__r</relationship>
+            <relationship>FundingRequests__r</relationship>
         </join>
         <outerJoin>false</outerJoin>
         <relationship>Funding_Programs__r</relationship>
@@ -178,147 +178,147 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedBy</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Application_Date__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Applying_Contact__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Applying_Employee__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Applying_Organization__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Awarded_Amount__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Awarded_Date__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Close_Date__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Closed_reason__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Funding_Program__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <field>FundingProgram__c</field>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Name</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Geographical_Area_Served__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastActivityDate</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedDate</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Owner</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Population_Served__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Recommended_Amount__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Requested_Amount__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Requested_For__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Status__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Term_End_Date__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Terms__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Term_Start_Date__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Total_Cancelled__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Total_Disbursed__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Total_Remaining__c</field>
-            <table>Funding_Program__c.Funding_Programs__r.Funding_Requests__r</table>
+            <table>Funding_Program__c.Funding_Programs__r.FundingRequests__r</table>
         </columns>
         <masterLabel>Funding Requests</masterLabel>
     </sections>
