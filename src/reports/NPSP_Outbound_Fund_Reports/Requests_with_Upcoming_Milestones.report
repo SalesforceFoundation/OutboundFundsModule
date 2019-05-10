@@ -13,7 +13,7 @@
         <field>FK_$Funding_Request__c.Applying_Employee__c</field>
     </columns>
     <columns>
-        <field>FK_$Funding_Request__c.Funding_Program__c</field>
+        <field>FK_$Funding_Request__c.FundingProgram__c</field>
     </columns>
     <columns>
         <field>FK_$Funding_Request__c.Awarded_Date__c</field>

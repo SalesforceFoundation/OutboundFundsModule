@@ -48,15 +48,15 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Requested_Amount__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.FundingRequests__r$Requested_Amount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Total_Disbursed__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.FundingRequests__r$Total_Disbursed__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.Funding_Programs__r.Funding_Requests__r$Total_Remaining__c</field>
+        <field>Funding_Program__c.Funding_Programs__r.FundingRequests__r$Total_Remaining__c</field>
     </columns>
     <description>Funding Request Totals by Parent Funding Program.  Used in Lightning Report Chart.</description>
     <format>Summary</format>

@@ -164,7 +164,7 @@
         <fields>Awarded_Amount__c</fields>
         <fields>Awarded_Date__c</fields>
         <fields>Close_Date__c</fields>
-        <relatedList>Funding_Request__c.Funding_Program__c</relatedList>
+        <relatedList>Funding_Request__c.FundingProgram__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>

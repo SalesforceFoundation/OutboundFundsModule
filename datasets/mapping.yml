@@ -66,7 +66,7 @@ Funding Requests:
             table: accounts
             join_field: id
             value_field: sf_id
-        Funding_Program__c:
+        FundingProgram__c:
             key_field: funding_program_id
             table: funding_programs
             join_field: id

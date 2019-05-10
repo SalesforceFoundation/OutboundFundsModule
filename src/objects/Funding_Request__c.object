@@ -151,14 +151,14 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Funding_Program__c</fullName>
+        <fullName>FundingProgram__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Lookup to the funding program from which funds are being requested.</description>
         <externalId>false</externalId>
         <label>Funding Program</label>
         <referenceTo>Funding_Program__c</referenceTo>
         <relationshipLabel>Funding Requests</relationshipLabel>
-        <relationshipName>Funding_Requests</relationshipName>
+        <relationshipName>FundingRequests</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -543,7 +543,7 @@
         <columns>NAME</columns>
         <columns>Applying_Organization__c</columns>
         <columns>Applying_Contact__c</columns>
-        <columns>Funding_Program__c</columns>
+        <columns>FundingProgram__c</columns>
         <columns>Application_Date__c</columns>
         <columns>Status__c</columns>
         <columns>Requested_Amount__c</columns>

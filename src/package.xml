@@ -36,7 +36,7 @@
         <members>Funding_Request__c.Awarded_Date__c</members>
         <members>Funding_Request__c.Close_Date__c</members>
         <members>Funding_Request__c.Closed_reason__c</members>
-        <members>Funding_Request__c.Funding_Program__c</members>
+        <members>Funding_Request__c.FundingProgram__c</members>
         <members>Funding_Request__c.Geographical_Area_Served__c</members>
         <members>Funding_Request__c.Population_Served__c</members>
         <members>Funding_Request__c.Recommended_Amount__c</members>

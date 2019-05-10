@@ -49,7 +49,7 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntity$Funding_Request__c@Funding_Request__c.Funding_Program__c</reportType>
+    <reportType>CustomEntity$Funding_Request__c@Funding_Request__c.FundingProgram__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <timeFrameFilter>
