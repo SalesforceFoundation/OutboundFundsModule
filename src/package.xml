@@ -9,6 +9,10 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>Outbound_Funds_Astro</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
         <members>Outbound_Funds</members>
         <name>CustomApplication</name>
     </types>
