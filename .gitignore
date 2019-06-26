@@ -1,5 +1,6 @@
 .DS_Store
 .appcloud
+.cci
 .externalToolBuilders
 .project
 .settings
