@@ -18,7 +18,7 @@ private class disbursementsCreateController_TEST {
 
         Funding_Request__c req1 = new Funding_Request__c(
             Name = 'Test Request',
-            Funding_Program__c = prog1.Id,
+            FundingProgram__c = prog1.Id,
             Applying_Contact__c = contact1.Id
         );
 
