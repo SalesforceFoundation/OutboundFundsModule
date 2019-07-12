@@ -54,7 +54,8 @@
         if(recordId != null) {
             this.getRequestData(cmp);
         }
-        cmp.set('v.model.formData.firstDate', new Date().toLocaleDateString());
+
+        cmp.set('v.model.formData.firstDate', $A.localizationService.formatDate(new Date(), "yyyy-MM-dd"));
     },
 
     getRequestData: function (cmp) {
