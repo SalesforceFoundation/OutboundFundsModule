@@ -1,4 +1,4 @@
-<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader, force:hasRecordId">
+<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
 
     <lightning:notificationsLibrary aura:id="notifLib"/>
 

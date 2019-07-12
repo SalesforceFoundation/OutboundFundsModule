@@ -455,8 +455,9 @@
     </fields>
     <fields>
         <fullName>Total_Disbursed__c</fullName>
+        <description>Total of all disbursements with a status of  &quot;paid&quot;</description>
         <externalId>false</externalId>
-        <label>Total Disbursed</label>
+        <label>Paid Disbursements</label>
         <summarizedField>Disbursement__c.Amount__c</summarizedField>
         <summaryFilterItems>
             <field>Disbursement__c.Status__c</field>
@@ -470,16 +471,32 @@
     </fields>
     <fields>
         <fullName>Total_Remaining__c</fullName>
-        <description>Amount remaining to be disbursed or cancelled.</description>
+        <description>Amount remaining to be disbursed.</description>
         <externalId>false</externalId>
-        <formula>Awarded_Amount__c - Total_Disbursed__c -  Total_Cancelled__c</formula>
+        <formula>Awarded_Amount__c - Total_Disbursed__c - Unpaid_Disbursements__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Total Remaining</label>
+        <label>Available for Disbursement</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unpaid_Disbursements__c</fullName>
+        <description>The rollup of all disbursements that do not have a status  &quot;Paid&quot; or &quot;Cancelled&quot;</description>
+        <externalId>false</externalId>
+        <label>Unpaid Disbursements</label>
+        <summarizedField>Disbursement__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Disbursement__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Paid, Cancelled</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Disbursement__c.Funding_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
     </fields>
     <label>Funding Request</label>
     <listViews>

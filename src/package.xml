@@ -63,6 +63,7 @@
         <members>Funding_Request__c.Total_Cancelled__c</members>
         <members>Funding_Request__c.Total_Disbursed__c</members>
         <members>Funding_Request__c.Total_Remaining__c</members>
+        <members>Funding_Request__c.Unpaid_Disbursements__c</members>
         <members>Requirement__c.Assigned__c</members>
         <members>Requirement__c.Completed_Date__c</members>
         <members>Requirement__c.Disbursement__c</members>
