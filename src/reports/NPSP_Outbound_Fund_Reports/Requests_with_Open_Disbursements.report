@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r$Name</field>
+        <field>Funding_Program__c.FundingRequests__r$Name</field>
     </columns>
     <columns>
         <field>Funding_Program__c$Name</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r$Awarded_Date__c</field>
+        <field>Funding_Program__c.FundingRequests__r$Awarded_Date__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r$Awarded_Amount__c</field>
+        <field>Funding_Program__c.FundingRequests__r$Awarded_Amount__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r$Total_Disbursed__c</field>
+        <field>Funding_Program__c.FundingRequests__r$Total_Disbursed__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r$Total_Remaining__c</field>
+        <field>Funding_Program__c.FundingRequests__r$Total_Remaining__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r.Disbursements__r$Name</field>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Name</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r.Disbursements__r$Amount__c</field>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r.Disbursements__r$Scheduled_Date__c</field>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r.Disbursements__r$Status__c</field>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Status__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.Funding_Requests__r.Disbursements__r$Type__c</field>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Type__c</field>
     </columns>
     <description>List of requests with disbursements this and next month or overdue disbursements.</description>
     <filter>
         <criteriaItems>
-            <column>Funding_Program__c.Funding_Requests__r.Disbursements__r$Status__c</column>
+            <column>Funding_Program__c.FundingRequests__r.Disbursements__r$Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Paid</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Funding_Program__c.Funding_Requests__r.Disbursements__r$Scheduled_Date__c</column>
+            <column>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
             <value>NEXT_MONTH</value>

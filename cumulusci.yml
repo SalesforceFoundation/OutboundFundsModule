@@ -46,3 +46,7 @@ orgs:
             config_file: orgs/dev.json
             days: 7
             namespaced: True
+
+        demo:
+            config_file: orgs/demo.json
+            days: 30

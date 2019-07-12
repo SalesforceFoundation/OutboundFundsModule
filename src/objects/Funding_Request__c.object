@@ -151,19 +151,18 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Funding_Program__c</fullName>
+        <fullName>FundingProgram__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>Lookup to the funding program from which funds are being requested.</description>
         <externalId>false</externalId>
         <label>Funding Program</label>
         <referenceTo>Funding_Program__c</referenceTo>
         <relationshipLabel>Funding Requests</relationshipLabel>
-        <relationshipName>Funding_Requests</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <relationshipName>FundingRequests</relationshipName>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Geographical_Area_Served__c</fullName>
@@ -561,7 +560,7 @@
         <columns>NAME</columns>
         <columns>Applying_Organization__c</columns>
         <columns>Applying_Contact__c</columns>
-        <columns>Funding_Program__c</columns>
+        <columns>FundingProgram__c</columns>
         <columns>Application_Date__c</columns>
         <columns>Status__c</columns>
         <columns>Requested_Amount__c</columns>
@@ -655,6 +654,6 @@
         <searchResultsAdditionalFields>Awarded_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Close_Date__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

@@ -1,0 +1,10 @@
+{
+    "orgName": "Outbound Funds - Demo Test Org",
+    "edition": "Developer",
+    "settings": {
+        "orgPreferenceSettings": {
+            "s1DesktopEnabled": true,
+            "chatterEnabled": true
+        }
+    }
+}
