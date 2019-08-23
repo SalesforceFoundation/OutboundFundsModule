@@ -87,7 +87,7 @@
                     <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-grid">
                         <lightning:input type="number" name="intervalCount" label="Interval" value="{!v.model.formData.intervalCount}" class="slds-size_1-of-3 slds-p-right_small"/>
 
-                        <lightning:select label="Type" name="intervalType" value="{!v.model.formData.intervalType}" class="slds-size_2-of-3 ">
+                        <lightning:select label="Period" name="intervalType" value="{!v.model.formData.intervalType}" class="slds-size_2-of-3 ">
                             <aura:iteration items="{!v.model.formDefaults.intervalTypes}" var="o">
                                 <option text="{!o}"></option>
                             </aura:iteration>
