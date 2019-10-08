@@ -96,6 +96,7 @@
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
                         <lightning:input type="number" label="Amount"
+                                         step="0.01"
                                          name="paymentTotal"
                                          value="{!v.model.formData.paymentTotal}"
                                          max="{!v.model.request.totalRemaining}"

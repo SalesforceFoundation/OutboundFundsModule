@@ -77,19 +77,22 @@
         var d = m.formData;
 
         var paymentCount = d.paymentCount;
-
-        var paymentAmt = d.paymentTotal / paymentCount;
         var intervalType = d.intervalType;
 
         var startDate = new Date( d.firstDate );
 
         var intervalNum = d.intervalCount;
-        var remainder = (paymentAmt * 100) % paymentCount;
+
+        // Payment Calculating and remainder handling
+        var totalAmount = d.paymentTotal;
+        var paymentAmt = d.paymentTotal / paymentCount;
+        var paymentRounded = Math.floor(paymentAmt * 100) / 100;
+        var remainder = Math.round((totalAmount - (paymentRounded * paymentCount))*100);
 
         var disbursements = [];
 
         for (var i = 0; i < paymentCount; i++) {
-            var thisPayment = paymentAmt;
+            var thisPayment = paymentRounded;
             var dateObject = new Date(startDate);
 
             if(i > 0){
@@ -104,16 +107,17 @@
                 } else if(intervalType == 'Year'){
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
-
             }
 
-            if(this.countDecimals(thisPayment) > 2 ){
+            if(this.countDecimals(paymentAmt) > 2 ) {
                 // Round down to the nearest decimal
                 thisPayment = Math.floor(thisPayment * 100) / 100;
-                // If there was a remainder, add it here
+
+                // If there was a remainder, add it here to distribute
                 if(i < remainder){
                     thisPayment += 0.01;
                 }
+
                 thisPayment = Math.round(thisPayment * 100) / 100;
             }
 
@@ -125,6 +129,7 @@
                 requestId: m.request.recordId
             });
         }
+
         cmp.set('v.model.disbursements',disbursements);
     },
 
