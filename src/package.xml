@@ -4,6 +4,7 @@
     <types>
         <members>Disbursement__c.Disbursement_Compact_Layout</members>
         <members>Funding_Program__c.Funding_Program_Compact_Layout</members>
+        <members>Funding_Request_Role__c.Funding_Request_Role_Compact_Layout</members>
         <members>Funding_Request__c.Funding_Request_Compact_Layout</members>
         <members>Requirement__c.Milestone_Compact_Layout</members>
         <name>CompactLayout</name>
@@ -32,6 +33,11 @@
         <members>Funding_Program__c.Status__c</members>
         <members>Funding_Program__c.Top_Level__c</members>
         <members>Funding_Program__c.Total_Program_Amount__c</members>
+        <members>Funding_Request_Role__c.Contact__c</members>
+        <members>Funding_Request_Role__c.Funding_Request__c</members>
+        <members>Funding_Request_Role__c.Primary__c</members>
+        <members>Funding_Request_Role__c.Role__c</members>
+        <members>Funding_Request_Role__c.Status__c</members>
         <members>Funding_Request__c.Application_Date__c</members>
         <members>Funding_Request__c.Applying_Contact__c</members>
         <members>Funding_Request__c.Applying_Employee__c</members>
@@ -67,6 +73,7 @@
     <types>
         <members>Disbursement__c</members>
         <members>Funding_Program__c</members>
+        <members>Funding_Request_Role__c</members>
         <members>Funding_Request__c</members>
         <members>Requirement__c</members>
         <name>CustomObject</name>
@@ -81,6 +88,7 @@
         <members>Disbursement_Record_Page</members>
         <members>Funding_Program_Record_Page</members>
         <members>Funding_Request_Record_Page</members>
+        <members>Funding_Request_Role</members>
         <members>Milestone_Record_Page</members>
         <members>Outbound_Funds_UtilityBar</members>
         <name>FlexiPage</name>
@@ -88,6 +96,7 @@
     <types>
         <members>Disbursement__c-Disbursement Layout</members>
         <members>Funding_Program__c-Funding Program Layout</members>
+        <members>Funding_Request_Role__c-Funding Request Role Layout</members>
         <members>Funding_Request__c-Funding Request Layout</members>
         <members>Requirement__c-Requirement Layout</members>
         <name>Layout</name>
