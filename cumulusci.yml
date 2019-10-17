@@ -4,6 +4,8 @@ project:
         name:  Outbound Funds (Core)
         namespace: outfunds
         api_version: '42.0'
+    git:
+        repo_url: https://github.com/SFDO-Community/OutboundFunds
 
 tasks:
 
@@ -50,3 +52,23 @@ orgs:
         demo:
             config_file: orgs/demo.json
             days: 30
+
+plans:
+    install:
+        slug: install
+        title: Install
+        tier: primary
+        steps:
+            1:
+                flow: install_prod_no_config
+            2:
+                task: install_managed
+                options:
+                    name: Outbound Funds (NPSP)
+                    namespace: outfundsnpspext
+                    version: 1.1
+                ui_options:
+                    is_required: False
+                checks:
+                    - when: "'npsp' not in tasks.get_installed_packages()"
+                      action: hide
