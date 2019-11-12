@@ -149,7 +149,7 @@
     </fields>
     <label>Funding Request Role</label>
     <nameField>
-        <displayFormat>FR-{0000}</displayFormat>
+        <displayFormat>FR-{000000}</displayFormat>
         <label>Funding Request Role Name</label>
         <type>AutoNumber</type>
     </nameField>
