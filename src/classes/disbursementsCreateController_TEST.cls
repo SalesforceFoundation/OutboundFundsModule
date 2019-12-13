@@ -78,4 +78,37 @@ private class disbursementsCreateController_TEST {
         System.assertEquals(disbursements.size(),disps.size());
 
     }
+
+    @isTest
+    static void testSaveDisbursementsGeneratedJson() {
+        Funding_Request__c loadReq = [
+              SELECT Id
+              FROM Funding_Request__c
+              WHERE Name = 'Test Request'
+              LIMIT 1
+          ];
+
+        String json = '[' +
+        '{"id":"0","amount":16666.67,"scheduleDate":"2019-12-31","requestId":"' + loadReq.Id + '"},' +
+        '{"id":"1","amount":16666.67,"scheduleDate":"2020-01-31","requestId":"' + loadReq.Id + '"},' +
+        '{"id":"2","amount":16666.66,"scheduleDate":"2020-02-29","requestId":"' + loadReq.Id + '"}' +
+        ']';
+
+        test.startTest();
+        disbursementsCreateController.saveDisbursements(json);
+        test.stopTest();
+
+        Disbursement__c[] disbursements = [
+            SELECT Id, Funding_Request__c, Scheduled_Date__c, Amount__c
+            FROM Disbursement__c
+            WHERE Funding_Request__c =: loadReq.Id
+        ];
+
+        System.assertEquals(3, disbursements.size());
+        for (Disbursement__c disbursement : disbursements) {
+          System.assertEquals(1, disbursement.Scheduled_Date__c.day());
+          System.assertEquals(loadReq.Id, disbursement.Funding_Request__c);
+          System.assertEquals(16666, disbursement.Amount__c.round(System.RoundingMode.FLOOR));
+        }
+    }
 }
