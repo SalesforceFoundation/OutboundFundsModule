@@ -35,7 +35,6 @@
         <members>Funding_Program__c.Total_Program_Amount__c</members>
         <members>Funding_Request_Role__c.Contact__c</members>
         <members>Funding_Request_Role__c.Funding_Request__c</members>
-        <members>Funding_Request_Role__c.Primary__c</members>
         <members>Funding_Request_Role__c.Role__c</members>
         <members>Funding_Request_Role__c.Status__c</members>
         <members>Funding_Request__c.Application_Date__c</members>
@@ -120,6 +119,7 @@
     <types>
         <members>Funding_Program__c.Program_Totals</members>
         <members>Funding_Request__c.Disbursment_Information</members>
+        <members>Funding_Request__c.New_Funding_Request_Role</members>
         <members>LogACall</members>
         <members>NewTask</members>
         <members>SendEmail</members>

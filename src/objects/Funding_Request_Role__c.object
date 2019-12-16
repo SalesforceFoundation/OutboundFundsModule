@@ -49,7 +49,6 @@
         <fields>Funding_Request__c</fields>
         <fields>Status__c</fields>
         <fields>Role__c</fields>
-        <fields>Primary__c</fields>
         <label>Funding Request Role Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -87,14 +86,6 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
-    </fields>
-    <fields>
-        <fullName>Primary__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Primary</label>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Role__c</fullName>
