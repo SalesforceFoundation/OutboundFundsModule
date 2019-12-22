@@ -25,7 +25,8 @@ public with sharing class disbursementsCreateController {
     @AuraEnabled
     public static void saveDisbursements(String dispListString) {
 
-        List<Disbursement> dList = transformList(dispListString);
+        List<Disbursement> dList = (List<Disbursement>)
+            JSON.deserialize(dispListString, List<Disbursement>.class);
 
         List<Disbursement__c> newDispList = new List<Disbursement__c>();
 
@@ -76,24 +77,6 @@ public with sharing class disbursementsCreateController {
             Scheduled_Date__c = d.scheduleDate,
             Status__c = 'Scheduled'
         );
-    }
-
-    /**
-    * Deserialization wrapper to include other needed adjustments
-    *
-    * @param dispListString - json string of Disbursement
-    *
-    * @return - List<Disbursement__c>
-    */
-    private static List<Disbursement> transformList(String dispListString) {
-      List<Disbursement> dList = (List<Disbursement>)
-            JSON.deserialize(dispListString, List<Disbursement>.class);
-
-      for (Disbursement d : dlist) {
-        d.scheduleDate = d.scheduleDate.addDays(1);
-      }
-
-      return dList;
     }
 
     /*** Models ***/
