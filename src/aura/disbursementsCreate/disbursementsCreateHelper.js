@@ -21,8 +21,8 @@
                 },
                 {   label: 'Scheduled Date',
                     fieldName: 'scheduleDate',
-                    // type: 'date-local',
-                    type: 'date',
+                    type: 'date-local',
+                    // type: 'date',
                     typeAttributes: {
                         year: 'numeric',
                         month: 'numeric',
