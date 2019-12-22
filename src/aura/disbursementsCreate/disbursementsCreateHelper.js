@@ -21,8 +21,8 @@
                 },
                 {   label: 'Scheduled Date',
                     fieldName: 'scheduleDate',
-                    type: 'date-local',
-                    // type: 'date',
+                    // type: 'date-local',
+                    type: 'date',
                     typeAttributes: {
                         year: 'numeric',
                         month: 'numeric',
@@ -79,7 +79,7 @@
         var paymentCount = d.paymentCount;
         var intervalType = d.intervalType;
 
-        var startDate = new Date( d.firstDate );
+        var startDate = new Date( d.firstDate + 'T00:00:00' );
 
         var intervalNum = d.intervalCount;
 
