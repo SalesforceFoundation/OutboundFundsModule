@@ -2,6 +2,15 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Outbound Funds %28Core%29</fullName>
     <types>
+        <members>disbursementsCreateController</members>
+        <members>disbursementsCreateController_TEST</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>disbursementsCreate</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
         <members>Disbursement__c.Disbursement_Compact_Layout</members>
         <members>Funding_Program__c.Funding_Program_Compact_Layout</members>
         <members>Funding_Request__c.Funding_Request_Compact_Layout</members>
@@ -53,6 +62,7 @@
         <members>Funding_Request__c.Total_Cancelled__c</members>
         <members>Funding_Request__c.Total_Disbursed__c</members>
         <members>Funding_Request__c.Total_Remaining__c</members>
+        <members>Funding_Request__c.Unpaid_Disbursements__c</members>
         <members>Requirement__c.Assigned__c</members>
         <members>Requirement__c.Completed_Date__c</members>
         <members>Requirement__c.Disbursement__c</members>
@@ -110,6 +120,7 @@
     </types>
     <types>
         <members>Funding_Program__c.Program_Totals</members>
+        <members>Funding_Request__c.Create_Bulk_Disbursements</members>
         <members>Funding_Request__c.Disbursment_Information</members>
         <members>LogACall</members>
         <members>NewTask</members>

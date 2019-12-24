@@ -1,0 +1,8 @@
+.THIS {}
+
+.THIS.wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 550px;
+}
