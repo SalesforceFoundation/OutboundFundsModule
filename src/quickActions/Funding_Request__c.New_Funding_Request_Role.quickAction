@@ -7,13 +7,13 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Funding_Request__c</field>
-                <uiBehavior>Required</uiBehavior>
+                <field>Contact__c</field>
+                <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Contact__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <field>Funding_Request__c</field>
+                <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
