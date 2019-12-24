@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Creates Funding Request Role record from Funding Request record</description>
+    <label>Create Funding Request Role</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -29,7 +30,6 @@
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
-    <standardLabel>New</standardLabel>
     <successMessage>A new Funding Request Role has been created</successMessage>
     <targetObject>Funding_Request_Role__c</targetObject>
     <targetParentField>Funding_Request__c</targetParentField>
