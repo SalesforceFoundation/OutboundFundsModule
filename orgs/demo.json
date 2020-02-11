@@ -1,10 +1,18 @@
 {
-    "orgName": "Outbound Funds - Demo Test Org",
+    "orgName": "Outbound Funds - Demo Org",
     "edition": "Developer",
     "settings": {
-        "orgPreferenceSettings": {
-            "s1DesktopEnabled": true,
-            "chatterEnabled": true
+        "chatterSettings": {
+            "enableChatter": true
+        },
+        "apexSettings": {
+            "enableDisableParallelApexTesting": true
+        },
+        "enhancedNotesSettings": {
+            "enableEnhancedNotes": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
         }
     }
 }
