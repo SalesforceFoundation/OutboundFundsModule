@@ -2,9 +2,17 @@
   "orgName": "Outbound Funds - Release Test Org",
   "edition": "Enterprise",
   "settings": {
-    "orgPreferenceSettings": {
-      "s1DesktopEnabled": true,
-      "chatterEnabled": true
+    "chatterSettings": {
+      "enableChatter": true
+    },
+    "apexSettings": {
+      "enableDisableParallelApexTesting": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
     }
   }
 }
