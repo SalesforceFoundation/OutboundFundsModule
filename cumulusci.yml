@@ -20,6 +20,17 @@ tasks:
                 - Contact
                 - Account
 
+    robot:
+        options:
+            suites: robot/OutboundFunds/tests
+            options:
+                outputdir: robot/OutboundFunds/results
+
+    robot_testdoc:
+        options:
+            path: robot/OutboundFunds/tests
+            output: robot/OutboundFunds/doc/OutboundFunds_tests.html
+            
 flows:
     config_dev:
         steps:
