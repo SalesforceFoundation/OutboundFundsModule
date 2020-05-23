@@ -1,0 +1,19 @@
+{
+  "orgName": "Outbound Funds - Beta Test Org",
+  "edition": "Developer",
+  "instance": "cs46",
+  "settings": {
+    "chatterSettings": {
+      "enableChatter": true
+    },
+    "apexSettings": {
+      "enableDisableParallelApexTesting": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    }
+  }
+}

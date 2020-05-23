@@ -8,7 +8,6 @@ project:
         repo_url: https://github.com/SFDO-Community/OutboundFunds
 
 tasks:
-
     demo_data_query:
         description: Query the demo data set into the org
         class_path: cumulusci.tasks.bulkdata.QueryData
@@ -36,7 +35,6 @@ tasks:
                 - Account
 
 flows:
-
     config_qa:
         steps:
             3:
@@ -48,10 +46,13 @@ orgs:
             config_file: orgs/dev.json
             days: 7
             namespaced: True
-
         demo:
             config_file: orgs/demo.json
             days: 30
+        prerelease:
+            config_file: orgs/prerelease.json
+        beta_prerelease:
+            config_file: orgs/beta_prerelease.json
 
 plans:
     install:
