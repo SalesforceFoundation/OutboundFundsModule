@@ -56,7 +56,7 @@ Funding Requests:
             key_field: applying_organization__c
             table: Account
         outfunds__FundingProgram__c:
-            key_field: fundingprogram__c
+            key_field: funding_program__c
             table: Funding_Program__c
 
 Disbursements:
