@@ -1,119 +1,96 @@
 Accounts:
     sf_object: Account
-    table: accounts
+    table: Account
     fields:
-        Id: sf_id
-        Name: name
+        Name: Name
 
 Contacts:
     sf_object: Contact
-    table: contacts
+    table: Contact
     fields:
-        Id: sf_id
-        Salutation: salutation
-        FirstName: first_name
-        LastName: last_name
-        Email: email
-        Phone: phone
-        Title: job_title
+        Salutation: Salutation
+        FirstName: FirstName
+        LastName: LastName
+        Email: Email
+        Phone: Phone
+        Title: Title
     lookups:
         AccountId:
-            key_field: account_id
-            table: accounts
-            join_field: id
-            value_field: sf_id
+            table: Account
 
 Funding Programs:
     sf_object: outfunds__Funding_Program__c
-    table: funding_programs
+    table: Funding_Program__c
     fields:
-        Id: sf_id
-        Name: name
-        outfunds__Description__c: description
-        outfunds__End_Date__c: end_date
-        outfunds__Start_Date__c: start_date
-        outfunds__Status__c: status
-        outfunds__Total_Program_Amount__c: total_program_amount
+        Name: Name
+        outfunds__Description__c: Description__c
+        outfunds__End_Date__c: End_Date__c
+        outfunds__Start_Date__c: Start_Date__c
+        outfunds__Status__c: Status__c
+        outfunds__Total_Program_Amount__c: Total_Program_Amount__c
 
 Funding Requests:
     sf_object: outfunds__Funding_Request__c
-    table: funding_requests
+    table: Funding_Request__c
     fields:
-        Id: sf_id
-        Name: name
-        outfunds__Application_Date__c: application_date
-        outfunds__Awarded_Amount__c: awarded_amount
-        outfunds__Awarded_Date__c: awarded_date
-        outfunds__Close_Date__c: close_date
-        outfunds__Closed_reason__c: closed_reason
-        outfunds__Geographical_Area_Served__c: geographical_area_served
-        outfunds__Population_Served__c: population_served
-        outfunds__Recommended_Amount__c: recommended_amount
-        outfunds__Requested_Amount__c: requested_amount
-        outfunds__Requested_For__c: requested_for
-        outfunds__Status__c: status
-        outfunds__Term_End_Date__c: term_end_date
-        outfunds__Term_Start_Date__c: term_start_date
-        outfunds__Terms__c: terms
+        Name: Name
+        outfunds__Application_Date__c: Application_Date__c
+        outfunds__Awarded_Amount__c: Awarded_Amount__c
+        outfunds__Awarded_Date__c: Awarded_Date__c
+        outfunds__Close_Date__c: Close_Date__c
+        outfunds__Closed_reason__c: Closed_reason__c
+        outfunds__Geographical_Area_Served__c: Geographical_Area_Served__c
+        outfunds__Population_Served__c: Population_Served__c
+        outfunds__Recommended_Amount__c: Recommended_Amount__c
+        outfunds__Requested_Amount__c: Requested_Amount__c
+        outfunds__Requested_For__c: Requested_For__c
+        outfunds__Status__c: Status__c
+        outfunds__Term_End_Date__c: Term_End_Date__c
+        outfunds__Term_Start_Date__c: Term_Start_Date__c
+        outfunds__Terms__c: Terms__c
     lookups:
         outfunds__Applying_Contact__c:
-            key_field: applying_contact_id
-            table: contacts
-            join_field: id
-            value_field: sf_id
+            key_field: applying_contact__c
+            table: Contact
         outfunds__Applying_Organization__c:
-            key_field: applying_organization_id
-            table: accounts
-            join_field: id
-            value_field: sf_id
+            key_field: applying_organization__c
+            table: Account
         outfunds__FundingProgram__c:
-            key_field: funding_program_id
-            table: funding_programs
-            join_field: id
-            value_field: sf_id
+            key_field: fundingprogram__c
+            table: Funding_Program__c
 
 Disbursements:
     sf_object: outfunds__Disbursement__c
-    table: disbursements
+    table: Disbursement__c
     fields:
-        Id: sf_id
-        outfunds__Amount__c: amount
-        outfunds__Disbursement_Date__c: disbursement_date
-        outfunds__Disbursement_Method__c: disbursement_method
-        outfunds__Scheduled_Date__c: scheduled_date
-        outfunds__Status__c: status
-        outfunds__Type__c: type
+        outfunds__Amount__c: Amount__c
+        outfunds__Disbursement_Date__c: Disbursement_Date__c
+        outfunds__Disbursement_Method__c: Disbursement_Method__c
+        outfunds__Scheduled_Date__c: Scheduled_Date__c
+        outfunds__Status__c: Status__c
+        outfunds__Type__c: Type__c
     lookups:
         outfunds__Funding_Request__c:
-            key_field: funding_request_id
-            table: funding_requests
-            join_field: id
-            value_field: sf_id
+            key_field: funding_request__c
+            table: Funding_Request__c
 
 Requirements:
     sf_object: outfunds__Requirement__c
-    table: requirements
+    table: Requirement__c
     fields:
-        Id: sf_id
-        Name: name
-        outfunds__Completed_Date__c: completed_date
-        outfunds__Due_Date__c: due_date
-        outfunds__Requirements__c: requirements
-        outfunds__Status__c: status
-        outfunds__Type__c: type
+        Name: Name
+        outfunds__Completed_Date__c: Completed_Date__c
+        outfunds__Due_Date__c: Due_Date__c
+        outfunds__Requirements__c: Requirements__c
+        outfunds__Status__c: Status__c
+        outfunds__Type__c: Type__c
     lookups:
         outfunds__Disbursement__c:
-            key_field: disbursement_id
-            table: disbursements
-            join_field: id
-            value_field: sf_id
+            table: Disbursement__c
+            key_field: disbursement__c
         outfunds__Funding_Request__c:
-            key_field: funding_request_id
-            table: funding_requests
-            join_field: id
-            value_field: sf_id
+            table: Funding_Request__c
+            key_field: funding_request__c
         outfunds__Primary_Contact__c:
-            key_field: primary_contact_id
-            table: contacts
-            join_field: id
-            value_field: sf_id
+            table: Contact
+            key_field: primary_contact__c

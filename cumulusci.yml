@@ -8,20 +8,6 @@ project:
         repo_url: https://github.com/SFDO-Community/OutboundFunds
 
 tasks:
-    demo_data_query:
-        description: Query the demo data set into the org
-        class_path: cumulusci.tasks.bulkdata.QueryData
-        options:
-            database_url: 'sqlite:///datasets/demo/data.db'
-            mapping: 'datasets/mapping.yml'
-            
-    demo_data_load:
-        description: Load the demo data set into the org
-        class_path: cumulusci.tasks.bulkdata.LoadData
-        options:
-            database_url: 'sqlite:///datasets/demo/data.db'
-            mapping: 'datasets/mapping.yml'  
-                 
     demo_data_delete:
         description: 'WARNING: Deletes all data in the objects specified in the objects option.'
         class_path: cumulusci.tasks.bulkdata.DeleteData
@@ -35,10 +21,15 @@ tasks:
                 - Account
 
 flows:
+    config_dev:
+        steps:
+            3:
+                task: load_dataset
+
     config_qa:
         steps:
             3:
-                task: demo_data_load
+                task: load_dataset
 
 orgs:
     scratch:
