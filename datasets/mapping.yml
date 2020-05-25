@@ -1,119 +1,89 @@
 Accounts:
     sf_object: Account
-    table: accounts
+    table: Account
     fields:
-        Id: sf_id
-        Name: name
+        Name: Name
 
 Contacts:
     sf_object: Contact
-    table: contacts
+    table: Contact
     fields:
-        Id: sf_id
-        Salutation: salutation
-        FirstName: first_name
-        LastName: last_name
-        Email: email
-        Phone: phone
-        Title: job_title
+        Salutation: Salutation
+        FirstName: FirstName
+        LastName: LastName
+        Email: Email
+        Phone: Phone
+        Title: Title
     lookups:
         AccountId:
-            key_field: account_id
-            table: accounts
-            join_field: id
-            value_field: sf_id
+            table: Account
 
 Funding Programs:
     sf_object: Funding_Program__c
-    table: funding_programs
+    table: Funding_Program__c
     fields:
-        Id: sf_id
-        Name: name
-        Description__c: description
-        End_Date__c: end_date
-        Start_Date__c: start_date
-        Status__c: status
-        Total_Program_Amount__c: total_program_amount
+        Name: Name
+        Description__c: Description__c
+        End_Date__c: End_Date__c
+        Start_Date__c: Start_Date__c
+        Status__c: Status__c
+        Total_Program_Amount__c: Total_Program_Amount__c
 
 Funding Requests:
     sf_object: Funding_Request__c
-    table: funding_requests
+    table: Funding_Request__c
     fields:
-        Id: sf_id
-        Name: name
-        Application_Date__c: application_date
-        Awarded_Amount__c: awarded_amount
-        Awarded_Date__c: awarded_date
-        Close_Date__c: close_date
-        Closed_reason__c: closed_reason
-        Geographical_Area_Served__c: geographical_area_served
-        Population_Served__c: population_served
-        Recommended_Amount__c: recommended_amount
-        Requested_Amount__c: requested_amount
-        Requested_For__c: requested_for
-        Status__c: status
-        Term_End_Date__c: term_end_date
-        Term_Start_Date__c: term_start_date
-        Terms__c: terms
+        Name: Name
+        Application_Date__c: Application_Date__c
+        Awarded_Amount__c: Awarded_Amount__c
+        Awarded_Date__c: Awarded_Date__c
+        Close_Date__c: Close_Date__c
+        Closed_reason__c: Closed_reason__c
+        Geographical_Area_Served__c: Geographical_Area_Served__c
+        Population_Served__c: Population_Served__c
+        Recommended_Amount__c: Recommended_Amount__c
+        Requested_Amount__c: Requested_Amount__c
+        Requested_For__c: Requested_For__c
+        Status__c: Status__c
+        Term_End_Date__c: Term_End_Date__c
+        Term_Start_Date__c: Term_Start_Date__c
+        Terms__c: Terms__c
     lookups:
         Applying_Contact__c:
-            key_field: applying_contact_id
-            table: contacts
-            join_field: id
-            value_field: sf_id
+            table: Contact
         Applying_Organization__c:
-            key_field: applying_organization_id
-            table: accounts
-            join_field: id
-            value_field: sf_id
+            table: Account
         FundingProgram__c:
-            key_field: funding_program_id
-            table: funding_programs
-            join_field: id
-            value_field: sf_id
+            table: Funding_Program__c
 
 Disbursements:
     sf_object: Disbursement__c
-    table: disbursements
+    table: Disbursement__c
     fields:
-        Id: sf_id
-        Amount__c: amount
-        Disbursement_Date__c: disbursement_date
-        Disbursement_Method__c: disbursement_method
-        Scheduled_Date__c: scheduled_date
-        Status__c: status
-        Type__c: type
+        Amount__c: Amount__c
+        Disbursement_Date__c: Disbursement_Date__c
+        Disbursement_Method__c: Disbursement_Method__c
+        Scheduled_Date__c: Scheduled_Date__c
+        Status__c: Status__c
+        Type__c: Type__c
     lookups:
         Funding_Request__c:
-            key_field: funding_request_id
-            table: funding_requests
-            join_field: id
-            value_field: sf_id
+            table: Funding_Request__c
 
 Requirements:
     sf_object: Requirement__c
-    table: requirements
+    table: Requirement__c
     fields:
-        Id: sf_id
-        Name: name
-        Completed_Date__c: completed_date
-        Due_Date__c: due_date
-        Requirements__c: requirements
-        Status__c: status
-        Type__c: type
+        Name: Name
+        Completed_Date__c: Completed_Date__c
+        Due_Date__c: Due_Date__c
+        Requirements__c: Requirements__c
+        Status__c: Status__c
+        Type__c: Type__c
     lookups:
         Disbursement__c:
-            key_field: disbursement_id
-            table: disbursements
-            join_field: id
-            value_field: sf_id
+            table: Disbursement__c
         Funding_Request__c:
-            key_field: funding_request_id
-            table: funding_requests
-            join_field: id
-            value_field: sf_id
+            table: Funding_Request__c
         Primary_Contact__c:
-            key_field: primary_contact_id
-            table: contacts
-            join_field: id
-            value_field: sf_id
+            table: Contact
