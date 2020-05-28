@@ -116,7 +116,7 @@
                     <div class="slds-p-horizontal_medium slds-size_1-of-1 ">
                         <lightning:button name="calculate" type="button"
                               onclick="{!c.calculate}"
-                              label="Calculate"
+                              label="{!$Label.c.Calculate}"
                               class="slds-align_absolute-center"
                               disabled="{!not(empty(v.model.uiMessages))}"
                         />
@@ -132,8 +132,8 @@
                 <div class="slds-section__content">
                     <lightning:datatable
                             keyField="id"
-                            data="{! v.model.disbursements }"
-                            columns="{! v.model.formDefaults.columns }"
+                            data="{!v.model.disbursements}"
+                            columns="{!v.model.formDefaults.columns}"
                             hideCheckboxColumn="true"
                             oncellchange="{!c.handleRowChange}"
                             aura:id="disbursementTable"
@@ -143,8 +143,8 @@
 
             <!-- Footer -->
             <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
-                <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleCancel}" />
-                <lightning:button label="Save" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.model.disbursements)}"/>
+                <lightning:button label="{!$Label.c.Cancel}" variant="neutral" onclick="{!c.handleCancel}" />
+                <lightning:button label="{!$Label.c.Save}" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.model.disbursements)}"/>
             </div>
         </aura:if>
     </div>

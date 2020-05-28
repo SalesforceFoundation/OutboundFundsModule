@@ -104,4 +104,28 @@
         <shortDescription>Error</shortDescription>
         <value>Error</value>
     </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <categories>Aura</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>Aura</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Calculate</fullName>
+        <categories>Aura</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Calculate</shortDescription>
+        <value>Calculate</value>
+    </labels>
 </CustomLabels>
