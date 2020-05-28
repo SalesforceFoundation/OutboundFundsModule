@@ -1,128 +1,189 @@
-<aura:component controller="disbursementsCreateController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
-
-    <lightning:notificationsLibrary aura:id="notifLib"/>
+<aura:component
+    controller="disbursementsCreateController"
+    implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+>
+    <lightning:notificationsLibrary aura:id="notifLib" />
 
     <!-- Init -->
-    <aura:handler name="init" value="{!this}"
-                  action="{!c.doInit}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
     <!-- Default model set in helper -->
     <aura:attribute type="Map" name="model" />
 
     <div class="wrap">
-
         <!-- Header -->
-        <h2 class="slds-text-heading_medium slds-hyphenate slds-m-bottom--large">{!$Label.c.disbursementsCreate_ScheduleDisbursements}</h2>
+        <h2 class="slds-text-heading_medium slds-hyphenate slds-m-bottom--large">
+            {!$Label.c.disbursementsCreate_ScheduleDisbursements}
+        </h2>
 
         <div class="slds-section slds-is-open">
-
             <!-- Funding Request Data -->
             <h3 class="slds-section__title slds-theme_shade">
-                <span class="slds-truncate slds-p-horizontal_small" title="{!$Label.c.disbursementsCreate_FundingRequestInformation}">{!$Label.c.disbursementsCreate_FundingRequestInformation}</span>
+                <span
+                    class="slds-truncate slds-p-horizontal_small"
+                    title="{!$Label.c.disbursementsCreate_FundingRequestInformation}"
+                    >{!$Label.c.disbursementsCreate_FundingRequestInformation}</span
+                >
             </h3>
             <div class="slds-section__content">
                 <div class="slds-grid slds-grid_pull-padded-medium slds-m-bottom_large">
-
-                    <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow">
+                    <div
+                        class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow"
+                    >
                         <dl class="slds-dl_inline slds-wrap">
-                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">{!v.model.request.fundingRequestLabels.Applying_Contact__c}:</dt>
-                            <dd class="slds-dl_inline__detail slds-truncate">{!v.model.request.contactName}</dd>
-                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">{!v.model.request.fundingRequestLabels.Awarded_Amount__c}:</dt>
+                            <dt
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
+                            >
+                                {!v.model.request.fundingRequestLabels.Applying_Contact__c}:
+                            </dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.request.awardedAmount}"/>
+                                {!v.model.request.contactName}
+                            </dd>
+                            <dt
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
+                            >
+                                {!v.model.request.fundingRequestLabels.Awarded_Amount__c}:
+                            </dt>
+                            <dd class="slds-dl_inline__detail slds-truncate">
+                                <lightning:formattedNumber
+                                    style="currency"
+                                    value="{!v.model.request.awardedAmount}"
+                                />
                             </dd>
                         </dl>
                     </div>
 
-                    <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow">
+                    <div
+                        class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow"
+                    >
                         <dl class="slds-dl_inline slds-wrap">
-                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">{!v.model.request.fundingRequestLabels.Total_Disbursed__c}:</dt>
+                            <dt
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
+                            >
+                                {!v.model.request.fundingRequestLabels.Total_Disbursed__c}:
+                            </dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.request.totalDisbursed}"/>
+                                <lightning:formattedNumber
+                                    style="currency"
+                                    value="{!v.model.request.totalDisbursed}"
+                                />
                             </dd>
-                            <dt class="slds-dl_inline__label slds-text-color_weak slds-truncate">{!v.model.request.fundingRequestLabels.Total_Remaining__c}:</dt>
+                            <dt
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
+                            >
+                                {!v.model.request.fundingRequestLabels.Total_Remaining__c}:
+                            </dt>
                             <dd class="slds-dl_inline__detail slds-truncate">
-                                <lightning:formattedNumber style="currency" value="{!v.model.request.totalRemaining}"/>
+                                <lightning:formattedNumber
+                                    style="currency"
+                                    value="{!v.model.request.totalRemaining}"
+                                />
                             </dd>
                         </dl>
                     </div>
                 </div>
-                <div class="slds-grid slds-grid_pull-padded-medium  slds-p-left_large slds-p-right_large">
-
-                </div>
+                <div
+                    class="slds-grid slds-grid_pull-padded-medium slds-p-left_large slds-p-right_large"
+                ></div>
             </div>
 
             <!-- UI Messages -->
             <aura:if isTrue="{!not(empty(v.model.uiMessages))}">
                 <aura:iteration items="{!v.model.uiMessages}" var="m">
-                    <ui:message title="{!m.title}"
-                                severity="{!m.severity}"
-                                closable="{!m.closeable}">
+                    <ui:message
+                        title="{!m.title}"
+                        severity="{!m.severity}"
+                        closable="{!m.closeable}"
+                    >
                         {!m.message}
                     </ui:message>
                 </aura:iteration>
             </aura:if>
-
         </div>
 
         <div class="slds-section slds-is-open">
             <h3 class="slds-section__title slds-theme_shade">
-                <span class="slds-truncate slds-p-horizontal_small" title="{!$Label.c.disbursementsCreate_CalculateDisbursements}">{!$Label.c.disbursementsCreate_CalculateDisbursements}</span>
+                <span
+                    class="slds-truncate slds-p-horizontal_small"
+                    title="{!$Label.c.disbursementsCreate_CalculateDisbursements}"
+                    >{!$Label.c.disbursementsCreate_CalculateDisbursements}</span
+                >
             </h3>
             <div class="slds-section__content">
-
                 <div class="slds-grid slds-grid_pull-padded-medium">
-
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input name="paymentCount" label="{!$Label.c.disbursementsCreate_NumberOfDisbursements}" type="number" value="{!v.model.formData.paymentCount}"/>
+                        <lightning:input
+                            name="paymentCount"
+                            label="{!$Label.c.disbursementsCreate_NumberOfDisbursements}"
+                            type="number"
+                            value="{!v.model.formData.paymentCount}"
+                        />
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input name="firstDate" label="{!$Label.c.disbursementsCreate_FirstDate}" type="date" value="{!v.model.formData.firstDate}"/>
+                        <lightning:input
+                            name="firstDate"
+                            label="{!$Label.c.disbursementsCreate_FirstDate}"
+                            type="date"
+                            value="{!v.model.formData.firstDate}"
+                        />
                     </div>
                 </div>
 
                 <div class="slds-grid slds-grid_pull-padded-medium">
-
                     <div class="slds-p-horizontal_medium slds-size_1-of-2 slds-grid">
-                        <lightning:input name="intervalCount" label="{!$Label.c.disbursementsCreate_Interval}" type="number" value="{!v.model.formData.intervalCount}" class="slds-size_1-of-3 slds-p-right_small"/>
+                        <lightning:input
+                            name="intervalCount"
+                            label="{!$Label.c.disbursementsCreate_Interval}"
+                            type="number"
+                            value="{!v.model.formData.intervalCount}"
+                            class="slds-size_1-of-3 slds-p-right_small"
+                        />
 
-                        <lightning:select name="intervalType" label="{!$Label.c.disbursementsCreate_IntervalType}" value="{!v.model.formData.intervalType}" class="slds-size_2-of-3 ">
-                            <aura:iteration items="{!v.model.formDefaults.intervalTypes}" var="o">
+                        <lightning:select
+                            name="intervalType"
+                            label="{!$Label.c.disbursementsCreate_IntervalType}"
+                            value="{!v.model.formData.intervalType}"
+                            class="slds-size_2-of-3"
+                        >
+                            <aura:iteration
+                                items="{!v.model.formDefaults.intervalTypes}"
+                                var="o"
+                            >
                                 <option value="{!o.value}">{!o.label}</option>
                             </aura:iteration>
                         </lightning:select>
                     </div>
 
                     <div class="slds-p-horizontal_medium slds-size_1-of-2">
-                        <lightning:input type="number" label="{!v.model.request.disbursementLabels.Amount__c}"
-                                         step="0.01"
-                                         name="paymentTotal"
-                                         value="{!v.model.formData.paymentTotal}"
-                                         max="{!v.model.request.totalRemaining}"
-                                         onblur="{!c.inputBlur}"
-                                         />
+                        <lightning:input
+                            type="number"
+                            label="{!v.model.request.disbursementLabels.Amount__c}"
+                            step="0.01"
+                            name="paymentTotal"
+                            value="{!v.model.formData.paymentTotal}"
+                            max="{!v.model.request.totalRemaining}"
+                            onblur="{!c.inputBlur}"
+                        />
                     </div>
                 </div>
-
             </div>
         </div>
 
         <div class="slds-section slds-is-open">
             <div class="slds-section__content">
-
                 <div class="slds-grid slds-grid_pull-padded-medium">
-
-                    <div class="slds-p-horizontal_medium slds-size_1-of-1 ">
-                        <lightning:button name="calculate" type="button"
-                              onclick="{!c.calculate}"
-                              label="{!$Label.c.Calculate}"
-                              class="slds-align_absolute-center"
-                              disabled="{!not(empty(v.model.uiMessages))}"
+                    <div class="slds-p-horizontal_medium slds-size_1-of-1">
+                        <lightning:button
+                            name="calculate"
+                            type="button"
+                            onclick="{!c.calculate}"
+                            label="{!$Label.c.Calculate}"
+                            class="slds-align_absolute-center"
+                            disabled="{!not(empty(v.model.uiMessages))}"
                         />
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -131,20 +192,31 @@
             <div class="slds-section slds-is-open">
                 <div class="slds-section__content">
                     <lightning:datatable
-                            keyField="id"
-                            data="{!v.model.disbursements}"
-                            columns="{!v.model.formDefaults.columns}"
-                            hideCheckboxColumn="true"
-                            oncellchange="{!c.handleRowChange}"
-                            aura:id="disbursementTable"
+                        keyField="id"
+                        data="{!v.model.disbursements}"
+                        columns="{!v.model.formDefaults.columns}"
+                        hideCheckboxColumn="true"
+                        oncellchange="{!c.handleRowChange}"
+                        aura:id="disbursementTable"
                     />
                 </div>
             </div>
 
             <!-- Footer -->
-            <div class="slds-section slds-is-open slds-text-align--center slds-m-top--medium">
-                <lightning:button label="{!$Label.c.Cancel}" variant="neutral" onclick="{!c.handleCancel}" />
-                <lightning:button label="{!$Label.c.Save}" variant="brand" onclick="{!c.handleSave}" disabled="{!empty(v.model.disbursements)}"/>
+            <div
+                class="slds-section slds-is-open slds-text-align--center slds-m-top--medium"
+            >
+                <lightning:button
+                    label="{!$Label.c.Cancel}"
+                    variant="neutral"
+                    onclick="{!c.handleCancel}"
+                />
+                <lightning:button
+                    label="{!$Label.c.Save}"
+                    variant="brand"
+                    onclick="{!c.handleSave}"
+                    disabled="{!empty(v.model.disbursements)}"
+                />
             </div>
         </aura:if>
     </div>
