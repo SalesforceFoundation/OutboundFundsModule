@@ -125,7 +125,8 @@ public with sharing class disbursementsCreateController {
             this.uiMessages = new Map<String, String>{
                 'Error' => System.Label.Error,
                 'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
-                'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds
+                'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
+                'SavedMessage' => System.Label.disbursementsCreate_SavedMessage
             };
 
             this.intervalTypes = new Map<String, String>{

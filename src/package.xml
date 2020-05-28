@@ -80,7 +80,10 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>Calculate</members>
+        <members>Cancel</members>
         <members>Error</members>
+        <members>Save</members>
         <members>disbursementsCreate_CalculateDisbursements</members>
         <members>disbursementsCreate_FirstDate</members>
         <members>disbursementsCreate_FundingRequestInformation</members>
@@ -92,6 +95,7 @@
         <members>disbursementsCreate_NoFundsRemaining</members>
         <members>disbursementsCreate_NumberOfDisbursements</members>
         <members>disbursementsCreate_PaymentsExceedFunds</members>
+        <members>disbursementsCreate_SavedMessage</members>
         <members>disbursementsCreate_ScheduleDisbursements</members>
         <name>CustomLabel</name>
     </types>
@@ -172,5 +176,5 @@
         <members>Funding_Requests_w_Funding_Programs_w_Parent_Progr</members>
         <name>ReportType</name>
     </types>
-    <version>48.0</version>
+    <version>42.0</version>
 </Package>

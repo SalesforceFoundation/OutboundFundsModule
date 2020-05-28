@@ -55,7 +55,8 @@ private class disbursementsCreateController_TEST {
         final Map<String, String> expectedUiMessages = new Map<String, String>{
             'Error' => System.Label.Error,
             'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
-            'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds
+            'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
+            'SavedMessage' => System.Label.disbursementsCreate_SavedMessage
         };
 
         final Map<String, String> expectedIntervalTypes = new Map<String, String>{

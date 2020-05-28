@@ -97,6 +97,14 @@
         <value>The amount of payments cannot exceed available funds.</value>
     </labels>
     <labels>
+        <fullName>disbursementsCreate_SavedMessage</fullName>
+        <categories>Aura</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>disbursementsCreate: Saved Message</shortDescription>
+        <value>Disbursements successfully saved.</value>
+    </labels>
+    <labels>
         <fullName>Error</fullName>
         <categories>Aura</categories>
         <language>en_US</language>
