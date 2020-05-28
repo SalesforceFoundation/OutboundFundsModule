@@ -9,7 +9,20 @@
             intervalType: 'Month',
         },
         formDefaults: {
-            intervalTypes: ['Week','Month','Year'],
+            intervalTypes: [
+                {
+                    value: 'Week',
+                    label: 'Week'
+                },
+                {
+                    value: 'Month',
+                    label: 'Month'
+                },
+                {
+                    value: 'Year',
+                    label: 'Year'
+                }
+           	],
             columns: [
                 {   label: 'Amount',
                     fieldName: 'amount',
@@ -22,7 +35,6 @@
                 {   label: 'Scheduled Date',
                     fieldName: 'scheduleDate',
                     type: 'date-local',
-                    // type: 'date',
                     typeAttributes: {
                         year: 'numeric',
                         month: 'numeric',
@@ -62,11 +74,22 @@
         var params = { reqId: cmp.get("v.recordId") };
         var parent = this;
         this.callServer(cmp,'c.getFundRequest',params, function (r) {
-            cmp.set('v.model.request',r);
-
+            var model = cmp.get('v.model')
+            
+            model.request = r;
+            
+            // Update labels and options
+            model.formDefaults.columns[0].label = r.disbursementLabels.Amount__c;
+            model.formDefaults.columns[1].label = r.disbursementLabels.Scheduled_Date__c;
+            model.formDefaults.intervalTypes.forEach(function(intervalType) {
+                intervalType.label = r.intervalTypes[intervalType.value];
+            });
+            
             // After the model is loaded set the default total
-            cmp.set('v.model.formData.paymentTotal', cmp.get('v.model.request.totalRemaining'));
-
+           	model.formData.paymentTotal = model.request.totalRemaining;
+            
+            cmp.set('v.model', model);
+            
             parent.validate(cmp);
         });
     },
@@ -260,7 +283,7 @@
         var r = cmp.get('v.model.request');
 
         if(r.totalRemaining <= 0) {
-            this.addMessage(cmp, 'Error','error', 'There are not enough funds remaining to create disbursements');
+            this.addMessage(cmp, r.uiMessages.Error, 'error', r.uiMessages.NoFundsRemaining);
         }
     },
 
@@ -270,7 +293,7 @@
         var total = m.formData.paymentTotal;
 
         if(total > remaining) {
-            this.addMessage(cmp, 'Error','error', 'The amount of payments cannot exceed available funds.', true);
+            this.addMessage(cmp, r.uiMessages.Error, 'error', r.uiMessages.NoFundsRemaining.PaymentsExceedFunds, true);
         }
     },
 

@@ -28,7 +28,7 @@ public with sharing class disbursementsCreateController {
         List<Disbursement> dList = (List<Disbursement>)
             JSON.deserialize(dispListString, List<Disbursement>.class);
 
-        List<Disbursement__c> newDispList = new List<Disbursement__c>();
+        List<Schema.Disbursement__c> newDispList = new List<Schema.Disbursement__c>();
 
         for (Disbursement d : dList) {
             newDispList.add( mapDisbursement(d) );
@@ -45,7 +45,7 @@ public with sharing class disbursementsCreateController {
      * @return - Request model
      */
     private static Request getRequest(Id reqId) {
-        Funding_Request__c fr = [
+        Schema.Funding_Request__c fr = [
             SELECT
                 Id,
                 Requested_Amount__c,
@@ -69,9 +69,9 @@ public with sharing class disbursementsCreateController {
      *
      * @return - Disbursement__c
      */
-    private static Disbursement__c mapDisbursement(Disbursement d) {
+    private static Schema.Disbursement__c mapDisbursement(Disbursement d) {
 
-        return new Disbursement__c(
+        return new Schema.Disbursement__c(
             Amount__c = d.amount,
             Funding_Request__c = d.requestId,
             Scheduled_Date__c = d.scheduleDate,
@@ -96,13 +96,46 @@ public with sharing class disbursementsCreateController {
         @AuraEnabled
         public Decimal totalRemaining;
 
-        public Request(Funding_Request__c r) {
+        @AuraEnabled
+        public Map<String, String> 
+            fundingRequestLabels, 
+            disbursementLabels, 
+            uiMessages,
+            intervalTypes;
+
+        public Request(Schema.Funding_Request__c r) {
             this.recordId = r.Id;
             this.contactName = r.Applying_Contact__r.Name;
             this.requestedAmount = r.Requested_Amount__c;
             this.awardedAmount = r.Awarded_Amount__c;
             this.totalDisbursed = r.Total_Disbursed__c;
             this.totalRemaining = r.Total_Remaining__c;
+
+            // Send Field labels and labels needed in the helper.
+            this.fundingRequestLabels = new Map<String, String> {
+                'Applying_Contact__c' => Schema.SObjectType.Funding_Request__c.fields.Applying_Contact__c.getLabel(),
+                'Requested_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Requested_Amount__c.getLabel(),
+                'Awarded_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Awarded_Amount__c.getLabel(),
+                'Total_Disbursed__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Disbursed__c.getLabel(),
+                'Total_Remaining__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Remaining__c.getLabel()
+            };
+                
+            this.disbursementLabels = new Map<String, String> {
+                'Amount__c' => Schema.SObjectType.Disbursement__c.fields.Amount__c.getLabel(),
+                'Scheduled_Date__c' => Schema.SObjectType.Disbursement__c.fields.Scheduled_Date__c.getLabel()
+            };
+                
+            this.uiMessages = new Map<String, String> {
+                'Error' => System.Label.Error,
+                'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
+                'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds
+            };
+                
+            this.intervalTypes = new Map<String, String> {
+                'Week' => System.Label.disbursementsCreate_IntervalType_Week,
+                'Month' => System.Label.disbursementsCreate_IntervalType_Month,
+                'Year' => System.Label.disbursementsCreate_IntervalType_Year
+            };
         }
     }
 
