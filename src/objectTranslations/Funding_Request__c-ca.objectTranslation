@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Application_Date__c</name>
+    <label>[Application Date]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Applying_Contact__c</name>
+    <relationshipLabel>[Funding Requests]o'介引]</relationshipLabel>
+    <label>[Applying Contact]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Applying_Employee__c</name>
+    <label>[Applying Employee]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Applying_Organization__c</name>
+    <relationshipLabel>[Funding Requests]o'介引]</relationshipLabel>
+    <label>[Applying Organization]o'介引户ה]</label>
+  </fields>
+  <fields>
+    <name>Awarded_Amount__c</name>
+    <label>[Awarded Amount]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Awarded_Date__c</name>
+    <label>[Awarded Date]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Close_Date__c</name>
+    <label>[Close Date]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Closed_reason__c</name>
+    <label>[Closed reason]o'介]</label>
+  </fields>
+  <fields>
+    <name>FundingProgram__c</name>
+    <relationshipLabel>[Funding Requests]o'介引]</relationshipLabel>
+    <label>[Funding Program]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Geographical_Area_Served__c</name>
+    <label>[Geographical Area Served]o'介引户הа]</label>
+    <picklistValues>
+      <masterLabel>City</masterLabel>
+      <translation>[City]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>State</masterLabel>
+      <translation>[State]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Region</masterLabel>
+      <translation>[Region]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Country</masterLabel>
+      <translation>[Country]o']</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Population_Served__c</name>
+    <label>[Population Served]o'介引户]</label>
+    <picklistValues>
+      <masterLabel>Adults</masterLabel>
+      <translation>[Adults]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Below Poverty level</masterLabel>
+      <translation>[Below Poverty level]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Caregivers</masterLabel>
+      <translation>[Caregivers]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Children and Youth</masterLabel>
+      <translation>[Children and Youth]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Economically Disadvantaged People</masterLabel>
+      <translation>[Economically Disadvantaged People]o'介引户הаí先]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Ethnic and racial groups</masterLabel>
+      <translation>[Ethnic and racial groups]o'介引户הа]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Families</masterLabel>
+      <translation>[Families]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Heterosexuals</masterLabel>
+      <translation>[Heterosexuals]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Homeless</masterLabel>
+      <translation>[Homeless]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Immigrants and Refugees</masterLabel>
+      <translation>[Immigrants and Refugees]o'介引户ה]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Incarcerated People</masterLabel>
+      <translation>[Incarcerated People]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>LGBTQ</masterLabel>
+      <translation>[LGBTQ]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Men</masterLabel>
+      <translation>[Men]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Disabilities</masterLabel>
+      <translation>[People with Disabilities]o'介引户הа]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Diseases and Illnesses</masterLabel>
+      <translation>[People with Diseases and Illnesses]o'介引户הаí先ร]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Religious Groups</masterLabel>
+      <translation>[Religious Groups]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Veteran</masterLabel>
+      <translation>[Veteran]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Victims and Oppressed People</masterLabel>
+      <translation>[Victims and Oppressed People]o'介引户הаí]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Women</masterLabel>
+      <translation>[Women]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Youth at Risk</masterLabel>
+      <translation>[Youth at Risk]o'介]</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Recommended_Amount__c</name>
+    <label>[Recommended Amount]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Requested_Amount__c</name>
+    <label>[Requested Amount]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Requested_For__c</name>
+    <label>[Requested For]o'介]</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>[Status]o']</label>
+    <picklistValues>
+      <masterLabel>Invited</masterLabel>
+      <translation>[Invited]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Submitted</masterLabel>
+      <translation>[Submitted]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In progress</masterLabel>
+      <translation>[In progress]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Review</masterLabel>
+      <translation>[In Review]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Reviewed</masterLabel>
+      <translation>[Reviewed]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Awarded</masterLabel>
+      <translation>[Awarded]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Fully Disbursed</masterLabel>
+      <translation>[Fully Disbursed]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Closed</masterLabel>
+      <translation>[Closed]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>[Rejected]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Withdrawn</masterLabel>
+      <translation>[Withdrawn]o'介]</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Term_End_Date__c</name>
+    <label>[Term End Date]o'介]</label>
+  </fields>
+  <fields>
+    <name>Term_Start_Date__c</name>
+    <label>[Term Start Date]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Terms__c</name>
+    <label>[Terms]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Total_Cancelled__c</name>
+    <label>[Total Cancelled]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Total_Disbursed__c</name>
+    <label>[Paid Disbursements]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Total_Remaining__c</name>
+    <label>[Available for Disbursement]o'介引户הа]</label>
+  </fields>
+  <fields>
+    <name>Unpaid_Disbursements__c</name>
+    <label>[Unpaid Disbursements]o'介引户ה]</label>
+  </fields>
+  <layouts>
+    <layout>Funding Request Layout</layout>
+    <sections>
+      <label>[Purpose]o']</label>
+      <section>Purpose</section>
+    </sections>
+    <sections>
+      <label>[Applicant]o'介]</label>
+      <section>Applicant</section>
+    </sections>
+    <sections>
+      <label>[Award Information]o'介引户]</label>
+      <section>Award Information</section>
+    </sections>
+    <sections>
+      <label>[Terms]o'介引户]</label>
+      <section>Terms</section>
+    </sections>
+    <sections>
+      <label>[Disbursement Information]o'介引户הа]</label>
+      <section>Disbursement Information</section>
+    </sections>
+    <sections>
+      <label>[Custom Links]o'介引]</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>[Funding Request Name]o'介引户ה]</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>[Funding Request Name]o'介引户ה]</label>
+  </standardFields>
+</CustomObjectTranslation>

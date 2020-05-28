@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <reportTypes>
+        <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
+        <label>[Funding Programs with Funding Requests with Disbursements]l'介引户הаí先ร简аน取정úσ]</label>
+        <sections>
+            <label>[Funding Programs]l'介引]</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>[Funding Requests]l'介引]</label>
+            <name>Funding Requests</name>
+        </sections>
+        <sections>
+            <label>[Disbursements]l'介]</label>
+            <name>Disbursements</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
+        <label>[Funding Requests w/Funding Programs w/Parent Prog]l'介引户הаí先ร简аน取]</label>
+        <sections>
+            <label>[Funding Programs]l'介引]</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>[Subordinate Funding Programs]l'介引户הаí]</label>
+            <name>Subordinate Funding Programs</name>
+        </sections>
+        <sections>
+            <label>[Funding Requests]l'介引]</label>
+            <name>Funding Requests</name>
+        </sections>
+    </reportTypes>
+    <customApplications>
+        <name>Outbound_Funds</name>
+        <label>[Outbound Funds]l'介引]</label>
+    </customApplications>
+    <quickActions>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>[Create Funding Request Role]l'介引户הаí]</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>[Disbursment Information]l'介引户ה]</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Create_Bulk_Disbursements</name>
+        <label>[Create Disbursements]l'介引户ה]</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>[Program Totals]l'介引]</label>
+    </quickActions>
+</Translations>

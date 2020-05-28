@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Assigned__c</name>
+    <label>[Assigned]o'介]</label>
+  </fields>
+  <fields>
+    <name>Completed_Date__c</name>
+    <label>[Completed Date]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Disbursement__c</name>
+    <label>[Disbursement]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Due_Date__c</name>
+    <label>[Due Date]o'介]</label>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <label>[Funding Request]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Primary_Contact__c</name>
+    <label>[Primary Contact]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Requirements__c</name>
+    <label>[Requirements]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>[Status]o']</label>
+    <picklistValues>
+      <masterLabel>Open</masterLabel>
+      <translation>[Open]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Progress</masterLabel>
+      <translation>[In Progress]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Delayed</masterLabel>
+      <translation>[Delayed]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Complete</masterLabel>
+      <translation>[Complete]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Accepted</masterLabel>
+      <translation>[Accepted]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>[Rejected]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Abandoned</masterLabel>
+      <translation>[Abandoned]o'介]</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <label>[Type]o'介引]</label>
+    <picklistValues>
+      <masterLabel>Letter of Intent</masterLabel>
+      <translation>[Letter of Intent]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Preliminary Application</masterLabel>
+      <translation>[Preliminary Application]o'介引户ה]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Final Application</masterLabel>
+      <translation>[Final Application]o'介引户]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Review</masterLabel>
+      <translation>[Review]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Panel Review</masterLabel>
+      <translation>[Panel Review]o'介引]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Contract</masterLabel>
+      <translation>[Contract]o'介]</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Report</masterLabel>
+      <translation>[Report]o']</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Outcome</masterLabel>
+      <translation>[Outcome]o']</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Requirement Layout</layout>
+    <sections>
+      <label>[Status]o']</label>
+      <section>Status</section>
+    </sections>
+    <sections>
+      <label>[Requirements]o'介引]</label>
+      <section>Requirements</section>
+    </sections>
+    <sections>
+      <label>[Custom Links]o'介引]</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>[Requirement Name]o'介引]</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>[Requirement Name]o'介引]</label>
+  </standardFields>
+</CustomObjectTranslation>
