@@ -32,18 +32,6 @@ tasks:
             output: robot/OutboundFunds/doc/OutboundFunds_tests.html
             
 flows:
-
-    deploy_unmanaged:
-        steps:
-            4: 
-                task: uninstall_packaged_incremental
-                options:
-                    # Ignore CustomObjectTranslation for localization testing
-                    ignore_types:
-                        - RecordType
-                        - CustomObjectTranslation
-
-
     config_dev:
         steps:
             3:
