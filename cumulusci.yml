@@ -5,7 +5,7 @@ project:
         namespace: outfunds
         api_version: '42.0'
     git:
-        repo_url: https://github.com/SFDO-Community/OutboundFunds
+        repo_url: https://github.com/SalesforceFoundation/OutboundFunds
 
 tasks:
     demo_data_delete:
