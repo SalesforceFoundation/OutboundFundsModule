@@ -5,7 +5,7 @@ project:
         namespace: outfunds
         api_version: '42.0'
     git:
-        repo_url: https://github.com/SFDO-Community/OutboundFunds
+        repo_url: https://github.com/SalesforceFoundation/OutboundFunds
 
 tasks:
     demo_data_delete:
@@ -59,8 +59,12 @@ orgs:
 plans:
     install:
         slug: install
-        title: Install
+        title: Install Outbound Funds Module
         tier: primary
+        is_listed: True
+        preflight_message: "This will install Outbound Funds Module into your org."
+        post_install_message: "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) community group on the Power of Us Hub for any questions about Outbound Funds Module."
+        error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area, and log a technical support ticket with Salesforce. Include “Outbound Funds Module” in the subject line and include in your comment the installation link shown here."
         steps:
             1:
                 flow: install_prod_no_config
@@ -69,8 +73,9 @@ plans:
                 options:
                     name: Outbound Funds (NPSP)
                     namespace: outfundsnpspext
-                    version: 1.1
+                    version: 1.2
                 ui_options:
+                    name: 'Install Outbound Funds NPSP Extension'
                     is_required: False
                 checks:
                     - when: "'npsp' not in tasks.get_installed_packages()"
