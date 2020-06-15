@@ -67,8 +67,15 @@ plans:
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area, and log a technical support ticket with Salesforce. Include “Outbound Funds Module” in the subject line and include in your comment the installation link shown here."
         steps:
             1:
-                flow: install_prod_no_config
+                task: update_dependencies
+                dependencies:
+                    - namespace: sfdobase
+                      version: 1.0
+                ui_options:
+                    name: "Install SFDO Base 1.0"
             2:
+                flow: install_prod_no_config
+            3:
                 task: install_managed
                 options:
                     name: Outbound Funds (NPSP)
