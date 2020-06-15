@@ -83,10 +83,8 @@
             model.request = r;
 
             // Update labels and options
-            model.formDefaults.columns[0].label =
-                r.disbursementLabels.Amount__c;
-            model.formDefaults.columns[1].label =
-                r.disbursementLabels.Scheduled_Date__c;
+            model.formDefaults.columns[0].label = r.disbursementLabels.Amount__c;
+            model.formDefaults.columns[1].label = r.disbursementLabels.Scheduled_Date__c;
             model.formDefaults.intervalTypes.forEach(function (intervalType) {
                 intervalType.label = r.intervalTypes[intervalType.value];
             });
@@ -115,9 +113,7 @@
         var totalAmount = d.paymentTotal;
         var paymentAmt = d.paymentTotal / paymentCount;
         var paymentRounded = Math.floor(paymentAmt * 100) / 100;
-        var remainder = Math.round(
-            (totalAmount - paymentRounded * paymentCount) * 100
-        );
+        var remainder = Math.round((totalAmount - paymentRounded * paymentCount) * 100);
 
         var disbursements = [];
 
@@ -191,11 +187,7 @@
         var params = { dispListString: disbursementsJson };
         var that = this;
         this.callServer(cmp, "c.saveDisbursements", params, function () {
-            that.showToast(
-                model.request.uiMessages.SavedMessage,
-                "success",
-                cmp
-            );
+            that.showToast(model.request.uiMessages.SavedMessage, "success", cmp);
             // Clear these out after saved
             cmp.set("v.model.disbursements", null);
 
