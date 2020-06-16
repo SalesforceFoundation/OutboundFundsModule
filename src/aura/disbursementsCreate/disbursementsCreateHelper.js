@@ -301,9 +301,9 @@
         if (total > remaining) {
             this.addMessage(
                 cmp,
-                r.uiMessages.Error,
+                m.request.uiMessages.Error,
                 "error",
-                r.uiMessages.NoFundsRemaining.PaymentsExceedFunds,
+                m.request.uiMessages.PaymentsExceedFunds,
                 true
             );
         }
