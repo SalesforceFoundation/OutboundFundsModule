@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Amount__c</name>
+    <label>Bedrag</label>
+  </fields>
+  <fields>
+    <name>Disbursement_Date__c</name>
+    <label>Datum uitbetaling</label>
+  </fields>
+  <fields>
+    <name>Disbursement_Method__c</name>
+    <label>Uitbetalingsmethode</label>
+    <picklistValues>
+      <masterLabel>Cash</masterLabel>
+      <translation>Contant</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Check</masterLabel>
+      <translation>Cheque</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>EFT</masterLabel>
+      <translation>Bankoverschrijving</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <relationshipLabel>Uitbetalingen</relationshipLabel>
+    <label>Financieringsaanvraag</label>
+  </fields>
+  <fields>
+    <name>Scheduled_Date__c</name>
+    <label>Geplande datum</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Status</label>
+    <picklistValues>
+      <masterLabel>Scheduled</masterLabel>
+      <translation>Gepland</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Pending Approval</masterLabel>
+      <translation>In afwachting van goedkeuring</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Approved</masterLabel>
+      <translation>Goedgekeurd</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Paid</masterLabel>
+      <translation>Betaald</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Cancelled</masterLabel>
+      <translation>Geannuleerd</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <label>Type</label>
+    <picklistValues>
+      <masterLabel>Initial</masterLabel>
+      <translation>Eerste</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Interim</masterLabel>
+      <translation>Tussentijdse</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Amendment</masterLabel>
+      <translation>Aanpassing</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Final</masterLabel>
+      <translation>Laatste</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Disbursement Layout</layout>
+    <sections>
+      <label>Aangepaste koppelingen</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Uitbetaling</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Uitbetaling</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Uitbetaling</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Uitbetalingen</value>
+  </caseValues>
+</CustomObjectTranslation>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Contact__c</name>
+    <relationshipLabel>Financieringsaanvraagrollen</relationshipLabel>
+    <label>Contactpersoon</label>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <relationshipLabel>Financieringsaanvraagrollen</relationshipLabel>
+    <label>Financieringsaanvraag</label>
+  </fields>
+  <fields>
+    <name>Role__c</name>
+    <label>Rol</label>
+    <picklistValues>
+      <masterLabel>Grant Manager</masterLabel>
+      <translation>Schenkingsmanager</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Financial Manager</masterLabel>
+      <translation>Financieel manager</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Applicant</masterLabel>
+      <translation>Fondsenwerver</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Status</label>
+    <picklistValues>
+      <masterLabel>Current</masterLabel>
+      <translation>Huidig</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Former</masterLabel>
+      <translation>Voormalig</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Funding Request Role Layout</layout>
+    <sections>
+      <label>Aangepaste koppelingen</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Rolnaam financieringsaanvraag</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Rolnaam financieringsaanvraag</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Financieringsaanvraagrol</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Financieringsaanvraagrollen</value>
+  </caseValues>
+</CustomObjectTranslation>

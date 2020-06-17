@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Assigned__c</name>
+    <label>Attribué</label>
+  </fields>
+  <fields>
+    <name>Completed_Date__c</name>
+    <label>Date de réalisation</label>
+  </fields>
+  <fields>
+    <name>Disbursement__c</name>
+    <label>Versement</label>
+  </fields>
+  <fields>
+    <name>Due_Date__c</name>
+    <label>Date d’échéance</label>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <label>Demande de subvention</label>
+  </fields>
+  <fields>
+    <name>Primary_Contact__c</name>
+    <label>Contact principal</label>
+  </fields>
+  <fields>
+    <name>Requirements__c</name>
+    <label>Dossier de demande</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Statut</label>
+    <picklistValues>
+      <masterLabel>Open</masterLabel>
+      <translation>Ouvert</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Progress</masterLabel>
+      <translation>En cours</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Delayed</masterLabel>
+      <translation>Reporté</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Complete</masterLabel>
+      <translation>Terminé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Accepted</masterLabel>
+      <translation>Accepté</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>Refusé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Abandoned</masterLabel>
+      <translation>Abandonné</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <label>Type</label>
+    <picklistValues>
+      <masterLabel>Letter of Intent</masterLabel>
+      <translation>Lettre d'intention</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Preliminary Application</masterLabel>
+      <translation>Demande préliminaire</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Final Application</masterLabel>
+      <translation>Demande finale</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Review</masterLabel>
+      <translation>Examen</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Panel Review</masterLabel>
+      <translation>Examen de la commission</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Contract</masterLabel>
+      <translation>Contrat</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Report</masterLabel>
+      <translation>Rapport</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Outcome</masterLabel>
+      <translation>Résultat</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Requirement Layout</layout>
+    <sections>
+      <label>Statut</label>
+      <section>Status</section>
+    </sections>
+    <sections>
+      <label>Dossier de demande</label>
+      <section>Requirements</section>
+    </sections>
+    <sections>
+      <label>Liens personnalisés</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Nom du dossier de demande</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Nom du dossier de demande</label>
+  </standardFields>
+  <gender>Masculine</gender>
+  <startsWith>Consonant</startsWith>
+  <caseValues>
+    <plural>false</plural>
+    <value>Dossier de demande</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Dossiers de demande</value>
+  </caseValues>
+</CustomObjectTranslation>
