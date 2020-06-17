@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Application_Date__c</name>
+    <label>Fecha de solicitud</label>
+  </fields>
+  <fields>
+    <name>Applying_Contact__c</name>
+    <relationshipLabel>Solicitudes de fondos</relationshipLabel>
+    <label>Contacto de solicitante</label>
+  </fields>
+  <fields>
+    <name>Applying_Employee__c</name>
+    <label>Empleado solicitante</label>
+  </fields>
+  <fields>
+    <name>Applying_Organization__c</name>
+    <relationshipLabel>Solicitudes de fondos</relationshipLabel>
+    <label>Organización solicitante</label>
+  </fields>
+  <fields>
+    <name>Awarded_Amount__c</name>
+    <label>Importe otorgado</label>
+  </fields>
+  <fields>
+    <name>Awarded_Date__c</name>
+    <label>Fecha de otorgamiento</label>
+  </fields>
+  <fields>
+    <name>Close_Date__c</name>
+    <label>Fecha de cierre</label>
+  </fields>
+  <fields>
+    <name>Closed_reason__c</name>
+    <label>Motivo de cierre</label>
+  </fields>
+  <fields>
+    <name>FundingProgram__c</name>
+    <relationshipLabel>Solicitudes de fondos</relationshipLabel>
+    <label>Programa de fondos</label>
+  </fields>
+  <fields>
+    <name>Geographical_Area_Served__c</name>
+    <label>Área geográfica servida</label>
+    <picklistValues>
+      <masterLabel>City</masterLabel>
+      <translation>Ciudad</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>State</masterLabel>
+      <translation>Estado/Provincia</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Region</masterLabel>
+      <translation>Región</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Country</masterLabel>
+      <translation>País</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Population_Served__c</name>
+    <label>Población servida</label>
+    <picklistValues>
+      <masterLabel>Adults</masterLabel>
+      <translation>Adultos</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Below Poverty level</masterLabel>
+      <translation>Por debajo de umbral de pobreza</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Caregivers</masterLabel>
+      <translation>Cuidadores</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Children and Youth</masterLabel>
+      <translation>Niños y jóvenes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Economically Disadvantaged People</masterLabel>
+      <translation>Personas desfavorecidas económicamente</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Ethnic and racial groups</masterLabel>
+      <translation>Grupos étnicos y raciales</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Families</masterLabel>
+      <translation>Familias</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Heterosexuals</masterLabel>
+      <translation>Heterosexuales</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Homeless</masterLabel>
+      <translation>Sin hogar</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Immigrants and Refugees</masterLabel>
+      <translation>Inmigrantes y refugiados</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Incarcerated People</masterLabel>
+      <translation>Personas reclusas</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>LGBTQ</masterLabel>
+      <translation>LGTBI</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Men</masterLabel>
+      <translation>Hombres</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Disabilities</masterLabel>
+      <translation>Personas con discapacidades</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Diseases and Illnesses</masterLabel>
+      <translation>Personas con enfermedades y dolencias</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Religious Groups</masterLabel>
+      <translation>Grupos religiosos</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Veteran</masterLabel>
+      <translation>Veterano</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Victims and Oppressed People</masterLabel>
+      <translation>Víctimas y personas oprimidas</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Women</masterLabel>
+      <translation>Mujeres</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Youth at Risk</masterLabel>
+      <translation>Jóvenes en riesgo</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Recommended_Amount__c</name>
+    <label>Importe recomendado</label>
+  </fields>
+  <fields>
+    <name>Requested_Amount__c</name>
+    <label>Importe solicitado</label>
+  </fields>
+  <fields>
+    <name>Requested_For__c</name>
+    <label>Solicitado para</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Estado</label>
+    <picklistValues>
+      <masterLabel>Invited</masterLabel>
+      <translation>Invitado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Submitted</masterLabel>
+      <translation>Presentado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In progress</masterLabel>
+      <translation>En curso</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Review</masterLabel>
+      <translation>En revisión</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Reviewed</masterLabel>
+      <translation>Revisado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Awarded</masterLabel>
+      <translation>Otorgado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Fully Disbursed</masterLabel>
+      <translation>Desembolsado al completo</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Closed</masterLabel>
+      <translation>Cerrado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>Rechazado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Withdrawn</masterLabel>
+      <translation>Retirado</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Term_End_Date__c</name>
+    <label>Fecha de finalización del plazo</label>
+  </fields>
+  <fields>
+    <name>Term_Start_Date__c</name>
+    <label>Fecha de inicio del plazo</label>
+  </fields>
+  <fields>
+    <name>Terms__c</name>
+    <label>Plazos</label>
+  </fields>
+  <fields>
+    <name>Total_Cancelled__c</name>
+    <label>Total cancelado</label>
+  </fields>
+  <fields>
+    <name>Total_Disbursed__c</name>
+    <label>Desembolsos pagados</label>
+  </fields>
+  <fields>
+    <name>Total_Remaining__c</name>
+    <label>Disponible para desembolso</label>
+  </fields>
+  <fields>
+    <name>Unpaid_Disbursements__c</name>
+    <label>Desembolsos no pagados</label>
+  </fields>
+  <layouts>
+    <layout>Funding Request Layout</layout>
+    <sections>
+      <label>Propósito</label>
+      <section>Purpose</section>
+    </sections>
+    <sections>
+      <label>Solicitante</label>
+      <section>Applicant</section>
+    </sections>
+    <sections>
+      <label>Información de otorgamiento</label>
+      <section>Award Information</section>
+    </sections>
+    <sections>
+      <label>Plazos</label>
+      <section>Terms</section>
+    </sections>
+    <sections>
+      <label>Información de desembolso</label>
+      <section>Disbursement Information</section>
+    </sections>
+    <sections>
+      <label>Vínculos personalizados</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Nombre de solicitud de fondos</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Nombre de solicitud de fondos</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Solicitud de fondos</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Solicitudes de fondos</value>
+  </caseValues>
+</CustomObjectTranslation>
