@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>disbursementsCreate_ScheduleDisbursements</name>
+        <label>Auszahlungen planen</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FundingRequestInformation</name>
+        <label>Informationen zur Finanzierungsanfrage</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_CalculateDisbursements</name>
+        <label>Auszahlungen berechnen</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NumberOfDisbursements</name>
+        <label>Anzahl der Auszahlungen</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FirstDate</name>
+        <label>Erstes Datum</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_Interval</name>
+        <label>Intervall</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType</name>
+        <label>Zeitraum</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Week</name>
+        <label>Woche</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Month</name>
+        <label>Monat</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Year</name>
+        <label>Jahr</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NoFundsRemaining</name>
+        <label>Es sind nicht genügend Mittel vorhanden, um Auszahlungen zu erstellen.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_PaymentsExceedFunds</name>
+        <label>Die Höhe der Zahlungen darf die verfügbaren Mittel nicht überschreiten.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_SavedMessage</name>
+        <label>Auszahlung erfolgreich gespeichert.</label>
+    </customLabels>
+    <customLabels>
+        <name>Error</name>
+        <label>Fehler</label>
+    </customLabels>
+    <customLabels>
+        <name>Save</name>
+        <label>Speichern</label>
+    </customLabels>
+    <customLabels>
+        <name>Cancel</name>
+        <label>Abbrechen</label>
+    </customLabels>
+    <customLabels>
+        <name>Calculate</name>
+        <label>Berechnen</label>
+    </customLabels>
+    <reportTypes>
+        <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
+        <label>Finanzierungsprogramme mit Finanzierungsanfragen mit Auszahlungen</label>
+        <sections>
+            <label>Finanzierungsprogramme</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Finanzierungsanfragen</label>
+            <name>Funding Requests</name>
+        </sections>
+        <sections>
+            <label>Auszahlungen</label>
+            <name>Disbursements</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
+        <label>Finanzierungsanfragen m. Finanzierungsprogrammen m. übergeordnetem Prog.</label>
+        <sections>
+            <label>Finanzierungsprogramme</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Untergeordnete Finanzierungsprogramme</label>
+            <name>Subordinate Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Finanzierungsanfragen</label>
+            <name>Funding Requests</name>
+        </sections>
+    </reportTypes>
+    <customApplications>
+        <name>Outbound_Funds</name>
+        <label>Outbound Funds</label>
+    </customApplications>
+    <quickActions>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Rolle für Finanzierungsanfragen erstellen</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Auszahlungsinformationen</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Create_Bulk_Disbursements</name>
+        <label>Auszahlungen erstellen</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Gesamtbeträge des Programms</label>
+    </quickActions>
+</Translations>

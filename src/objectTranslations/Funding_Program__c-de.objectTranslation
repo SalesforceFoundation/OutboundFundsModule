@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Description__c</name>
+    <label>Beschreibung</label>
+  </fields>
+  <fields>
+    <name>End_Date__c</name>
+    <label>Enddatum</label>
+  </fields>
+  <fields>
+    <name>Funding_Program_Manager__c</name>
+    <help>Diese Person ist der Verwalter/Leiter/Manager des Finanzierungsprogramms und häufig auch für die endgültige Genehmigung von Finanzierungsanfragen zuständig.</help>
+    <label>Manager des Finanzierungsprogramms</label>
+  </fields>
+  <fields>
+    <name>Parent_Funding_Program__c</name>
+    <relationshipLabel>Untergeordnete Finanzierungsprogramme</relationshipLabel>
+    <label>Übergeordnetes Finanzierungsprogramm</label>
+  </fields>
+  <fields>
+    <name>Start_Date__c</name>
+    <label>Startdatum</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Status</label>
+    <picklistValues>
+      <masterLabel>Planned</masterLabel>
+      <translation>Geplant</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In progress</masterLabel>
+      <translation>In Bearbeitung</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Completed</masterLabel>
+      <translation>Abgeschlossen</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Aborted</masterLabel>
+      <translation>Abgebrochen</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Top_Level__c</name>
+    <help>Aktivieren Sie diese Option, wenn sich das Finanzierungsprogramm auf der obersten Ebene einer Programmhierarchie befindet.</help>
+    <label>Oberste Ebene</label>
+  </fields>
+  <fields>
+    <name>Total_Program_Amount__c</name>
+    <label>Gesamtbetrag des Programms</label>
+  </fields>
+  <layouts>
+    <layout>Funding Program Layout</layout>
+    <sections>
+      <label>Beschreibung</label>
+      <section>Description</section>
+    </sections>
+    <sections>
+      <label>Gesamtbeträge des Programms</label>
+      <section>Program Totals</section>
+    </sections>
+    <sections>
+      <label>Benutzerdefinierte Links</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Name des Finanzierungsprogramms</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Name des Finanzierungsprogramms</label>
+  </standardFields>
+  <gender>Neuter</gender>
+  <caseValues>
+    <plural>false</plural>
+    <caseType>Nominative</caseType>
+    <value>Finanzierungsprogramm</value>
+  </caseValues>
+  <caseValues>
+    <plural>false</plural>
+    <caseType>Accusative</caseType>
+    <value>Finanzierungsprogramm</value>
+  </caseValues>
+  <caseValues>
+    <plural>false</plural>
+    <caseType>Dative</caseType>
+    <value>Finanzierungsprogramm</value>
+  </caseValues>
+  <caseValues>
+    <plural>false</plural>
+    <caseType>Genitive</caseType>
+    <value>Finanzierungsprogramms</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <caseType>Nominative</caseType>
+    <value>Finanzierungsprogramme</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <caseType>Accusative</caseType>
+    <value>Finanzierungsprogramme</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <caseType>Dative</caseType>
+    <value>Finanzierungsprogrammen</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <caseType>Genitive</caseType>
+    <value>Finanzierungsprogramme</value>
+  </caseValues>
+</CustomObjectTranslation>
