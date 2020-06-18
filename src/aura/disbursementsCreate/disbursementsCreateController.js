@@ -8,13 +8,13 @@
     },
 
     handleRowChange: function (cmp, event, helper) {
-        var draftValues = event.getParam('draftValues');
+        var draftValues = event.getParam("draftValues");
 
         // Edits to be saved immediately to the in-memory disbursement
         helper.setDispursementProperty(cmp, draftValues[0]);
 
         // Since we live edit the pending disbursements, we'll clear the drafts
-        cmp.find('disbursementTable').set('v.draftValues', null);
+        cmp.find("disbursementTable").set("v.draftValues", null);
     },
 
     handleSave: function (cmp, event, helper) {
@@ -27,6 +27,5 @@
 
     handleCancel: function () {
         $A.get("e.force:closeQuickAction").fire();
-    },
-
-})
+    }
+});
