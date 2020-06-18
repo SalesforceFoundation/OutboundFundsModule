@@ -88,6 +88,39 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Disbursement__c-de</members>
+        <members>Disbursement__c-en_US</members>
+        <members>Disbursement__c-es</members>
+        <members>Disbursement__c-fr</members>
+        <members>Disbursement__c-ja</members>
+        <members>Disbursement__c-nl_NL</members>
+        <members>Funding_Program__c-de</members>
+        <members>Funding_Program__c-en_US</members>
+        <members>Funding_Program__c-es</members>
+        <members>Funding_Program__c-fr</members>
+        <members>Funding_Program__c-ja</members>
+        <members>Funding_Program__c-nl_NL</members>
+        <members>Funding_Request_Role__c-de</members>
+        <members>Funding_Request_Role__c-en_US</members>
+        <members>Funding_Request_Role__c-es</members>
+        <members>Funding_Request_Role__c-fr</members>
+        <members>Funding_Request_Role__c-ja</members>
+        <members>Funding_Request_Role__c-nl_NL</members>
+        <members>Funding_Request__c-de</members>
+        <members>Funding_Request__c-en_US</members>
+        <members>Funding_Request__c-es</members>
+        <members>Funding_Request__c-fr</members>
+        <members>Funding_Request__c-ja</members>
+        <members>Funding_Request__c-nl_NL</members>
+        <members>Requirement__c-de</members>
+        <members>Requirement__c-en_US</members>
+        <members>Requirement__c-es</members>
+        <members>Requirement__c-fr</members>
+        <members>Requirement__c-ja</members>
+        <members>Requirement__c-nl_NL</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
         <members>Funding_Program__c</members>
         <members>Funding_Request__c</members>
         <members>Requirement__c</members>
@@ -152,5 +185,13 @@
         <members>Funding_Requests_w_Funding_Programs_w_Parent_Progr</members>
         <name>ReportType</name>
     </types>
-    <version>42.0</version>
+    <types>
+        <members>de</members>
+        <members>es</members>
+        <members>fr</members>
+        <members>ja</members>
+        <members>nl_NL</members>
+        <name>Translations</name>
+    </types>
+    <version>48.0</version>
 </Package>
