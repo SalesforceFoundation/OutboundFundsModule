@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "Outbound Funds Module インストーラをご利用いただきありがとうございます。\r\n\r\nOutbound Funds Module では、資金調達要求と出資金を容易に管理および追跡するためのツールが提供されます。\r\n\r\n*重要*: Salesforce は、本番組織にアップグレードを直接インストールすることを推奨しません。まず、Outbound Funds Module を無料の Sandbox 環境または Developer Edition 組織にインストールしてください。\r\n\r\nOutbound Funds Module のインストールが完了したら、使用を開始するための各種資料を参照してください。\r\n\r\n* [Outbound Funds Module ドキュメント](https://powerofus.force.com/s/article/OBF-Documentation)\r\n\r\nご質問がある場合は、Power of Us Hub の [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにご参加ください。",
+            "message": "Outbound Funds Module インストーラをご利用いただきありがとうございます。\r\n\r\nOutbound Funds Module では、資金調達要求と出資金を容易に管理および追跡するためのツールが提供されます。\r\n\r\n*重要*: Salesforce は、本番組織にアップグレードを直接インストールすることを推奨しません。まず、Outbound Funds Module を無料の Sandbox 環境または Developer Edition 組織にインストールしてください。\r\n\r\nOutbound Funds Module のインストールが完了したら、使用を開始するための各種資料を参照してください。\r\n\r\n* [Outbound Funds Module ドキュメント](https://powerofus.force.com/s/article/OFM-Documentation)\r\n\r\nご質問がある場合は、Power of Us Hub の [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにご参加ください。",
             "description": "shown on product detail page (markdown)"
         },
         "error_message": {
