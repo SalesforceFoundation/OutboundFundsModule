@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
   <fields>
     <name>Application_Date__c</name>
-    <label>Bewerbungsdatum</label>
+    <label>Antragsdatum</label>
   </fields>
   <fields>
     <name>Applying_Contact__c</name>
@@ -48,7 +48,7 @@
     </picklistValues>
     <picklistValues>
       <masterLabel>State</masterLabel>
-      <translation>Land</translation>
+      <translation>Bundesland</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Region</masterLabel>
