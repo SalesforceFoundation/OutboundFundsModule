@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Assigned__c</name>
+    <label>Toegewezen</label>
+  </fields>
+  <fields>
+    <name>Completed_Date__c</name>
+    <label>Datum van voltooiing</label>
+  </fields>
+  <fields>
+    <name>Disbursement__c</name>
+    <label>Uitbetaling</label>
+  </fields>
+  <fields>
+    <name>Due_Date__c</name>
+    <label>Vervaldatum</label>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <label>Financieringsaanvraag</label>
+  </fields>
+  <fields>
+    <name>Primary_Contact__c</name>
+    <label>Primaire contactpersoon</label>
+  </fields>
+  <fields>
+    <name>Requirements__c</name>
+    <label>Vereisten</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Status</label>
+    <picklistValues>
+      <masterLabel>Open</masterLabel>
+      <translation>Open</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Progress</masterLabel>
+      <translation>In uitvoering</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Delayed</masterLabel>
+      <translation>Vertraagd</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Complete</masterLabel>
+      <translation>Voltooid</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Accepted</masterLabel>
+      <translation>Geaccepteerd</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>Geweigerd</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Abandoned</masterLabel>
+      <translation>Verlaten</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <label>Type</label>
+    <picklistValues>
+      <masterLabel>Letter of Intent</masterLabel>
+      <translation>Intentieverklaring</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Preliminary Application</masterLabel>
+      <translation>Voorlopige aanvraag</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Final Application</masterLabel>
+      <translation>Eindaanvraag</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Review</masterLabel>
+      <translation>Beoordeling</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Panel Review</masterLabel>
+      <translation>Panelbeoordeling</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Contract</masterLabel>
+      <translation>Contract</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Report</masterLabel>
+      <translation>Rapport</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Outcome</masterLabel>
+      <translation>Resultaat</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Requirement Layout</layout>
+    <sections>
+      <label>Status</label>
+      <section>Status</section>
+    </sections>
+    <sections>
+      <label>Vereisten</label>
+      <section>Requirements</section>
+    </sections>
+    <sections>
+      <label>Aangepaste koppelingen</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Naam van vereiste</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Naam van vereiste</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Vereiste</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Vereisten</value>
+  </caseValues>
+</CustomObjectTranslation>

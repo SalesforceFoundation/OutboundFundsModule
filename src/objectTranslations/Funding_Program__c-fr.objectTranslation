@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Description__c</name>
+    <label>Description</label>
+  </fields>
+  <fields>
+    <name>End_Date__c</name>
+    <label>Date de fin</label>
+  </fields>
+  <fields>
+    <name>Funding_Program_Manager__c</name>
+    <help>Cette personne est superviseur, directeur ou responsable du Programme de subvention. Il est aussi souvent l'approbateur final des demandes de subvention.</help>
+    <label>Gestionnaire du programme de subvention</label>
+  </fields>
+  <fields>
+    <name>Parent_Funding_Program__c</name>
+    <relationshipLabel>Programmes de subvention subordonnés</relationshipLabel>
+    <label>Programme de subvention parent</label>
+  </fields>
+  <fields>
+    <name>Start_Date__c</name>
+    <label>Date de début</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Statut</label>
+    <picklistValues>
+      <masterLabel>Planned</masterLabel>
+      <translation>Planifié</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In progress</masterLabel>
+      <translation>En cours</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Completed</masterLabel>
+      <translation>Terminé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Aborted</masterLabel>
+      <translation>Abandonné</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Top_Level__c</name>
+    <help>Vérifiez si ce programme de subvention figure en haut de la hiérarchie d'un programme.</help>
+    <label>Niveau supérieur</label>
+  </fields>
+  <fields>
+    <name>Total_Program_Amount__c</name>
+    <label>Montant total du programme</label>
+  </fields>
+  <layouts>
+    <layout>Funding Program Layout</layout>
+    <sections>
+      <label>Description</label>
+      <section>Description</section>
+    </sections>
+    <sections>
+      <label>Totaux du programme</label>
+      <section>Program Totals</section>
+    </sections>
+    <sections>
+      <label>Liens personnalisés</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Nom du programme de subvention</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Nom du programme de subvention</label>
+  </standardFields>
+  <gender>Masculine</gender>
+  <startsWith>Consonant</startsWith>
+  <caseValues>
+    <plural>false</plural>
+    <value>Programme de subvention</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Programmes de subvention</value>
+  </caseValues>
+</CustomObjectTranslation>

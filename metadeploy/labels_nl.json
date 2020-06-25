@@ -1,0 +1,44 @@
+{
+    "product": {
+        "title": {
+            "message": "Outbound Funds Module",
+            "description": "name of product"
+        },
+        "short_description": {
+            "message": "Volg en beheer programma's voor uitgaande financiering.",
+            "description": "tagline of product"
+        },
+        "description": {
+            "message": "Welkom bij het installatieprogramma voor de Outbound Funds Module.\r\n\r\nMet de Outbound Funds Module beschikt u over alles wat u nodig hebt om financieringsaanvragen en uitgaand geld eenvoudig te beheren en volgen.\r\n\r\n*BELANGRIJK*: Salesforce beveelt niet aan om upgrades rechtstreeks in productieorganisaties te installeren. Installeer Outbound Funds Module in plaats daarvan eerst in een van uw gratis sandboxomgevingen of in een ontwikkelorganisatie.\r\n\r\nWanneer u de Outbound Funds Module hebt geïnstalleerd, bekijkt u de resources in onze documentatie voordat u aan de slag gaat:\r\n\r\n* [Outbound Funds Module-documentatie](https://powerofus.force.com/s/article/OFM-Documentation)\r\n\r\nVragen? Word lid van de [Outbound Funds Module]-community (https://powerofus.force.com/s/group/0F980000000CvlMCAS) in de Power of Us Hub.",
+            "description": "shown on product detail page (markdown)"
+        },
+        "error_message": {
+            "message": "Ga voor hulp bij deze fout naar [help.salesforce.com](https://help.salesforce.com/), ga naar Ondersteuning en services en maak een ticket voor technische ondersteuning aan bij Salesforce. Vermeld ‘Outbound Funds Module’ in de onderwerpregel en neem in uw opmerking de hier getoonde installatiekoppeling op.",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Outbound Funds Module installeren",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "Hiermee installeert u de Outbound Funds Module in uw organisatie.",
+            "description": "shown before user starts installation (markdown)"
+        },
+        "post_install_message": {
+            "message": "Bedankt voor het installeren van de Outbound Funds Module. Ga naar de [Outbound Funds Module]-community (https://powerofus.force.com/s/group/0F980000000CvlMCAS) in de Power of Us Hub als u vragen hebt over Outbound Funds Module.",
+            "description": "shown after successful installation (markdown)"
+        },
+        "error_message": {
+            "message": "Ga voor hulp bij deze fout naar [help.salesforce.com](https://help.salesforce.com/), ga naar Ondersteuning en services en maak een ticket voor technische ondersteuning aan bij Salesforce. Vermeld ‘Outbound Funds Module’ in de onderwerpregel en neem in uw opmerking de hier getoonde installatiekoppeling op.",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "steps": {
+        "Install {product} {version}": {
+            "message": "{product} {version} installeren",
+            "description": "title of installation step"
+        }
+    }
+}

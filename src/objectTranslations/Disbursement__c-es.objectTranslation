@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Amount__c</name>
+    <label>Importe</label>
+  </fields>
+  <fields>
+    <name>Disbursement_Date__c</name>
+    <label>Fecha de desembolso</label>
+  </fields>
+  <fields>
+    <name>Disbursement_Method__c</name>
+    <label>Método de desembolso</label>
+    <picklistValues>
+      <masterLabel>Cash</masterLabel>
+      <translation>Efectivo</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Check</masterLabel>
+      <translation>Cheque</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>EFT</masterLabel>
+      <translation>Transferencia electrónica</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Funding_Request__c</name>
+    <relationshipLabel>Desembolsos</relationshipLabel>
+    <label>Solicitud de fondos</label>
+  </fields>
+  <fields>
+    <name>Scheduled_Date__c</name>
+    <label>Fecha programada</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Estado</label>
+    <picklistValues>
+      <masterLabel>Scheduled</masterLabel>
+      <translation>Programado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Pending Approval</masterLabel>
+      <translation>Pendiente de aprobación</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Approved</masterLabel>
+      <translation>Aprobado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Paid</masterLabel>
+      <translation>Pagado</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Cancelled</masterLabel>
+      <translation>Cancelado</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <label>Tipo</label>
+    <picklistValues>
+      <masterLabel>Initial</masterLabel>
+      <translation>Inicial</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Interim</masterLabel>
+      <translation>Interim</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Amendment</masterLabel>
+      <translation>Corrección</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Final</masterLabel>
+      <translation>Final</translation>
+    </picklistValues>
+  </fields>
+  <layouts>
+    <layout>Disbursement Layout</layout>
+    <sections>
+      <label>Vínculos personalizados</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Desembolso</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Desembolso</label>
+  </standardFields>
+  <gender>Masculine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Desembolso</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Desembolsos</value>
+  </caseValues>
+</CustomObjectTranslation>

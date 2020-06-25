@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>disbursementsCreate_ScheduleDisbursements</name>
+        <label>Planifier les versements</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FundingRequestInformation</name>
+        <label>Informations sur la demande de subvention</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_CalculateDisbursements</name>
+        <label>Calculer les versements</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NumberOfDisbursements</name>
+        <label>Nombre de versements</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FirstDate</name>
+        <label>Date initiale</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_Interval</name>
+        <label>Intervalle</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType</name>
+        <label>Périodicité</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Week</name>
+        <label>Semaine</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Month</name>
+        <label>Mois</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Year</name>
+        <label>Année</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NoFundsRemaining</name>
+        <label>Les fonds restants sont insuffisants pour créer des versements.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_PaymentsExceedFunds</name>
+        <label>Le montant des paiements ne peut pas dépasser les fonds disponibles.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_SavedMessage</name>
+        <label>Versement enregistré avec succès.</label>
+    </customLabels>
+    <customLabels>
+        <name>Error</name>
+        <label>Erreur</label>
+    </customLabels>
+    <customLabels>
+        <name>Save</name>
+        <label>Enregistrer</label>
+    </customLabels>
+    <customLabels>
+        <name>Cancel</name>
+        <label>Annuler</label>
+    </customLabels>
+    <customLabels>
+        <name>Calculate</name>
+        <label>Calculer</label>
+    </customLabels>
+    <reportTypes>
+        <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
+        <label>Programmes de subvention avec des demandes de subvention avec des versements</label>
+        <sections>
+            <label>Programmes de subvention</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Demandes de subvention</label>
+            <name>Funding Requests</name>
+        </sections>
+        <sections>
+            <label>Versements</label>
+            <name>Disbursements</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
+        <label>Demandes de subvention avec des programmes de subvention avec un programme parent</label>
+        <sections>
+            <label>Programmes de subvention</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Programmes de subvention subordonnés</label>
+            <name>Subordinate Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Demandes de subvention</label>
+            <name>Funding Requests</name>
+        </sections>
+    </reportTypes>
+    <customApplications>
+        <name>Outbound_Funds</name>
+        <label>Fonds sortants</label>
+    </customApplications>
+    <quickActions>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Créer un rôle de demande de subvention</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Informations sur le versement</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Create_Bulk_Disbursements</name>
+        <label>Créer des versements</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Totaux du programme</label>
+    </quickActions>
+</Translations>

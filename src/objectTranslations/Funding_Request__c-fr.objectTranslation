@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Application_Date__c</name>
+    <label>Date de la demande</label>
+  </fields>
+  <fields>
+    <name>Applying_Contact__c</name>
+    <relationshipLabel>Demandes de subvention</relationshipLabel>
+    <label>Contact demandeur</label>
+  </fields>
+  <fields>
+    <name>Applying_Employee__c</name>
+    <label>Employé demandeur</label>
+  </fields>
+  <fields>
+    <name>Applying_Organization__c</name>
+    <relationshipLabel>Demandes de subvention</relationshipLabel>
+    <label>Organisation demandeur</label>
+  </fields>
+  <fields>
+    <name>Awarded_Amount__c</name>
+    <label>Montant attribué</label>
+  </fields>
+  <fields>
+    <name>Awarded_Date__c</name>
+    <label>Date d'attribution</label>
+  </fields>
+  <fields>
+    <name>Close_Date__c</name>
+    <label>Date de fermeture</label>
+  </fields>
+  <fields>
+    <name>Closed_reason__c</name>
+    <label>Motif de fermeture</label>
+  </fields>
+  <fields>
+    <name>FundingProgram__c</name>
+    <relationshipLabel>Demandes de subvention</relationshipLabel>
+    <label>Programme de subvention</label>
+  </fields>
+  <fields>
+    <name>Geographical_Area_Served__c</name>
+    <label>Zone géographique desservie</label>
+    <picklistValues>
+      <masterLabel>City</masterLabel>
+      <translation>Ville</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>State</masterLabel>
+      <translation>Département/division</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Region</masterLabel>
+      <translation>Région/province</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Country</masterLabel>
+      <translation>Pays</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Population_Served__c</name>
+    <label>Population desservie</label>
+    <picklistValues>
+      <masterLabel>Adults</masterLabel>
+      <translation>Adultes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Below Poverty level</masterLabel>
+      <translation>Sous le seuil de pauvreté</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Caregivers</masterLabel>
+      <translation>Personnes soignantes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Children and Youth</masterLabel>
+      <translation>Enfants et jeunes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Economically Disadvantaged People</masterLabel>
+      <translation>Personnes économiquement défavorisées</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Ethnic and racial groups</masterLabel>
+      <translation>Groupes ethniques</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Families</masterLabel>
+      <translation>Familles</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Heterosexuals</masterLabel>
+      <translation>Personnes hétérosexuelles</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Homeless</masterLabel>
+      <translation>Personnes sans-abri</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Immigrants and Refugees</masterLabel>
+      <translation>Émigrés et réfugiés</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Incarcerated People</masterLabel>
+      <translation>Personnes incarcérées</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>LGBTQ</masterLabel>
+      <translation>LGBTQ</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Men</masterLabel>
+      <translation>Hommes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Disabilities</masterLabel>
+      <translation>Personnes handicapées</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>People with Diseases and Illnesses</masterLabel>
+      <translation>Personnes atteintes d'affections et de maladies</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Religious Groups</masterLabel>
+      <translation>Groupes religieux</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Veteran</masterLabel>
+      <translation>Vétérans</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Victims and Oppressed People</masterLabel>
+      <translation>Victimes et personnes opprimées</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Women</masterLabel>
+      <translation>Femmes</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Youth at Risk</masterLabel>
+      <translation>Jeunes en danger</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Recommended_Amount__c</name>
+    <label>Montant recommandé</label>
+  </fields>
+  <fields>
+    <name>Requested_Amount__c</name>
+    <label>Montant demandé</label>
+  </fields>
+  <fields>
+    <name>Requested_For__c</name>
+    <label>Demandé pour</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <label>Statut</label>
+    <picklistValues>
+      <masterLabel>Invited</masterLabel>
+      <translation>Invité</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Submitted</masterLabel>
+      <translation>Soumis</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In progress</masterLabel>
+      <translation>En cours</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>In Review</masterLabel>
+      <translation>Révision en cours</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Reviewed</masterLabel>
+      <translation>Révisé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Awarded</masterLabel>
+      <translation>Attribué</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Fully Disbursed</masterLabel>
+      <translation>Entièrement versé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Closed</masterLabel>
+      <translation>Fermé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Rejected</masterLabel>
+      <translation>Refusé</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Withdrawn</masterLabel>
+      <translation>Retiré</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Term_End_Date__c</name>
+    <label>Date de fin de la période</label>
+  </fields>
+  <fields>
+    <name>Term_Start_Date__c</name>
+    <label>Date de début de la période</label>
+  </fields>
+  <fields>
+    <name>Terms__c</name>
+    <label>Période</label>
+  </fields>
+  <fields>
+    <name>Total_Cancelled__c</name>
+    <label>Total annulé</label>
+  </fields>
+  <fields>
+    <name>Total_Disbursed__c</name>
+    <label>Versements réglés</label>
+  </fields>
+  <fields>
+    <name>Total_Remaining__c</name>
+    <label>Disponible pour versement</label>
+  </fields>
+  <fields>
+    <name>Unpaid_Disbursements__c</name>
+    <label>Versements non réglés</label>
+  </fields>
+  <layouts>
+    <layout>Funding Request Layout</layout>
+    <sections>
+      <label>Motif</label>
+      <section>Purpose</section>
+    </sections>
+    <sections>
+      <label>Demandeur</label>
+      <section>Applicant</section>
+    </sections>
+    <sections>
+      <label>Informations sur l'attribution</label>
+      <section>Award Information</section>
+    </sections>
+    <sections>
+      <label>Période</label>
+      <section>Terms</section>
+    </sections>
+    <sections>
+      <label>Informations sur le versement</label>
+      <section>Disbursement Information</section>
+    </sections>
+    <sections>
+      <label>Liens personnalisés</label>
+      <section>Custom Links</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Nom de la demande de subvention</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Nom de la demande de subvention</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <startsWith>Consonant</startsWith>
+  <caseValues>
+    <plural>false</plural>
+    <value>Demande de subvention</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Demandes de subvention</value>
+  </caseValues>
+</CustomObjectTranslation>

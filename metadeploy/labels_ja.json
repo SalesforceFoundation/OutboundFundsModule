@@ -1,0 +1,44 @@
+{
+    "product": {
+        "title": {
+            "message": "Outbound Funds Module",
+            "description": "name of product"
+        },
+        "short_description": {
+            "message": "出資プログラムを追跡および管理します。",
+            "description": "tagline of product"
+        },
+        "description": {
+            "message": "Outbound Funds Module インストーラをご利用いただきありがとうございます。\r\n\r\nOutbound Funds Module では、資金調達要求と出資金を容易に管理および追跡するためのツールが提供されます。\r\n\r\n*重要*: Salesforce は、本番組織にアップグレードを直接インストールすることを推奨しません。まず、Outbound Funds Module を無料の Sandbox 環境または Developer Edition 組織にインストールしてください。\r\n\r\nOutbound Funds Module のインストールが完了したら、使用を開始するための各種資料を参照してください。\r\n\r\n* [Outbound Funds Module ドキュメント](https://powerofus.force.com/s/article/OFM-Documentation)\r\n\r\nご質問がある場合は、Power of Us Hub の [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにご参加ください。",
+            "description": "shown on product detail page (markdown)"
+        },
+        "error_message": {
+            "message": "このエラーについて支援を受けるには、[help.salesforce.com](https://help.salesforce.com/) にアクセスし、[サポートとサービス] 領域を見つけて、Salesforce でテクニカルサポートのチケットを登録してください。件名行に「Outbound Funds Module」を含め、コメントにはここに表示されているインストールリンクを含めてください。",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Outbound Funds Module のインストール",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "これにより、組織に Outbound Funds Module がインストールされます。",
+            "description": "shown before user starts installation (markdown)"
+        },
+        "post_install_message": {
+            "message": "Outbound Funds Module をインストールしていただきありがとうございます。Outbound Funds Module に関するあらゆる質問については、Power of Us Hub の [Outbound Funds Module] (https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにアクセスしてください。",
+            "description": "shown after successful installation (markdown)"
+        },
+        "error_message": {
+            "message": "このエラーについて支援を受けるには、[help.salesforce.com](https://help.salesforce.com/) にアクセスし、[サポートとサービス] 領域を見つけて、Salesforce でテクニカルサポートのチケットを登録してください。件名行に「Outbound Funds Module」を含め、コメントにはここに表示されているインストールリンクを含めてください。",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "steps": {
+        "Install {product} {version}": {
+            "message": "{product} {version} のインストール",
+            "description": "title of installation step"
+        }
+    }
+}
