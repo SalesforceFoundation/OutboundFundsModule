@@ -7,6 +7,12 @@ project:
     git:
         repo_url: https://github.com/SalesforceFoundation/OutboundFunds
 
+sources:
+    bridge:
+        github: https://github.com/SalesforceFoundation/OutboundFundsNPSP
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+
 tasks:
     demo_data_delete:
         description: 'WARNING: Deletes all data in the objects specified in the objects option.'
@@ -49,6 +55,26 @@ flows:
             3:
                 task: load_dataset
 
+    customer_org:
+        steps:
+            1:
+                task: install_sfdo_base
+            2:
+                flow: install_prod_no_config
+            3:
+                task: bridge:install_managed
+                ui_options:
+                    is_required: False
+                checks:
+                    - when: "'npsp' not in tasks.get_installed_packages()"
+                      action: hide
+                when: "org_config.has_minimum_package_version('npsp', '1.0')"
+
+    install_npsp:
+        steps:
+            1:
+                flow: npsp:install_prod
+
 orgs:
     scratch:
         dev_namespaced:
@@ -74,17 +100,4 @@ plans:
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area, and log a technical support ticket with Salesforce. Include “Outbound Funds Module” in the subject line and include in your comment the installation link shown here."
         steps:
             1:
-                task: install_sfdo_base
-            2:
-                flow: install_prod_no_config
-            3:
-                task: install_managed
-                options:
-                    name: Outbound Funds (NPSP)
-                    namespace: outfundsnpspext
-                    version: 1.2
-                ui_options:
-                    is_required: False
-                checks:
-                    - when: "'npsp' not in tasks.get_installed_packages()"
-                      action: hide
+                flow: customer_org
