@@ -127,7 +127,7 @@
         <fullName>Identifier__c</fullName>
         <displayFormat>R-{0000000}</displayFormat>
         <externalId>false</externalId>
-        <label>Requirement Identifier</label>
+        <label>Identifier</label>
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>

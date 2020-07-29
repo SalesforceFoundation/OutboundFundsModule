@@ -201,7 +201,7 @@
         <fullName>Identifier__c</fullName>
         <displayFormat>FR-{000000}</displayFormat>
         <externalId>false</externalId>
-        <label>Application Identifier</label>
+        <label>Identifier</label>
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>
