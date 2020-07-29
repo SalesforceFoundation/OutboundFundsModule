@@ -198,6 +198,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Identifier__c</fullName>
+        <displayFormat>FR-{000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Application Identifier</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Population_Served__c</fullName>
         <externalId>false</externalId>
         <label>Population Served</label>

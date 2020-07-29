@@ -124,6 +124,14 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Identifier__c</fullName>
+        <displayFormat>R-{0000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Requirement Identifier</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Primary_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>

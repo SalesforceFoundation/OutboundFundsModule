@@ -56,6 +56,7 @@
         <members>Funding_Request__c.Closed_reason__c</members>
         <members>Funding_Request__c.FundingProgram__c</members>
         <members>Funding_Request__c.Geographical_Area_Served__c</members>
+        <members>Funding_Request__c.Identifier__c</members>
         <members>Funding_Request__c.Population_Served__c</members>
         <members>Funding_Request__c.Recommended_Amount__c</members>
         <members>Funding_Request__c.Requested_Amount__c</members>
@@ -73,6 +74,7 @@
         <members>Requirement__c.Disbursement__c</members>
         <members>Requirement__c.Due_Date__c</members>
         <members>Requirement__c.Funding_Request__c</members>
+        <members>Requirement__c.Identifier__c</members>
         <members>Requirement__c.Primary_Contact__c</members>
         <members>Requirement__c.Requirements__c</members>
         <members>Requirement__c.Status__c</members>
