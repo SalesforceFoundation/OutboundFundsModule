@@ -199,8 +199,10 @@
     </fields>
     <fields>
         <fullName>Identifier__c</fullName>
-        <displayFormat>FR-{000000}</displayFormat>
+        <description>A simple and unique identifying string for a funding request record</description>
+        <displayFormat>FR-{00000}</displayFormat>
         <externalId>false</externalId>
+        <inlineHelpText></inlineHelpText>
         <label>Identifier</label>
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
