@@ -138,7 +138,7 @@
     </labels>
     <labels>
         <fullName>Details</fullName>
-        <categories>CRM</categories>
+        <categories>Tabs</categories>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Details</shortDescription>
@@ -146,7 +146,7 @@
     </labels>
     <labels>
         <fullName>Program_Analysis</fullName>
-        <categories>CRM</categories>
+        <categories>Tabs</categories>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Program Analysis</shortDescription>
@@ -154,7 +154,7 @@
     </labels>
     <labels>
         <fullName>Funding_Requests</fullName>
-        <categories>CRM</categories>
+        <categories>Tabs</categories>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Funding Requests</shortDescription>
@@ -162,7 +162,7 @@
     </labels>
     <labels>
         <fullName>Requirements</fullName>
-        <categories>CRM</categories>
+        <categories>Tabs</categories>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Requirements</shortDescription>
@@ -170,7 +170,7 @@
     </labels>
     <labels>
         <fullName>Disbursements</fullName>
-        <categories>CRM</categories>
+        <categories>Tabs</categories>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Disbursements</shortDescription>
