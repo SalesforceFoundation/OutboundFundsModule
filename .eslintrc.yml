@@ -1,0 +1,30 @@
+env:
+    browser: true
+    es6: true
+extends:
+    - eslint:recommended
+    - prettier
+    - plugin:prettier/recommended
+    - "@salesforce/eslint-config-lwc/recommended"
+globals:
+    Atomics: readonly
+    SharedArrayBuffer: readonly
+parserOptions:
+    ecmaVersion: 2018
+    sourceType: module
+parser: babel-eslint
+plugins:
+    - prettier
+    - "@lwc/eslint-plugin-lwc"
+rules:
+    "prettier/prettier": error
+    "@lwc/lwc/no-deprecated": error
+    "@lwc/lwc/valid-api": error
+    "@lwc/lwc/valid-track": error
+    "@lwc/lwc/valid-wire": error
+    "@lwc/lwc/no-document-query": error
+    "@lwc/lwc/consistent-component-name": error
+    "@lwc/lwc/no-leading-uppercase-api-name": error
+    "@lwc/lwc/no-dupe-class-members": error
+    "@lwc/lwc/no-inner-html": error
+    "@lwc/lwc/no-async-operation": error

@@ -1,0 +1,11 @@
+{
+    "*.{cls,apex,js,html,md,yml,yaml,json}": [
+        "prettier --write"
+    ],
+    "*.js": [
+        "eslint"
+    ],
+    "yarn.lock": [
+        "lockfile-lint"
+    ]
+}

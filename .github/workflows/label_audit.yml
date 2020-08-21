@@ -1,0 +1,25 @@
+name: Label Audit
+on: [push]
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+      - name: Determine Python Version
+        id: python-version
+        run: |
+          echo "::set-output name=ver::$(python --version)"
+      - uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ runner.os }}-${{ steps.python-version.outputs.ver }}-${{ hashFiles('requirements.txt') }}
+      - name: Install Packages
+        run: |
+          python3 -m venv venv
+          venv/bin/pip install -r requirements.txt
+      - name: Label Audit
+        run: |
+          venv/bin/python scripts/label_audit.py

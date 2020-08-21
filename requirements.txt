@@ -1,0 +1,4 @@
+beautifulsoup4==4.8.1
+esprima==4.0.1
+soupsieve==1.9.5
+click==7.1.1
