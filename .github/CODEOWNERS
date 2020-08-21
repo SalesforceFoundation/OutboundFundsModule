@@ -5,4 +5,4 @@
 /cumulusci.yml        @SalesforceFoundation/release-engineering-reviewers
 /tasks/               @SalesforceFoundation/release-engineering-reviewers
 
-/.github
+/.github              @SalesforceFoundation/release-engineering-reviewers
