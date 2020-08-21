@@ -1,7 +1,7 @@
 project:
     name: OutboundFunds
     package:
-        name:  Outbound Funds (Core)
+        name: Outbound Funds (Core)
         namespace: outfunds
         api_version: "48.0"
     git:
@@ -15,7 +15,7 @@ sources:
 
 tasks:
     demo_data_delete:
-        description: 'WARNING: Deletes all data in the objects specified in the objects option.'
+        description: "WARNING: Deletes all data in the objects specified in the objects option."
         class_path: cumulusci.tasks.bulkdata.DeleteData
         options:
             objects:
@@ -43,7 +43,7 @@ tasks:
         options:
             path: robot/OutboundFunds/tests
             output: robot/OutboundFunds/doc/OutboundFunds_tests.html
-            
+
 flows:
     config_dev:
         steps:
