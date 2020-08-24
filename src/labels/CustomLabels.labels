@@ -136,4 +136,44 @@
         <shortDescription>Calculate</shortDescription>
         <value>Calculate</value>
     </labels>
+    <labels>
+        <fullName>Details</fullName>
+        <categories>Tabs</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>Program_Analysis</fullName>
+        <categories>Tabs</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Program Analysis</shortDescription>
+        <value>Program Analysis</value>
+    </labels>
+    <labels>
+        <fullName>Funding_Requests</fullName>
+        <categories>Tabs</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Funding Requests</shortDescription>
+        <value>Funding Requests</value>
+    </labels>
+    <labels>
+        <fullName>Requirements</fullName>
+        <categories>Tabs</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Requirements</shortDescription>
+        <value>Requirements</value>
+    </labels>
+    <labels>
+        <fullName>Disbursements</fullName>
+        <categories>Tabs</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Disbursements</shortDescription>
+        <value>Disbursements</value>
+    </labels>    
 </CustomLabels>
