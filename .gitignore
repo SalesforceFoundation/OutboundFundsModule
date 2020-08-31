@@ -21,3 +21,7 @@ output.xml
 report.html
 selenium-screenshot*.png
 .cci
+node_modules
+.python_hash
+.node_hash
+venv

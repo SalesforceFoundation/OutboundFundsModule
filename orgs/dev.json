@@ -1,35 +1,35 @@
 {
-  "orgName": "Outbound Funds - Dev Org",
-  "edition": "Developer",
-  "settings": {
-    "chatterSettings": {
-      "enableChatter": true
-    },
-    "apexSettings": {
-      "enableDisableParallelApexTesting": true
-    },
-    "enhancedNotesSettings": {
-      "enableEnhancedNotes": true
-    },
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
-    },
-    "mobileSettings": {
-      "enableS1EncryptedStoragePref2": false
-    },
-    "userManagementSettings": {
-      "enableEnhancedPermsetMgmt": true,
-      "enableEnhancedProfileMgmt": true,
-      "enableNewProfileUI": true
-    },
-    "languageSettings": {
-      "enableTranslationWorkbench": true
-    },
-    "securitySettings": {
-      "enableAdminLoginAsAnyUser": true,
-      "sessionSettings": {
-        "forceRelogin": false
-      }
+    "orgName": "Outbound Funds - Dev Org",
+    "edition": "Developer",
+    "settings": {
+        "chatterSettings": {
+            "enableChatter": true
+        },
+        "apexSettings": {
+            "enableDisableParallelApexTesting": true
+        },
+        "enhancedNotesSettings": {
+            "enableEnhancedNotes": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "userManagementSettings": {
+            "enableEnhancedPermsetMgmt": true,
+            "enableEnhancedProfileMgmt": true,
+            "enableNewProfileUI": true
+        },
+        "languageSettings": {
+            "enableTranslationWorkbench": true
+        },
+        "securitySettings": {
+            "enableAdminLoginAsAnyUser": true,
+            "sessionSettings": {
+                "forceRelogin": false
+            }
+        }
     }
-  }
 }

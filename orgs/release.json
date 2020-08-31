@@ -1,21 +1,21 @@
 {
-  "orgName": "Outbound Funds - Release Test Org",
-  "edition": "Enterprise",
-  "settings": {
-    "chatterSettings": {
-      "enableChatter": true
-    },
-    "apexSettings": {
-      "enableDisableParallelApexTesting": true
-    },
-    "enhancedNotesSettings": {
-      "enableEnhancedNotes": true
-    },
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
-    },
-    "languageSettings": {
-      "enableTranslationWorkbench": true
+    "orgName": "Outbound Funds - Release Test Org",
+    "edition": "Enterprise",
+    "settings": {
+        "chatterSettings": {
+            "enableChatter": true
+        },
+        "apexSettings": {
+            "enableDisableParallelApexTesting": true
+        },
+        "enhancedNotesSettings": {
+            "enableEnhancedNotes": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "languageSettings": {
+            "enableTranslationWorkbench": true
+        }
     }
-  }
 }

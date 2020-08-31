@@ -1,0 +1,28 @@
+# Development dependencies
+node_modules
+venv
+yarn.lock
+.cci
+.github
+.sfdx
+.vscode
+.pytest_cache
+
+# Ignore files
+.gitignore
+.prettierignore
+.eslintignore
+
+# Images
+*.png
+*.jpg
+
+# Files with no parser
+*.py
+*.robot
+*.pdf
+*.design
+
+# Filetypes to ignore
+*.sql
+*.xml

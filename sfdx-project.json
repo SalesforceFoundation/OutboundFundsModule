@@ -1,1 +1,5 @@
-{"sourceApiVersion": "48.0", "packageDirectories": [{"default": true, "path": "force-app"}], "namespace": "outfunds"}
+{
+    "sourceApiVersion": "48.0",
+    "packageDirectories": [{ "default": true, "path": "force-app" }],
+    "namespace": "outfunds"
+}
