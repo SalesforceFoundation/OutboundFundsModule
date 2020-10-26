@@ -44,5 +44,11 @@
             "message": "Install {product} {version}",
             "description": "title of installation step"
         }
+    },
+    "checks": {
+        "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again.": {
+            "message": "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again.",
+            "description": "shown if validation fails"
+        }
     }
 }
