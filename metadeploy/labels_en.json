@@ -49,6 +49,10 @@
         "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again.": {
             "message": "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again.",
             "description": "shown if validation fails"
+        },
+        "Please enable My Domain in your org prior to installing.": {
+            "message": "Please enable My Domain in your org prior to installing.",
+            "description": "shown if validation fails"
         }
     }
 }
