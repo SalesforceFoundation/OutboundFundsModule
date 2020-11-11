@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Funding_Program_Manager__c</name>
+    <help>Cette personne est superviseur, directeur ou responsable du Programme de subvention. Il est aussi souvent l&apos;approbateur final des demandes de subvention.</help>
+    <label>Gestionnaire du programme de subvention</label>
+</CustomFieldTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Funding Program Layout</layout>
+        <sections>
+            <label>Description</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Totaux du programme</label>
+            <section>Program Totals</section>
+        </sections>
+        <sections>
+            <label>Liens personnalisés</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nom du programme de subvention</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nom du programme de subvention</label>
+    </standardFields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+    <caseValues>
+        <plural>false</plural>
+        <value>Programme de subvention</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programmes de subvention</value>
+    </caseValues>
+</CustomObjectTranslation>

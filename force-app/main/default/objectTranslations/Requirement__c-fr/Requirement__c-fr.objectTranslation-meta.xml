@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Requirement Layout</layout>
+        <sections>
+            <label>Statut</label>
+            <section>Status</section>
+        </sections>
+        <sections>
+            <label>Dossier de demande</label>
+            <section>Requirements</section>
+        </sections>
+        <sections>
+            <label>Liens personnalisés</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nom du dossier de demande</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nom du dossier de demande</label>
+    </standardFields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+    <caseValues>
+        <plural>false</plural>
+        <value>Dossier de demande</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dossiers de demande</value>
+    </caseValues>
+</CustomObjectTranslation>

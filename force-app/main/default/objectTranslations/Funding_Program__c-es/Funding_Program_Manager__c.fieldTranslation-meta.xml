@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Funding_Program_Manager__c</name>
+    <help>Esta persona es el supervisor/director/gerente del Programa de fondos. A menudo también es el aprobador final de las Solicitudes de fondos.</help>
+    <label>Gerente de programa de fondos</label>
+</CustomFieldTranslation>

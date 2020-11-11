@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Role__c</name>
+    <label>役割</label>
+    <picklistValues>
+        <masterLabel>Grant Manager</masterLabel>
+        <translation>助成金マネージャ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Financial Manager</masterLabel>
+        <translation>財務マネージャ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Applicant</masterLabel>
+        <translation>申請者</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Funding Program Layout</layout>
+        <sections>
+            <label>Beschrijving</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Programmatotalen</label>
+            <section>Program Totals</section>
+        </sections>
+        <sections>
+            <label>Aangepaste koppelingen</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Naam financieringsprogramma</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Naam financieringsprogramma</label>
+    </standardFields>
+    <gender>Neuter</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Financieringsprogramma</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Financieringsprogramma&apos;s</value>
+    </caseValues>
+</CustomObjectTranslation>

@@ -1,53 +1,49 @@
 Accounts:
     sf_object: Account
-    table: Account
     fields:
-        Name: Name
+        - Name
 
 Contacts:
     sf_object: Contact
-    table: Contact
     fields:
-        Salutation: Salutation
-        FirstName: FirstName
-        LastName: LastName
-        Email: Email
-        Phone: Phone
-        Title: Title
+        - Salutation
+        - FirstName
+        - LastName
+        - Email
+        - Phone
+        - Title
     lookups:
         AccountId:
             table: Account
 
 Funding Programs:
     sf_object: Funding_Program__c
-    table: Funding_Program__c
     fields:
-        Name: Name
-        Description__c: Description__c
-        End_Date__c: End_Date__c
-        Start_Date__c: Start_Date__c
-        Status__c: Status__c
-        Total_Program_Amount__c: Total_Program_Amount__c
+        - Name
+        - Description__c
+        - End_Date__c
+        - Start_Date__c
+        - Status__c
+        - Total_Program_Amount__c
 
 Funding Requests:
     sf_object: Funding_Request__c
-    table: Funding_Request__c
     fields:
-        Name: Name
-        Application_Date__c: Application_Date__c
-        Awarded_Amount__c: Awarded_Amount__c
-        Awarded_Date__c: Awarded_Date__c
-        Close_Date__c: Close_Date__c
-        Closed_reason__c: Closed_reason__c
-        Geographical_Area_Served__c: Geographical_Area_Served__c
-        Population_Served__c: Population_Served__c
-        Recommended_Amount__c: Recommended_Amount__c
-        Requested_Amount__c: Requested_Amount__c
-        Requested_For__c: Requested_For__c
-        Status__c: Status__c
-        Term_End_Date__c: Term_End_Date__c
-        Term_Start_Date__c: Term_Start_Date__c
-        Terms__c: Terms__c
+        - Name
+        - Application_Date__c
+        - Awarded_Amount__c
+        - Awarded_Date__c
+        - Close_Date__c
+        - Closed_reason__c
+        - Geographical_Area_Served__c
+        - Population_Served__c
+        - Recommended_Amount__c
+        - Requested_Amount__c
+        - Requested_For__c
+        - Status__c
+        - Term_End_Date__c
+        - Term_Start_Date__c
+        - Terms__c
     lookups:
         Applying_Contact__c:
             table: Contact
@@ -58,28 +54,26 @@ Funding Requests:
 
 Disbursements:
     sf_object: Disbursement__c
-    table: Disbursement__c
     fields:
-        Amount__c: Amount__c
-        Disbursement_Date__c: Disbursement_Date__c
-        Disbursement_Method__c: Disbursement_Method__c
-        Scheduled_Date__c: Scheduled_Date__c
-        Status__c: Status__c
-        Type__c: Type__c
+        - Amount__c
+        - Disbursement_Date__c
+        - Disbursement_Method__c
+        - Scheduled_Date__c
+        - Status__c
+        - Type__c
     lookups:
         Funding_Request__c:
             table: Funding_Request__c
 
 Requirements:
     sf_object: Requirement__c
-    table: Requirement__c
     fields:
-        Name: Name
-        Completed_Date__c: Completed_Date__c
-        Due_Date__c: Due_Date__c
-        Requirements__c: Requirements__c
-        Status__c: Status__c
-        Type__c: Type__c
+        - Name
+        - Completed_Date__c
+        - Due_Date__c
+        - Requirements__c
+        - Status__c
+        - Type__c
     lookups:
         Disbursement__c:
             table: Disbursement__c

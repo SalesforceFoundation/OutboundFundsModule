@@ -1,5 +1,6 @@
 project:
     name: OutboundFunds
+    source_format: sfdx
     package:
         name: Outbound Funds (Core)
         namespace: outfunds

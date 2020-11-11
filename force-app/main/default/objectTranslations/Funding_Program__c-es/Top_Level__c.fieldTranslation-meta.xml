@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Top_Level__c</name>
+    <help>Comprueba si este Programa de fondos está en el nivel superior de una jerarquía de programas.</help>
+    <label>Nivel superior</label>
+</CustomFieldTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unpaid_Disbursements__c</fullName>
+    <description>The rollup of all disbursements that do not have a status  &quot;Paid&quot; or &quot;Cancelled&quot;</description>
+    <externalId>false</externalId>
+    <label>Unpaid Disbursements</label>
+    <summarizedField>Disbursement__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Disbursement__c.Status__c</field>
+        <operation>notEqual</operation>
+        <value>Paid, Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Disbursement__c.Funding_Request__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

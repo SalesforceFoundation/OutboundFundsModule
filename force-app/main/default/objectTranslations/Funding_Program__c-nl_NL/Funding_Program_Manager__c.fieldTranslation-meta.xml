@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Funding_Program_Manager__c</name>
+    <help>Deze persoon is de toezichthouder/leidinggevende/manager van het financieringsprogramma. Vaak is dit ook de persoon die financieringsaanvragen goedkeurt of afwijst.</help>
+    <label>Manager financieringsprogramma</label>
+</CustomFieldTranslation>

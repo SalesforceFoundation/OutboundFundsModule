@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Geographical_Area_Served__c</name>
+    <label>対象地域</label>
+    <picklistValues>
+        <masterLabel>City</masterLabel>
+        <translation>市区郡</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>State</masterLabel>
+        <translation>都道府県</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Region</masterLabel>
+        <translation>地域</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Country</masterLabel>
+        <translation>国</translation>
+    </picklistValues>
+</CustomFieldTranslation>

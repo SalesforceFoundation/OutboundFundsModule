@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Population_Served__c</name>
+    <label>対象者</label>
+    <picklistValues>
+        <masterLabel>Adults</masterLabel>
+        <translation>大人</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Below Poverty level</masterLabel>
+        <translation>貧困レベル以下</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Caregivers</masterLabel>
+        <translation>ケア担当者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Children and Youth</masterLabel>
+        <translation>子供および青年</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Economically Disadvantaged People</masterLabel>
+        <translation>経済的に恵まれない人</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ethnic and racial groups</masterLabel>
+        <translation>人種および民族</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Families</masterLabel>
+        <translation>家族</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heterosexuals</masterLabel>
+        <translation>異性愛者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Homeless</masterLabel>
+        <translation>ホームレス</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Immigrants and Refugees</masterLabel>
+        <translation>移民および難民</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incarcerated People</masterLabel>
+        <translation>収監者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LGBTQ</masterLabel>
+        <translation>LGBTQ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Men</masterLabel>
+        <translation>男性</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>People with Disabilities</masterLabel>
+        <translation>障害者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>People with Diseases and Illnesses</masterLabel>
+        <translation>疾患のある人</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Religious Groups</masterLabel>
+        <translation>宗教団体</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Veteran</masterLabel>
+        <translation>退役軍人</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Victims and Oppressed People</masterLabel>
+        <translation>犠牲者および抑圧された人</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Women</masterLabel>
+        <translation>女性</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Youth at Risk</masterLabel>
+        <translation>危険にさらされている青少年</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Funding Program Layout</layout>
+        <sections>
+            <label>説明</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>プログラム合計</label>
+            <section>Program Totals</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>資金調達プログラム名</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>資金調達プログラム名</label>
+    </standardFields>
+    <caseValues>
+        <plural>false</plural>
+        <value>資金調達プログラム</value>
+    </caseValues>
+</CustomObjectTranslation>

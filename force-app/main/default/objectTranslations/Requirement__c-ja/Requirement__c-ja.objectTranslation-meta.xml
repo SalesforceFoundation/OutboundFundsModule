@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Requirement Layout</layout>
+        <sections>
+            <label>状況</label>
+            <section>Status</section>
+        </sections>
+        <sections>
+            <label>助成金の提出書類要件</label>
+            <section>Requirements</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>要件名</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>要件名</label>
+    </standardFields>
+    <caseValues>
+        <plural>false</plural>
+        <value>要件</value>
+    </caseValues>
+</CustomObjectTranslation>
