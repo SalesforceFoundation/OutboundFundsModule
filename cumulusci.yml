@@ -15,9 +15,7 @@ sources:
         github: https://github.com/SalesforceFoundation/NPSP
 
 tasks:
-    demo_data_delete:
-        description: "WARNING: Deletes all data in the objects specified in the objects option."
-        class_path: cumulusci.tasks.bulkdata.DeleteData
+    delete_data:
         options:
             objects:
                 - Requirement__c
@@ -75,6 +73,8 @@ flows:
         steps:
             1:
                 flow: npsp:install_prod
+            2:
+                task: bridge:install_managed
 
 orgs:
     scratch:
