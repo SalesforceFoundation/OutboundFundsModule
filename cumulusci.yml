@@ -102,6 +102,9 @@ plans:
             - when: "not tasks.check_chatter_enabled()"
               action: error
               message: "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again."
+            - when: "'.my.' not in org_config.instance_url"
+              action: error
+              message: "Please enable My Domain in your org prior to installing."
         steps:
             1:
                 flow: customer_org
