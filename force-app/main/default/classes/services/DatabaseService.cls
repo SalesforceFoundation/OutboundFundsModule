@@ -3,12 +3,12 @@ public with sharing class DatabaseService {
         if (records == null || records.isEmpty()) {
             return new List<Database.DeleteResult>();
         }
-		
+
         // No OOTB System service to check for object-level access.
-		// Forcing the records parameter with type List<Sobject> (hopefully) forces a single SobjectType.
+        // Forcing the records parameter with type List<Sobject> (hopefully) forces a single SobjectType.
         final Schema.DescribeSObjectResult describe = records.getSObjectType()
             .getDescribe();
-        
+
         if (!describe.isDeletable()) {
             System.NoAccessException e = new System.NoAccessException();
             e.setMessage(System.Label.DatabaseService_NoDeleteAccessException);
@@ -37,14 +37,13 @@ public with sharing class DatabaseService {
         }
 
         return Database.update(records);
-    }  
+    }
 
-    
     public List<Database.SaveResult> insertRecordsEnforceFls(List<SObject> records) {
         if (records == null || records.isEmpty()) {
             return new List<Database.SaveResult>();
         }
-        
+
         // Security.stripInaccessible verifies object-level permissions.
         System.SObjectAccessDecision accessDecision = Security.stripInaccessible(
             System.AccessType.CREATABLE,
@@ -55,7 +54,9 @@ public with sharing class DatabaseService {
         // Enforce all field-level permissions by checking if any fields were removed in the accessDecision implying the user does not have the proper field-level permission for this operation.
         if (!accessDecision.getRemovedFields().isEmpty()) {
             System.NoAccessException e = new System.NoAccessException();
-            e.setMessage('Insert Exception. Remove fields: ' + accessDecision.getRemovedFields());
+            e.setMessage(
+                'Insert Exception. Remove fields: ' + accessDecision.getRemovedFields()
+            );
             throw e;
         }
 

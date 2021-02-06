@@ -34,11 +34,11 @@ public with sharing class disbursementsCreateController {
             newDispList.add(mapDisbursement(d));
         }
 
-        try{
+        try {
             DatabaseService databaseService = new DatabaseService();
             databaseService.insertRecordsEnforceFls(newDispList);
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

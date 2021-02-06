@@ -188,7 +188,7 @@
         var that = this;
         this.callServer(cmp, "c.saveDisbursements", params, function (r) {
             let userHasAccess = r;
-            if(userHasAccess){
+            if (userHasAccess) {
                 that.showToast(model.request.uiMessages.SavedMessage, "success", cmp);
                 // Clear these out after saved
                 cmp.set("v.model.disbursements", null);
@@ -196,16 +196,16 @@
                 // Refresh Record Page
                 $A.get("e.force:refreshView").fire();
                 $A.get("e.force:closeQuickAction").fire();
-            }else{
-                console.log('Entered here ****');
+            } else {
+                console.log("Entered here ****");
                 that.addMessage(
                     cmp,
                     model.request.uiMessages.Error,
                     "error",
-                    "*** ACCESS ERROR ***"  
+                    "*** ACCESS ERROR ***"
                 );
                 let saveButton = event.getSource();
-                saveButton.set('v.disabled',true);
+                saveButton.set("v.disabled", true);
             }
         });
     },
@@ -291,7 +291,7 @@
 
         this.validateTotal(cmp);
 
-        // 
+        //
     },
 
     validateAmountRemaining: function (cmp) {
