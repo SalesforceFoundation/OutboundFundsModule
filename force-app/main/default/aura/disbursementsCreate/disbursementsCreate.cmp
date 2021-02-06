@@ -215,7 +215,7 @@
                     label="{!$Label.c.Save}"
                     variant="brand"
                     onclick="{!c.handleSave}"
-                    disabled="{!empty(v.model.disbursements)}"
+                    
                 />
             </div>
         </aura:if>

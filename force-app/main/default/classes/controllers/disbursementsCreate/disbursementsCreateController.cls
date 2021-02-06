@@ -22,7 +22,7 @@ public with sharing class disbursementsCreateController {
      * @param dispListString - A serialized string which is a list of Disbursements
      */
     @AuraEnabled
-    public static void saveDisbursements(String dispListString) {
+    public static boolean saveDisbursements(String dispListString) {
         List<disbursementsCreateController.Disbursement> dList = (List<disbursementsCreateController.Disbursement>) JSON.deserialize(
             dispListString,
             List<disbursementsCreateController.Disbursement>.class
@@ -34,7 +34,13 @@ public with sharing class disbursementsCreateController {
             newDispList.add(mapDisbursement(d));
         }
 
-        insert newDispList;
+        try{
+            DatabaseService databaseService = new DatabaseService();
+            databaseService.insertRecordsEnforceFls(newDispList);
+            return true;
+        }catch(Exception e){
+            return false;
+        }
     }
 
     /**
