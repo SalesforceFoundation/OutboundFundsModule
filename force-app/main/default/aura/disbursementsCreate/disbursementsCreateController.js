@@ -1,6 +1,5 @@
 ({
     doInit: function (cmp, event, helper) {
-        helper.setDefaultModel(cmp);
         helper.init(cmp);
     },
 

@@ -3,6 +3,8 @@
     VIEW_MODEL: {},
 
     init: function (cmp) {
+        // Set Default Model Values
+        this.setDefaultModel(cmp);
         // reset VM every load
         this.DEFAULT_MODEL = JSON.parse(JSON.stringify(cmp.get("v.defaultModel")));
         this.VIEW_MODEL = this.DEFAULT_MODEL;
