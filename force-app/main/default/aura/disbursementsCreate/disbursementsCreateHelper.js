@@ -1,61 +1,10 @@
 ({
-    DEFAULT_MODEL: {
-        request: null,
-        formData: {
-            paymentCount: 1,
-            paymentTotal: 0,
-            firstDate: null,
-            intervalCount: 1,
-            intervalType: "Month"
-        },
-        formDefaults: {
-            intervalTypes: [
-                {
-                    value: "Week",
-                    label: "Week"
-                },
-                {
-                    value: "Month",
-                    label: "Month"
-                },
-                {
-                    value: "Year",
-                    label: "Year"
-                }
-            ],
-            columns: [
-                {
-                    label: "Amount",
-                    fieldName: "amount",
-                    type: "currency",
-                    editable: true,
-                    cellAttributes: {
-                        alignment: "left"
-                    }
-                },
-                {
-                    label: "Scheduled Date",
-                    fieldName: "scheduleDate",
-                    type: "date-local",
-                    typeAttributes: {
-                        year: "numeric",
-                        month: "numeric",
-                        day: "numeric"
-                    },
-                    editable: true,
-                    cellAttributes: {
-                        alignment: "left"
-                    }
-                }
-            ]
-        },
-        disbursements: [],
-        uiMessages: []
-    },
-
+    DEFAULT_MODEL: {},
     VIEW_MODEL: {},
 
     init: function (cmp) {
+        // Set Default Model Values
+        this.setDefaultModel();
         // reset VM every load
         this.VIEW_MODEL = this.DEFAULT_MODEL;
 
@@ -99,6 +48,10 @@
     },
 
     calcDisp: function (cmp) {
+        const WEEK = "Week";
+        const MONTH = "Month";
+        const YEAR = "Year";
+
         var m = cmp.get("v.model");
         var d = m.formData;
 
@@ -125,11 +78,11 @@
                 var interval = i * intervalNum;
 
                 // Figure out what the date should be
-                if (intervalType == "Week") {
+                if (intervalType == WEEK) {
                     dateObject.setDate(dateObject.getDate() + interval * 7);
-                } else if (intervalType == "Month") {
+                } else if (intervalType == MONTH) {
                     dateObject = this.addMonths(dateObject, interval);
-                } else if (intervalType == "Year") {
+                } else if (intervalType == YEAR) {
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
             }
@@ -228,6 +181,7 @@
     },
 
     callServer: function (cmp, method, params, callback) {
+        const UNKNOWN_ERROR = "Unknown Error.";
         var action = cmp.get(method);
         if (params) {
             action.setParams(params);
@@ -239,7 +193,7 @@
                 }
             } else {
                 var errors = a.getError();
-                var message = "Unknown Error.";
+                var message = UNKNOWN_ERROR;
                 if (errors && Array.isArray(errors) && errors.length) {
                     message = errors[0].message;
                 }
@@ -253,11 +207,12 @@
 
     // Types:  'error', 'warning', 'success', or 'info'
     showToast: function (message, type, cmp) {
+        const ERROR = "error";
         // Need this workaround because e.force:showToast toasts are hidden behind quick actions
         if (type == "error" && typeof cmp != "undefined") {
             cmp.find("notifLib").showNotice({
                 variant: "error",
-                header: "Error",
+                header: ERROR,
                 message: message
             });
         } else {
@@ -319,5 +274,67 @@
         });
 
         cmp.set("v.model", m);
+    },
+
+    setDefaultModel: function () {
+        const WEEK = "Week";
+        const MONTH = "Month";
+        const YEAR = "Year";
+        const AMOUNT = "Amount";
+        const SCHEDULE_DATE = "Scheduled Date";
+
+        this.DEFAULT_MODEL = {
+            request: null,
+            formData: {
+                paymentCount: 1,
+                paymentTotal: 0,
+                firstDate: null,
+                intervalCount: 1,
+                intervalType: MONTH
+            },
+            formDefaults: {
+                intervalTypes: [
+                    {
+                        value: WEEK,
+                        label: WEEK
+                    },
+                    {
+                        value: MONTH,
+                        label: MONTH
+                    },
+                    {
+                        value: YEAR,
+                        label: YEAR
+                    }
+                ],
+                columns: [
+                    {
+                        label: AMOUNT,
+                        fieldName: "amount",
+                        type: "currency",
+                        editable: true,
+                        cellAttributes: {
+                            alignment: "left"
+                        }
+                    },
+                    {
+                        label: SCHEDULE_DATE,
+                        fieldName: "scheduleDate",
+                        type: "date-local",
+                        typeAttributes: {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric"
+                        },
+                        editable: true,
+                        cellAttributes: {
+                            alignment: "left"
+                        }
+                    }
+                ]
+            },
+            disbursements: [],
+            uiMessages: []
+        };
     }
 });
