@@ -5,12 +5,10 @@
     init: function (cmp) {
         // reset VM every load
         this.DEFAULT_MODEL = JSON.parse(JSON.stringify(cmp.get("v.defaultModel")));
-        console.log("Default --> ", this.DEFAULT_MODEL);
         this.VIEW_MODEL = this.DEFAULT_MODEL;
 
         // Set the view model
         cmp.set("v.model", this.VIEW_MODEL);
-        
 
         // Get the data from the database using the record id from force:hasRecordId
         var recordId = cmp.get("v.recordId");
@@ -182,6 +180,7 @@
     },
 
     callServer: function (cmp, method, params, callback) {
+        const UNKNOWN_ERROR = "Unknown Error.";
         var action = cmp.get(method);
         if (params) {
             action.setParams(params);
@@ -193,7 +192,7 @@
                 }
             } else {
                 var errors = a.getError();
-                var message = "Unknown Error.";
+                var message = UNKNOWN_ERROR;
                 if (errors && Array.isArray(errors) && errors.length) {
                     message = errors[0].message;
                 }
@@ -207,11 +206,12 @@
 
     // Types:  'error', 'warning', 'success', or 'info'
     showToast: function (message, type, cmp) {
+        const ERROR = "error";
         // Need this workaround because e.force:showToast toasts are hidden behind quick actions
         if (type == "error" && typeof cmp != "undefined") {
             cmp.find("notifLib").showNotice({
                 variant: "error",
-                header: "Error",
+                header: ERROR,
                 message: message
             });
         } else {
@@ -335,8 +335,6 @@
             disbursements: [],
             uiMessages: []
         };
-
-        console.log("JSDEfault --> ", defaultModel);
         cmp.set("v.defaultModel", defaultModel);
     }
 });
