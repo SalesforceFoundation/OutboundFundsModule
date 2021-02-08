@@ -11,9 +11,6 @@
     <aura:attribute type="Map" name="model" />
     <aura:attribute type="Map" name="defaultModel" />
 
-    
-
-
     <div class="wrap">
         <!-- Header -->
         <h2 class="slds-text-heading_medium slds-hyphenate slds-m-bottom--large">
