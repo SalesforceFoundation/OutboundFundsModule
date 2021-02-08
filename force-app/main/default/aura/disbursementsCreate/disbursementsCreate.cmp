@@ -9,7 +9,6 @@
 
     <!-- Default model set in helper -->
     <aura:attribute type="Map" name="model" />
-    <aura:attribute type="Map" name="defaultModel" />
 
     <div class="wrap">
         <!-- Header -->

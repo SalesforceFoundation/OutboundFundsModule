@@ -4,9 +4,8 @@
 
     init: function (cmp) {
         // Set Default Model Values
-        this.setDefaultModel(cmp);
+        this.setDefaultModel();
         // reset VM every load
-        this.DEFAULT_MODEL = JSON.parse(JSON.stringify(cmp.get("v.defaultModel")));
         this.VIEW_MODEL = this.DEFAULT_MODEL;
 
         // Set the view model
@@ -277,14 +276,14 @@
         cmp.set("v.model", m);
     },
 
-    setDefaultModel: function (cmp) {
+    setDefaultModel: function () {
         const WEEK = "Week";
         const MONTH = "Month";
         const YEAR = "Year";
         const AMOUNT = "Amount";
         const SCHEDULE_DATE = "Scheduled Date";
 
-        let defaultModel = {
+        this.DEFAULT_MODEL = {
             request: null,
             formData: {
                 paymentCount: 1,
@@ -337,6 +336,5 @@
             disbursements: [],
             uiMessages: []
         };
-        cmp.set("v.defaultModel", defaultModel);
     }
 });
