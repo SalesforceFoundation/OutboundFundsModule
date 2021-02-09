@@ -139,6 +139,10 @@
         );
         var params = { dispListString: disbursementsJson };
         var that = this;
+
+        let saveButton = event.getSource();
+        saveButton.set("v.disabled", true);
+
         this.callServer(cmp, "c.saveDisbursements", params, function (r) {
             let userHasAccess = r;
             if (userHasAccess) {
@@ -150,15 +154,12 @@
                 $A.get("e.force:refreshView").fire();
                 $A.get("e.force:closeQuickAction").fire();
             } else {
-                console.log("Entered here ****");
                 that.addMessage(
                     cmp,
                     model.request.uiMessages.Error,
                     "error",
-                    "*** ACCESS ERROR ***"
+                    model.request.uiMessages.NoAccess
                 );
-                let saveButton = event.getSource();
-                saveButton.set("v.disabled", true);
             }
         });
     },

@@ -132,7 +132,8 @@ public with sharing class disbursementsCreateController {
                 'Error' => System.Label.Error,
                 'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
                 'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
-                'SavedMessage' => System.Label.disbursementsCreate_SavedMessage
+                'SavedMessage' => System.Label.disbursementsCreate_SavedMessage,
+                'NoAccess' => System.Label.DatabaseService_NoInsertFlsException
             };
 
             this.intervalTypes = new Map<String, String>{

@@ -17,28 +17,28 @@
         <value>Cancel</value>
     </labels>
     <labels>
+        <fullName>DatabaseService_NoInsertFlsException</fullName>
+        <categories>DatabaseService,Exception</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>The user does not have create access to fields required for this process.</shortDescription>
+        <value>You don&apos;t have field-level access to create this record. Contact your system administrator for help.</value>
+    </labels>  
+    <labels>
+        <fullName>DatabaseService_NoUpdateFlsException</fullName>
+        <categories>DatabaseService,Exception</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>The user does not have edit or update access to required fields.</shortDescription>
+        <value>You don&apos;t have field-level access to edit this record. Contact your system administrator for help.</value>
+    </labels>
+    <labels>
         <fullName>DatabaseService_NoDeleteAccessException</fullName>
-        <categories>Database Service</categories>
+        <categories>DatabaseService,Exception</categories>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Database_NoAccessException</shortDescription>
-        <value>Cannot Delete Records</value>
-    </labels>
-    <labels>
-        <fullName>DatabaseService_NoEditFlsException</fullName>
-        <categories>Database Service</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>DatabaseService_NoEditFlsException</shortDescription>
-        <value>No Edit Access</value>
-    </labels>
-    <labels>
-        <fullName>DatabaseService_NoUpsertFlsException</fullName>
-        <categories>Database Service</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>DatabaseService_NoUpsertFlsException</shortDescription>
-        <value>No Update / Insert Access</value>
+        <shortDescription>The user does not have delete access to the object.</shortDescription>
+        <value>You don&apos;t have delete access to this object. Ask your Salesforce admin for help.</value>
     </labels>
     <labels>
         <fullName>Details</fullName>
