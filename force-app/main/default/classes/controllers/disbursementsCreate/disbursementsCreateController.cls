@@ -62,7 +62,6 @@ public with sharing class disbursementsCreateController {
             disbursementsCreateController.databaseService.insertRecordsEnforceFls(
                 newDispList
             );
-
             return true;
         } catch (Exception e) {
             return false;
@@ -90,7 +89,7 @@ public with sharing class disbursementsCreateController {
 
     /*** Models ***/
 
-    public class Request {
+    public with sharing class Request {
         @AuraEnabled
         public Id recordId;
         @AuraEnabled

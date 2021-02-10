@@ -25,74 +25,6 @@ private class disbursementsCreateController_TEST {
     }
 
     @isTest
-    static void testGetFundRequestWhenSuccessful() {
-        final Schema.Funding_Request__c record = [
-            SELECT
-                Id,
-                Applying_Contact__r.Name,
-                Requested_Amount__c,
-                Awarded_Amount__c,
-                Total_Disbursed__c,
-                Total_Remaining__c
-            FROM Funding_Request__c
-            WHERE Name = 'Test Request'
-            LIMIT 1
-        ];
-
-        final Map<String, String> expectedFundingRequestLabels = new Map<String, String>{
-            'Applying_Contact__c' => Schema.SObjectType.Funding_Request__c.fields.Applying_Contact__c.getLabel(),
-            'Requested_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Requested_Amount__c.getLabel(),
-            'Awarded_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Awarded_Amount__c.getLabel(),
-            'Total_Disbursed__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Disbursed__c.getLabel(),
-            'Total_Remaining__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Remaining__c.getLabel()
-        };
-
-        final Map<String, String> expectedDisbursementLabels = new Map<String, String>{
-            'Amount__c' => Schema.SObjectType.Disbursement__c.fields.Amount__c.getLabel(),
-            'Scheduled_Date__c' => Schema.SObjectType.Disbursement__c.fields.Scheduled_Date__c.getLabel()
-        };
-
-        final Map<String, String> expectedUiMessages = new Map<String, String>{
-            'Error' => System.Label.Error,
-            'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
-            'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
-            'SavedMessage' => System.Label.disbursementsCreate_SavedMessage,
-            'NoAccess' => System.Label.DatabaseService_NoInsertFlsException
-        };
-
-        final Map<String, String> expectedIntervalTypes = new Map<String, String>{
-            'Week' => System.Label.disbursementsCreate_IntervalType_Week,
-            'Month' => System.Label.disbursementsCreate_IntervalType_Month,
-            'Year' => System.Label.disbursementsCreate_IntervalType_Year
-        };
-
-        Test.startTest();
-
-        final disbursementsCreateController.Request request = disbursementsCreateController.getFundRequest(
-            record.Id
-        );
-
-        Test.stopTest();
-
-        System.assertNotEquals(
-            null,
-            request,
-            'record exist so getFundRequest() should not return null.'
-        );
-
-        System.assertEquals(request.recordId, record.Id);
-        System.assertEquals(request.contactName, record.Applying_Contact__r.Name);
-        System.assertEquals(request.requestedAmount, record.Requested_Amount__c);
-        System.assertEquals(request.awardedAmount, record.Awarded_Amount__c);
-        System.assertEquals(request.totalDisbursed, record.Total_Disbursed__c);
-        System.assertEquals(request.totalRemaining, record.Total_Remaining__c);
-        System.assertEquals(request.fundingRequestLabels, expectedFundingRequestLabels);
-        System.assertEquals(request.disbursementLabels, expectedDisbursementLabels);
-        System.assertEquals(request.uiMessages, expectedUiMessages);
-        System.assertEquals(request.intervalTypes, expectedIntervalTypes);
-    }
-
-    @isTest
     static void testSaveDisbursementsWhenSuccessful() {
         final Id fundingRequestId = UnitTest.mockId(
             Schema.SObjectType.Funding_Request__c
@@ -261,7 +193,8 @@ private class disbursementsCreateController_TEST {
         getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
     }
 
-    static void testGetFundRequestShouldBeNull() {
+    @isTest
+    static void testGetFundRequestWhenQueryReturnEmpty() {
         // Create Argument
         final Id fundingRequestId = UnitTest.mockId(
             Schema.SObjectType.Funding_Request__c
@@ -274,7 +207,7 @@ private class disbursementsCreateController_TEST {
         List<Funding_Request__c> fundingRequests = new List<Funding_Request__c>();
 
         final disbursementsCreateController.Request expected = new disbursementsCreateController.Request(
-            fundingRequest
+            new Schema.Funding_Request__c()
         );
 
         // Create Mocks
@@ -298,11 +231,16 @@ private class disbursementsCreateController_TEST {
         Test.stopTest();
 
         // assert expected values
+        System.assertEquals(null, actual.requestedAmount, 'Actual should be empty');
+
+        System.assertEquals(null, expected.requestedAmount, 'Expected should be empty');
+
         System.assertEquals(
-            null,
-            actual,
-            'disbursementsCreateController.Request should be null'
+            expected.requestedAmount,
+            actual.requestedAmount,
+            'Actual and Expected should be empty'
         );
+
         // assert expected method call
         getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
     }
@@ -331,7 +269,7 @@ private class disbursementsCreateController_TEST {
             'getFundingRequestById'
         );
         // Create Mock Return Values
-        getFundingRequestById.returnValue = new UnitTest.TestException();
+        getFundingRequestById.returnValue = new UnitTest.TestException('Query Exception');
 
         Exception actualException;
         Test.startTest();
@@ -352,9 +290,127 @@ private class disbursementsCreateController_TEST {
         System.assertNotEquals(
             null,
             actualException,
-            'disbursementsCreateController.Request should not be null'
+            'disbursementsCreateController getFundRequest should throw an exception'
+        );
+
+        System.assertEquals(
+            'Query Exception',
+            actualException.getMessage(),
+            'Exception messages should be the same'
         );
 
         getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
+    }
+
+    @isTest
+    static void testMapDisbursements() {
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
+        final Date today = Date.today();
+
+        // Set argument.
+        disbursementsCreateController.Disbursement disbursementWrapper = new disbursementsCreateController.Disbursement();
+        disbursementWrapper.amount = Decimal.valueOf(Crypto.getRandomInteger());
+        disbursementWrapper.requestId = fundingRequestId;
+        disbursementWrapper.scheduleDate = today.addMonths(1);
+        disbursementWrapper.status = 'anything; this value is not used';
+        //disbursementWrappers.add(disbursementWrapper);
+
+        Test.startTest();
+        // Set what we expect to be passed into insertRecordsEnforceFls.
+        final Schema.Disbursement__c expectedDisbursement = disbursementsCreateController.mapDisbursement(
+            disbursementWrapper
+        );
+
+        Test.stopTest();
+
+        System.assertEquals(
+            'Scheduled',
+            expectedDisbursement.Status__c,
+            'Status is hardcoded to SCHEDULED on mapDisbursement method'
+        );
+        System.assertNotEquals(
+            disbursementWrapper.status,
+            expectedDisbursement.Status__c,
+            'Status is hardcoded to SCHEDULED on mapDisbursment method'
+        );
+        System.assertEquals(
+            disbursementWrapper.amount,
+            expectedDisbursement.Amount__c,
+            'Amount should be the same'
+        );
+        System.assertEquals(
+            disbursementWrapper.scheduleDate,
+            expectedDisbursement.Scheduled_Date__c,
+            'Schedule date should be the same'
+        );
+        System.assertEquals(
+            disbursementWrapper.requestId,
+            expectedDisbursement.Funding_Request__c,
+            'Funding Request Id  should be the same'
+        );
+    }
+
+    @isTest
+    static void testRequestConstructor() {
+        final Schema.Funding_Request__c record = [
+            SELECT
+                Id,
+                Applying_Contact__r.Name,
+                Requested_Amount__c,
+                Awarded_Amount__c,
+                Total_Disbursed__c,
+                Total_Remaining__c
+            FROM Funding_Request__c
+            WHERE Name = 'Test Request'
+            LIMIT 1
+        ];
+
+        final Map<String, String> expectedFundingRequestLabels = new Map<String, String>{
+            'Applying_Contact__c' => Schema.SObjectType.Funding_Request__c.fields.Applying_Contact__c.getLabel(),
+            'Requested_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Requested_Amount__c.getLabel(),
+            'Awarded_Amount__c' => Schema.SObjectType.Funding_Request__c.fields.Awarded_Amount__c.getLabel(),
+            'Total_Disbursed__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Disbursed__c.getLabel(),
+            'Total_Remaining__c' => Schema.SObjectType.Funding_Request__c.fields.Total_Remaining__c.getLabel()
+        };
+
+        final Map<String, String> expectedDisbursementLabels = new Map<String, String>{
+            'Amount__c' => Schema.SObjectType.Disbursement__c.fields.Amount__c.getLabel(),
+            'Scheduled_Date__c' => Schema.SObjectType.Disbursement__c.fields.Scheduled_Date__c.getLabel()
+        };
+
+        final Map<String, String> expectedUiMessages = new Map<String, String>{
+            'Error' => System.Label.Error,
+            'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
+            'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
+            'SavedMessage' => System.Label.disbursementsCreate_SavedMessage,
+            'NoAccess' => System.Label.DatabaseService_NoInsertFlsException
+        };
+
+        final Map<String, String> expectedIntervalTypes = new Map<String, String>{
+            'Week' => System.Label.disbursementsCreate_IntervalType_Week,
+            'Month' => System.Label.disbursementsCreate_IntervalType_Month,
+            'Year' => System.Label.disbursementsCreate_IntervalType_Year
+        };
+
+        Test.startTest();
+
+        final disbursementsCreateController.Request request = new disbursementsCreateController.Request(
+            record
+        );
+
+        Test.stopTest();
+
+        System.assertEquals(request.recordId, record.Id);
+        System.assertEquals(request.contactName, record.Applying_Contact__r.Name);
+        System.assertEquals(request.requestedAmount, record.Requested_Amount__c);
+        System.assertEquals(request.awardedAmount, record.Awarded_Amount__c);
+        System.assertEquals(request.totalDisbursed, record.Total_Disbursed__c);
+        System.assertEquals(request.totalRemaining, record.Total_Remaining__c);
+        System.assertEquals(request.fundingRequestLabels, expectedFundingRequestLabels);
+        System.assertEquals(request.disbursementLabels, expectedDisbursementLabels);
+        System.assertEquals(request.uiMessages, expectedUiMessages);
+        System.assertEquals(request.intervalTypes, expectedIntervalTypes);
     }
 }
