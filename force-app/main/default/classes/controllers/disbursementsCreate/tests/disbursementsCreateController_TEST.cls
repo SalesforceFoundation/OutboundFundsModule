@@ -25,7 +25,7 @@ private class disbursementsCreateController_TEST {
     }
 
     @isTest
-    static void testGetFundRequest() {
+    static void testGetFundRequestWhenSuccessful() {
         final Schema.Funding_Request__c record = [
             SELECT
                 Id,
@@ -56,7 +56,8 @@ private class disbursementsCreateController_TEST {
             'Error' => System.Label.Error,
             'NoFundsRemaining' => System.Label.disbursementsCreate_NoFundsRemaining,
             'PaymentsExceedFunds' => System.Label.disbursementsCreate_PaymentsExceedFunds,
-            'SavedMessage' => System.Label.disbursementsCreate_SavedMessage
+            'SavedMessage' => System.Label.disbursementsCreate_SavedMessage,
+            'NoAccess' => System.Label.DatabaseService_NoInsertFlsException
         };
 
         final Map<String, String> expectedIntervalTypes = new Map<String, String>{
@@ -92,37 +93,268 @@ private class disbursementsCreateController_TEST {
     }
 
     @isTest
-    static void testSaveDisbursements() {
-        final Schema.Funding_Request__c loadReq = [
-            SELECT Id
-            FROM Funding_Request__c
-            WHERE Name = 'Test Request'
-            LIMIT 1
-        ];
+    static void testSaveDisbursementsWhenSuccessful() {
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
 
-        List<disbursementsCreateController.Disbursement> disps = new List<disbursementsCreateController.Disbursement>();
-        Date today = Date.today();
+        final List<disbursementsCreateController.Disbursement> disbursementWrappers = new List<disbursementsCreateController.Disbursement>();
+        final List<Schema.Disbursement__c> expectedDisbursements = new List<Schema.Disbursement__c>();
+        final Date today = Date.today();
+
         for (Integer i = 0; i < 4; i++) {
-            disbursementsCreateController.Disbursement d = new disbursementsCreateController.Disbursement();
-            d.amount = 300;
-            d.requestId = loadReq.Id;
-            d.scheduleDate = today.addMonths(i);
-            d.status = 'scheduled';
-            disps.add(d);
+            // Set argument.
+            disbursementsCreateController.Disbursement disbursementWrapper = new disbursementsCreateController.Disbursement();
+            disbursementWrapper.amount = Decimal.valueOf(Crypto.getRandomInteger());
+            disbursementWrapper.requestId = fundingRequestId;
+            disbursementWrapper.scheduleDate = today.addMonths(i);
+            disbursementWrapper.status = 'anything; this value is not used';
+            disbursementWrappers.add(disbursementWrapper);
+
+            // Set what we expect to be passed into insertRecordsEnforceFls.
+            final Schema.Disbursement__c expectedDisbursement = disbursementsCreateController.mapDisbursement(
+                disbursementWrapper
+            );
+            expectedDisbursements.add(expectedDisbursement);
         }
+
+        // Create mocks.
+        final UnitTest.Mock databaseServiceMock = new UnitTest.Mock();
+        final UnitTest.Mock insertRecordsEnforceFls = databaseServiceMock.getMethod(
+            'insertRecordsEnforceFls'
+        );
 
         Test.startTest();
 
-        disbursementsCreateController.saveDisbursements(JSON.serialize(disps));
+        // Set stubs.
+        disbursementsCreateController.databaseService = (DatabaseService) databaseServiceMock.createStub(
+            DatabaseService.class
+        );
+
+        final Boolean actual = disbursementsCreateController.saveDisbursements(
+            JSON.serialize(disbursementWrappers)
+        );
 
         Test.stopTest();
 
-        List<Schema.Disbursement__c> disbursements = [
-            SELECT Id, Funding_Request__c
-            FROM Disbursement__c
-            WHERE Funding_Request__c = :loadReq.Id
-        ];
+        System.assert(
+            actual,
+            'saveDisbursements should return true since the insert was successful.'
+        );
 
-        System.assertEquals(disbursements.size(), disps.size());
+        insertRecordsEnforceFls.assertCalledOnceWith(
+            new List<Object>{ expectedDisbursements }
+        );
+    }
+
+    @isTest
+    static void testSaveDisbursementsWhenExceptionThrown() {
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
+
+        final List<disbursementsCreateController.Disbursement> disbursementWrappers = new List<disbursementsCreateController.Disbursement>();
+        final List<Schema.Disbursement__c> expectedDisbursements = new List<Schema.Disbursement__c>();
+        final Date today = Date.today();
+
+        for (Integer i = 0; i < 4; i++) {
+            // Set argument.
+            disbursementsCreateController.Disbursement disbursementWrapper = new disbursementsCreateController.Disbursement();
+            disbursementWrapper.amount = Decimal.valueOf(Crypto.getRandomInteger());
+            disbursementWrapper.requestId = fundingRequestId;
+            disbursementWrapper.scheduleDate = today.addMonths(i);
+            disbursementWrapper.status = 'anything; this value is not used';
+            disbursementWrappers.add(disbursementWrapper);
+
+            // Set what we expect to be passed into insertRecordsEnforceFls.
+            final Schema.Disbursement__c expectedDisbursement = disbursementsCreateController.mapDisbursement(
+                disbursementWrapper
+            );
+            expectedDisbursements.add(expectedDisbursement);
+        }
+
+        final String dispListString = JSON.serialize(disbursementWrappers);
+
+        // Create mocks.
+        final UnitTest.Mock databaseServiceMock = new UnitTest.Mock();
+        final UnitTest.Mock insertRecordsEnforceFls = databaseServiceMock.getMethod(
+            'insertRecordsEnforceFls'
+        );
+        insertRecordsEnforceFls.returnValue = new UnitTest.TestException();
+
+        Test.startTest();
+
+        // Set stubs.
+        disbursementsCreateController.databaseService = (DatabaseService) databaseServiceMock.createStub(
+            DatabaseService.class
+        );
+
+        final Boolean actual = disbursementsCreateController.saveDisbursements(
+            dispListString
+        );
+
+        Test.stopTest();
+
+        System.assertEquals(
+            false,
+            actual,
+            'DisbursementsCreateController.saveDisbursements should return false since insertRecordsEnforceFls threw an exception'
+        );
+
+        insertRecordsEnforceFls.assertCalledOnceWith(
+            new List<Object>{ expectedDisbursements }
+        );
+    }
+
+    @isTest
+    static void testGetFundRequestNotNull() {
+        // Create Argument
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
+
+        // Create Expected Values
+        final Schema.Funding_request__c fundingRequest = new Schema.Funding_request__c();
+
+        fundingRequest.Id = fundingRequestId;
+
+        //final Schema.Funding_Request__c expectedFundingRequest = new Schema.Funding_Request__c();
+
+        List<Funding_Request__c> fundingRequests = new List<Funding_Request__c>();
+        fundingRequests.add(fundingRequest);
+
+        final disbursementsCreateController.Request expected = new disbursementsCreateController.Request(
+            fundingRequest
+        );
+
+        // Create Mocks
+        final UnitTest.Mock fundingRequestSelectorMock = new UnitTest.Mock();
+        final UnitTest.Mock getFundingRequestById = fundingRequestSelectorMock.getMethod(
+            'getFundingRequestById'
+        );
+        // Create Mock Return Values
+        getFundingRequestById.returnValue = fundingRequests;
+
+        Test.startTest();
+        // Set stubs
+        disbursementsCreateController.fundingRequestSelector = (FundingRequestSelector) fundingRequestSelectorMock.createStub(
+            FundingRequestSelector.class
+        );
+        // Execute test
+        final disbursementsCreateController.Request actual = disbursementsCreateController.getFundRequest(
+            fundingRequestId
+        );
+
+        Test.stopTest();
+
+        // assert expected values
+        System.assertNotEquals(
+            null,
+            actual,
+            'disbursementsCreateController.Request should not be null'
+        );
+        System.assertEquals(expected.recordId, actual.recordId);
+
+        //System.assertEquals(expected, actual);
+        // assert expected method call
+
+        getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
+    }
+
+    static void testGetFundRequestShouldBeNull() {
+        // Create Argument
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
+
+        // Create Expected Values
+        final Schema.Funding_request__c fundingRequest = new Schema.Funding_request__c();
+
+        fundingRequest.Id = fundingRequestId;
+        List<Funding_Request__c> fundingRequests = new List<Funding_Request__c>();
+
+        final disbursementsCreateController.Request expected = new disbursementsCreateController.Request(
+            fundingRequest
+        );
+
+        // Create Mocks
+        final UnitTest.Mock fundingRequestSelectorMock = new UnitTest.Mock();
+        final UnitTest.Mock getFundingRequestById = fundingRequestSelectorMock.getMethod(
+            'getFundingRequestById'
+        );
+        // Create Mock Return Values
+        getFundingRequestById.returnValue = fundingRequests;
+
+        Test.startTest();
+        // Set stubs
+        disbursementsCreateController.fundingRequestSelector = (FundingRequestSelector) fundingRequestSelectorMock.createStub(
+            FundingRequestSelector.class
+        );
+        // Execute test
+        final disbursementsCreateController.Request actual = disbursementsCreateController.getFundRequest(
+            fundingRequestId
+        );
+
+        Test.stopTest();
+
+        // assert expected values
+        System.assertEquals(
+            null,
+            actual,
+            'disbursementsCreateController.Request should be null'
+        );
+        // assert expected method call
+        getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
+    }
+
+    @isTest
+    static void testGetFundRequestThrowException() {
+        // Create Argument
+        final Id fundingRequestId = UnitTest.mockId(
+            Schema.SObjectType.Funding_Request__c
+        );
+
+        // Create Expected Values
+        final Schema.Funding_request__c fundingRequest = new Schema.Funding_request__c();
+
+        fundingRequest.Id = fundingRequestId;
+        List<Funding_Request__c> fundingRequests = new List<Funding_Request__c>();
+        fundingRequests.add(fundingRequest);
+
+        final disbursementsCreateController.Request expected = new disbursementsCreateController.Request(
+            fundingRequest
+        );
+
+        // Create Mocks
+        final UnitTest.Mock fundingRequestSelectorMock = new UnitTest.Mock();
+        final UnitTest.Mock getFundingRequestById = fundingRequestSelectorMock.getMethod(
+            'getFundingRequestById'
+        );
+        // Create Mock Return Values
+        getFundingRequestById.returnValue = new UnitTest.TestException();
+
+        Exception actualException;
+        Test.startTest();
+        // Set stubs
+        disbursementsCreateController.fundingRequestSelector = (FundingRequestSelector) fundingRequestSelectorMock.createStub(
+            FundingRequestSelector.class
+        );
+        // Execute test
+        try {
+            disbursementsCreateController.getFundRequest(fundingRequestId);
+        } catch (AuraHandledException e) {
+            actualException = e;
+        }
+
+        Test.stopTest();
+
+        // assert expected values
+        System.assertNotEquals(
+            null,
+            actualException,
+            'disbursementsCreateController.Request should not be null'
+        );
+
+        getFundingRequestById.assertCalledOnceWith(new List<Object>{ fundingRequestId });
     }
 }

@@ -4,6 +4,12 @@
  * display Data in the UI, as well as handles the requests from the UI.
  */
 public with sharing class disbursementsCreateController {
+    @TestVisible
+    private static DatabaseService databaseService = new DatabaseService();
+
+    @TestVisible
+    private static FundingRequestSelector fundingRequestSelector = new FundingRequestSelector();
+
     /**
      * This Method is the entry point for the Lightning Component to receive data about the funding request
      *
@@ -13,7 +19,25 @@ public with sharing class disbursementsCreateController {
      */
     @AuraEnabled
     public static disbursementsCreateController.Request getFundRequest(Id reqId) {
-        return getRequest(reqId);
+        try {
+            Schema.Funding_Request__c fr = new Schema.Funding_Request__c();
+
+            for (
+                Schema.Funding_Request__c fundingRequest : fundingRequestSelector.getFundingRequestById(
+                    reqId
+                )
+            ) {
+                fr = fundingRequest;
+            }
+
+            return new disbursementsCreateController.Request(fr);
+        } catch (Exception e) {
+            System.AuraHandledException auraHandledExpection = new System.AuraHandledException(
+                e.getMessage()
+            );
+            auraHandledExpection.setMessage(e.getMessage());
+            throw auraHandledExpection;
+        }
     }
 
     /**
@@ -23,47 +47,26 @@ public with sharing class disbursementsCreateController {
      */
     @AuraEnabled
     public static boolean saveDisbursements(String dispListString) {
-        List<disbursementsCreateController.Disbursement> dList = (List<disbursementsCreateController.Disbursement>) JSON.deserialize(
-            dispListString,
-            List<disbursementsCreateController.Disbursement>.class
-        );
-
-        List<Schema.Disbursement__c> newDispList = new List<Schema.Disbursement__c>();
-
-        for (disbursementsCreateController.Disbursement d : dList) {
-            newDispList.add(mapDisbursement(d));
-        }
-
         try {
-            DatabaseService databaseService = new DatabaseService();
-            databaseService.insertRecordsEnforceFls(newDispList);
+            List<disbursementsCreateController.Disbursement> dList = (List<disbursementsCreateController.Disbursement>) JSON.deserialize(
+                dispListString,
+                List<disbursementsCreateController.Disbursement>.class
+            );
+
+            List<Schema.Disbursement__c> newDispList = new List<Schema.Disbursement__c>();
+
+            for (disbursementsCreateController.Disbursement d : dList) {
+                newDispList.add(mapDisbursement(d));
+            }
+
+            disbursementsCreateController.databaseService.insertRecordsEnforceFls(
+                newDispList
+            );
+
             return true;
         } catch (Exception e) {
             return false;
         }
-    }
-
-    /**
-     * Return a Request from the database. This method also functions as a mapper to separate the database from the front end.
-     *
-     * @param reqId - Id of the request we want information about
-     *
-     * @return - Request model
-     */
-    private static disbursementsCreateController.Request getRequest(Id reqId) {
-        Schema.Funding_Request__c fr = [
-            SELECT
-                Id,
-                Requested_Amount__c,
-                Awarded_Amount__c,
-                Total_Disbursed__c,
-                Total_Remaining__c,
-                Applying_Contact__r.Name
-            FROM Funding_Request__c
-            WHERE Id = :reqId
-        ];
-
-        return new disbursementsCreateController.Request(fr);
     }
 
     /**
@@ -73,6 +76,7 @@ public with sharing class disbursementsCreateController {
      *
      * @return - Disbursement__c
      */
+    @TestVisible
     private static Schema.Disbursement__c mapDisbursement(
         disbursementsCreateController.Disbursement d
     ) {
