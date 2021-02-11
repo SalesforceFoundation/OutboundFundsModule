@@ -20,17 +20,17 @@ public with sharing class disbursementsCreateController {
     @AuraEnabled
     public static disbursementsCreateController.Request getFundRequest(Id reqId) {
         try {
-            Schema.Funding_Request__c fr = new Schema.Funding_Request__c();
+            Schema.Funding_Request__c fundingRequest = new Schema.Funding_Request__c();
 
             for (
-                Schema.Funding_Request__c fundingRequest : fundingRequestSelector.getFundingRequestById(
+                Schema.Funding_Request__c fundingRequestFromSelector : fundingRequestSelector.getFundingRequestById(
                     reqId
                 )
             ) {
-                fr = fundingRequest;
+                fundingRequest = fundingRequestFromSelector;
             }
 
-            return new disbursementsCreateController.Request(fr);
+            return new disbursementsCreateController.Request(fundingRequest);
         } catch (Exception e) {
             System.AuraHandledException auraHandledExpection = new System.AuraHandledException(
                 e.getMessage()
