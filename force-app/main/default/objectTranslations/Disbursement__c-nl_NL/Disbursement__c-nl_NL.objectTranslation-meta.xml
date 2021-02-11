@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Disbursement Layout</layout>
+        <sections>
+            <label>Aangepaste koppelingen</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Uitbetaling</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Uitbetaling</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Uitbetaling</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Uitbetalingen</value>
+    </caseValues>
+</CustomObjectTranslation>

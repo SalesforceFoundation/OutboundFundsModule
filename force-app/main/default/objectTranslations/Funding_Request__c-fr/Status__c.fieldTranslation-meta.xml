@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Status__c</name>
+    <label>Statut</label>
+    <picklistValues>
+        <masterLabel>Invited</masterLabel>
+        <translation>Invité</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Submitted</masterLabel>
+        <translation>Soumis</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In progress</masterLabel>
+        <translation>En cours</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Review</masterLabel>
+        <translation>Révision en cours</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reviewed</masterLabel>
+        <translation>Révisé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awarded</masterLabel>
+        <translation>Attribué</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fully Disbursed</masterLabel>
+        <translation>Entièrement versé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed</masterLabel>
+        <translation>Fermé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Refusé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Withdrawn</masterLabel>
+        <translation>Retiré</translation>
+    </picklistValues>
+</CustomFieldTranslation>

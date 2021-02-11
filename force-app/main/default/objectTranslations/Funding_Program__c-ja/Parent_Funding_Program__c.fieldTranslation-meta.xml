@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Parent_Funding_Program__c</name>
+    <relationshipLabel>下位資金調達プログラム</relationshipLabel>
+    <label>親資金調達プログラム</label>
+</CustomFieldTranslation>

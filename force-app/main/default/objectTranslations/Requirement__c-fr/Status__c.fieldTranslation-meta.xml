@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Status__c</name>
+    <label>Statut</label>
+    <picklistValues>
+        <masterLabel>Open</masterLabel>
+        <translation>Ouvert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Progress</masterLabel>
+        <translation>En cours</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delayed</masterLabel>
+        <translation>Reporté</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complete</masterLabel>
+        <translation>Terminé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Accepted</masterLabel>
+        <translation>Accepté</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Refusé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Abandoned</masterLabel>
+        <translation>Abandonné</translation>
+    </picklistValues>
+</CustomFieldTranslation>

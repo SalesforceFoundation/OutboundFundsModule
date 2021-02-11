@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Requirement Layout</layout>
+        <sections>
+            <label>Status</label>
+            <section>Status</section>
+        </sections>
+        <sections>
+            <label>Vereisten</label>
+            <section>Requirements</section>
+        </sections>
+        <sections>
+            <label>Aangepaste koppelingen</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Naam van vereiste</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Naam van vereiste</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Vereiste</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vereisten</value>
+    </caseValues>
+</CustomObjectTranslation>

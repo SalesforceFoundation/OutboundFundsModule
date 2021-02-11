@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Geographical_Area_Served__c</name>
+    <label>Zone géographique desservie</label>
+    <picklistValues>
+        <masterLabel>City</masterLabel>
+        <translation>Ville</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>State</masterLabel>
+        <translation>Département/division</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Region</masterLabel>
+        <translation>Région/province</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Country</masterLabel>
+        <translation>Pays</translation>
+    </picklistValues>
+</CustomFieldTranslation>

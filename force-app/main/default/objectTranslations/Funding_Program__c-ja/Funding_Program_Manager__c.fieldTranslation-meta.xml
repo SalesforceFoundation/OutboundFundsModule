@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Funding_Program_Manager__c</name>
+    <help>この個人は資金調達プログラムのスーパーバイザ/ディレクタ/マネージャです。多くの場合、この個人は資金調達要求の最終承認者にもなっています。</help>
+    <label>資金調達プログラムマネージャ</label>
+</CustomFieldTranslation>

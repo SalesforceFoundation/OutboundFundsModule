@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Top_Level__c</name>
+    <help>この資金調達プログラムがプログラム階層の最上位であるかどうかを確認します。</help>
+    <label>最上位</label>
+</CustomFieldTranslation>

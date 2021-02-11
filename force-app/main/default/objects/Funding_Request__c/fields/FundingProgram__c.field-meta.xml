@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FundingProgram__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to the funding program from which funds are being requested.</description>
+    <externalId>false</externalId>
+    <label>Funding Program</label>
+    <referenceTo>Funding_Program__c</referenceTo>
+    <relationshipLabel>Funding Requests</relationshipLabel>
+    <relationshipName>FundingRequests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
