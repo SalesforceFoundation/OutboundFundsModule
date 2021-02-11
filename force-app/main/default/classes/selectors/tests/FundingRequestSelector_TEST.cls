@@ -73,6 +73,8 @@ public with sharing class FundingRequestSelector_TEST {
     private static void callFundingRequest_MissingCrud() {
         // Configure permissions.
         FundingRequestSelector_TEST.minimalAccessPersona.load();
+        // Run the test
+        String fundingRequestId = [SELECT Id FROM Funding_Request__c LIMIT 1].Id;
         Test.startTest();
 
         System.QueryException actualException;
@@ -117,10 +119,6 @@ public with sharing class FundingRequestSelector_TEST {
                 Schema.Funding_Request__c.SObjectType.fields.Total_Remaining__c.getDescribe()
                     .isAccessible()
             );
-            // Question regarding lookups
-
-            // Run the test
-            String fundingRequestId = [SELECT Id FROM Funding_Request__c LIMIT 1].Id;
 
             final FundingRequestSelector fundingRequestSelector = new FundingRequestSelector();
 
@@ -187,7 +185,7 @@ public with sharing class FundingRequestSelector_TEST {
         Test.stopTest();
 
         System.assertNotEquals(
-            null,
+            true,
             fundingRequests.isEmpty(),
             'Funding Request should not be empty'
         );

@@ -246,8 +246,6 @@
         this.validateAmountRemaining(cmp);
 
         this.validateTotal(cmp);
-
-        //
     },
 
     validateAmountRemaining: function (cmp) {
