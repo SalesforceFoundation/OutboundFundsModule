@@ -26,16 +26,17 @@
     getRequestData: function (cmp) {
         var params = { reqId: cmp.get("v.recordId") };
         var parent = this;
-        this.callServer(cmp, "c.getFundRequest", params, function (r) {
+        this.callServer(cmp, "c.getFundRequest", params, function (result) {
             var model = cmp.get("v.model");
 
-            model.request = r;
+            model.request = result;
 
             // Update labels and options
-            model.formDefaults.columns[0].label = r.disbursementLabels.Amount__c;
-            model.formDefaults.columns[1].label = r.disbursementLabels.Scheduled_Date__c;
+            model.formDefaults.columns[0].label = result.disbursementLabels.Amount__c;
+            model.formDefaults.columns[1].label =
+                result.disbursementLabels.Scheduled_Date__c;
             model.formDefaults.intervalTypes.forEach(function (intervalType) {
-                intervalType.label = r.intervalTypes[intervalType.value];
+                intervalType.label = result.intervalTypes[intervalType.value];
             });
 
             // After the model is loaded set the default total
@@ -132,22 +133,34 @@
         });
     },
 
-    saveDisps: function (cmp) {
+    saveDisps: function (cmp, event) {
         var model = cmp.get("v.model");
         var disbursementsJson = JSON.stringify(
             this.processDatesForAex(model.disbursements)
         );
         var params = { dispListString: disbursementsJson };
         var that = this;
-        this.callServer(cmp, "c.saveDisbursements", params, function () {
-            that.showToast(model.request.uiMessages.SavedMessage, "success", cmp);
-            // Clear these out after saved
-            cmp.set("v.model.disbursements", null);
 
-            // Refresh Record Page
-            $A.get("e.force:refreshView").fire();
+        let saveButton = event.getSource();
+        saveButton.set("v.disabled", true);
 
-            $A.get("e.force:closeQuickAction").fire();
+        this.callServer(cmp, "c.saveDisbursements", params, function (userHasAccess) {
+            if (userHasAccess) {
+                that.showToast(model.request.uiMessages.SavedMessage, "success", cmp);
+                // Clear these out after saved
+                cmp.set("v.model.disbursements", null);
+
+                // Refresh Record Page
+                $A.get("e.force:refreshView").fire();
+                $A.get("e.force:closeQuickAction").fire();
+            } else {
+                that.addMessage(
+                    cmp,
+                    model.request.uiMessages.Error,
+                    "error",
+                    model.request.uiMessages.NoAccess
+                );
+            }
         });
     },
 

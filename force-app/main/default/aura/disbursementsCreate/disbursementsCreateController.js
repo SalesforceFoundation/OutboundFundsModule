@@ -18,7 +18,7 @@
     },
 
     handleSave: function (cmp, event, helper) {
-        helper.saveDisps(cmp);
+        helper.saveDisps(cmp, event);
     },
 
     inputBlur: function (cmp, event, helper) {
