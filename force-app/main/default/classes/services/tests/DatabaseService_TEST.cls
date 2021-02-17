@@ -605,19 +605,31 @@ public with sharing class DatabaseService_TEST {
             );
         }
 
-        System.assertEquals(
-            recordsSize,
-            [
-                    SELECT Id
-                    FROM Account
-                    WHERE
-                        Id = :originalRecord.Id
-                        AND Name = :records[0].Name
-                        AND AccountNumber = :records[0].AccountNumber
-                ]
-                .size(),
-            'All records should have been updated in the Database.'
+        final Map<Id, Account> actualAccountsById = new Map<Id, Account>(
+            [SELECT Id, Name, AccountNumber FROM Account WHERE Id IN :records]
         );
+
+        for (Account record : records) {
+            final Account actualAccount = actualAccountsById.get(record.Id);
+
+            System.assertNotEquals(
+                null,
+                actualAccount,
+                'An Account should exist for updated record with Name "' +
+                record.Name +
+                '".'
+            );
+            System.assertEquals(
+                record.Name,
+                actualAccount.Name,
+                'Account.Name should have been updated.'
+            );
+            System.assertEquals(
+                record.AccountNumber,
+                actualAccount.AccountNumber,
+                'Account.AccountNumber should have been updated.'
+            );
+        }
     }
 
     @IsTest
