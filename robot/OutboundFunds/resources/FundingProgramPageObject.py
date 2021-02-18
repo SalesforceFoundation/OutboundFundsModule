@@ -5,7 +5,7 @@ from BaseObjects import BaseOutboundFundsPage
 from cumulusci.robotframework.utils import capture_screenshot_on_error
 
 
-@pageobject("Listing", "Funding_Program__c")
+@pageobject("Listing", "outfunds__Funding_Program__c")
 class FundingProgramListingPage(BaseOutboundFundsPage, ListingPage):
     object_name = "outfunds__Funding_Program__c"
 
@@ -20,7 +20,7 @@ class FundingProgramListingPage(BaseOutboundFundsPage, ListingPage):
         )
 
 
-@pageobject("Details", "Funding_Program__c")
+@pageobject("Details", "outfunds__Funding_Program__c")
 class FundingProgramDetailPage(BaseOutboundFundsPage, DetailPage):
     object_name = "outfunds__Funding_Program__c"
 

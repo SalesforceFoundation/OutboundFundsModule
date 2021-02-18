@@ -4,7 +4,7 @@ from cumulusci.robotframework.pageobjects import pageobject
 from BaseObjects import BaseOutboundFundsPage
 
 
-@pageobject("Listing", "Funding_Request__c")
+@pageobject("Listing", "outfunds__Funding_Request__c")
 class FundingRequestListingPage(BaseOutboundFundsPage, ListingPage):
     object_name = "outfunds__Funding_Request__c"
 
@@ -18,7 +18,7 @@ class FundingRequestListingPage(BaseOutboundFundsPage, ListingPage):
         )
 
 
-@pageobject("Details", "Funding_Request__c")
+@pageobject("Details", "outfunds__Funding_Request__c")
 class FundingRequestDetailPage(BaseOutboundFundsPage, DetailPage):
     object_name = "outfunds__Funding_Request__c"
 
