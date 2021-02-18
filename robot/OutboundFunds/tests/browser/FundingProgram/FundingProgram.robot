@@ -16,8 +16,8 @@ Setup Test Data
     ${fp_name} =                      Generate New String
     Set suite variable                &{fundingprogram}
     Set suite variable                ${fp_name}
-    ${ns} =                          Get Outfunds Namespace Prefix
-    Set Suite Variable               ${ns}
+    ${ns} =                           Get Outfunds Namespace Prefix
+    Set Suite Variable                ${ns}
 *** Test Case ***
 Create Funding Program Via API
     [Documentation]                             Creates a Funding Program via API.
