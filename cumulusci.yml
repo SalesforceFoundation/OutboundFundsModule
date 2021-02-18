@@ -38,10 +38,10 @@ tasks:
             options:
                 outputdir: robot/OutboundFunds/results
 
-    robot_testdoc:
+    robot_libdoc:
         options:
-            path: robot/OutboundFunds/tests
-            output: robot/OutboundFunds/doc/OutboundFunds_tests.html
+            path: robot/OutboundFunds/resources/OutboundFunds.py,robot/OutboundFunds/resources/OutboundFunds.robot,robot/OutboundFunds/resources/*PageObject.py
+            output: robot/OutboundFunds/doc/Keywords.html
 
 flows:
     config_dev:
