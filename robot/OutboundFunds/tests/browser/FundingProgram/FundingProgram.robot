@@ -18,6 +18,7 @@ Setup Test Data
     Set suite variable                ${fp_name}
     ${ns} =                           Get Outfunds Namespace Prefix
     Set Suite Variable                ${ns}
+    Log to Console          ${ns}
 *** Test Case ***
 Create Funding Program Via API
     [Documentation]                             Creates a Funding Program via API.
