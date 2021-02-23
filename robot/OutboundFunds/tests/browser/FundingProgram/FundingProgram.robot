@@ -23,17 +23,17 @@ Create Funding Program Via API
     ...                                         Verifies that Funding Program is created and
     ...                                         displays under recently viewed Funding Program
     [tags]                                      feature:FundingProgram
-    Go To Page                                  Listing             outfunds__Funding_Program__c
+    Go To Page                                  Listing             Funding_Program__c
     Capture Page Screenshot
     Click Link With Text                        ${fundingprogram}[Name]
     Wait Until Loading Is Complete
-    Current Page Should Be                      Details             outfunds__Funding_Program__c
+    Current Page Should Be                      Details             Funding_Program__c
 
 Create Funding Program via UI in OutboundFunds
     [Documentation]                             Creates a Funding Program via UI.
      ...                                        Verifies that Funding Program is created.
      [tags]                                     feature:FundingProgram
-     Go To Page                                 Listing             outfunds__Funding_Program__c
+     Go To Page                                 Listing             Funding_Program__c
      Capture Page Screenshot
      Click Object Button                        New
      Wait Until Modal Is Open
@@ -41,4 +41,4 @@ Create Funding Program via UI in OutboundFunds
      Populate Field                             Description         Automated Robot Funding Program
      Click Save
      Wait Until Modal Is Closed
-     Current Page Should Be                     Details             outfunds__Funding_Program__c
+     Current Page Should Be                     Details             Funding_Program__c

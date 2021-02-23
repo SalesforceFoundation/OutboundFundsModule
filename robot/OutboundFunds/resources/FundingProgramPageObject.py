@@ -5,9 +5,8 @@ from BaseObjects import BaseOutboundFundsPage
 from cumulusci.robotframework.utils import capture_screenshot_on_error
 
 
-@pageobject("Listing", "outfunds__Funding_Program__c")
+@pageobject("Listing", "Funding_Program__c")
 class FundingProgramListingPage(BaseOutboundFundsPage, ListingPage):
-    object_name = "outfunds__Funding_Program__c"
 
     @capture_screenshot_on_error
     def _is_current_page(self):
@@ -15,14 +14,13 @@ class FundingProgramListingPage(BaseOutboundFundsPage, ListingPage):
         by verifying that the url contains '/view'
         """
         self.selenium.location_should_contain(
-            "/lightning/o/outfunds__Funding_Program__c/list?",
+            "Funding_Program__c/list?",
             message="Current page is not a Funding Program List view",
         )
 
 
-@pageobject("Details", "outfunds__Funding_Program__c")
+@pageobject("Details", "Funding_Program__c")
 class FundingProgramDetailPage(BaseOutboundFundsPage, DetailPage):
-    object_name = "outfunds__Funding_Program__c"
 
     @capture_screenshot_on_error
     def _is_current_page(self):
