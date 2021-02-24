@@ -36,9 +36,8 @@ Add a Requirement on a Funding Request
     Click Tab                                   Requirements
     click related list wrapper button           Requirements                               New
     Wait For Modal                              New                                  Requirement
-    Populate Modal Form                         Requirement Name=${req_name}
-    ...                                         Due Date=15
-    ...                                         Primary Contact=${contact}[Name]
+    Populate Field                              Requirement Name=${req_name}
+    Populate Lookup Field                        Primary Contact=${contact}[Name]
     Click Save
     wait until modal is closed
     Click Related List Link                     ${req_name}
