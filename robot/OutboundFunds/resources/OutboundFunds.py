@@ -186,3 +186,11 @@ class OutboundFunds(BaseOutboundFundsPage):
             self.wait_for_locator("flexipage-popup")
             self.selenium.scroll_element_into_view(option)
             self.selenium.click_element(option)
+
+    def click_related_list_wrapper_button(self, heading, button_title):
+        """ loads the related list  and clicks on the button on the list """
+        locator = outboundfunds_lex_locators["related"]["flexi_button"].format(
+            heading, button_title
+        )
+        self.salesforce._jsclick(locator)
+        self.salesforce.wait_until_loading_is_complete()
