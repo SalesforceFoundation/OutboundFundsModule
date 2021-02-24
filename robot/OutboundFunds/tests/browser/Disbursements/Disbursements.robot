@@ -14,7 +14,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 Setup Test Data
     ${fundingprogram} =               API Create Funding Program
     Set suite variable                ${fundingprogram}
-    $ ${contact} =                    API Create Contact
+    ${contact} =                    API Create Contact
     Store Session Record              Contact                              ${contact}[Id]
     Set suite variable                ${contact}
     ${funding_request} =              API Create Funding Request             ${fundingprogram}[Id]     ${contact}[Id]
