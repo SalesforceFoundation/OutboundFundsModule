@@ -36,9 +36,9 @@ Create Disbursement on a Funding Request
     Current Page Should Be                      Details          Funding_Request__c
     Click Button                                Create Disbursements
     wait until modal is open
-    Populate Field                              Number of Disbursements=4
-    Populate Field                              Interval=4
-    Populate Field                              Amount=80000
+    Populate Field                              Number of Disbursements     4
+    Populate Field                              Interval    4
+    Populate Field                              Amount      80000
     click button                                Calculate
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
