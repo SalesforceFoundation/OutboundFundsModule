@@ -2,6 +2,7 @@ from cumulusci.robotframework.pageobjects import ListingPage
 from cumulusci.robotframework.pageobjects import DetailPage
 from cumulusci.robotframework.pageobjects import pageobject
 from BaseObjects import BaseOutboundFundsPage
+from OutboundFunds import outboundfunds_lex_locators
 
 
 @pageobject("Listing", "Funding_Request__c")
@@ -27,3 +28,9 @@ class FundingRequestDetailPage(BaseOutboundFundsPage, DetailPage):
         self.selenium.wait_until_location_contains(
             "/view", timeout=60, message="Detail page did not load in 1 min"
         )
+
+    def save_disbursement(self):
+        """Click Save Disbursement"""
+        locator = outboundfunds_lex_locators["details"]["button"].format("Save")
+        self.selenium.set_focus_to_element(locator)
+        self.selenium.get_webelement(locator).click()

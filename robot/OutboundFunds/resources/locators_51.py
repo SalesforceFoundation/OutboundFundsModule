@@ -44,6 +44,10 @@ outboundfunds_lex_locators = {
         "count": "//tbody/tr/td[1]",
         "flexi_button": "//div[@lst-listviewmanagerheader_listviewmanagerheader][.//span[@title='{}']]//lightning-button//button[text()='{}']",
     },
+    "details": {
+        "button": "//button[contains(@class, 'slds-button') and text() = '{}']",
+        "header": "//h1//div[contains(@class, 'entityNameTitle') and contains(text(),'{}')]",
+    },
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
 }

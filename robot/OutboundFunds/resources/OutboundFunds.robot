@@ -93,8 +93,8 @@ API Create Requirement on a Funding Request
     ...                             ${ns}Primary_Contact__c=${contact_id}
     ...                             ${ns}Due_Date__c=${due_date}
     ...                             ${ns}Assigned__c=${user_id}
-    ...                            ${ns}Status__c=Open
-    ...                             o${ns}Funding_Request__c=${funding_request_id}
+    ...                             ${ns}Status__c=Open
+    ...                             ${ns}Funding_Request__c=${funding_request_id}
     ...                             ${ns}Type__c=Review
     ...                             &{fields}
     &{requirement} =                Salesforce Get  ${ns}Requirement__c  ${requirement_id}
