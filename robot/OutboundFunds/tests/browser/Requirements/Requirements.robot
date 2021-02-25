@@ -28,7 +28,7 @@ Setup Test Data
 Add a Requirement on a Funding Request
     [Documentation]                             Creates a Funding Request via API.
     ...                                         Go to Requirements and add a new Requirement
-    [tags]                                      feature:Funding Request    Requirements
+    [tags]                                      unstable    feature:Funding Request    Requirements
     Go To Page                                  Listing          Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
