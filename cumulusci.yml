@@ -43,6 +43,20 @@ tasks:
             path: robot/OutboundFunds/tests
             output: robot/OutboundFunds/doc/OutboundFunds_tests.html
 
+    recover_funding_program_analytics:
+        group: "Recover deleted reports"
+        description: Deploys deleted namespaced reports that are preventing push upgrades.
+        class_path: cumulusci.tasks.salesforce.Deploy
+        options:
+            path: unpackaged/config/recover_funding_program_analytics
+
+    recover_parent_funding_program_analytics:
+        group: "Recover deleted reports"
+        description: Deploys deleted namespaced reports that are preventing push upgrades.
+        class_path: cumulusci.tasks.salesforce.Deploy
+        options:
+            path: unpackaged/config/recover_parent_funding_program_analytics
+
 flows:
     config_dev:
         steps:
@@ -109,3 +123,40 @@ plans:
         steps:
             1:
                 flow: customer_org
+
+    recover-deleted-funding-program-analytics-report:
+        slug: recover-deleted-funding-program-analytics-report
+        title: Recover Deleted Funding Program Analytics Report
+        tier: additional
+        is_listed: False
+        preflight_message: "This installer is designed to correct upgrade issues caused by a Outbound Funds Module report (Funding Progam Analytics) being deleted. Please do not run this installer unless instructed by Salesforce Support."
+        checks:
+            - when: "not org_config.has_minimum_package_version('outfunds', '1.0')"
+              action: error
+              message: "Please install Outbound Funds Module in your org prior to installing reports."
+        steps:
+            1:
+                task: deploy
+                options:
+                    path: unpackaged/config/recover_funding_program_analytics
+                ui_options:
+                    name: "Recover Deleted Report"
+
+
+    recover-deleted-parent-funding-program-analytics-report:
+        slug: recover-deleted-parent-funding-program-analytics-report
+        title: Recover Deleted Funding Program Analytics Report
+        tier: additional
+        is_listed: False
+        preflight_message: "This installer is designed to correct upgrade issues caused by a Outbound Funds Module report (Parent Funding Progam Analytics) being deleted. Please do not run this installer unless instructed by Salesforce Support."
+        checks:
+            - when: "not org_config.has_minimum_package_version('outfunds', '1.0')"
+              action: error
+              message: "Please install Outbound Funds Module in your org prior to installing reports."
+        steps:
+            1:
+                task: deploy
+                options:
+                    path: unpackaged/config/recover_parent_funding_program_analytics
+                ui_options:
+                    name: "Recover Deleted Report"
