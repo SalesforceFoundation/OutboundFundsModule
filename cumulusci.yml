@@ -15,6 +15,11 @@ sources:
         github: https://github.com/SalesforceFoundation/NPSP
 
 tasks:
+    # Automerge Major Release Branches
+    github_automerge_feature:
+        options:
+            update_future_releases: True
+
     delete_data:
         options:
             objects:
