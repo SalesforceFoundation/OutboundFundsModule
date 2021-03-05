@@ -156,6 +156,7 @@ class OutboundFunds(BaseOutboundFundsPage):
 
         assert list_found, "locator not found"
 
+    @capture_screenshot_on_error
     def click_tab(self, label):
         """Click on a tab on a record page"""
         locator = outboundfunds_lex_locators["tab"]["tab_header"].format(label)
