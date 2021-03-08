@@ -30,10 +30,10 @@ Create Disbursement on a Funding Request
     ...                                         Verifies that Funding Request is created and
     ...                                         add a new Disbursement
     [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          Funding_Request__c
+    Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
-    Current Page Should Be                      Details          Funding_Request__c
+    Current Page Should Be                      Details          ${ns}Funding_Request__c
     Click Button                                Create Disbursements
     wait until modal is open
     Populate Field                              Number of Disbursements     4
@@ -42,6 +42,6 @@ Create Disbursement on a Funding Request
     click button                                Calculate
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
-    Current Page Should Be                      Details          Funding_Request__c
+    Current Page Should Be                      Details          ${ns}Funding_Request__c
     Validate Field Value                        Unpaid Disbursements          contains         $80,000.00
     Validate Field Value                        Available for Disbursement          contains         $20,000.00

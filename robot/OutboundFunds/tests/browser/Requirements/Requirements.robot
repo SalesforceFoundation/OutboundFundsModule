@@ -29,15 +29,15 @@ Add a Requirement on a Funding Request
     [Documentation]                             Creates a Funding Request via API.
     ...                                         Go to Requirements and add a new Requirement
     [tags]                                      unstable    feature:Funding Request    Requirements
-    Go To Page                                  Listing          Funding_Request__c
+    Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
-    Current Page Should Be                      Details          Funding_Request__c
+    Current Page Should Be                      Details          ${ns}Funding_Request__c
     Click Tab                                   Requirements
     click related list wrapper button           Requirements                               New
     Wait For Modal                              New                                  Requirement
     Populate Field                              Requirement Name=${req_name}
-    Populate Lookup Field                        Primary Contact=${contact}[Name]
+    Populate Lookup Field                       Primary Contact=${contact}[Name]
     Click Save
     wait until modal is closed
     Click Related List Link                     ${req_name}

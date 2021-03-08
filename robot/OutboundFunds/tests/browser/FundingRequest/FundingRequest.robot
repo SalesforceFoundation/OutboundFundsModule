@@ -38,10 +38,10 @@ Create Funding Request Via API
     ...                                         Verifies that Funding Request is created and
     ...                                         displays under recently viewed Funding Request
     [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          Funding_Request__c
+    Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
-    Current Page Should Be                      Details          Funding_Request__c
+    Current Page Should Be                      Details          ${ns}Funding_Request__c
     Validate Field Value                        Status  contains    In progress
     Validate Field Value                        Funding Request Name    contains    ${funding_request}[Name]
 
@@ -49,7 +49,7 @@ Create Funding Request via UI in Outbound Funds
      [Documentation]                            Creates a Funding Request via UI.
      ...                                        Verifies that Funding Request is created.
      [tags]                                     feature:FundingRequest
-     Go To Page                                 Listing          Funding_Request__c
+     Go To Page                                 Listing          ${ns}Funding_Request__c
      Click Object Button                        New
      wait until modal is open
      Populate Field                             Funding Request Name    ${fr_name}
@@ -57,5 +57,5 @@ Create Funding Request via UI in Outbound Funds
      Populate Lookup Field                      Applying Contact    ${contact}[Name]
      Click Save
      wait until modal is closed
-     Current Page Should Be                     Details           Funding_Request__c
+     Current Page Should Be                     Details           ${ns}Funding_Request__c
      Validate Field Value                       Funding Request Name           contains         ${fr_name}
