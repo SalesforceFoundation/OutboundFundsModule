@@ -48,6 +48,11 @@ tasks:
             path: robot/OutboundFunds/resources/OutboundFunds.py,robot/OutboundFunds/resources/OutboundFunds.robot,robot/OutboundFunds/resources/*PageObject.py
             output: robot/OutboundFunds/doc/Keywords.html
 
+    update_admin_profile:
+        options:
+            package_xml: lib/admin.profile-meta.xml
+            include_packaged_objects: true
+
 flows:
     config_dev:
         steps:
@@ -58,6 +63,15 @@ flows:
         steps:
             3:
                 task: load_dataset
+
+    dev_org_2gp:
+        steps:
+            1:
+                flow: install_2gp_commit
+            2:
+                flow: config_dev
+            3:
+                task: snapshot_changes
 
     customer_org:
         steps:
