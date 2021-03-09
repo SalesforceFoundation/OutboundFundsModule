@@ -7,20 +7,18 @@ from OutboundFunds import outboundfunds_lex_locators
 
 @pageobject("Listing", "Funding_Request__c")
 class FundingRequestListingPage(BaseOutboundFundsPage, ListingPage):
-
     def _is_current_page(self):
         """Verify we are on the Funding Request Listing page
         by verifying that the url contains '/view'
         """
         self.selenium.location_should_contain(
-            "Funding_Request__c/list?",
+            "/list?",
             message="Current page is not a Funding Request List view",
         )
 
 
 @pageobject("Details", "Funding_Request__c")
 class FundingRequestDetailPage(BaseOutboundFundsPage, DetailPage):
-
     def _is_current_page(self):
         """Verify we are on the Funding Request detail page
         by verifying that the url contains '/view'
