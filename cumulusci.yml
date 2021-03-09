@@ -13,6 +13,8 @@ sources:
         github: https://github.com/SalesforceFoundation/OutboundFundsNPSP
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
+    site_template:
+        github: https://github.com/SalesforceFoundation/OutboundFundsCommunity
 
 tasks:
     # Automerge Major Release Branches
@@ -87,6 +89,10 @@ flows:
                     - when: "'npsp' not in tasks.get_installed_packages()"
                       action: hide
                 when: "org_config.has_minimum_package_version('npsp', '1.0')"
+            4:
+                task: site_template:install_managed
+                ui_options:
+                    is_required: False
 
     install_npsp:
         steps:
