@@ -38,7 +38,7 @@ Create Funding Request Via API
     ...                                         Verifies that Funding Request is created and
     ...                                         displays under recently viewed Funding Request
     [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          Funding_Request__c
+    Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
     Current Page Should Be                      Details          Funding_Request__c
@@ -49,7 +49,7 @@ Create Funding Request via UI in Outbound Funds
      [Documentation]                            Creates a Funding Request via UI.
      ...                                        Verifies that Funding Request is created.
      [tags]                                     feature:FundingRequest
-     Go To Page                                 Listing          Funding_Request__c
+     Go To Page                                 Listing          ${ns}Funding_Request__c
      Click Object Button                        New
      wait until modal is open
      Populate Field                             Funding Request Name    ${fr_name}

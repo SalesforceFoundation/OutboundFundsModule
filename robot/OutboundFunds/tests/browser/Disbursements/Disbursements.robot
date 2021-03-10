@@ -30,7 +30,7 @@ Create Disbursement on a Funding Request
     ...                                         Verifies that Funding Request is created and
     ...                                         add a new Disbursement
     [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          Funding_Request__c
+    Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
     Current Page Should Be                      Details          Funding_Request__c
