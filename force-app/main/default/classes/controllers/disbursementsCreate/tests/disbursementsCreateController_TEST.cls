@@ -357,13 +357,13 @@ private class disbursementsCreateController_TEST {
         final Schema.Funding_Request__c record = [
             SELECT
                 Id,
+                Name,
                 Applying_Contact__r.Name,
                 Requested_Amount__c,
                 Awarded_Amount__c,
                 Total_Disbursed__c,
                 Total_Remaining__c
             FROM Funding_Request__c
-            WHERE Name = 'Test Request'
             LIMIT 1
         ];
 
