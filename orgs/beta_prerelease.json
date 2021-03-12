@@ -1,6 +1,7 @@
 {
     "orgName": "Outbound Funds - Beta Test Org",
     "edition": "Developer",
+    "features": ["Communities"],
     "instance": "cs46",
     "settings": {
         "chatterSettings": {
@@ -14,6 +15,11 @@
         },
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
+        },
+        "communitiesSettings": {
+            "enableNetworksEnabled": true,
+            "enableGuestRecordReassignOrgPref": true,
+            "enableOotbProfExtUserOpsEnable": true
         }
     }
 }

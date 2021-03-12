@@ -1,6 +1,7 @@
 {
     "orgName": "Outbound Funds - Dev Org",
     "edition": "Developer",
+    "features": ["Communities"],
     "settings": {
         "chatterSettings": {
             "enableChatter": true
@@ -30,6 +31,11 @@
             "sessionSettings": {
                 "forceRelogin": false
             }
+        },
+        "communitiesSettings": {
+            "enableNetworksEnabled": true,
+            "enableGuestRecordReassignOrgPref": true,
+            "enableOotbProfExtUserOpsEnable": true
         }
     }
 }

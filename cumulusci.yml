@@ -90,7 +90,7 @@ flows:
                       action: hide
                 when: "org_config.has_minimum_package_version('npsp', '1.0')"
             4:
-                task: site_template:install_managed
+                task: site_template:install_managed_beta
                 ui_options:
                     is_required: False
 

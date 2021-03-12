@@ -1,6 +1,7 @@
 {
     "orgName": "Outbound Funds - Feature Test Org",
     "edition": "Developer",
+    "features": ["Communities"],
     "settings": {
         "chatterSettings": {
             "enableChatter": true
@@ -16,6 +17,11 @@
         },
         "languageSettings": {
             "enableTranslationWorkbench": true
+        },
+        "communitiesSettings": {
+            "enableNetworksEnabled": true,
+            "enableGuestRecordReassignOrgPref": true,
+            "enableOotbProfExtUserOpsEnable": true
         }
     }
 }
