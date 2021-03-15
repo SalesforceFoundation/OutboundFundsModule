@@ -121,13 +121,15 @@ API Create Disbursement on a Funding Request
     [Return]                        &{disbursement}
 
 Change Object Permissions
-    [Documentation]  Adds or removes the Create, Read, Edit and Delete permissions for the specified object on the specified permission set..
+    [Documentation]  Adds or removes the Create, Read, Edit and Delete permissions
+     ...             for the specified object on the specified permission set..
     [Arguments]  ${action}  ${objectapiname}  ${permset}
 
 
     ${removeobjperms} =  Catenate  SEPARATOR=\n
     ...  ObjectPermissions objperm;
-    ...  objperm = [SELECT Id, PermissionsRead, PermissionsEdit, PermissionsCreate, PermissionsDelete FROM ObjectPermissions
+    ...  objperm = [SELECT Id, PermissionsRead, PermissionsEdit, PermissionsCreate,
+    ...  PermissionsDelete FROM ObjectPermissions
     ...  WHERE parentId IN ( SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}')
     ...  AND SobjectType='${objectapiname}'];
     ...  objperm.PermissionsRead = false;
@@ -138,7 +140,8 @@ Change Object Permissions
 
     ${addobjperms} =  Catenate  SEPARATOR=\n
     ...  String permid = [SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}'].id;
-    ...  ObjectPermissions objperm = New ObjectPermissions(PermissionsRead = true, PermissionsEdit = true, PermissionsCreate = true,
+    ...  ObjectPermissions objperm = New ObjectPermissions(PermissionsRead = true,
+    ...  PermissionsEdit = true, PermissionsCreate = true,
     ...  PermissionsDelete = true, ParentId = permid, SobjectType='${objectapiname}');
     ...  insert objperm;
 
@@ -151,7 +154,8 @@ Change Object Permissions
     ...             apex= ${addobjperms}
 
 Change Field Permissions
-    [Documentation]  Adds or removes the Create, Read, Edit and Delete permissions for the specified object field on the specified permission set.
+    [Documentation]  Adds or removes the Create, Read, Edit and Delete permissions
+    ...              for the specified object field on the specified permission set.
     [Arguments]  ${action}  ${objectapiname}  ${fieldapiname}  ${permset}
 
     ${removefieldperms} =  Catenate  SEPARATOR=\n
@@ -166,8 +170,10 @@ Change Field Permissions
 
     ${addfieldperms} =  Catenate  SEPARATOR=\n
     ...  String permid = [SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}'].id;
-    ...  FieldPermissions fldperm = New FieldPermissions(PermissionsRead = true, PermissionsEdit = true,
-    ...  ParentId = permid, Field = '${objectapiname}.${fieldapiname}', SobjectType='${objectapiname}');
+    ...  FieldPermissions fldperm = New FieldPermissions(PermissionsRead = true,
+    ...  PermissionsEdit = true,
+    ...  ParentId = permid, Field = '${objectapiname}.${fieldapiname}',
+    ...  SobjectType='${objectapiname}');
     ...  insert fldperm;
 
     Run Keyword if  "${action}" == "remove"
@@ -179,16 +185,20 @@ Change Field Permissions
     ...             apex= ${addfieldperms}
 
 Object Permissions Cleanup
-   [Documentation]  Resets all object permissions in case a test fails before they are restored. Skips the reset if the permissions have already been added back.
+   [Documentation]  Resets all object permissions in case a test fails
+   ...              before they are restored. Skips the reset if the permissions
+   ...              have already been added back.
    [Arguments]  ${objectapiname}  ${permset}
 
    ${addobjback} =  Catenate  SEPARATOR=\n
    ...  List<ObjectPermissions> checkperms = [SELECT PermissionsRead FROM ObjectPermissions
-   ...  WHERE parentId IN ( SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}') AND
+   ...  WHERE parentId IN ( SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}')
+   ...  AND
    ...  SobjectType = '${objectapiname}'];
    ...  if (checkperms.isEmpty()) {
    ...  String permid = [SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}'].id;
-   ...  ObjectPermissions objperm = New ObjectPermissions(PermissionsRead = true, PermissionsEdit = true, PermissionsCreate = true,
+   ...  ObjectPermissions objperm = New ObjectPermissions(PermissionsRead = true,
+   ...  PermissionsEdit = true, PermissionsCreate = true,
    ...  PermissionsDelete = true, ParentId = permid, SobjectType = '${objectapiname}');
    ...  insert objperm; }
    ...  else { System.debug('Permissions Exist, skipping.'); }
@@ -196,19 +206,23 @@ Object Permissions Cleanup
    Run Task  execute_anon  apex=${addobjback}
 
 Field Permissions Cleanup
-   [Documentation]  Resets all field permissions in case a test fails before they are restored. Skips the reset if the permissions have already been added back.
+   [Documentation]  Resets all field permissions in case a test fails before they are restored.
+    ...             Skips the reset if the permissions have already been added back.
    [Arguments]  ${objectapiname}  ${fieldapiname}  ${permset}
 
-   ${ns} =  Get NPSP Namespace Prefix
+   ${ns} =  Get Outfunds Namespace Prefix
 
    ${addfieldback} =  Catenate  SEPARATOR=\n
    ...  List<FieldPermissions> checkperms = [SELECT PermissionsRead FROM FieldPermissions
-   ...  WHERE parentId IN ( SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}') AND
+   ...  WHERE parentId IN ( SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}')
+   ...  AND
    ...  SobjectType = '${objectapiname}' AND Field = '${objectapiname}.${fieldapiname}'];
    ...  if (checkperms.isEmpty()) {
    ...  String permid = [SELECT id FROM permissionset WHERE PermissionSet.Name = '${permset}'].id;
-   ...  FieldPermissions fldperm = New FieldPermissions(PermissionsRead = true, PermissionsEdit = true,
-   ...  ParentId = permid, Field = '${objectapiname}.${fieldapiname}', SobjectType = '${objectapiname}');
+   ...  FieldPermissions fldperm = New FieldPermissions(PermissionsRead = true,
+   ...  PermissionsEdit = true,
+   ...  ParentId = permid, Field = '${objectapiname}.${fieldapiname}',
+   ...  SobjectType = '${objectapiname}');
    ...  insert fldperm; }
    ...  else { System.debug('Permissions Exist, skipping.'); }
 
