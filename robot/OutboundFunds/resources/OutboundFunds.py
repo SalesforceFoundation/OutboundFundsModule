@@ -53,6 +53,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         outboundfunds_lex_locators.update(locators)
 
     def get_namespace_prefix(self, name):
+        """ This is a helper function to capture the namespace prefix of the target org """
         parts = name.split("__")
         if parts[-1] == "c":
             parts = parts[:-1]
@@ -62,6 +63,7 @@ class OutboundFunds(BaseOutboundFundsPage):
             return ""
 
     def get_outfunds_namespace_prefix(self):
+        """Get outfunds__ prefix for custom objects"""
         if not hasattr(self.cumulusci, "_describe_result"):
             self.cumulusci._describe_result = self.cumulusci.sf.describe()
         objects = self.cumulusci._describe_result["sobjects"]

@@ -1,5 +1,5 @@
 *** Settings ***
-
+Documentation  Create a nw Funding Program
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingProgramPageObject.py
@@ -12,6 +12,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Keywords ***
 Setup Test Data
+    [Documentation]                   Create data to run tests
     ${ns} =                           Get Outfunds Namespace Prefix
     Set suite variable                ${ns}
     &{fundingprogram} =               API Create Funding Program
