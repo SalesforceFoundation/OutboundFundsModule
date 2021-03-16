@@ -145,7 +145,7 @@ plans:
               message: "Enable My Domain in your org prior to installing."
             - when: "not tasks.check_enable_networks_enabled()"
               action: warn
-              message: "In order to include the Outbound Funds Module Site Template in your installation, please ensure that Digital Experiences is available in your org prior to installing."
+              message: "The Fundseeker Starter site template requires that Digital Experiences is enabled. Make sure to enable it in your org before installing the site template."
         steps:
             1:
                 flow: customer_org
