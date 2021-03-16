@@ -55,6 +55,15 @@ tasks:
             package_xml: lib/admin.profile-meta.xml
             include_packaged_objects: true
 
+    check_enable_networks_enabled:
+        description: Preflight check to validate that Communities are enabled.
+        group: "OFM: Preflight Checks"
+        class_path: cumulusci.tasks.preflight.settings.CheckSettingsValue
+        options:
+            settings_type: CommunitiesSettings
+            settings_field: IsNetworksEnabledEnabled
+            value: true
+
 flows:
     config_dev:
         steps:
@@ -93,6 +102,9 @@ flows:
                 task: site_template:install_managed_beta
                 ui_options:
                     is_required: False
+                checks:
+                    - when: "not tasks.check_enable_networks_enabled()"
+                      action: hide
 
     install_npsp:
         steps:
@@ -131,6 +143,9 @@ plans:
             - when: "'.my.' not in org_config.instance_url"
               action: error
               message: "Please enable My Domain in your org prior to installing."
+            - when: "not tasks.check_enable_networks_enabled()"
+              action: warn
+              message: "In order to include the Outbound Funds Module Site Template in your installation, please ensure that Digital Experiences is available in your org prior to installing."
         steps:
             1:
                 flow: customer_org
