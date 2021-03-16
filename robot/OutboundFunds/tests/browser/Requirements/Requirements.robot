@@ -1,5 +1,5 @@
 *** Settings ***
-
+Documentation  Create a Requirement on a Funding Request.
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingRequestPageObject.py
@@ -12,6 +12,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Keywords ***
 Setup Test Data
+    [Documentation]         Create data to run tests
     ${ns} =                           Get Outfunds Namespace Prefix
     Set Suite Variable                ${ns}
     ${fundingprogram} =               API Create Funding Program
@@ -19,8 +20,10 @@ Setup Test Data
     ${contact} =                      API Create Contact
     Store Session Record              Contact                              ${contact}[Id]
     Set suite variable                ${contact}
-    ${funding_request} =              API Create Funding Request           ${fundingprogram}[Id]     ${contact}[Id]
-    ...                               ${ns}Status__c=In Progress          ${ns}Awarded_Amount__c=100000
+    ${funding_request} =              API Create Funding Request           ${fundingprogram}[Id]
+    ...                               ${contact}[Id]
+    ...                               ${ns}Status__c=In Progress
+    ...                               ${ns}Awarded_Amount__c=100000
     Store Session Record              ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                ${funding_request}
     ${req_name} =                     Generate New String
@@ -30,7 +33,7 @@ Setup Test Data
 Add a Requirement on a Funding Request
     [Documentation]                             Creates a Funding Request via API.
     ...                                         Go to Requirements and add a new Requirement
-    [tags]                                      feature:Funding Request    Requirements
+    [tags]                                      feature:FundingRequest    Requirements
     Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
@@ -43,5 +46,5 @@ Add a Requirement on a Funding Request
     Click Save
     wait until modal is closed
     Click Related List Link                     ${req_name}
-    Validate Field Value                        Requirement Name           contains         ${req_name}
+    Validate Field Value                        Requirement Name   contains   ${req_name}
     Validate Field Value                        Primary Contact    contains    ${contact}[Name]

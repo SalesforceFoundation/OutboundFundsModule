@@ -1,5 +1,5 @@
 *** Settings ***
-
+Documentation  Create a funding request.
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingRequestPageObject.py
@@ -12,6 +12,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Keywords ***
 Setup Test Data
+    [Documentation]                     Create data to run tests
     ${ns} =                             Get Outfunds Namespace Prefix
     Set Suite Variable                  ${ns}
     ${fundingprogram} =                 API Create Funding Program
@@ -20,12 +21,14 @@ Setup Test Data
     ${contact} =                        API Create Contact
     Store Session Record                Contact                              ${contact}[Id]
     Set suite variable                  ${contact}
-    ${funding_request} =                API Create Funding Request           ${fundingprogram}[Id]     ${contact}[Id]
+    ${funding_request} =                API Create Funding Request
+    ...                                 ${fundingprogram}[Id]     ${contact}[Id]
     Store Session Record                ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                  ${funding_request}
-    ${awardedfunding_request} =         API Create Funding Request           ${fundingprogram}[Id]     ${contact}[Id]
-    ...                                 ${ns}Status__c=Awarded          ${ns}Awarded_Amount__c=100000
-    Store Session Record                ${ns}Funding_Request__c         ${awardedfunding_request}[Id]
+    ${awardedfunding_request} =         API Create Funding Request
+    ...                                 ${fundingprogram}[Id]      ${contact}[Id]
+    ...                                 ${ns}Status__c=Awarded  ${ns}Awarded_Amount__c=100000
+    Store Session Record                ${ns}Funding_Request__c  ${awardedfunding_request}[Id]
     Set suite variable                  ${awardedfunding_request}
     ${fr_name} =                        Generate New String
     Set suite variable                  ${fr_name}
@@ -43,7 +46,8 @@ Create Funding Request Via API
     Wait Until Loading Is Complete
     Current Page Should Be                      Details          Funding_Request__c
     Validate Field Value                        Status  contains    In progress
-    Validate Field Value                        Funding Request Name    contains    ${funding_request}[Name]
+    Validate Field Value                        Funding Request Name    contains
+    ...                                         ${funding_request}[Name]
 
 Create Funding Request via UI in Outbound Funds
      [Documentation]                            Creates a Funding Request via UI.
@@ -58,4 +62,4 @@ Create Funding Request via UI in Outbound Funds
      Click Save
      wait until modal is closed
      Current Page Should Be                     Details           Funding_Request__c
-     Validate Field Value                       Funding Request Name           contains         ${fr_name}
+     Validate Field Value                       Funding Request Name    contains    ${fr_name}

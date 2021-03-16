@@ -1,5 +1,5 @@
 *** Settings ***
-
+Documentation  Create an awarded funding request and add disbursemnt
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingRequestPageObject.py
@@ -12,6 +12,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Keywords ***
 Setup Test Data
+    [Documentation]                   Create data to run tests
     ${ns} =                           Get Outfunds Namespace Prefix
     Set Suite Variable                ${ns}
     ${fundingprogram} =               API Create Funding Program
@@ -19,8 +20,10 @@ Setup Test Data
     ${contact} =                      API Create Contact
     Store Session Record              Contact                              ${contact}[Id]
     Set suite variable                ${contact}
-    ${funding_request} =              API Create Funding Request             ${fundingprogram}[Id]     ${contact}[Id]
-    ...                               ${ns}Status__c=Awarded          ${ns}Awarded_Amount__c=100000
+    ${funding_request} =              API Create Funding Request
+    ...                               ${fundingprogram}[Id]     ${contact}[Id]
+    ...                               ${ns}Status__c=Awarded
+    ...                               ${ns}Awarded_Amount__c=100000
     Store Session Record              ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                ${funding_request}
 
@@ -43,5 +46,5 @@ Create Disbursement on a Funding Request
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
     Current Page Should Be                      Details          Funding_Request__c
-    Validate Field Value                        Unpaid Disbursements          contains         $80,000.00
-    Validate Field Value                        Available for Disbursement          contains         $20,000.00
+    Validate Field Value                        Unpaid Disbursements    contains    $80,000.00
+    Validate Field Value                        Available for Disbursement  contains    $20,000.00
