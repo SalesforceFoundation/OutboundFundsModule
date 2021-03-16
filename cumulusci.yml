@@ -142,7 +142,7 @@ plans:
               message: "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again."
             - when: "'.my.' not in org_config.instance_url"
               action: error
-              message: "Please enable My Domain in your org prior to installing."
+              message: "Enable My Domain in your org prior to installing."
             - when: "not tasks.check_enable_networks_enabled()"
               action: warn
               message: "In order to include the Outbound Funds Module Site Template in your installation, please ensure that Digital Experiences is available in your org prior to installing."
