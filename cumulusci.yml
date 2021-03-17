@@ -56,7 +56,7 @@ tasks:
             include_packaged_objects: true
 
     check_enable_networks_enabled:
-        description: Preflight check to validate that Communities are enabled.
+        description: Preflight check to validate that Digital Experiences are enabled.
         group: "OFM: Preflight Checks"
         class_path: cumulusci.tasks.preflight.settings.CheckSettingsValue
         options:
