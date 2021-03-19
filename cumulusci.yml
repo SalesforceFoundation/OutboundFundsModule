@@ -80,10 +80,6 @@ flows:
                 task: deploy_qa_config
             5:
                 task: create_perms_testing_user
-            6:
-                task: assign_permission_sets
-                options:
-                    api_names: Disbursements
 
     dev_org_2gp:
         steps:
