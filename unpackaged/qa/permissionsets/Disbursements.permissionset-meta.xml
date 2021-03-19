@@ -1,199 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
-        <application>Outbound_Funds</application>
+        <application>%%%NAMESPACE%%%Outbound_Funds</application>
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>DatabaseService</apexClass>
+        <apexClass>%%%NAMESPACE%%%DatabaseService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>FundingRequestSelector</apexClass>
+        <apexClass>%%%NAMESPACE%%%FundingRequestSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>disbursementsCreateController</apexClass>
+        <apexClass>%%%NAMESPACE%%%disbursementsCreateController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Amount__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Disbursement_Date__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Disbursement_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Disbursement_Method__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Disbursement_Method__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Scheduled_Date__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Scheduled_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Status__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Disbursement__c.Type__c</field>
+        <field>%%%NAMESPACE%%%Disbursement__c.%%%NAMESPACE%%%Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Description__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.End_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Funding_Program_Manager__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Funding_Program_Manager__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Parent_Funding_Program__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Parent_Funding_Program__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Start_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Status__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Top_Level__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Top_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Program__c.Total_Program_Amount__c</field>
+        <field>%%%NAMESPACE%%%Funding_Program__c.%%%NAMESPACE%%%Total_Program_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Application_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Application_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Applying_Contact__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Applying_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Applying_Employee__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Applying_Employee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Applying_Organization__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Applying_Organization__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Awarded_Amount__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Awarded_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Awarded_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Awarded_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Close_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Close_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Closed_reason__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Closed_reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.FundingProgram__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%FundingProgram__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Geographical_Area_Served__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Geographical_Area_Served__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Population_Served__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Population_Served__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Recommended_Amount__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Recommended_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Requested_Amount__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Requested_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Requested_For__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Requested_For__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Status__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Term_End_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Term_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Term_Start_Date__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Term_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Terms__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Terms__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Total_Cancelled__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Total_Cancelled__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Total_Disbursed__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Total_Disbursed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Total_Remaining__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Total_Remaining__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Funding_Request__c.Unpaid_Disbursements__c</field>
+        <field>%%%NAMESPACE%%%Funding_Request__c.%%%NAMESPACE%%%Unpaid_Disbursements__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
@@ -204,7 +204,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Disbursement__c</object>
+        <object>%%%NAMESPACE%%%Disbursement__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -213,7 +213,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Funding_Program__c</object>
+        <object>%%%NAMESPACE%%%Funding_Program__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -222,15 +222,15 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Funding_Request__c</object>
+        <object>%%%NAMESPACE%%%Funding_Request__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
-        <tab>Funding_Program__c</tab>
+        <tab>%%%NAMESPACE%%%Funding_Program__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Funding_Request__c</tab>
+        <tab>%%%NAMESPACE%%%Funding_Request__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>
