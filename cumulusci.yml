@@ -77,7 +77,7 @@ flows:
             3:
                 task: load_dataset
             4:
-                task:  deploy_qa_config
+                task: deploy_qa_config
             5:
                 task: create_perms_testing_user
             6:
