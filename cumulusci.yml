@@ -57,14 +57,14 @@ tasks:
         description: Creates a test user for testing permissions.
         class_path: cumulusci.tasks.sfdx.SFDXOrgTask
         options:
-            command: "force:user:create -a permtest --definitionfile datasets/qa_org/users/perms_test_user.json"
+            command: "force:user:create -a permtest --definitionfile robot/OutboundFunds/resources/qa_org/users/perms_test_user.json"
 
     deploy_qa_config:
         description: Deploys additional fields used for QA purposes only
         class_path: cumulusci.tasks.salesforce.Deploy
         group: Salesforce Metadata
         options:
-            path: unpackaged/qa
+            path: robot/OutboundFunds/resources/unpackaged/qa
 
 flows:
     config_dev:
