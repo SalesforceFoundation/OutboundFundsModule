@@ -23,10 +23,10 @@ tasks:
     delete_data:
         options:
             objects:
-                - "%%%NAMESPACE%%%Requirement__c"
-                - "%%%NAMESPACE%%%Disbursement__c"
-                - "%%%NAMESPACE%%%Funding_Request__c"
-                - "%%%NAMESPACE%%%Funding_Program__c"
+                - Requirement__c
+                - Disbursement__c
+                - Funding_Request__c
+                - Funding_Program__c
                 - Contact
                 - Account
 
