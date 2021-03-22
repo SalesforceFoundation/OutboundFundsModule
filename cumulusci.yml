@@ -112,6 +112,24 @@ flows:
                 flow: npsp:install_prod
             2:
                 task: bridge:install_managed
+    
+    customer_site_enablement:
+        description: Customer enablement for the Outbound Funds Portal with recommended configuration.
+        steps:
+            1:
+                flow: site_template:fundseeker_customer_enablement
+                ui_options:
+                    is_required: False
+                checks:
+                    - when: "'outfunds_comm' not in tasks.get_installed_packages()"
+                      action: hide
+
+    customer_org_site:
+        steps:
+            1:
+                flow: customer_org
+            2:
+                flow: customer_site_enablement
 
 orgs:
     scratch:
@@ -149,3 +167,32 @@ plans:
         steps:
             1:
                 flow: customer_org
+    
+    customer_enablement_install:
+        slug: install-and-build-site
+        title: Install Outbound Funds Module and Build an Experience Site
+        tier: primary
+        is_listed: True
+        preflight_message: "This will install Outbound Funds Module into your org. The installer creates a Site with the Experience Site template from Outbound Funds Site and applies our recommended configurations."
+        post_install_message: "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) community group on the Power of Us Hub for any questions about Outbound Funds Module or Outbound Funds Site."
+        error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area and log a technical support ticket with Salesforce. Include “Outbound Funds Module” in the subject line and include in your comment the installation link shown here."
+        checks:
+            - when: "not tasks.check_chatter_enabled()"
+              action: error
+              message: "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again."
+            - when: "'.my.' not in org_config.instance_url"
+              action: error
+              message: "Enable My Domain in your org prior to installing."
+            - when: "not tasks.check_enable_networks_enabled()"
+              action: error
+              message: "The Fundseeker Starter site template requires that Digital Experiences is enabled. Make sure to enable it in your org before installing the site template."
+            - when: "'PID_Customer_Community_Plus_Login' not in tasks.get_available_licenses()"
+              action: error
+              message: "The Fundseeker Started site requires Customer Community Plus Login licenses. Please coordinate with your Salesforce account executive to be sure you have the correct licenses set up in your org."
+            #- when: "'Outbound Funds Portal' in tasks.list_communities()" 
+            #  action: error
+            #  message: "The site with the default Outbound Funds Portal name already exists."
+
+        steps:
+            1:
+                flow: customer_org_site
