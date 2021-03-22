@@ -129,7 +129,7 @@ flows:
                 flow: npsp:install_prod
             2:
                 task: bridge:install_managed
-    
+
     customer_site_enablement:
         description: Customer enablement for the Outbound Funds Portal with recommended configuration.
         steps:
@@ -184,7 +184,7 @@ plans:
         steps:
             1:
                 flow: customer_org
-    
+
     customer_enablement_install:
         slug: install-and-build-site
         title: Install Outbound Funds Module and Build an Experience Site
@@ -206,7 +206,8 @@ plans:
             - when: "'PID_Customer_Community_Plus_Login' not in tasks.get_available_licenses()"
               action: error
               message: "The Fundseeker Started site requires Customer Community Plus Login licenses. Please coordinate with your Salesforce account executive to be sure you have the correct licenses set up in your org."
-            #- when: "'Outbound Funds Portal' in tasks.list_communities()" 
+            #  How to check for existing sites with same name ?
+            #- when: "'Outbound Funds Portal' in tasks.list_communities()"
             #  action: error
             #  message: "The site with the default Outbound Funds Portal name already exists."
 
