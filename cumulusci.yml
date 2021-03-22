@@ -64,6 +64,19 @@ tasks:
             settings_field: IsNetworksEnabledEnabled
             value: true
 
+    create_perms_testing_user:
+        description: Creates a test user for testing permissions.
+        class_path: cumulusci.tasks.sfdx.SFDXOrgTask
+        options:
+            command: "force:user:create -a permtest --definitionfile robot/OutboundFunds/resources/qa_org/users/perms_test_user.json"
+
+    deploy_qa_config:
+        description: Deploys additional fields used for QA purposes only
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: Salesforce Metadata
+        options:
+            path: robot/OutboundFunds/resources/unpackaged/qa
+
 flows:
     config_dev:
         steps:
@@ -74,6 +87,10 @@ flows:
         steps:
             3:
                 task: load_dataset
+            4:
+                task: deploy_qa_config
+            5:
+                task: create_perms_testing_user
 
     dev_org_2gp:
         steps:

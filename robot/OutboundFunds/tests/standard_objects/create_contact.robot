@@ -1,5 +1,5 @@
 *** Settings ***
-
+Documentation   Create a new Contact via API and UI.
 Resource        cumulusci/robotframework/Salesforce.robot
 Suite Setup     Open Test Browser
 Suite Teardown  Delete Records and Close Browser
@@ -7,6 +7,7 @@ Suite Teardown  Delete Records and Close Browser
 *** Test Cases ***
 
 Via API
+    [Documentation]       Create a Contact via API
     ${first_name} =       Generate Random String
     ${last_name} =        Generate Random String
     ${contact_id} =       Salesforce Insert  Contact
@@ -16,6 +17,7 @@ Via API
     Validate Contact      ${contact_id}  ${first_name}  ${last_name}
 
 Via UI
+    [Documentation]       Create a Contact via UI
     ${first_name} =       Generate Random String
     ${last_name} =        Generate Random String
     Go To Object Home     Contact
@@ -28,12 +30,12 @@ Via UI
     ${contact_id} =       Get Current Record Id
     Store Session Record  Contact  ${contact_id}
     Validate Contact      ${contact_id}  ${first_name}  ${last_name}
-     
 
 *** Keywords ***
 
 Validate Contact
     [Arguments]          ${contact_id}  ${first_name}  ${last_name}
+    [Documentation]      Validate via UI and API
     # Validate via UI
     Go To Record Home    ${contact_id}
     Page Should Contain  ${first_name} ${last_name}
@@ -41,5 +43,3 @@ Validate Contact
     &{contact} =     Salesforce Get  Contact  ${contact_id}
     Should Be Equal  ${first_name}  &{contact}[FirstName]
     Should Be Equal  ${last_name}  &{contact}[LastName]
-
-
