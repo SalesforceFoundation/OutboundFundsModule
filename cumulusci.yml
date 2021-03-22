@@ -186,8 +186,8 @@ plans:
                 flow: customer_org
 
     customer_enablement_install:
-        slug: install-and-build-site
-        title: Install Outbound Funds Module and Build an Experience Site
+        slug: install-ofm-and-build-site
+        title: Install Outbound Funds Module and Build Experience Site
         tier: primary
         is_listed: True
         preflight_message: "This will install Outbound Funds Module into your org. The installer creates a Site with the Experience Site template from Outbound Funds Site and applies our recommended configurations."
@@ -209,7 +209,7 @@ plans:
             #  How to check for existing sites with same name ?
             #- when: "'Outbound Funds Portal' in tasks.list_communities()"
             #  action: error
-            #  message: "The site with the default Outbound Funds Portal name already exists."
+            #  message: "The site with the default 'Outbound Funds Portal' name already exists."
 
         steps:
             1:
