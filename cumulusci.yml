@@ -99,8 +99,9 @@ flows:
                       action: hide
                 when: "org_config.has_minimum_package_version('npsp', '1.0')"
             4:
-                task: site_template:install_managed_beta
+                flow: install_ofm_template
                 ui_options:
+                    name: "Install the Outbound Funds Module Site Template"
                     is_required: False
                 checks:
                     - when: "not tasks.check_enable_networks_enabled()"
@@ -112,6 +113,16 @@ flows:
                 flow: npsp:install_prod
             2:
                 task: bridge:install_managed
+
+    install_ofm_template:
+        steps:
+            1:
+                task: site_template:deploy_pre
+            2:
+                task: site_template:install_managed_beta
+            3:
+                task: site_template:deploy_post
+
 
 orgs:
     scratch:
