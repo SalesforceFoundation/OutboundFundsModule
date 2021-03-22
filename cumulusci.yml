@@ -55,6 +55,19 @@ tasks:
             package_xml: lib/admin.profile-meta.xml
             include_packaged_objects: true
 
+    create_perms_testing_user:
+        description: Creates a test user for testing permissions.
+        class_path: cumulusci.tasks.sfdx.SFDXOrgTask
+        options:
+            command: "force:user:create -a permtest --definitionfile robot/OutboundFunds/resources/qa_org/users/perms_test_user.json"
+
+    deploy_qa_config:
+        description: Deploys additional fields used for QA purposes only
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: Salesforce Metadata
+        options:
+            path: robot/OutboundFunds/resources/unpackaged/qa
+
     check_enable_networks_enabled:
         description: Preflight check to validate that Digital Experiences are enabled.
         group: "OFM: Preflight Checks"
@@ -74,6 +87,10 @@ flows:
         steps:
             3:
                 task: load_dataset
+            4:
+                task: deploy_qa_config
+            5:
+                task: create_perms_testing_user
 
     dev_org_2gp:
         steps:
@@ -160,7 +177,7 @@ plans:
               message: "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again."
             - when: "'.my.' not in org_config.instance_url"
               action: error
-              message: "Enable My Domain in your org prior to installing."
+              message: "Please enable My Domain in your org prior to installing."
             - when: "not tasks.check_enable_networks_enabled()"
               action: warn
               message: "The Fundseeker Starter site template requires that Digital Experiences is enabled. Make sure to enable it in your org before installing the site template."

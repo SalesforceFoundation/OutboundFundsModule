@@ -1,14 +1,17 @@
 *** Settings ***
-Documentation  Create an awarded funding request and add disbursemnt
+Documentation  User with Read Only Access should not  be able to Create a Disbursement
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingRequestPageObject.py
 ...            robot/OutboundFunds/resources/OutboundFunds.py
 
 Suite Setup     Run keywords
-...             Open Test Browser
+...             Open test browser       useralias=${test_user}      AND
 ...             Setup Test Data
 Suite Teardown  Capture Screenshot And Delete Records And Close Browser
+
+*** Variables ***
+${test_user}             permtest
 
 *** Keywords ***
 Setup Test Data
@@ -28,15 +31,14 @@ Setup Test Data
     Set suite variable                ${funding_request}
 
 *** Test Case ***
-Create Disbursement on a Funding Request
-    [Documentation]                             Creates a Funding Request via API.
-    ...                                         Verifies that Funding Request is created and
-    ...                                         add a new Disbursement
-    [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          ${ns}Funding_Request__c
-    Click Link With Text                        ${funding_request}[Name]
+Disbursement FLS Check
+    [Documentation]                            Login as User who only have read access
+    ...                                        to Disbursements Object and Verify
+    ...                                        that user cannot save a disbursement
+    [tags]                                      W-9027758   feature:FundingRequest
+    Go To Page                                  Details     Funding_Request__c
+    ...                                         object_id=${funding_request}[Id]
     Wait Until Loading Is Complete
-    Current Page Should Be                      Details          Funding_Request__c
     Click Button                                Create Disbursements
     wait until modal is open
     Populate Field                              Number of Disbursements     4
@@ -45,6 +47,4 @@ Create Disbursement on a Funding Request
     click button                                Calculate
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
-    Current Page Should Be                      Details          Funding_Request__c
-    Validate Field Value                        Unpaid Disbursements    contains    $80,000.00
-    Validate Field Value                        Available for Disbursement  contains    $20,000.00
+    Wait Until Element Is Visible               text:Error
