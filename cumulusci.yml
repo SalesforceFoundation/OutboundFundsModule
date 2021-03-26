@@ -6,11 +6,11 @@ project:
         namespace: outfunds
         api_version: "48.0"
     git:
-        repo_url: https://github.com/SalesforceFoundation/OutboundFunds
+        repo_url: https://github.com/SalesforceFoundation/OutboundFundsModule
 
 sources:
     bridge:
-        github: https://github.com/SalesforceFoundation/OutboundFundsNPSP
+        github: https://github.com/SalesforceFoundation/OutboundFundsModuleNPSP
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
     site_template:
