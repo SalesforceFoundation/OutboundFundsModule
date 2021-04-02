@@ -15,7 +15,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: venv
-          key: ${{ runner.os }}-${{ steps.python-version.outputs.ver }}-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-${{ steps.python-version.outputs.ver }}_${{ hashFiles('requirements.txt') }}
       - name: Install Packages
         run: |
           python3 -m venv venv
