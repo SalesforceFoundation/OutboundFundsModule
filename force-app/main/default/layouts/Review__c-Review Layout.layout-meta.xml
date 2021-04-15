@@ -47,7 +47,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Feedback__c</field>
+                <field>Comments__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
