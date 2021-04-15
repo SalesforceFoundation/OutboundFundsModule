@@ -93,29 +93,40 @@ CREATE TABLE "Disbursement__c" (
 	"Funding_Request__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Disbursement__c" VALUES(1,'124.0','2018-04-12','Cash','2018-04-11','Paid','Initial','1');
-INSERT INTO "Disbursement__c" VALUES(2,'125345.0','','Cash','2018-05-11','Scheduled','Interim','1');
-INSERT INTO "Disbursement__c" VALUES(3,'65667.0','','Cash','2018-02-15','Scheduled','Amendment','1');
-INSERT INTO "Disbursement__c" VALUES(4,'5000.0','','EFT','2018-06-01','Scheduled','Initial','5');
-INSERT INTO "Disbursement__c" VALUES(5,'50000.0','','EFT','2018-12-01','Scheduled','Interim','5');
-INSERT INTO "Disbursement__c" VALUES(6,'50000.0','','EFT','2019-05-01','Scheduled','Final','5');
-INSERT INTO "Disbursement__c" VALUES(7,'25000.0','2018-07-13','Check','2018-07-15','Paid','Initial','17');
-INSERT INTO "Disbursement__c" VALUES(8,'25000.0','','Check','2018-12-15','Scheduled','Interim','17');
-INSERT INTO "Disbursement__c" VALUES(9,'4000.0','','','2018-11-01','Pending Approval','Final','8');
-INSERT INTO "Disbursement__c" VALUES(10,'4000.0','2018-05-31','EFT','2018-06-01','Approved','Initial','8');
-INSERT INTO "Disbursement__c" VALUES(11,'7000.0','2018-06-06','Cash','2018-06-06','Paid','Final','11');
-INSERT INTO "Disbursement__c" VALUES(12,'2500.0','','Check','2018-06-01','Scheduled','Initial','4');
-INSERT INTO "Disbursement__c" VALUES(13,'2500.0','','Check','2018-12-01','Scheduled','Final','4');
-INSERT INTO "Disbursement__c" VALUES(14,'20000.0','','EFT','2018-07-31','Pending Approval','Initial','6');
-INSERT INTO "Disbursement__c" VALUES(15,'20000.0','','EFT','2018-12-01','Scheduled','Final','6');
-INSERT INTO "Disbursement__c" VALUES(16,'50000.0','','EFT','2018-06-15','Approved','Initial','18');
-INSERT INTO "Disbursement__c" VALUES(17,'50000.0','','EFT','2018-09-01','Scheduled','Final','18');
-INSERT INTO "Disbursement__c" VALUES(18,'10000.0','','EFT','2018-09-01','Paid','Final','9');
-INSERT INTO "Disbursement__c" VALUES(19,'5000.0','2018-05-14','EFT','2018-05-11','Paid','Initial','9');
-INSERT INTO "Disbursement__c" VALUES(20,'15000.0','2017-08-01','Check','2017-08-01','Paid','Initial','13');
-INSERT INTO "Disbursement__c" VALUES(21,'5000.0','','EFT','2018-06-01','Scheduled','Initial','14');
-INSERT INTO "Disbursement__c" VALUES(22,'50000.0','','Check','2018-12-01','Scheduled','Interim','14');
-INSERT INTO "Disbursement__c" VALUES(23,'50000.0','','Check','2019-05-01','Scheduled','Final','14');
+INSERT INTO "Disbursement__c" VALUES(1,'6000.0','2020-07-15','Cash','2020-06-01','Paid','Initial','1');
+INSERT INTO "Disbursement__c" VALUES(2,'4000.0','','Cash','2020-10-11','Scheduled','Interim','1');
+INSERT INTO "Disbursement__c" VALUES(3,'2546.0','','Cash','2021-02-15','Scheduled','Final','1');
+INSERT INTO "Disbursement__c" VALUES(4,'5000.0','','EFT','2021-01-01','Scheduled','Initial','5');
+INSERT INTO "Disbursement__c" VALUES(5,'50000.0','','EFT','2021-02-01','Scheduled','Interim','5');
+INSERT INTO "Disbursement__c" VALUES(6,'50000.0','','EFT','2021-03-01','Scheduled','Final','5');
+INSERT INTO "Disbursement__c" VALUES(7,'25000.0','2018-07-13','Check','2020-07-15','Paid','Initial','17');
+INSERT INTO "Disbursement__c" VALUES(8,'10000.0','','Check','2020-11-15','Scheduled','Interim','17');
+INSERT INTO "Disbursement__c" VALUES(9,'15000.0','','Check','2021-02-15','Scheduled','Interim','17');    
+INSERT INTO "Disbursement__c" VALUES(10,'1000.0','','','2021-04-01','Pending Approval','Final','8');
+INSERT INTO "Disbursement__c" VALUES(11,'1000.0','2018-05-31','EFT','2018-06-01','Approved','Initial','8');  
+INSERT INTO "Disbursement__c" VALUES(12,'1000.0','2018-05-31','EFT','2021-01-01','Scheduled','Interim','8'); 
+INSERT INTO "Disbursement__c" VALUES(13,'1000.0','2018-05-31','EFT','2021-03-01','Scheduled','Interim','8'); 
+INSERT INTO "Disbursement__c" VALUES(14,'7000.0','2018-06-06','Cash','2018-06-06','Paid','Final','11');
+INSERT INTO "Disbursement__c" VALUES(15,'2000.0','','Check','2021-01-01','Paid','Initial','4');
+INSERT INTO "Disbursement__c" VALUES(16,'1000.0','','Check','2021-02-01','Scheduled','Interim','4');  
+INSERT INTO "Disbursement__c" VALUES(17,'2000.0','','Check','2021-04-01','Scheduled','Final','4');
+INSERT INTO "Disbursement__c" VALUES(18,'20000.0','','EFT','2018-07-31','Pending Approval','Initial','6');
+INSERT INTO "Disbursement__c" VALUES(19,'20000.0','','EFT','2018-12-01','Scheduled','Final','6');
+INSERT INTO "Disbursement__c" VALUES(20,'50000.0','','EFT','2020-12-15','Approved','Initial','18');
+INSERT INTO "Disbursement__c" VALUES(21,'10000.0','','EFT','2021-01-01','Scheduled','Interim','18'); 
+INSERT INTO "Disbursement__c" VALUES(22,'10000.0','','EFT','2021-02-01','Scheduled','Interim','18'); 
+INSERT INTO "Disbursement__c" VALUES(23,'10000.0','','EFT','2021-03-01','Scheduled','Interim','18'); 
+INSERT INTO "Disbursement__c" VALUES(24,'10000.0','','EFT','2021-04-01','Scheduled','Interim','18'); 
+INSERT INTO "Disbursement__c" VALUES(25,'10000.0','','EFT','2021-05-01','Scheduled','Final','18'); 
+INSERT INTO "Disbursement__c" VALUES(26,'10000.0','','EFT','2018-09-01','Paid','Final','9');
+INSERT INTO "Disbursement__c" VALUES(27,'5000.0','2018-05-14','EFT','2018-05-11','Paid','Initial','9');
+INSERT INTO "Disbursement__c" VALUES(28,'15000.0','2017-08-01','Check','2017-08-01','Paid','Initial','13');
+INSERT INTO "Disbursement__c" VALUES(29,'5000.0','','EFT','2020-08-01','Scheduled','Initial','14');
+INSERT INTO "Disbursement__c" VALUES(30,'20000.0','','Check','2020-10-01','Scheduled','Interim','14');
+INSERT INTO "Disbursement__c" VALUES(31,'10000.0','','Check','2020-12-01','Scheduled','Interim','14'); 
+INSERT INTO "Disbursement__c" VALUES(32,'10000.0','','Check','2021-01-01','Scheduled','Interim','14'); 
+INSERT INTO "Disbursement__c" VALUES(33,'10000.0','','Check','2021-03-01','Scheduled','Interim','14'); 
+INSERT INTO "Disbursement__c" VALUES(34,'50000.0','','Check','2019-05-01','Scheduled','Final','14');
 CREATE TABLE "Funding_Program__c" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -172,7 +183,7 @@ INSERT INTO "Funding_Request__c" VALUES(7,'DUFF Robots','2018-05-01','0.0','','2
 INSERT INTO "Funding_Request__c" VALUES(8,'Nick Lindberg - Scholarship 2018-19','2018-04-18','8000.0','2018-05-22','','','','','5000.0','3000.0','NYU - Dance & Computer Science','Submitted','2019-05-31','2018-08-15','Need a transcript and confirmation from NYU on acceptance','8','','10');
 INSERT INTO "Funding_Request__c" VALUES(9,'Springfield Robotics Team 2018','2018-01-01','15000.0','2018-05-30','','','City','Children and Youth','15000.0','10000.0','Robotics program','Awarded','2019-05-31','2018-09-01','For the 2018-19 School year to be used to support the robotics team.','12','29','8');
 INSERT INTO "Funding_Request__c" VALUES(10,'Bill Corkill Scholarship 2018-19','2018-04-02','','','','','','','5000.0','10000.0','WMU  - Computers','Submitted','','','','9','','10');
-INSERT INTO "Funding_Request__c" VALUES(11,'Sarah Amin - Scholarship 2018-19','2018-04-03','','2018-06-06','','','','','5000.0','7000.0','UCLA - Arts & Crafts','Fully Disbursed','','','','10','','10');
+INSERT INTO "Funding_Request__c" VALUES(11,'Sarah Amin - Scholarship 2018-19','2018-04-03','7000.0','2018-06-06','','','','','5000.0','7000.0','UCLA - Arts & Crafts','Fully Disbursed','','','','10','','10');
 INSERT INTO "Funding_Request__c" VALUES(12,'Lisa Simpson Camp Scholarship','2018-04-17','','','','','','Children and Youth','','','','Submitted','','','','30','17','11');
 INSERT INTO "Funding_Request__c" VALUES(13,'Sally Jones','2017-04-28','50000.0','2017-07-26','','','','','55000.0','50000.0','','Awarded','2018-07-31','2017-08-01','','20','','2');
 INSERT INTO "Funding_Request__c" VALUES(14,'2018 Bob Test 98765','2018-04-22','105000.0','2018-05-07','','','State','Homeless','100000.0','100000.0','','Awarded','2019-05-31','2018-06-01','','21','','7');
