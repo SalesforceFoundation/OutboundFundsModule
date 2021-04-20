@@ -14,6 +14,18 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Funding_Request__c.Total_Remaining__c</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Funding_Request__c.Total_Disbursed__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Funding_Request__c.Unpaid_Disbursements__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Funding_Request__c.Total_Cancelled__c</field>
+    </columns>
     <description>List of funding requests with available amount for disbursement.</description>
     <filter>
         <criteriaItems>
