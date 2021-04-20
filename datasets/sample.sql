@@ -127,6 +127,13 @@ INSERT INTO "Disbursement__c" VALUES(31,'10000.0','','Check','2020-12-01','Sched
 INSERT INTO "Disbursement__c" VALUES(32,'10000.0','','Check','2021-01-01','Scheduled','Interim','14'); 
 INSERT INTO "Disbursement__c" VALUES(33,'10000.0','','Check','2021-03-01','Scheduled','Interim','14'); 
 INSERT INTO "Disbursement__c" VALUES(34,'50000.0','','Check','2019-05-01','Scheduled','Final','14');
+INSERT INTO "Disbursement__c" VALUES(29,'5000.0','','EFT','2021-08-01','Scheduled','Initial','7');
+INSERT INTO "Disbursement__c" VALUES(30,'2000.0','','EFT','2021-10-01','Scheduled','Interim','18');
+INSERT INTO "Disbursement__c" VALUES(31,'5000.0','','EFT','2021-12-01','Scheduled','Interim','17');
+INSERT INTO "Disbursement__c" VALUES(32,'5000.0','','EFT','2022-01-01','Scheduled','Interim','14');
+INSERT INTO "Disbursement__c" VALUES(33,'5000.0','','Check','2022-03-01','Scheduled','Interim','14');
+INSERT INTO "Disbursement__c" VALUES(34,'3000.0','','Check','2021-05-01','Scheduled','Interim','14');
+INSERT INTO "Disbursement__c" VALUES(13,'1000.0','','EFT','2022-02-01','Scheduled','Interim','12');
 CREATE TABLE "Funding_Program__c" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
