@@ -44,7 +44,7 @@
     <columns>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Status__c</field>
     </columns>
-    <description>List of overdue disbursements grouped by funding program.</description>
+    <description>List of Disbursements that are overdue by 1-30 days, 31-60 days, and 61+ days.</description>
     <customDetailFormulas>
         <calculatedFormula>IF(TODAY() - Disbursement__c.Scheduled_Date__c &gt; 59 , &apos;(3) 60+ Days&apos;,
 IF( TODAY() - Disbursement__c.Scheduled_Date__c &gt; 30 &amp;&amp; TODAY() - Disbursement__c.Scheduled_Date__c &lt; 60, &apos;(2) 31 - 60 days&apos;, &apos;(1) 1 - 30 days&apos;

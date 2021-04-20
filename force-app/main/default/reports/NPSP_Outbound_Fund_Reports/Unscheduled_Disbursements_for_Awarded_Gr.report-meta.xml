@@ -26,7 +26,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Funding_Request__c.Total_Cancelled__c</field>
     </columns>
-    <description>List of funding requests with available amount for disbursement.</description>
+    <description>List of Disbursements associated with an awarded Funding Request that need to be scheduled.</description>
     <filter>
         <criteriaItems>
             <column>Funding_Request__c.Total_Remaining__c</column>
@@ -38,7 +38,7 @@
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
-    <name>Unscheduled Disbursements for Awarded Gr</name>
+    <name>Overdue Disbursements</name>
     <params>
         <name>co</name>
         <value>1</value>
