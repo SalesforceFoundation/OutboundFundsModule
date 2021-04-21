@@ -17,11 +17,13 @@
             <axisBinding>y</axisBinding>
             <column>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</column>
         </chartSummaries>
-        <chartType>VerticalColumn</chartType>
+        <chartType>VerticalColumnStacked</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>Funding_Program__c$Name</groupingColumn>
+        <groupingColumn>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
         <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>Funding_Program__c$Name</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
@@ -30,7 +32,7 @@
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
         <textSize>12</textSize>
-        <title>Open Disbursements over next 12 months</title>
+        <title>Unpaid Disbursements</title>
         <titleColor>#000000</titleColor>
         <titleSize>18</titleSize>
     </chart>
@@ -109,7 +111,7 @@
     </params>
     <reportType>Funding_Programs_with_Funding_Requests_with_Disbursements__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
