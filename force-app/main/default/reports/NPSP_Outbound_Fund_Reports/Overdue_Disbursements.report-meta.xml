@@ -44,10 +44,10 @@
     <columns>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Status__c</field>
     </columns>
-    <description>List of overdue disbursements group by funding program.</description>
+    <description>List of Disbursements that are overdue by 1-30 days, 31-59 days, and 61+ days.</description>
     <customDetailFormulas>
-        <calculatedFormula>IF(TODAY() - Disbursement__c.Scheduled_Date__c &gt; 59 , &apos;(3) 60+ Days&apos;,
-IF( TODAY() - Disbursement__c.Scheduled_Date__c &gt; 30 &amp;&amp; TODAY() - Disbursement__c.Scheduled_Date__c &lt; 60, &apos;(2) 31 - 60 days&apos;, &apos;(1) 1 - 30 days&apos;
+        <calculatedFormula>IF(TODAY() - Disbursement__c.Scheduled_Date__c &gt; 59 , &apos;60+ Days&apos;,
+IF( TODAY() - Disbursement__c.Scheduled_Date__c &gt; 30 &amp;&amp; TODAY() - Disbursement__c.Scheduled_Date__c &lt; 60, &apos;31 - 59 days&apos;, &apos;1 - 30 days&apos;
 )
 )</calculatedFormula>
         <dataType>Text</dataType>
@@ -84,7 +84,7 @@ IF( TODAY() - Disbursement__c.Scheduled_Date__c &gt; 30 &amp;&amp; TODAY() - Dis
         <field>Funding_Program__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Aging Disbursements</name>
+    <name>Overdue Disbursements</name>
     <params>
         <name>co</name>
         <value>1</value>
