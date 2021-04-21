@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsAssignedToRunningUser__c</fullName>
+    <description>Marked as true if the running user is the user in the Assigned To lookup field.</description>
+    <externalId>false</externalId>
+    <formula>AssignedTo__c == $User.Id</formula>
+    <label>Is Assigned To Running User</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
