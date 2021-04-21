@@ -13,7 +13,7 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</groupingColumn>
-        <legendPosition>Bottom</legendPosition>
+        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Funding_Program__c$Name</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
@@ -32,32 +32,20 @@
         <field>Funding_Program__c.FundingRequests__r$Name</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.FundingRequests__r$Applying_Organization__c</field>
-    </columns>
-    <columns>
-        <field>Funding_Program__c.FundingRequests__r$Applying_Contact__c</field>
-    </columns>
-    <columns>
         <field>Funding_Program__c.FundingRequests__r$Awarded_Date__c</field>
     </columns>
     <columns>
         <field>Funding_Program__c.FundingRequests__r$Awarded_Amount__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.FundingRequests__r$Total_Disbursed__c</field>
-    </columns>
-    <columns>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Name</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</field>
     </columns>
     <columns>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Status__c</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Type__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</field>
     </columns>
     <description>List of upcoming unpaid Disbursements over the next 12 months.</description>
     <filter>
