@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <buckets>
-        <bucketType>text</bucketType>
-        <developerName>BucketField_74828780</developerName>
-        <masterLabel>Funding Program</masterLabel>
-        <nullTreatment>n</nullTreatment>
-        <sourceColumnName>Funding_Program__c.FundingRequests__r$FundingProgram__c</sourceColumnName>
-        <useOther>false</useOther>
-    </buckets>
     <chart>
         <backgroundColor1>#FFFFFF</backgroundColor1>
         <backgroundColor2>#FFFFFF</backgroundColor2>
