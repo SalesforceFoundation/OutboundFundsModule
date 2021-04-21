@@ -62,6 +62,7 @@
     <tabs>Funding_Program__c</tabs>
     <tabs>Funding_Request__c</tabs>
     <tabs>Requirement__c</tabs>
+    <tabs>Review__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>

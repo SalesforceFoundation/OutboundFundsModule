@@ -270,6 +270,13 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>AssignedTo__c</fields>
+        <fields>DueDate__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Review__c.FundingRequest__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>Contact__c</fields>
         <fields>Role__c</fields>
         <fields>Status__c</fields>
@@ -303,7 +310,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hP0000000nX06</masterLabel>
+        <masterLabel>00h2D000002AEXN</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
