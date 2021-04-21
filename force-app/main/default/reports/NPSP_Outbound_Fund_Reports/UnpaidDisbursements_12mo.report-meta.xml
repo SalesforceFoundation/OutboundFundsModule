@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <aggregates>
-        <calculatedFormula>Disbursement__c.Amount__c:SUM</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA1</developerName>
-        <isActive>false</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Sum of Disbursement Amount</masterLabel>
-        <scale>2</scale>
-    </aggregates>
-    <aggregates>
-        <acrossGroupingContext>CDF1</acrossGroupingContext>
-        <calculatedFormula>RowCount</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA2</developerName>
-        <downGroupingContext>ROW_GRAND_SUMMARY</downGroupingContext>
-        <isActive>false</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Open Disbursements Count</masterLabel>
-        <scale>0</scale>
-    </aggregates>
     <buckets>
         <bucketType>text</bucketType>
         <developerName>BucketField_74828780</developerName>
@@ -37,13 +17,11 @@
             <axisBinding>y</axisBinding>
             <column>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</column>
         </chartSummaries>
-        <chartType>VerticalColumnGrouped</chartType>
+        <chartType>VerticalColumn</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>CDF1</groupingColumn>
-        <legendPosition>Bottom</legendPosition>
+        <groupingColumn>Funding_Program__c$Name</groupingColumn>
         <location>CHART_BOTTOM</location>
-        <secondaryGroupingColumn>Funding_Program__c$Name</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
@@ -57,10 +35,13 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>BucketField_74828780</field>
+        <field>Funding_Program__c.FundingRequests__r$Name</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.FundingRequests__r$Name</field>
+        <field>Funding_Program__c.FundingRequests__r$Applying_Organization__c</field>
+    </columns>
+    <columns>
+        <field>Funding_Program__c.FundingRequests__r$Applying_Contact__c</field>
     </columns>
     <columns>
         <field>Funding_Program__c.FundingRequests__r$Awarded_Date__c</field>
@@ -75,9 +56,6 @@
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Name</field>
     </columns>
     <columns>
-        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Amount__c</field>
     </columns>
@@ -87,15 +65,7 @@
     <columns>
         <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Type__c</field>
     </columns>
-    <customDetailFormulas>
-        <calculatedFormula>MONTH(Disbursement__c.Scheduled_Date__c)</calculatedFormula>
-        <dataType>Double</dataType>
-        <description>Represented as a number</description>
-        <developerName>CDF1</developerName>
-        <label>Month Disbursement Scheduled</label>
-        <scale>0</scale>
-    </customDetailFormulas>
-    <description>List of requests with disbursements this and next 12 months or overdue disbursements.</description>
+    <description>List of upcoming unpaid Disbursements over the next 12 months.</description>
     <filter>
         <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <criteriaItems>
@@ -123,8 +93,8 @@
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
-        <dateGranularity>Day</dateGranularity>
-        <field>CDF1</field>
+        <dateGranularity>Month</dateGranularity>
+        <field>Funding_Program__c.FundingRequests__r.Disbursements__r$Scheduled_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsAcross>
     <groupingsDown>
@@ -132,7 +102,7 @@
         <field>Funding_Program__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Requests with Open Disbursements - 12 mo</name>
+    <name>Unpaid Disbursements</name>
     <params>
         <name>co</name>
         <value>1</value>
