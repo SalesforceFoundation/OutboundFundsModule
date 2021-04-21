@@ -24,7 +24,7 @@
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
         <textSize>12</textSize>
-        <title>Unpaid Disbursements</title>
+        <title>Upcoming Disbursements</title>
         <titleColor>#000000</titleColor>
         <titleSize>18</titleSize>
     </chart>
@@ -96,7 +96,7 @@
         <field>Funding_Program__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Unpaid Disbursements</name>
+    <name>Upcoming Disbursements</name>
     <params>
         <name>co</name>
         <value>1</value>
