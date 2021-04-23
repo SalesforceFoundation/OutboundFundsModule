@@ -36,7 +36,7 @@ Setup Test Data
     Set suite variable                ${review_name2}
 
 *** Test Case ***
-Create Funding Program Via API
+Create Review Via API
     [Documentation]                             Creates a Review via API.
     ...                                         Verifies that Review is created
     [tags]                                      feature:Review
