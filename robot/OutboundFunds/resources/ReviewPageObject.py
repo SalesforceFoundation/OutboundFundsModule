@@ -6,7 +6,7 @@ from OutboundFunds import outboundfunds_lex_locators
 
 
 @pageobject("Listing", "Review__c")
-class FundingRequestListingPage(BaseOutboundFundsPage, ListingPage):
+class ReviewListingPage(BaseOutboundFundsPage, ListingPage):
     def _is_current_page(self):
         """Verify we are on the Review Listing page
         by verifying that the url contains '/view'
@@ -18,7 +18,7 @@ class FundingRequestListingPage(BaseOutboundFundsPage, ListingPage):
 
 
 @pageobject("Details", "Review__c")
-class FundingRequestDetailPage(BaseOutboundFundsPage, DetailPage):
+class ReviewDetailPage(BaseOutboundFundsPage, DetailPage):
     def _is_current_page(self):
         """Verify we are on the Review detail page
         by verifying that the url contains '/view'
