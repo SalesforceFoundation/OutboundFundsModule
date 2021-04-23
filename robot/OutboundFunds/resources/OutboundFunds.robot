@@ -72,7 +72,7 @@ API Create Review on a Funding Request
     ${due_date} =                   Get Current Date  result_format=%Y-%m-%d    increment=30 days
     ${review_id} =                  Salesforce Insert  ${ns}Review__c
     ...                             Name=${review_name}
-    ...                             ${ns}Due_Date__c=${due_date}
+    ...                             ${ns}DueDate__c=${due_date}
     ...                             ${ns}Status__c=In Progress
     ...                             ${ns}Funding_Request__c=${funding_request_id}
     ...                             &{fields}
