@@ -70,7 +70,7 @@ API Create Review on a Funding Request
     ${ns} =                         Get Outfunds Namespace Prefix
     ${review_name} =                Generate New String
     ${due_date} =                   Get Current Date  result_format=%Y-%m-%d    increment=30 days
-    ${review_id} =                  Salesforce Insert  outfunds__Review__c
+    ${review_id} =                  Salesforce Insert  ${ns}Review__c
     ...                             Name=${review_name}
     ...                             ${ns}Due_Date__c=${due_date}
     ...                             ${ns}Status__c=In Progress
