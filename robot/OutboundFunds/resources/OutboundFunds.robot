@@ -65,7 +65,7 @@ API Create Funding Program
     [Return]                        &{fundingprogram}
 
 API Create Review on a Funding Request
-    [Documentation]                 Create a Requirement on a Funding Request via API
+    [Documentation]                 Create a Review on a Funding Request via API
     [Arguments]                     ${funding_request_id}   &{fields}
     ${ns} =                         Get Outfunds Namespace Prefix
     ${review_name} =                Generate New String
