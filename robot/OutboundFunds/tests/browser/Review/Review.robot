@@ -74,4 +74,4 @@ Create a Review via Review Object Tab
     Click Save
     Wait Until Modal Is Closed
     Current Page Should Be                      Details           Review__c
-    Validate Field Value                        Review Name    contains    ${review_name2} 
+    Validate Field Value                        Review Name    contains    ${review_name2}

@@ -13,7 +13,7 @@ class ReviewListingPage(BaseOutboundFundsPage, ListingPage):
         """
         self.selenium.location_should_contain(
             "/list?",
-            message="Current page is not a Funding Request List view",
+            message="Current page is not a Review List view",
         )
 
 
