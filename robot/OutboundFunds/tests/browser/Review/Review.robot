@@ -47,7 +47,7 @@ Add a Review on a Funding Request
     Populate Field                              Review Name        ${review_name1}
     Click Save
     Wait Until Modal is Closed
-    Click Related List Link                     ${review_name}
+    Click Related List Link                     ${review_name1}
     Validate Field Value                        Review Name   contains   ${review_name1}
 
 Create a Review via Review Object Tab
@@ -55,10 +55,10 @@ Create a Review via Review Object Tab
     [tags]                                      feature:Review
     Go To Page                                  Listing          ${ns}Review__c
     Click Object Button                         New
-    Wait Until Modal Is Open
-    Populate Field                             Review Name    ${review_name2}
-    Populate Lookup Field                      Funding Request     ${funding_request}[Name]
+    Wait For Modal                              New                                  Review
+    Populate Field                              Review Name    ${review_name2}
+    Populate Lookup Field                       Funding Request     ${funding_request}[Name]
     Click Save
     Wait Until Modal Is Closed
-    Current Page Should Be                     Details           Review__c
-    Validate Field Value                       Review Name    contains    ${review_name2}
+    Current Page Should Be                      Details           Review__c
+    Validate Field Value                        Review Name    contains    ${review_name2}
