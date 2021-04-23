@@ -27,16 +27,29 @@ Setup Test Data
     ...                               ${ns}Awarded_Amount__c=100000
     Store Session Record              ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                ${funding_request}
+    &{review} =                       API Create Review on a Funding Request
+    ...                               ${funding_request}[Id]
+    Set Suite Variable                &{review}
     ${review_name1} =                 Generate New String
     Set suite variable                ${review_name1}
     ${review_name2} =                 Generate New String
     Set suite variable                ${review_name2}
 
 *** Test Case ***
+Create Funding Program Via API
+    [Documentation]                             Creates a Review via API.
+    ...                                         Verifies that Review is created
+    [tags]                                      feature:Review
+    Go To Page                                  Listing             ${ns}Review__c
+    Capture Page Screenshot
+    Click Link With Text                        ${review}[Name]
+    Wait Until Loading Is Complete
+    Current Page Should Be                      Details             Review__c
+
 Add a Review on a Funding Request
     [Documentation]                             Creates a Funding Request via API.
     ...                                         Go to Reviews and add a new Review
-    [tags]                                      feature:FundingRequest    Review
+    [tags]                                      feature:Review
     Go To Page                                  Listing          ${ns}Funding_Request__c
     Click Link With Text                        ${funding_request}[Name]
     Wait Until Loading Is Complete
