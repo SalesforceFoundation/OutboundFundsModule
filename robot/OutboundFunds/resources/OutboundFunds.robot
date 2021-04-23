@@ -76,7 +76,7 @@ API Create Review on a Funding Request
     ...                             ${ns}Status__c=In Progress
     ...                             ${ns}FundingRequest__c=${funding_request_id}
     ...                             &{fields}
-    &{requirement} =                Salesforce Get  ${ns}Review__c  ${review_id}
+    &{review} =                     Salesforce Get  ${ns}Review__c  ${review_id}
     Store Session Record            ${ns}Review__c   ${review_id}
     [Return]                        &{review}
 
