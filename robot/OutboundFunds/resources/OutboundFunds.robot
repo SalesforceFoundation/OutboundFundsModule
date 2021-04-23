@@ -64,6 +64,22 @@ API Create Funding Program
     &{fundingprogram} =             Salesforce Get  ${ns}Funding_Program__c  ${funding_program_id}
     [Return]                        &{fundingprogram}
 
+API Create Review on a Funding Request
+    [Documentation]                 Create a Review on a Funding Request via API
+    [Arguments]                     ${funding_request_id}   &{fields}
+    ${ns} =                         Get Outfunds Namespace Prefix
+    ${review_name} =                Generate New String
+    ${due_date} =                   Get Current Date  result_format=%Y-%m-%d    increment=30 days
+    ${review_id} =                  Salesforce Insert  ${ns}Review__c
+    ...                             Name=${review_name}
+    ...                             ${ns}DueDate__c=${due_date}
+    ...                             ${ns}Status__c=In Progress
+    ...                             ${ns}FundingRequest__c=${funding_request_id}
+    ...                             &{fields}
+    &{review} =                     Salesforce Get  ${ns}Review__c  ${review_id}
+    Store Session Record            ${ns}Review__c   ${review_id}
+    [Return]                        &{review}
+
 API Create Funding Request
     [Documentation]                 Create a Funding Request via API
     [Arguments]                     ${funding_program_id}  ${contact_id}    &{fields}
