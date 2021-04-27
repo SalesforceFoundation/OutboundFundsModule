@@ -36,6 +36,10 @@
                 <behavior>Edit</behavior>
                 <field>DueDate__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SubmittedDate__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
