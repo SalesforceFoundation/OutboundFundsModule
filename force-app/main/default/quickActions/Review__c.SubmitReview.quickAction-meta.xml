@@ -3,7 +3,7 @@
     <description>Submits this Review</description>
     <fieldOverrides>
         <field>Status__c</field>
-        <literalValue>Completed</literalValue>
+        <literalValue>Submitted</literalValue>
     </fieldOverrides>
     <fieldOverrides>
         <field>SubmittedDate__c</field>
