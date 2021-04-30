@@ -17,7 +17,7 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>SubmittedDate__c</field>
-                <uiBehavior>ReadOnly</uiBehavior>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
