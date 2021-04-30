@@ -28,11 +28,6 @@
                 <default>false</default>
                 <label>Submitted</label>
             </value>
-            <value>
-                <fullName>Completed</fullName>
-                <default>false</default>
-                <label>Completed</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
