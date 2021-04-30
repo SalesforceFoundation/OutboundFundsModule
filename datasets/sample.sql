@@ -256,6 +256,7 @@ CREATE TABLE "Review__c" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Review__c" VALUES(1,'Scholarship 2021-22 - Sarah Amin','<p>Need more documentation!</p>','2021-07-17','In Progress','','14');
-INSERT INTO "Review__c" VALUES(2,'Review - Program Officer','<p>Looks great!</p>','2021-04-29','Completed','2021-04-28','4');
+INSERT INTO "Review__c" VALUES(2,'Review - External','','2021-04-29','Submitted','2021-04-28','4');
 INSERT INTO "Review__c" VALUES(3,'Review of Application - Shari Reily - Scholarship 2021','','2021-04-30','Not Started','','9');
+INSERT INTO "Review__c" VALUES(4,'Review - Program Officer','<p>Looks great!</p>','2021-04-27','Completed','2021-04-28','4');
 COMMIT;
