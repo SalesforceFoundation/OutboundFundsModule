@@ -26,7 +26,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Funding_Request__c.Total_Cancelled__c</field>
     </columns>
-    <description>List of Disbursements associated with an awarded Funding Request that need to be scheduled.</description>
+    <description>List of awarded Funding Requests that have available funds to be scheduled for disbursement.</description>
     <filter>
         <criteriaItems>
             <column>Funding_Request__c.Total_Remaining__c</column>
