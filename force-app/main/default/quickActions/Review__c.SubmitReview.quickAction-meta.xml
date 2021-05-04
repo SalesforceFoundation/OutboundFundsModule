@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Updates the Review Status to "Submitted" and Submitted Date to today's date.</description>
+    <description>Updates the Review Status to "Submitted" and Submitted Date to the current date.</description>
     <fieldOverrides>
         <field>Status__c</field>
         <literalValue>Submitted</literalValue>
