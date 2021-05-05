@@ -6,11 +6,13 @@ import warnings
 from BaseObjects import BaseOutboundFundsPage
 from selenium.common.exceptions import NoSuchWindowException
 from robot.libraries.BuiltIn import RobotNotRunningError
+from locators_52 import outboundfunds_lex_locators as locators_52
 from locators_51 import outboundfunds_lex_locators as locators_51
 from cumulusci.robotframework.utils import selenium_retry, capture_screenshot_on_error
 
 locators_by_api_version = {
     51.0: locators_51,  # Spring '21
+    52.0: locators_52,  # Summer '21
 }
 # will get populated in _init_locators
 outboundfunds_lex_locators = {}
