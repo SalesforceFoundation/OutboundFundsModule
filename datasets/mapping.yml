@@ -81,3 +81,14 @@ Requirements:
             table: Funding_Request__c
         Primary_Contact__c:
             table: Contact
+Reviews:
+    sf_object: Review__c
+    fields:
+        - Name
+        - Comments__c
+        - DueDate__c
+        - Status__c
+        - SubmittedDate__c
+    lookups:
+        FundingRequest__c:
+            table: Funding_Request__c
