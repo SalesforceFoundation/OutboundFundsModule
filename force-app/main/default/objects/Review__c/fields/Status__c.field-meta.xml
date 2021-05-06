@@ -24,9 +24,9 @@
                 <label>In Progress</label>
             </value>
             <value>
-                <fullName>Completed</fullName>
+                <fullName>Submitted</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>Submitted</label>
             </value>
         </valueSetDefinition>
     </valueSet>
