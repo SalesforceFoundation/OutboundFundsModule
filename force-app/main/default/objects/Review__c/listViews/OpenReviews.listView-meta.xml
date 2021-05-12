@@ -11,7 +11,7 @@
     <filters>
         <field>Status__c</field>
         <operation>notEqual</operation>
-        <value>Completed</value>
+        <value>Submitted</value>
     </filters>
     <label>Open Reviews</label>
 </ListView>
