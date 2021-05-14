@@ -7,8 +7,6 @@ project:
         api_version: "48.0"
     git:
         repo_url: https://github.com/SalesforceFoundation/OutboundFundsModule
-    dependency_resolutions:
-        preproduction: include_beta
 
 sources:
     bridge:
