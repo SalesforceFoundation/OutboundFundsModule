@@ -1,6 +1,7 @@
 from cumulusci.robotframework.pageobjects import ListingPage
 from cumulusci.robotframework.pageobjects import DetailPage
 from cumulusci.robotframework.pageobjects import pageobject
+from cumulusci.robotframework.pageobjects import BasePage
 from BaseObjects import BaseOutboundFundsPage
 from OutboundFunds import outboundfunds_lex_locators
 from cumulusci.robotframework.utils import capture_screenshot_on_error
@@ -26,6 +27,18 @@ class ReviewDetailPage(BaseOutboundFundsPage, DetailPage):
         """
         self.selenium.wait_until_location_contains(
             "/view", timeout=60, message="Detail page did not load in 1 min"
+        )
+
+
+@pageobject("SubmitReview", "Review__c")
+class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
+    def _is_current_page(self):
+        """Verify we are on the Submit Review
+        by verifying that the url contains 'SubmitReview?'
+        """
+        self.selenium.location_should_contain(
+            "SubmitReview?",
+            message="Current page is not a Review List view",
         )
 
     @capture_screenshot_on_error

@@ -9,7 +9,7 @@ Library        cumulusci.robotframework.PageObjects
 Suite Setup     Run keywords
 ...             Open test browser
 ...             Setup Test Data
-#Suite Teardown  Capture Screenshot And Delete Records And Close Browser
+Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Variables ***
 ${test_user}             permtest
@@ -53,6 +53,7 @@ Submit a Review
     Validate Field Value                        Status    contains    Submitted
     Click Button                                Submit Review
     Wait until modal is open
+    Current page should be                      SubmitReview        Review__c
     Submit Review
     Wait Until Modal Is Closed
     Current Page Should Be                      Details             Review__c
