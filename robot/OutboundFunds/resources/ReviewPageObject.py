@@ -33,4 +33,5 @@ class ReviewDetailPage(BaseOutboundFundsPage, DetailPage):
         locator = outboundfunds_lex_locators["new_record"][
             "modal_footer_button"
         ].format("Save")
+        self.selenium.set_focus_to_element(locator)
         self.selenium.get_webelement(locator).click()
