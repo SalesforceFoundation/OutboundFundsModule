@@ -52,6 +52,7 @@ Submit a Review
     Current Page Should Be                      Details             Review__c
     Validate Field Value                        Status    contains    Submitted
     Click Button                                Submit Review
+    Wait until modal is open
     Submit Review
     Wait Until Modal Is Closed
     Current Page Should Be                      Details             Review__c
