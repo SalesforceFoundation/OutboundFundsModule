@@ -3,6 +3,7 @@ from cumulusci.robotframework.pageobjects import DetailPage
 from cumulusci.robotframework.pageobjects import pageobject
 from BaseObjects import BaseOutboundFundsPage
 from OutboundFunds import outboundfunds_lex_locators
+from cumulusci.robotframework.utils import capture_screenshot_on_error
 
 
 @pageobject("Listing", "Review__c")
@@ -27,6 +28,7 @@ class ReviewDetailPage(BaseOutboundFundsPage, DetailPage):
             "/view", timeout=60, message="Detail page did not load in 1 min"
         )
 
+    @capture_screenshot_on_error
     def submit_review(self):
         locator = outboundfunds_lex_locators["new_record"][
             "modal_footer_button"
