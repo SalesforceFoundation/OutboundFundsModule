@@ -4,5 +4,9 @@
         <members>Disbursements</members>
         <name>PermissionSet</name>
     </types>
+    <types>
+        <members>SubmitReview</members>
+        <name>PermissionSet</name>
+    </types>
     <version>50.0</version>
 </Package>

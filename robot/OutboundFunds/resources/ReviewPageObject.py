@@ -26,3 +26,9 @@ class ReviewDetailPage(BaseOutboundFundsPage, DetailPage):
         self.selenium.wait_until_location_contains(
             "/view", timeout=60, message="Detail page did not load in 1 min"
         )
+
+    def submit_review(self):
+        locator = outboundfunds_lex_locators["new_record"][
+            "modal_footer_button"
+        ].format("Save")
+        self.selenium.get_webelement(locator).click()
