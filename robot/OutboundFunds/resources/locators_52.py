@@ -29,7 +29,7 @@ outboundfunds_lex_locators = {
         "dropdown_field": "//lightning-combobox[./label[text()='{}']]/div//input[contains(@class,'combobox__input')]",
         "dropdown_popup": "//div[contains(@class, 'slds-dropdown-trigger')]/div[contains(@class, 'slds-listbox')]",
         "dropdown_value": "//div[contains(@class,'slds-listbox')]//lightning-base-combobox-item//span[text()='{}']",
-        "modal_footer_button": "//footer//button//span[text()='{}']",
+        "modal_footer_button": "//*[@id='wrapper-body']/footer/button/span[text()='{}']",
     },
     "confirm": {
         "check_value": "//div[contains(@class, 'forcePageBlockItem') or contains(@class, 'slds-form-element_stacked')][.//span[text()='{}']]//following-sibling::div[.//span[contains(@class, 'test-id__field-value')]]//*[text()='{}']",

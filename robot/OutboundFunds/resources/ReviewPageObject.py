@@ -38,7 +38,12 @@ class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
         """
         self.selenium.location_should_contain(
             "SubmitReview?",
-            message="Current page is not a Review List view",
+            message="Current page is not Submit Review",
+        )
+        locator = outboundfunds_lex_locators["new_record"]["edit_title"].format("Submit Review")
+        self.selenium.wait_until_page_contains_element(
+            locator,
+            error="The header for this page is not 'Submit Review' as expected"
         )
 
     @capture_screenshot_on_error
