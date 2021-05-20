@@ -53,4 +53,4 @@ class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
             "modal_footer_button"
         ].format("Save")
         self.selenium.set_focus_to_element(locator)
-        self.selenium.get_webelement(locator).click()
+        self.salesforce._jsclick(locator)
