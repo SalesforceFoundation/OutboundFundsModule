@@ -45,6 +45,7 @@ class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
             locator,
             error="The header for this page is not 'Submit Review' as expected"
         )
+        self.selenium.set_focus_to_element(locator)
 
     @capture_screenshot_on_error
     def submit_review(self):
