@@ -40,15 +40,17 @@ class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
             "SubmitReview?",
             message="Current page is not Submit Review",
         )
-        locator = outboundfunds_lex_locators["new_record"]["edit_title"].format("Submit Review")
-        self.selenium.wait_until_page_contains_element(
-            locator,
-            error="The header for this page is not 'Submit Review' as expected"
+        locator = outboundfunds_lex_locators["new_record"]["edit_title"].format(
+            "Submit Review"
         )
-        self.selenium.set_focus_to_element(locator)
+        self.selenium.wait_until_page_contains_element(
+            locator, error="The header for this page is not 'Submit Review' as expected"
+        )
 
     @capture_screenshot_on_error
     def submit_review(self):
+        footer_locator = outboundfunds_lex_locators["new_record"]["modal_footer"]
+        self.selenium.set_focus_to_element(footer_locator)
         locator = outboundfunds_lex_locators["new_record"][
             "modal_footer_button"
         ].format("Save")
