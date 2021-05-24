@@ -1,6 +1,6 @@
 {
     "FirstName": "PermsTestingUser",
-    "LastName": "ForDisbursement",
+    "LastName": "RobotUser",
     "Email": "testingperms@sfdx.org",
     "Alias": "permtest",
     "TimeZoneSidKey": "America/Los_Angeles",
@@ -9,5 +9,5 @@
     "LanguageLocaleKey": "en_US",
     "profileName": "Standard User",
     "generatePassword": true,
-    "permsets": ["Disbursements"]
+    "permsets": ["Disbursements", "SubmitReview"]
 }

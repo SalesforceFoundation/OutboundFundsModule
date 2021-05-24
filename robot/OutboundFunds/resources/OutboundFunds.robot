@@ -69,12 +69,14 @@ API Create Review on a Funding Request
     [Arguments]                     ${funding_request_id}   &{fields}
     ${ns} =                         Get Outfunds Namespace Prefix
     ${review_name} =                Generate New String
+    ${user_id} =                    API Get User Id of Permissions Test User
     ${due_date} =                   Get Current Date  result_format=%Y-%m-%d    increment=30 days
     ${review_id} =                  Salesforce Insert  ${ns}Review__c
     ...                             Name=${review_name}
     ...                             ${ns}DueDate__c=${due_date}
     ...                             ${ns}Status__c=In Progress
     ...                             ${ns}FundingRequest__c=${funding_request_id}
+    ...                             ${ns}AssignedTo__c=${user_id}
     ...                             &{fields}
     &{review} =                     Salesforce Get  ${ns}Review__c  ${review_id}
     Store Session Record            ${ns}Review__c   ${review_id}
@@ -243,3 +245,11 @@ Field Permissions Cleanup
    ...  else { System.debug('Permissions Exist, skipping.'); }
 
    Run Task  execute_anon  apex=${addfieldback}
+
+API Get User Id of Permissions Test User
+    [Documentation]         Returns the ID of a User
+    [Arguments]             &{fields}
+    ${result} =             SOQL Query
+    ...                     SELECT Id FROM User where Email LIKE '%testingperms%' and IsActive=True
+    &{Id} =                 Get From List  ${result['records']}  0
+    [return]                ${Id}[Id]
