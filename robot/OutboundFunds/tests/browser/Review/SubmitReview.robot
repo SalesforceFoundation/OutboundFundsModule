@@ -37,7 +37,7 @@ Setup Test Data
 
 *** Test Case ***
 Submit a Review
-    [Documentation]                             Submit a Review
+    [Documentation]                             Submit a Review as Test User
     [tags]                                      feature:Review
     Open Test Browser                           useralias=${test_user}
     ${today} =                                  Get current date        result_format=%-m/%d/%Y
@@ -54,7 +54,9 @@ Submit a Review
     Click Button                                Submit Review
     Wait until modal is open
     Current page should be                      SubmitReview        Review__c
+    Capture Page Screenshot
     Submit Review
+    Capture Page Screenshot
     Wait Until Modal Is Closed
     Current Page Should Be                      Details             Review__c
     Validate Field Value                        Submitted Date    contains    ${today}
