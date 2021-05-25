@@ -1,33 +1,87 @@
-Accounts:
-    sf_object: Account
-    fields:
-        - Name
+Account:
+  sf_object: Account
+  table: Account
+  fields:
+    - Name
+    - AccountNumber
+    - Site
+    - Type
+    - Industry
+    - AnnualRevenue
+    - Rating
+    - Phone
+    - Fax
+    - Website
+    - Ownership
+    - Sic
+    - TickerSymbol
+    - BillingStreet
+    - BillingCity
+    - BillingState
+    - BillingPostalCode
+    - BillingCountry
+    - ShippingStreet
+    - ShippingCity
+    - ShippingState
+    - ShippingPostalCode
+    - ShippingCountry
+    - Description
+  anchor_date: "2020-07-01"
 
-Contacts:
-    sf_object: Contact
-    fields:
-        - Salutation
-        - FirstName
-        - LastName
-        - Email
-        - Phone
-        - Title
-    lookups:
-        AccountId:
-            table: Account
+Contact:
+  sf_object: Contact
+  table: Contact
+  anchor_date: "2020-07-01"
+  fields:
+    - Salutation
+    - FirstName
+    - LastName
+    - Title
+    - Email
+    - Department
+    - Birthdate
+    - LeadSource
+    - Phone
+    - HomePhone
+    - OtherPhone
+    - Fax
+    - AssistantName
+    - AssistantPhone
+    - MailingStreet
+    - MailingCity
+    - MailingState
+    - MailingPostalCode
+    - MailingCountry
+    - OtherStreet
+    - OtherCity
+    - OtherState
+    - OtherPostalCode
+    - OtherCountry
+    - Description
+  lookups:
+    AccountId:
+      key_field: account_id
+      table: Account
+    ReportsToId:
+      key_field: reports_to_id
+      table: Contact
+      after: Contact
 
 Funding Programs:
     sf_object: Funding_Program__c
+    anchor_date: "2020-07-01"
     fields:
         - Name
         - Description__c
         - End_Date__c
         - Start_Date__c
         - Status__c
+        - Top_Level__c
         - Total_Program_Amount__c
 
 Funding Requests:
     sf_object: Funding_Request__c
+    anchor_date: "2020-07-01"
     fields:
         - Name
         - Application_Date__c
@@ -52,8 +106,24 @@ Funding Requests:
         FundingProgram__c:
             table: Funding_Program__c
 
+Funding_Request_Role__c:
+  sf_object: Funding_Request_Role__c
+  table: Funding_Request_Role__c
+  anchor_date: "2020-07-01"
+  fields:
+    - Role__c
+    - Status__c
+  lookups:
+    Contact__c:
+      key_field: Contact__c
+      table: Contact
+    Funding_Request__c:
+      key_field: Funding_request__c
+      table: Funding_Request__c
+
 Disbursements:
     sf_object: Disbursement__c
+    anchor_date: "2020-07-01"
     fields:
         - Amount__c
         - Disbursement_Date__c
@@ -67,6 +137,7 @@ Disbursements:
 
 Requirements:
     sf_object: Requirement__c
+    anchor_date: "2020-07-01"
     fields:
         - Name
         - Completed_Date__c
@@ -81,8 +152,10 @@ Requirements:
             table: Funding_Request__c
         Primary_Contact__c:
             table: Contact
+
 Reviews:
     sf_object: Review__c
+    anchor_date: "2021-04-30"
     fields:
         - Name
         - Comments__c
