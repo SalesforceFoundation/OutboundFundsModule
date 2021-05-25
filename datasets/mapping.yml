@@ -1,71 +1,71 @@
 Account:
-  sf_object: Account
-  table: Account
-  fields:
-    - Name
-    - AccountNumber
-    - Site
-    - Type
-    - Industry
-    - AnnualRevenue
-    - Rating
-    - Phone
-    - Fax
-    - Website
-    - Ownership
-    - Sic
-    - TickerSymbol
-    - BillingStreet
-    - BillingCity
-    - BillingState
-    - BillingPostalCode
-    - BillingCountry
-    - ShippingStreet
-    - ShippingCity
-    - ShippingState
-    - ShippingPostalCode
-    - ShippingCountry
-    - Description
-  anchor_date: "2020-07-01"
+    sf_object: Account
+    table: Account
+    fields:
+        - Name
+        - AccountNumber
+        - Site
+        - Type
+        - Industry
+        - AnnualRevenue
+        - Rating
+        - Phone
+        - Fax
+        - Website
+        - Ownership
+        - Sic
+        - TickerSymbol
+        - BillingStreet
+        - BillingCity
+        - BillingState
+        - BillingPostalCode
+        - BillingCountry
+        - ShippingStreet
+        - ShippingCity
+        - ShippingState
+        - ShippingPostalCode
+        - ShippingCountry
+        - Description
+    anchor_date: "2020-07-01"
 
 Contact:
-  sf_object: Contact
-  table: Contact
-  anchor_date: "2020-07-01"
-  fields:
-    - Salutation
-    - FirstName
-    - LastName
-    - Title
-    - Email
-    - Department
-    - Birthdate
-    - LeadSource
-    - Phone
-    - HomePhone
-    - OtherPhone
-    - Fax
-    - AssistantName
-    - AssistantPhone
-    - MailingStreet
-    - MailingCity
-    - MailingState
-    - MailingPostalCode
-    - MailingCountry
-    - OtherStreet
-    - OtherCity
-    - OtherState
-    - OtherPostalCode
-    - OtherCountry
-    - Description
-  lookups:
-    AccountId:
-      key_field: account_id
-      table: Account
-    ReportsToId:
-      key_field: reports_to_id
-      table: Contact
-      after: Contact
+    sf_object: Contact
+    table: Contact
+    anchor_date: "2020-07-01"
+    fields:
+        - Salutation
+        - FirstName
+        - LastName
+        - Title
+        - Email
+        - Department
+        - Birthdate
+        - LeadSource
+        - Phone
+        - HomePhone
+        - OtherPhone
+        - Fax
+        - AssistantName
+        - AssistantPhone
+        - MailingStreet
+        - MailingCity
+        - MailingState
+        - MailingPostalCode
+        - MailingCountry
+        - OtherStreet
+        - OtherCity
+        - OtherState
+        - OtherPostalCode
+        - OtherCountry
+        - Description
+    lookups:
+        AccountId:
+            key_field: account_id
+            table: Account
+        ReportsToId:
+            key_field: reports_to_id
+            table: Contact
+            after: Contact
 
 Funding Programs:
     sf_object: Funding_Program__c
@@ -107,19 +107,19 @@ Funding Requests:
             table: Funding_Program__c
 
 Funding_Request_Role__c:
-  sf_object: Funding_Request_Role__c
-  table: Funding_Request_Role__c
-  anchor_date: "2020-07-01"
-  fields:
-    - Role__c
-    - Status__c
-  lookups:
-    Contact__c:
-      key_field: Contact__c
-      table: Contact
-    Funding_Request__c:
-      key_field: Funding_request__c
-      table: Funding_Request__c
+    sf_object: Funding_Request_Role__c
+    table: Funding_Request_Role__c
+    anchor_date: "2020-07-01"
+    fields:
+        - Role__c
+        - Status__c
+    lookups:
+        Contact__c:
+            key_field: Contact__c
+            table: Contact
+        Funding_Request__c:
+            key_field: Funding_request__c
+            table: Funding_Request__c
 
 Disbursements:
     sf_object: Disbursement__c
