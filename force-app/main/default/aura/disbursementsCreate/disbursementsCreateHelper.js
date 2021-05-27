@@ -104,7 +104,7 @@
                 // Calculated Properties
                 id: "" + i, // A workaround to force the datatable to see this id as a string
                 amount: thisPayment,
-                scheduleDate: dateObject,
+                scheduleDate: dateObject.toISOString().split("T")[0],
                 requestId: m.request.recordId
             });
         }
