@@ -117,7 +117,7 @@
         return value.toString().split(".")[1].length || 0;
     },
 
-    setDispursementProperty: function (cmp, changedField) {
+    setDisbursementProperty: function (cmp, changedField) {
         var disbursements = cmp.get("v.model.disbursements");
 
         disbursements.forEach(function (el) {

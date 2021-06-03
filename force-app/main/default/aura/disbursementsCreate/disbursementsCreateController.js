@@ -11,7 +11,7 @@
         var draftValue = event.getParams();
 
         // Edits to be saved immediately to the in-memory disbursement
-        helper.setDispursementProperty(cmp, valueReceived);
+        helper.setDisbursementProperty(cmp, draftValue);
     },
 
     handleSave: function (cmp, event, helper) {
