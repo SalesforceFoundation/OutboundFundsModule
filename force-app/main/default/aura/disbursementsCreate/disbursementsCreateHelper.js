@@ -104,7 +104,7 @@
                 // Calculated Properties
                 id: "" + i, // A workaround to force the datatable to see this id as a string
                 amount: thisPayment,
-                scheduleDate: dateObject,
+                scheduleDate: dateObject.toISOString().split("T")[0],
                 requestId: m.request.recordId
             });
         }
@@ -117,7 +117,7 @@
         return value.toString().split(".")[1].length || 0;
     },
 
-    setDispursementProperty: function (cmp, changedField) {
+    setDisbursementProperty: function (cmp, changedField) {
         var disbursements = cmp.get("v.model.disbursements");
 
         disbursements.forEach(function (el) {

@@ -7,14 +7,11 @@
         helper.calcDisp(cmp);
     },
 
-    handleRowChange: function (cmp, event, helper) {
-        var draftValues = event.getParam("draftValues");
+    handleLWCRowChange: function (cmp, event, helper) {
+        var draftValue = event.getParams();
 
         // Edits to be saved immediately to the in-memory disbursement
-        helper.setDispursementProperty(cmp, draftValues[0]);
-
-        // Since we live edit the pending disbursements, we'll clear the drafts
-        cmp.find("disbursementTable").set("v.draftValues", null);
+        helper.setDisbursementProperty(cmp, draftValue);
     },
 
     handleSave: function (cmp, event, helper) {
