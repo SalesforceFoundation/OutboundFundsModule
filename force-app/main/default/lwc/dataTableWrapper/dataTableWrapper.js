@@ -7,7 +7,7 @@ export default class DataTableWrapper extends LightningElement {
 
     handleRowChange(event) {
         const draftValue = event.detail.draftValues[0];
-        const custEvent = new CustomEvent("dratfvaluechange", {
+        const custEvent = new CustomEvent("draftvaluechange", {
             detail: draftValue,
         });
         this.dispatchEvent(custEvent);

@@ -223,7 +223,7 @@
                         key-field="id"
                         records="{!v.model.disbursements}"
                         columns="{!v.model.formDefaults.columns}"
-                        ondratfvaluechange="{!c.handleLWCRowChange}"
+                        ondraftvaluechange="{!c.handleLWCRowChange}"
                         hide-checkbox-column="true"
                     />
                 </div>
