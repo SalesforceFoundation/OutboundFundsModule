@@ -2,247 +2,200 @@ BEGIN TRANSACTION;
 CREATE TABLE "Account" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
+	"AccountNumber" VARCHAR(255),
+	"Site" VARCHAR(255),
+	"Type" VARCHAR(255),
+	"Industry" VARCHAR(255),
+	"AnnualRevenue" VARCHAR(255),
+	"Rating" VARCHAR(255),
+	"Phone" VARCHAR(255),
+	"Fax" VARCHAR(255),
+	"Website" VARCHAR(255),
+	"Ownership" VARCHAR(255),
+	"Sic" VARCHAR(255),
+	"TickerSymbol" VARCHAR(255),
+	"BillingStreet" VARCHAR(255),
+	"BillingCity" VARCHAR(255),
+	"BillingState" VARCHAR(255),
+	"BillingPostalCode" VARCHAR(255),
+	"BillingCountry" VARCHAR(255),
+	"ShippingStreet" VARCHAR(255),
+	"ShippingCity" VARCHAR(255),
+	"ShippingState" VARCHAR(255),
+	"ShippingPostalCode" VARCHAR(255),
+	"ShippingCountry" VARCHAR(255),
+	"Description" VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'Nonprofit B');
-INSERT INTO "Account" VALUES(2,'salesforce.com');
-INSERT INTO "Account" VALUES(3,'Nonprofit A');
-INSERT INTO "Account" VALUES(4,'Nonprofit C');
-INSERT INTO "Account" VALUES(5,'Bob Test');
-INSERT INTO "Account" VALUES(6,'Ken Test');
-INSERT INTO "Account" VALUES(7,'Lisa Test');
-INSERT INTO "Account" VALUES(8,'Nancy Carlson');
-INSERT INTO "Account" VALUES(9,'Operation Change the World');
-INSERT INTO "Account" VALUES(10,'Shelbyville College');
-INSERT INTO "Account" VALUES(11,'Wig Household');
-INSERT INTO "Account" VALUES(12,'Simpson Household');
-INSERT INTO "Account" VALUES(13,'Moe’s Tavern');
-INSERT INTO "Account" VALUES(14,'Springfield heights institute of technology');
-INSERT INTO "Account" VALUES(15,'Burns Co');
-INSERT INTO "Account" VALUES(16,'Shelbyville Elementary School');
-INSERT INTO "Account" VALUES(17,'Simpson Household');
-INSERT INTO "Account" VALUES(18,'Reily Household');
-INSERT INTO "Account" VALUES(19,'Flanders Family Foundation');
-INSERT INTO "Account" VALUES(20,'Flanders Household');
-INSERT INTO "Account" VALUES(21,'Large Manufacturing Corporation');
-INSERT INTO "Account" VALUES(22,'Duff Brewery');
-INSERT INTO "Account" VALUES(23,'Springfield Police Academy');
-INSERT INTO "Account" VALUES(24,'Lindberg Household');
-INSERT INTO "Account" VALUES(25,'Corkill Household');
-INSERT INTO "Account" VALUES(26,'Amin Household');
-INSERT INTO "Account" VALUES(27,'Contact Household');
-INSERT INTO "Account" VALUES(28,'Sample Organization');
-INSERT INTO "Account" VALUES(29,'Sprinfield Elementary');
-INSERT INTO "Account" VALUES(30,'Wiggum Household');
-INSERT INTO "Account" VALUES(31,'Global Media');
-INSERT INTO "Account" VALUES(32,'Acme');
+INSERT INTO "Account" VALUES(1,'Sample Account for Entitlements','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(2,'Grantwood City Council','','','Customer - Direct','Government','','','970-555-9633','','','','','','445 North Peak Road','Grantwood','Colorado','80522','United States','','','','','','');
+INSERT INTO "Account" VALUES(3,'Takagawa Institute','','','Customer - Direct','Not For Profit','','','602-555-3542','','','','','','9833 Plateau Street','Phoenix','Arizona','85310','United States','','','','','','');
+INSERT INTO "Account" VALUES(4,'Outbound Funds Portal: Self-Registered','','','','','','','','','','','','','','','','','','','','','','','Account initially assigned to self-registered users for the Outbound Funds Portal Experiences Site');
+INSERT INTO "Account" VALUES(5,'Hillside Elementary','','','Customer - Direct','Education','','','719-555-9914','','','','','','713 S. 8th Street','Englewood','Colorado','80110','United States','','','','','','');
+INSERT INTO "Account" VALUES(6,'STEPS','','','Customer - Direct','Not For Profit','','','303-555-7541','','','','','','2920 Juniper Drive','Denver','Colorado','80230','United States','','','','','','');
 CREATE TABLE "Contact" (
-	id INTEGER NOT NULL, 
-	"Salutation" VARCHAR(255), 
-	"FirstName" VARCHAR(255), 
-	"LastName" VARCHAR(255), 
-	"Email" VARCHAR(255), 
-	"Phone" VARCHAR(255), 
-	"Title" VARCHAR(255), 
-	"AccountId" VARCHAR(255), 
+	id INTEGER NOT NULL,
+	"Salutation" VARCHAR(255),
+	"FirstName" VARCHAR(255),
+	"LastName" VARCHAR(255),
+	"Title" VARCHAR(255),
+	"Email" VARCHAR(255),
+	"Department" VARCHAR(255),
+	"Birthdate" VARCHAR(255),
+	"LeadSource" VARCHAR(255),
+	"Phone" VARCHAR(255),
+	"HomePhone" VARCHAR(255),
+	"OtherPhone" VARCHAR(255),
+	"Fax" VARCHAR(255),
+	"AssistantName" VARCHAR(255),
+	"AssistantPhone" VARCHAR(255),
+	"MailingStreet" VARCHAR(255),
+	"MailingCity" VARCHAR(255),
+	"MailingState" VARCHAR(255),
+	"MailingPostalCode" VARCHAR(255),
+	"MailingCountry" VARCHAR(255),
+	"OtherStreet" VARCHAR(255),
+	"OtherCity" VARCHAR(255),
+	"OtherState" VARCHAR(255),
+	"OtherPostalCode" VARCHAR(255),
+	"OtherCountry" VARCHAR(255),
+	"Description" VARCHAR(255),
+	account_id VARCHAR(255),
+	reports_to_id VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Contact" VALUES(1,'','Jon','Amos','info@salesforce.com','(905) 555-1212','Sales Manager','31');
-INSERT INTO "Contact" VALUES(2,'','Edward','Stamos','info@salesforce.com','(212) 555-5555','President and CEO','32');
-INSERT INTO "Contact" VALUES(3,'','Howard','Jones','info@salesforce.com','(212) 555-5555','Buyer','32');
-INSERT INTO "Contact" VALUES(4,'','Leanne','Tomlin','info@salesforce.com','(212) 555-5555','VP Customer Support','32');
-INSERT INTO "Contact" VALUES(5,'','Sally','Jones','','','','4');
-INSERT INTO "Contact" VALUES(6,'','Bob','Test','','','','5');
-INSERT INTO "Contact" VALUES(7,'','Ken','Test','','','','6');
-INSERT INTO "Contact" VALUES(8,'','Lisa','Test','shari_reily@redpathcg.com','','','7');
-INSERT INTO "Contact" VALUES(9,'','Nancy','Carlson','','','','8');
-INSERT INTO "Contact" VALUES(10,'','Sally','Walker','','','','9');
-INSERT INTO "Contact" VALUES(11,'','Erin','Test','shari_reily@redpathcg.com','','','1');
-INSERT INTO "Contact" VALUES(12,'Mr.','Big','Wig','','','CEO','11');
-INSERT INTO "Contact" VALUES(13,'Mr.','Bart','Simpson','','','Child','12');
-INSERT INTO "Contact" VALUES(14,'Ms.','Lisa','Simpson','','','','12');
-INSERT INTO "Contact" VALUES(15,'Mrs.','Marge','Simpson','','','','12');
-INSERT INTO "Contact" VALUES(16,'Mr.','Moe','Szyslak','','','Owner','13');
-INSERT INTO "Contact" VALUES(17,'Prof.','John','Frink','','','Professor','14');
-INSERT INTO "Contact" VALUES(18,'Mr.','Montgomery','Burns','','','','15');
-INSERT INTO "Contact" VALUES(19,'','Carol','Shelby','','','','16');
-INSERT INTO "Contact" VALUES(20,'','Homer','Simpson','','','','17');
-INSERT INTO "Contact" VALUES(21,'','Shari','Reily','','','','18');
-INSERT INTO "Contact" VALUES(22,'Mr.','Marc','Benioff','info@salesforce.com','(415) 901-7000','Executive Officer','2');
-INSERT INTO "Contact" VALUES(23,'Mr.','Ned','Flanders','test@test.com','','','20');
-INSERT INTO "Contact" VALUES(24,'Mr.','Todd','Flanders','','','','20');
-INSERT INTO "Contact" VALUES(25,'Mr.','Rod','Flanders','','','','20');
-INSERT INTO "Contact" VALUES(26,'Mr.','Duff','Man','','','The King Of Beers','22');
-INSERT INTO "Contact" VALUES(27,'Mr.','Clerance','Wiggum','chief@spinfieldpd.fake','911','Police Chief','23');
-INSERT INTO "Contact" VALUES(28,'','Nick','Lindberg','','','','24');
-INSERT INTO "Contact" VALUES(29,'','Bill','Corkill','','','','25');
-INSERT INTO "Contact" VALUES(30,'Ms.','Sarah','Amin','','','','26');
-INSERT INTO "Contact" VALUES(31,'','Sample','Contact','sample.contact@email.com','(202) 555-9654','CEO','27');
-INSERT INTO "Contact" VALUES(32,'','Seymour','Skinner','','','','29');
-INSERT INTO "Contact" VALUES(33,'Mr.','Ralph','Wiggum','','','','30');
-INSERT INTO "Contact" VALUES(34,'','Geoff','Minor','info@salesforce.com','(415) 555-1212','President','31');
-INSERT INTO "Contact" VALUES(35,'','Carole','White','info@salesforce.com','(415) 555-1212','VP Sales','31');
+INSERT INTO "Contact" VALUES(1,'Mr.','Dillon','Whitaker','Assistant City Manager','dillon.whitaker@gwcity.example.com','','','','719-555-2417','','','','','','445 North Peak Road','Grantwood','Colorado','80522','United States','','','','','','','2','');
+INSERT INTO "Contact" VALUES(2,'Ms.','Adriana','Atterberry','Grants Manager','adriana.atterberry@takagawa-institute.example.com','','','','602-555-3543','','','','','','9834 Plateau Street','Phoenix','Arizona','85310','United States','','','','','','','3','3');
+INSERT INTO "Contact" VALUES(3,'Dr.','Meiko','Takagawa','Executive Director','meiko.takagawa@takagawa-institute.example.com','','','','602-555-3542','','','','','','9833 Plateau Street','Phoenix','Arizona','85310','United States','','','','','','','3','');
+INSERT INTO "Contact" VALUES(4,'Mr.','Devon','Berger','Literacy Coach','devon.berger@hillside-elementary.example.com','','','','719-555-9914','','','','','','713 S. 8th Street','Englewood','Colorado','80110','United States','','','','','','','5','');
+INSERT INTO "Contact" VALUES(5,'Ms.','Ellen','Perez','Program Coordinator','ellen.perez@steps.example.com','','','','303-555-7541','','','','','','2920 Juniper Drive','Denver','Colorado','80230','United States','','','','','','','6','6');
+INSERT INTO "Contact" VALUES(6,'Ms.','Grace','Walker','Development Director','grace.walker@steps.example.com','','','','303-555-7540','','','','','','2920 Juniper Drive','Denver','Colorado','80230','United States','','','','','','','6','');
+INSERT INTO "Contact" VALUES(7,'Mr.','Jermaine','Harmon','Intern','jermaine.harmon@steps.example.com','','','','303-555-7540','','','','','','2920 Juniper Drive','Denver','Colorado','80230','United States','','','','','','','6','');
 CREATE TABLE "Disbursement__c" (
-	id INTEGER NOT NULL, 
-	"Amount__c" VARCHAR(255), 
-	"Disbursement_Date__c" VARCHAR(255), 
-	"Disbursement_Method__c" VARCHAR(255), 
-	"Scheduled_Date__c" VARCHAR(255), 
-	"Status__c" VARCHAR(255), 
-	"Type__c" VARCHAR(255), 
-	"Funding_Request__c" VARCHAR(255), 
+	id INTEGER NOT NULL,
+	"Amount__c" VARCHAR(255),
+	"Disbursement_Date__c" VARCHAR(255),
+	"Disbursement_Method__c" VARCHAR(255),
+	"Scheduled_Date__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"Type__c" VARCHAR(255),
+	Funding_Request__c VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Disbursement__c" VALUES(1,'6000.0','2020-07-15','Cash','2020-06-01','Paid','Initial','1');
-INSERT INTO "Disbursement__c" VALUES(2,'4000.0','','Cash','2020-10-11','Scheduled','Interim','1');
-INSERT INTO "Disbursement__c" VALUES(3,'2546.0','','Cash','2021-02-15','Scheduled','Final','1');
-INSERT INTO "Disbursement__c" VALUES(4,'7000.0','2018-06-06','Cash','2018-06-06','Paid','Final','6');
-INSERT INTO "Disbursement__c" VALUES(5,'15000.0','2017-08-01','Check','2017-08-01','Paid','Initial','8');
-INSERT INTO "Disbursement__c" VALUES(6,'5000.0','','EFT','2020-08-01','Scheduled','Initial','9');
-INSERT INTO "Disbursement__c" VALUES(7,'20000.0','','Check','2020-10-01','Scheduled','Interim','9');
-INSERT INTO "Disbursement__c" VALUES(8,'10000.0','','Check','2020-12-01','Scheduled','Interim','9');
-INSERT INTO "Disbursement__c" VALUES(9,'10000.0','','Check','2021-01-01','Scheduled','Interim','9');
-INSERT INTO "Disbursement__c" VALUES(10,'10000.0','','Check','2021-03-01','Scheduled','Interim','9');
-INSERT INTO "Disbursement__c" VALUES(11,'50000.0','','Check','2019-05-01','Scheduled','Final','9');
-INSERT INTO "Disbursement__c" VALUES(12,'25000.0','2018-07-13','Check','2020-07-15','Paid','Initial','13');
-INSERT INTO "Disbursement__c" VALUES(13,'10000.0','','Check','2020-11-15','Scheduled','Interim','13');
-INSERT INTO "Disbursement__c" VALUES(14,'15000.0','','Check','2021-02-15','Scheduled','Interim','13');
-INSERT INTO "Disbursement__c" VALUES(15,'50000.0','','EFT','2020-12-15','Approved','Initial','15');
-INSERT INTO "Disbursement__c" VALUES(16,'10000.0','','EFT','2021-01-01','Scheduled','Interim','15');
-INSERT INTO "Disbursement__c" VALUES(17,'10000.0','','EFT','2021-02-01','Scheduled','Interim','15');
-INSERT INTO "Disbursement__c" VALUES(18,'10000.0','','EFT','2021-03-01','Scheduled','Interim','15');
-INSERT INTO "Disbursement__c" VALUES(19,'10000.0','','EFT','2021-04-01','Scheduled','Interim','15');
-INSERT INTO "Disbursement__c" VALUES(20,'10000.0','','EFT','2021-05-01','Scheduled','Final','15');
-INSERT INTO "Disbursement__c" VALUES(21,'2000.0','','Check','2021-01-01','Paid','Initial','4');
-INSERT INTO "Disbursement__c" VALUES(22,'1000.0','','Check','2021-02-01','Scheduled','Interim','4');
-INSERT INTO "Disbursement__c" VALUES(23,'2000.0','','Check','2021-04-01','Scheduled','Final','4');
-INSERT INTO "Disbursement__c" VALUES(24,'5000.0','','EFT','2021-01-01','Scheduled','Initial','11');
-INSERT INTO "Disbursement__c" VALUES(25,'50000.0','','EFT','2021-02-01','Scheduled','Interim','11');
-INSERT INTO "Disbursement__c" VALUES(26,'50000.0','','EFT','2021-03-01','Scheduled','Final','11');
-INSERT INTO "Disbursement__c" VALUES(27,'20000.0','','EFT','2021-07-31','Pending Approval','Initial','5');
-INSERT INTO "Disbursement__c" VALUES(28,'20000.0','','EFT','2021-12-01','Scheduled','Final','5');
-INSERT INTO "Disbursement__c" VALUES(29,'1000.0','','','2021-04-01','Pending Approval','Final','17');
-INSERT INTO "Disbursement__c" VALUES(30,'1000.0','2018-05-31','EFT','2018-06-01','Approved','Initial','17');
-INSERT INTO "Disbursement__c" VALUES(31,'1000.0','2018-05-31','EFT','2021-01-01','Scheduled','Interim','17');
-INSERT INTO "Disbursement__c" VALUES(32,'1000.0','2018-05-31','EFT','2021-03-01','Scheduled','Interim','17');
-INSERT INTO "Disbursement__c" VALUES(33,'10000.0','','EFT','2018-09-01','Paid','Final','7');
-INSERT INTO "Disbursement__c" VALUES(34,'5000.0','2018-05-14','EFT','2018-05-11','Paid','Initial','7');
-INSERT INTO "Disbursement__c" VALUES(35,'833.34','','','2021-05-01','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(36,'833.34','','','2021-05-22','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(37,'833.34','','','2021-06-12','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(38,'833.34','','','2021-07-03','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(39,'833.33','','','2021-07-24','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(40,'833.33','','','2021-08-14','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(41,'833.33','','','2021-09-04','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(42,'833.33','','','2021-09-25','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(43,'833.33','','','2021-10-16','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(44,'833.33','','','2021-11-06','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(45,'833.33','','','2021-11-27','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(46,'833.33','','','2021-12-18','Scheduled','','19');
-INSERT INTO "Disbursement__c" VALUES(47,'1000.0','','','2021-04-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(48,'1000.0','','','2021-05-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(49,'1000.0','','','2021-06-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(50,'1000.0','','','2021-07-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(51,'1000.0','','','2021-08-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(52,'1000.0','','','2021-09-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(53,'1000.0','','','2021-10-20','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(54,'1000.0','','','2021-11-19','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(55,'1000.0','','','2021-12-19','Scheduled','','20');
-INSERT INTO "Disbursement__c" VALUES(56,'1000.0','','','2022-01-19','Scheduled','','20');
+INSERT INTO "Disbursement__c" VALUES(1,'40000.0','2019-05-14','EFT','2019-05-14','Paid','Final','5');
+INSERT INTO "Disbursement__c" VALUES(2,'10000.0','2020-03-28','EFT','2020-03-28','Paid','Initial','2');
+INSERT INTO "Disbursement__c" VALUES(3,'5000.0','2019-07-09','EFT','2019-07-09','Paid','Initial','3');
+INSERT INTO "Disbursement__c" VALUES(4,'5000.0','2020-07-09','','2020-07-09','Paid','Interim','3');
+INSERT INTO "Disbursement__c" VALUES(5,'5000.0','','EFT','2021-07-09','Scheduled','Final','3');
 CREATE TABLE "Funding_Program__c" (
-	id INTEGER NOT NULL, 
-	"Name" VARCHAR(255), 
-	"Description__c" VARCHAR(255), 
-	"End_Date__c" VARCHAR(255), 
-	"Start_Date__c" VARCHAR(255), 
-	"Status__c" VARCHAR(255), 
-	"Total_Program_Amount__c" VARCHAR(255), 
+	id INTEGER NOT NULL,
+	"Name" VARCHAR(255),
+	"Description__c" VARCHAR(255),
+	"End_Date__c" VARCHAR(255),
+	"Start_Date__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"Top_Level__c" VARCHAR(255),
+	"Total_Program_Amount__c" VARCHAR(255),
+	"Parent_Funding_Program__c" VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Funding_Program__c" VALUES(1,'Research Scholarship','','','','In progress','');
-INSERT INTO "Funding_Program__c" VALUES(2,'2017-2018 Research Scholarships','','2018-07-31','2017-08-01','In progress','500000.0');
-INSERT INTO "Funding_Program__c" VALUES(3,'2018-2019 Research Scholarship','','2019-07-31','2018-08-01','Planned','600000.0');
-INSERT INTO "Funding_Program__c" VALUES(4,'Community Support','Main Community Support program','','2018-01-01','In progress','');
-INSERT INTO "Funding_Program__c" VALUES(5,'2021 Community Support','2021 Community Support','2021-12-31','2022-01-01','Planned','100000.0');
-INSERT INTO "Funding_Program__c" VALUES(6,'Individual Fellowship','','','2018-01-01','In progress','');
-INSERT INTO "Funding_Program__c" VALUES(7,'2018 Individual Fellowship','','','2018-01-01','In progress','1000000.0');
-INSERT INTO "Funding_Program__c" VALUES(8,'2018-2019 STEAM Education','','2019-06-01','2018-08-01','In progress','50000.0');
-INSERT INTO "Funding_Program__c" VALUES(9,'College Scholarships','','','1994-01-01','In progress','1000000.0');
-INSERT INTO "Funding_Program__c" VALUES(10,'2018-2019 College Scholarships','','2018-08-31','2018-03-01','In progress','250000.0');
-INSERT INTO "Funding_Program__c" VALUES(11,'2018 Scholarships','','2018-08-01','2018-04-01','In progress','50000.0');
-INSERT INTO "Funding_Program__c" VALUES(12,'STEAM Education','','','2010-06-01','In progress','');
-INSERT INTO "Funding_Program__c" VALUES(13,'Environment','','','1987-04-19','In progress','100000000.0');
-INSERT INTO "Funding_Program__c" VALUES(14,'Lake Springfield Cleanup','','','2018-01-01','In progress','500000.0');
-INSERT INTO "Funding_Program__c" VALUES(15,'2021-2022 College Scholarships','','2022-05-31','2021-04-20','In progress','250000.0');
+INSERT INTO "Funding_Program__c" VALUES(1,'Kumar Endowment Scholarship','The Kumar family graciously sponsors the Kumar Endowment Scholarship Fund for high school students who have made a positive impact in their local community. This fund awards $2,000 scholarships every 4 years to ten students seeking higher education. Eligible expenses include tuition, room and board, fees, and books during the academic year.','2020-07-30','2020-01-14','In progress','False','200000.0','3');
+INSERT INTO "Funding_Program__c" VALUES(2,'Successful Scholars Grant','The Successful Scholars Grant provides funding to select non-profits and education institutes to enable students to excel in their academics. Past initiatives created by previous grantees include after-school tutoring, early literacy programs, and college preparation courses.','2020-08-13','2019-08-14','In progress','False','250000.0','3');
+INSERT INTO "Funding_Program__c" VALUES(3,'Education','','','','In progress','True','','');
+INSERT INTO "Funding_Program__c" VALUES(4,'Community Impact','','','','In progress','True','','');
+INSERT INTO "Funding_Program__c" VALUES(5,'Relief and Reinvestment Grant','The Relief and Reinvestment Grant provides financial assistance in the form of grants to small businesses experiencing temporary revenue loss due to unforeseen circumstances, such as a natural disaster or economic crisis. Grants of up to $10,000 are awarded to select small businesses to help offset lost revenue. This fund can be used for:
+        * Rent and utilities
+        * Payroll
+        * Outstanding debt
+        * Technology upgrades
+        * Immediate operation costs','2021-01-30','2020-01-31','In progress','False','300000.0','4');
+INSERT INTO "Funding_Program__c" VALUES(6,'Strategic Nonprofit Development','','','','Planned','True','','');
+CREATE TABLE "Funding_Request_Role__c" (
+	id INTEGER NOT NULL,
+	"Role__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"Contact__c" VARCHAR(255),
+	"Funding_Request__c" VARCHAR(255),
+	PRIMARY KEY (id)
+);
+INSERT INTO "Funding_Request_Role__c" VALUES(1,'Applicant','Current','3','2');
+INSERT INTO "Funding_Request_Role__c" VALUES(2,'Applicant','Former','7','5');
+INSERT INTO "Funding_Request_Role__c" VALUES(3,'Grant Manager','Current','2','2');
 CREATE TABLE "Funding_Request__c" (
-	id INTEGER NOT NULL, 
-	"Name" VARCHAR(255), 
-	"Application_Date__c" VARCHAR(255), 
-	"Awarded_Amount__c" VARCHAR(255), 
-	"Awarded_Date__c" VARCHAR(255), 
-	"Close_Date__c" VARCHAR(255), 
-	"Closed_reason__c" VARCHAR(255), 
-	"Geographical_Area_Served__c" VARCHAR(255), 
-	"Population_Served__c" VARCHAR(255), 
-	"Recommended_Amount__c" VARCHAR(255), 
-	"Requested_Amount__c" VARCHAR(255), 
-	"Requested_For__c" VARCHAR(255), 
-	"Status__c" VARCHAR(255), 
-	"Term_End_Date__c" VARCHAR(255), 
-	"Term_Start_Date__c" VARCHAR(255), 
-	"Terms__c" VARCHAR(255), 
-	"Applying_Contact__c" VARCHAR(255), 
-	"Applying_Organization__c" VARCHAR(255), 
-	"FundingProgram__c" VARCHAR(255), 
+	id INTEGER NOT NULL,
+	"Name" VARCHAR(255),
+	"Application_Date__c" VARCHAR(255),
+	"Awarded_Amount__c" VARCHAR(255),
+	"Awarded_Date__c" VARCHAR(255),
+	"Close_Date__c" VARCHAR(255),
+	"Closed_reason__c" VARCHAR(255),
+	"Geographical_Area_Served__c" VARCHAR(255),
+	"Population_Served__c" VARCHAR(255),
+	"Recommended_Amount__c" VARCHAR(255),
+	"Requested_Amount__c" VARCHAR(255),
+	"Requested_For__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"Term_End_Date__c" VARCHAR(255),
+	"Term_Start_Date__c" VARCHAR(255),
+	"Terms__c" VARCHAR(255),
+	"Applying_Contact__c" VARCHAR(255),
+	"Applying_Organization__c" VARCHAR(255),
+	"FundingProgram__c" VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Funding_Request__c" VALUES(1,'Test Funding Request','2018-04-02','12546.0','2018-04-10','2018-04-10','','State','Caregivers;Economically Disadvantaged People','15034.0','16408.0','','Awarded','2019-05-01','2018-05-01','','','','1');
-INSERT INTO "Funding_Request__c" VALUES(2,'Test Request','2018-09-19','','','','','','','','','','Submitted','','','','','','5');
-INSERT INTO "Funding_Request__c" VALUES(3,'Shelbyville Robotics','2018-03-01','','','','','City','Children and Youth','15000.0','20000.0','Shelbyville Robotics','Submitted','2019-05-31','2018-09-01','','','16','8');
-INSERT INTO "Funding_Request__c" VALUES(4,'2021 Nonprofit A 12345','2021-05-06','5000.0','2022-05-06','','','City','Children and Youth','9000.0','10000.0','Community Support for Youth','Awarded','2022-06-01','2021-06-01','Terms of the funded request','','3','5');
-INSERT INTO "Funding_Request__c" VALUES(5,'Shari Reily 2018-2019 Scholarship','2018-03-01','40000.0','','','','','','4000.0','3000.0','SFDO Academy - SalesForce Admin','In Review','','','','21','','10');
-INSERT INTO "Funding_Request__c" VALUES(6,'Sarah Amin - Scholarship 2018-19','2018-04-03','7000.0','2018-06-06','','','','','5000.0','7000.0','UCLA - Arts & Crafts','Fully Disbursed','','','','30','','10');
-INSERT INTO "Funding_Request__c" VALUES(7,'Springfield Robotics Team 2018','2018-01-01','15000.0','2018-05-30','','','City','Children and Youth','15000.0','10000.0','Robotics program','Awarded','2019-05-31','2018-09-01','For the 2018-19 School year to be used to support the robotics team.','32','29','8');
-INSERT INTO "Funding_Request__c" VALUES(8,'Sally Jones','2017-04-28','50000.0','2017-07-26','','','','','55000.0','50000.0','','Awarded','2018-07-31','2017-08-01','','5','','2');
-INSERT INTO "Funding_Request__c" VALUES(9,'2018 Bob Test 98765','2018-04-22','105000.0','2018-05-07','','','State','Homeless','100000.0','100000.0','','Awarded','2019-05-31','2018-06-01','','6','','7');
-INSERT INTO "Funding_Request__c" VALUES(10,'2018 Ken Test 34567','2018-04-29','','','','','Region','Economically Disadvantaged People','','100000.0','Information about request','Submitted','','','','7','','7');
-INSERT INTO "Funding_Request__c" VALUES(11,'2018 Lisa Test 67897','2018-04-08','105000.0','2018-05-07','','','State','Adults','100000.0','100000.0','','Submitted','2019-05-31','2018-06-01','','8','','7');
-INSERT INTO "Funding_Request__c" VALUES(12,'2018 Nancy Carlson 23456','2018-03-06','','','','','City','Children and Youth','','100000.0','Serve children and youth','Submitted','','','','9','','7');
-INSERT INTO "Funding_Request__c" VALUES(13,'2018 Operation Change the World 45678','2018-05-25','50000.0','2018-06-15','2018-06-15','','State','Families;Homeless;People with Disabilities','50000.0','75000.0','','Awarded','2018-06-30','2018-07-01','terms of the grant','10','9','5');
-INSERT INTO "Funding_Request__c" VALUES(14,'Lisa Simpson Camp Scholarship','2018-04-17','','','','','','Children and Youth','','','','Submitted','','','','14','17','11');
-INSERT INTO "Funding_Request__c" VALUES(15,'Remove 3 Eyed Fish','2018-06-07','100000.0','','','','City','Children and Youth','100000.0','100000.0','Remove contaminated fish from the lake','Awarded','','','','17','14','14');
-INSERT INTO "Funding_Request__c" VALUES(16,'DUFF Robots','2018-05-01','0.0','','2018-05-30','This is a for profit company, does not benefit children.','Country','Adults','0.0','30000.0','Building a robot army.','Rejected','','','','26','22','8');
-INSERT INTO "Funding_Request__c" VALUES(17,'Nick Lindberg - Scholarship 2018-19','2018-04-18','8000.0','2018-05-22','','','','','5000.0','3000.0','NYU - Dance & Computer Science','Submitted','2019-05-31','2018-08-15','Need a transcript and confirmation from NYU on acceptance','28','','10');
-INSERT INTO "Funding_Request__c" VALUES(18,'Bill Corkill Scholarship 2018-19','2018-04-02','','','','','','','5000.0','10000.0','WMU  - Computers','Submitted','','','','29','','10');
-INSERT INTO "Funding_Request__c" VALUES(19,'Shari Reily - Scholarship 2021-22','2021-04-30','10000.0','2021-04-20','','','','','10000.0','15000.0','SFDO Academy - SalesForce Admin','Awarded','','','','21','','15');
-INSERT INTO "Funding_Request__c" VALUES(20,'Sarah Amin - Scholarship 2021-22','2021-04-20','10000.0','2021-04-21','','','','','','10000.0','SFDO Academy - SalesForce Admin','Awarded','','','','30','','15');
+INSERT INTO "Funding_Request__c" VALUES(1,'Grantwood City Food Bank','','','','','','City','Below Poverty level;Economically Disadvantaged People;Homeless','','100000.0','Grantwood City Food Bank','In progress','','','','','2','4');
+INSERT INTO "Funding_Request__c" VALUES(2,'Takagawa Institute: Relief and Reinvestment Grant','2020-03-11','10000.0','2020-03-28','2020-03-28','Fully awarded.','Country','Immigrants and Refugees','10000.0','10000.0','','Fully Disbursed','2021-03-27','2020-03-28','One time payment with one year follow up','3','3','5');
+INSERT INTO "Funding_Request__c" VALUES(3,'Eager Beavers Read!','2019-04-25','15000.0','2019-07-09','','','City','Children and Youth','15000.0','15000.0','Eager Beavers Read! is an after school program that helps foster a love of reading in our 1st - 5th grade classes and also provides a safe place for students to go between 3:00 pm and 4:30 pm. Younger children will be paired up with an older student to help expand their early literacy skills, while older students work to develop mentoring skills and confidence.','Awarded','2022-08-13','2019-08-14','3 years','4','5','2');
+INSERT INTO "Funding_Request__c" VALUES(4,'STEPS to Leadership','2020-02-16','28000.0','','','','Region','Adults;Women','28000.0','28000.0','STEPS to Leadership is a proposed program that came from requests for additional leadership training for our graduates from Skills for Success, a successful program we currently offer to at-risk women in the community. After completing Skills for Success, graduates can learn leadership skills through various trainings, seminars, and one-on-one mentoring that will help prepare these future female leaders.','Submitted','','','','5','6','4');
+INSERT INTO "Funding_Request__c" VALUES(5,'Skills for Success','2019-03-21','40000.0','2019-05-14','','','Region','Adults;Women','40000.0','40000.0','Skills for Success addresses an existing gap for at-risk women seeking to learn technical and soft skills to help them find gainful employment in the community. Participants of the program receive:
+
+* Vouchers for free community college courses on select topics, such as bookkeeping, computer literacy, and communication skills.
+* Help developing a resume and interview preparation.
+* One-on-one mentoring with a female business owner in the community.
+* Ongoing support from the STEPS staff.','Awarded','2020-05-30','2019-05-31','1 year','6','6','4');
+INSERT INTO "Funding_Request__c" VALUES(6,'Skills for Success','2020-05-31','','','','','Region','Adults;Women','','46000.0','Skills for Success addresses an existing gap for at-risk women seeking to learn technical and soft skills to help them find gainful employment in the community. Participants of the program receive:
+
+* Vouchers for free community college courses on select topics, such as bookkeeping, computer literacy, and communication skills.
+* Help developing a resume and interview preparation.
+* One-on-one mentoring with a female business owner in the community.
+* Ongoing support from the STEPS staff.','In progress','','','1 year','6','6','4');
 CREATE TABLE "Requirement__c" (
-	id INTEGER NOT NULL, 
-	"Name" VARCHAR(255), 
-	"Completed_Date__c" VARCHAR(255), 
-	"Due_Date__c" VARCHAR(255), 
-	"Requirements__c" VARCHAR(255), 
-	"Status__c" VARCHAR(255), 
-	"Type__c" VARCHAR(255), 
-	"Disbursement__c" VARCHAR(255), 
-	"Funding_Request__c" VARCHAR(255), 
-	"Primary_Contact__c" VARCHAR(255), 
+	id INTEGER NOT NULL,
+	"Name" VARCHAR(255),
+	"Completed_Date__c" VARCHAR(255),
+	"Due_Date__c" VARCHAR(255),
+	"Requirements__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"Type__c" VARCHAR(255),
+	"Disbursement__c" VARCHAR(255),
+	"Funding_Request__c" VARCHAR(255),
+	"Primary_Contact__c" VARCHAR(255),
 	PRIMARY KEY (id)
 );
-INSERT INTO "Requirement__c" VALUES(1,'Review Completed','2018-05-01','2018-05-15','','Complete','Review','','13','');
-INSERT INTO "Requirement__c" VALUES(2,'Application Submitted','2018-04-12','2018-04-30','','Complete','Final Application','','13','');
-INSERT INTO "Requirement__c" VALUES(3,'Final Report','','2019-07-31','','Open','Report','','13','10');
-INSERT INTO "Requirement__c" VALUES(4,'LOI Required','2018-02-21','2018-02-13','','Accepted','Letter of Intent','','3','19');
-INSERT INTO "Requirement__c" VALUES(5,'Application','2018-05-16','2018-05-01','','In Progress','Preliminary Application','','3','19');
-INSERT INTO "Requirement__c" VALUES(6,'Budget Req.','','2018-07-02','','In Progress','Final Application','','3','19');
-INSERT INTO "Requirement__c" VALUES(7,'Final Report','','2019-05-01','','Open','Report','','3','19');
-INSERT INTO "Requirement__c" VALUES(8,'Proposal Required','2018-05-28','2018-05-25','<p>Proposal must be submitted. Was not adequate and did not meet criteria for grant program.</p>','Rejected','Preliminary Application','','16','26');
-INSERT INTO "Requirement__c" VALUES(9,'Test Requirement','','','','','','','17','23');
-INSERT INTO "Requirement__c" VALUES(10,'Acceptance Notice','2018-05-30','2018-08-01','','Complete','Final Application','29','17','28');
-INSERT INTO "Requirement__c" VALUES(11,'Transcript Required','','2018-06-30','','In Progress','Final Application','29','17','28');
-INSERT INTO "Requirement__c" VALUES(12,'Need Transcript','','2018-07-31','<p>Need Final Transcript before payment can be made</p>','Open','Final Application','4','5','21');
-INSERT INTO "Requirement__c" VALUES(13,'Budget Required','2018-06-07','2018-06-15','<p>Need budget from Ned before initial payment can be made.</p>','Complete','Preliminary Application','22','15','23');
-INSERT INTO "Requirement__c" VALUES(14,'Budget Required for 2nd (final) payment','','2018-08-01','','Open','Report','27','7','32');
-INSERT INTO "Requirement__c" VALUES(15,'Interim Report','','2018-11-30','','Open','Report','13','13','10');
-INSERT INTO "Requirement__c" VALUES(16,'Completion of Semester 1 and re-enrollment in Semseter 2','','2019-01-07','','Open','Final Application','14','17','28');
+INSERT INTO "Requirement__c" VALUES(1,'Application','2019-03-21','2019-12-30','<p><span style="font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);">Application</span></p>','Accepted','Final Application','','5','6');
+INSERT INTO "Requirement__c" VALUES(2,'Outcome Report','','2020-12-30','<p>Outcome Report</p>','Open','Outcome','','5','6');
+INSERT INTO "Requirement__c" VALUES(3,'Proposed Budget','2019-03-21','2019-12-30','<p>Proposed budget</p>','Accepted','Report','','5','6');
+INSERT INTO "Requirement__c" VALUES(4,'Budget Report','2020-02-11','2020-12-30','<p>Budget Report</p>','Complete','Report','','5','6');
+INSERT INTO "Requirement__c" VALUES(5,'Letter of Intent','2019-03-21','2019-12-30','<p><span style="font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);">Cover letter</span></p>','Accepted','Letter of Intent','','5','6');
+INSERT INTO "Requirement__c" VALUES(6,'Budget Report','','2020-09-14','<p>Budget Report</p>','Open','Report','','2','3');
+INSERT INTO "Requirement__c" VALUES(7,'Outcome Report','','2021-03-31','<p>Outcome Report</p>','Open','Outcome','','2','3');
+INSERT INTO "Requirement__c" VALUES(8,'Application','2020-03-11','2020-12-30','<p>Application</p>','Accepted','Final Application','','2','3');
+INSERT INTO "Requirement__c" VALUES(9,'Letter of Intent','2019-04-25','2019-12-30','<p><span style="font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);">Cover letter</span></p>','Accepted','Letter of Intent','','3','4');
+INSERT INTO "Requirement__c" VALUES(10,'Application','2019-04-25','2019-12-30','<p><span style="font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);">Application</span></p>','Accepted','Final Application','','3','4');
+INSERT INTO "Requirement__c" VALUES(11,'Outcome Report','','2022-12-30','<p>Outcome Report</p>','Open','Outcome','','3','4');
+INSERT INTO "Requirement__c" VALUES(12,'Budget Report','','2021-12-30','<p><span style="color: rgb(0, 0, 0); font-size: 10pt; font-family: Arial;">Budget Report</span></p>','Open','Report','','3','4');
+CREATE TABLE "Review__c" (
+	id INTEGER NOT NULL,
+	"Name" VARCHAR(255),
+	"Comments__c" VARCHAR(255),
+	"DueDate__c" VARCHAR(255),
+	"Status__c" VARCHAR(255),
+	"SubmittedDate__c" VARCHAR(255),
+	"FundingRequest__c" VARCHAR(255),
+	PRIMARY KEY (id)
+);
+INSERT INTO "Review__c" VALUES(1,'Scholarship 2021-22 - Sarah Amin','<p>Need more documentation!</p>','2021-07-17','In Progress','','1');
+INSERT INTO "Review__c" VALUES(2,'Review - External','','2021-04-29','Submitted','2021-04-28','2');
+INSERT INTO "Review__c" VALUES(3,'Review of Application - Shari Reily - Scholarship 2021','','2021-07-30','Not Started','','3');
+INSERT INTO "Review__c" VALUES(4,'Review - Program Officer','<p>Looks great!</p>','2021-04-27','Submitted','2021-04-28','2');
 COMMIT;

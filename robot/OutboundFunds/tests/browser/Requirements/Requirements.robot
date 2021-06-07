@@ -12,7 +12,7 @@ Suite Teardown  Capture Screenshot And Delete Records And Close Browser
 
 *** Keywords ***
 Setup Test Data
-    [Documentation]         Create data to run tests
+    [Documentation]                   Create data to run tests
     ${ns} =                           Get Outfunds Namespace Prefix
     Set Suite Variable                ${ns}
     ${fundingprogram} =               API Create Funding Program

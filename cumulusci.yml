@@ -27,6 +27,7 @@ tasks:
             objects:
                 - Requirement__c
                 - Disbursement__c
+                - Review__c
                 - Funding_Request__c
                 - Funding_Program__c
                 - Contact

@@ -6,11 +6,13 @@ import warnings
 from BaseObjects import BaseOutboundFundsPage
 from selenium.common.exceptions import NoSuchWindowException
 from robot.libraries.BuiltIn import RobotNotRunningError
+from locators_52 import outboundfunds_lex_locators as locators_52
 from locators_51 import outboundfunds_lex_locators as locators_51
 from cumulusci.robotframework.utils import selenium_retry, capture_screenshot_on_error
 
 locators_by_api_version = {
     51.0: locators_51,  # Spring '21
+    52.0: locators_52,  # Summer '21
 }
 # will get populated in _init_locators
 outboundfunds_lex_locators = {}
@@ -53,7 +55,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         outboundfunds_lex_locators.update(locators)
 
     def get_namespace_prefix(self, name):
-        """ This is a helper function to capture the namespace prefix of the target org """
+        """This is a helper function to capture the namespace prefix of the target org"""
         parts = name.split("__")
         if parts[-1] == "c":
             parts = parts[:-1]
@@ -85,7 +87,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         return True if elements > 0 else False
 
     def new_random_string(self, len=5):
-        """Generate a random string of fixed length """
+        """Generate a random string of fixed length"""
         return "".join(random.choice(string.ascii_lowercase) for _ in range(len))
 
     def generate_new_string(self, prefix="Robot Test"):
@@ -193,7 +195,7 @@ class OutboundFunds(BaseOutboundFundsPage):
             self.selenium.click_element(option)
 
     def click_related_list_wrapper_button(self, heading, button_title):
-        """ loads the related list  and clicks on the button on the list """
+        """loads the related list  and clicks on the button on the list"""
         locator = outboundfunds_lex_locators["related"]["flexi_button"].format(
             heading, button_title
         )
@@ -207,3 +209,19 @@ class OutboundFunds(BaseOutboundFundsPage):
         self.selenium.wait_until_page_contains_element(locator)
         element = self.selenium.driver.find_element_by_xpath(locator)
         self.selenium.driver.execute_script("arguments[0].click()", element)
+
+    @capture_screenshot_on_error
+    def select_value_from_picklist(self, dropdown, value):
+        """Select given value in the dropdown field"""
+        locator = outboundfunds_lex_locators["new_record"]["dropdown_field"].format(
+            dropdown
+        )
+        self.selenium.get_webelement(locator).click()
+        popup_loc = outboundfunds_lex_locators["new_record"]["dropdown_popup"]
+        self.selenium.wait_until_page_contains_element(
+            popup_loc, error="Picklist dropdown did not open"
+        )
+        value_loc = outboundfunds_lex_locators["new_record"]["dropdown_value"].format(
+            value
+        )
+        self.salesforce._jsclick(value_loc)
