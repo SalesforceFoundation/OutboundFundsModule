@@ -1,7 +1,7 @@
 {
-    "name": "OutboundFunds",
+    "name": "outboundfundsmodule",
     "license": "UNLICENSED",
-    "author": "Salesforce.org",
+    "author": "Salesforce.org Impact Engineering",
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^0.10.0",
         "@salesforce/eslint-config-lwc": "^0.6.0",
