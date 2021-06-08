@@ -306,3 +306,15 @@ class OutboundFunds(BaseOutboundFundsPage):
             self.selenium.click_element(close_locator)
         except Exception:
             self.builtin.log("The toast could not be closed.", "WARN")
+
+    def select_value_from_dropdown(self, dropdown, value):
+        """Select given value in the dropdown field"""
+        if dropdown in ("Role", "Status"):
+            locator = outboundfunds_lex_locators["funding_req_role"][
+                "select_dropdown"
+            ].format(dropdown)
+            selection_value = outboundfunds_lex_locators["funding_req_role"][
+                "select_value"
+            ].format(value)
+            self.salesforce._jsclick(locator)
+            self.selenium.click_element(selection_value)

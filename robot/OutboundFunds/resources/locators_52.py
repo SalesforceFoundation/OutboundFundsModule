@@ -56,6 +56,12 @@ outboundfunds_lex_locators = {
         "button": "//button[contains(@class, 'slds-button') and text() = '{}']",
         "header": "//h1//div[contains(@class, 'entityNameTitle') and contains(text(),'{}')]",
     },
+    "funding_req_role": {
+        "select_value": "//li/a[text()='{}']",
+        "select_dropdown": "//div[contains(@class, 'uiInput')][.//span[contains(@class, 'inputLabel')]]//span[text()='{}']/../following-sibling::div//a[@class='select']",
+        "save_button": "//footer/button/span[text()='Save']",
+        "fr_link": "//div//a//span[contains(text(),'FR-')]",
+    },
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
     "toast_message": "//div[contains(@class,'toastContent')]/child::div/span[contains(text(),\"{}\")]",
