@@ -13,7 +13,7 @@ public with sharing class disbursementsCreateController {
     /**
      * This Method is the entry point for the Lightning Component to receive data about the funding request
      *
-     * @param reqId - The Id of the funding request parent of the discbursements that will be created.
+     * @param reqId - The Id of the funding request parent of the disbursements that will be created.
      *
      * @return Request - the request model
      */

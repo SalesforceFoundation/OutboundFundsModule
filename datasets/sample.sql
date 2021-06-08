@@ -32,7 +32,7 @@ INSERT INTO "Account" VALUES(25,'Corkill Household');
 INSERT INTO "Account" VALUES(26,'Amin Household');
 INSERT INTO "Account" VALUES(27,'Contact Household');
 INSERT INTO "Account" VALUES(28,'Sample Organization');
-INSERT INTO "Account" VALUES(29,'Sprinfield Elementary');
+INSERT INTO "Account" VALUES(29,'Springfield Elementary');
 INSERT INTO "Account" VALUES(30,'Wiggum Household');
 INSERT INTO "Account" VALUES(31,'Global Media');
 INSERT INTO "Account" VALUES(32,'Acme');
@@ -53,7 +53,7 @@ INSERT INTO "Contact" VALUES(3,'Mr.','Ned','Flanders','test@test.com','','','20'
 INSERT INTO "Contact" VALUES(4,'Mr.','Todd','Flanders','','','','20');
 INSERT INTO "Contact" VALUES(5,'Mr.','Rod','Flanders','','','','20');
 INSERT INTO "Contact" VALUES(6,'Mr.','Duff','Man','','','The King Of Beers','22');
-INSERT INTO "Contact" VALUES(7,'Mr.','Clerance','Wiggum','chief@spinfieldpd.fake','911','Police Chief','23');
+INSERT INTO "Contact" VALUES(7,'Mr.','Clarence','Wiggum','chief@spinfieldpd.fake','911','Police Chief','23');
 INSERT INTO "Contact" VALUES(8,'','Nick','Lindberg','','','','24');
 INSERT INTO "Contact" VALUES(9,'','Bill','Corkill','','','','25');
 INSERT INTO "Contact" VALUES(10,'Ms.','Sarah','Amin','','','','26');
@@ -204,7 +204,7 @@ INSERT INTO "Requirement__c" VALUES(8,'Budget Req.','','2018-07-02','','In Progr
 INSERT INTO "Requirement__c" VALUES(9,'Final Report','','2019-05-01','','Open','Report','','3','35');
 INSERT INTO "Requirement__c" VALUES(10,'Budget Required','2018-06-07','2018-06-15','<p>Need budget from Ned before initial payment can be made.</p>','Complete','Preliminary Application','16','18','3');
 INSERT INTO "Requirement__c" VALUES(11,'Interim Report','','2018-11-30','','Open','Report','8','17','25');
-INSERT INTO "Requirement__c" VALUES(12,'Completion of Semester 1 and re-enrollment in Semseter 2','','2019-01-07','','Open','Final Application','9','8','8');
+INSERT INTO "Requirement__c" VALUES(12,'Completion of Semester 1 and re-enrollment in semester 2','','2019-01-07','','Open','Final Application','9','8','8');
 INSERT INTO "Requirement__c" VALUES(13,'Acceptance Notice','2018-05-30','2018-08-01','','Complete','Final Application','10','8','8');
 INSERT INTO "Requirement__c" VALUES(14,'Transcript Required','','2018-06-30','','In Progress','Final Application','10','8','8');
 INSERT INTO "Requirement__c" VALUES(15,'Budget Required for 2nd (final) payment','','2018-08-01','','Open','Report','18','9','12');
