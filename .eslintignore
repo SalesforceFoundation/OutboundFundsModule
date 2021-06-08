@@ -1,6 +1,3 @@
-*
-!**/
-!**/lwc/**/*.js
 node_modules
 .cci
 venv
