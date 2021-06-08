@@ -25,6 +25,18 @@ Setup Test Data
     Set suite variable                  ${date_2}
 
 *** Test Case ***
+Create Funding Program Via API
+    [Documentation]                             Creates a Funding Program via API.
+    ...                                         Verifies that Funding Program is created and
+    ...                                         displays under recently viewed Funding Program
+    [tags]                                      feature:FundingProgram
+    Go To Page                                  Listing             ${ns}Funding_Program__c
+    Capture Page Screenshot
+    Click Link With Text                        ${fundingprogram}[Name]
+    Wait Until Loading Is Complete
+    Current Page Should Be                      Details             Funding_Program__c
+    Validate Field Value                       Funding Program Name   contains     ${fundingprogram}[Name]
+
 Create Funding Program via UI in OutboundFunds
     [Documentation]                             Creates a Funding Program via UI.
      ...                                        Verifies that Funding Program is created.
