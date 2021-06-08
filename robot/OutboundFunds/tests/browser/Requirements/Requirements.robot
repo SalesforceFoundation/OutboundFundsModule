@@ -28,6 +28,9 @@ Setup Test Data
     Set suite variable                ${funding_request}
     ${req_name} =                     Generate New String
     Set suite variable                ${req_name}
+    ${date_2} =                       Get current date    result_format=%m/%d/%Y  increment=240 days
+    Set suite variable                ${date_2}
+
 
 *** Test Case ***
 Add a Requirement on a Funding Request
@@ -41,10 +44,14 @@ Add a Requirement on a Funding Request
     Click Tab                                   Requirements
     click related list wrapper button           Requirements                               New
     Wait For Modal                              New                                  Requirement
-    Populate Field                              Requirement Name        ${req_name}
-    Populate Lookup Field                       Primary Contact     ${contact}[Name]
+    Populate New Record Form                    Requirement Name=${req_name}
+    ...                                         Primary Contact=${contact}[Name]
+    ...                                         Type=Letter of Intent
+    ...                                         Due Date=${date_1}
+    ...                                         Status=Open
+    ...                                         Assigned=PermsTestingUser RobotUser
     Click Save
-    wait until modal is closed
+    Verify Toast Message                        Requirement
     Click Related List Link                     ${req_name}
     Validate Field Value                        Requirement Name   contains   ${req_name}
     Validate Field Value                        Primary Contact    contains    ${contact}[Name]

@@ -34,20 +34,22 @@ Setup Test Data
     Set suite variable                  ${fr_name}
     ${req_name} =                       Generate New String
     Set suite variable                  ${req_name}
+    ${date_1} =                         Get current date    result_format=%m/%d/%Y  increment=1 day
+    Set suite variable                  ${date_1}
 
 *** Test Case ***
-Create Funding Request Via API
-    [Documentation]                             Creates a Funding Request via API.
-    ...                                         Verifies that Funding Request is created and
-    ...                                         displays under recently viewed Funding Request
-    [tags]                                      feature:FundingRequest
-    Go To Page                                  Listing          ${ns}Funding_Request__c
-    Click Link With Text                        ${funding_request}[Name]
-    Wait Until Loading Is Complete
-    Current Page Should Be                      Details          Funding_Request__c
-    Validate Field Value                        Status  contains    In progress
-    Validate Field Value                        Funding Request Name    contains
-    ...                                         ${funding_request}[Name]
+#Create Funding Request Via API
+#    [Documentation]                             Creates a Funding Request via API.
+#    ...                                         Verifies that Funding Request is created and
+#    ...                                         displays under recently viewed Funding Request
+#    [tags]                                      feature:FundingRequest
+#    Go To Page                                  Listing          ${ns}Funding_Request__c
+#    Click Link With Text                        ${funding_request}[Name]
+#    Wait Until Loading Is Complete
+#    Current Page Should Be                      Details          Funding_Request__c
+#    Validate Field Value                        Status  contains    In progress
+#    Validate Field Value                        Funding Request Name    contains
+#    ...                                         ${funding_request}[Name]
 
 Create Funding Request via UI in Outbound Funds
      [Documentation]                            Creates a Funding Request via UI.
@@ -56,10 +58,14 @@ Create Funding Request via UI in Outbound Funds
      Go To Page                                 Listing          ${ns}Funding_Request__c
      Click Object Button                        New
      wait until modal is open
-     Populate Field                             Funding Request Name    ${fr_name}
-     Populate Lookup Field                      Funding Program     ${fundingprogram}[Name]
-     Populate Lookup Field                      Applying Contact    ${contact}[Name]
+     Populate New Record Form                   Funding Request Name=${fr_name}
+     ...                                        Funding Program=${fundingprogram}[Name]
+     ...                                        Application Date=${date_1}
+     ...                                        Status=Submitted
+     ...                                        Geographical Area Served=State
+     ...                                        Applying Contact=${contact}[Name]
+     ...                                        Requested Amount=25000
      Click Save
-     wait until modal is closed
+     Verify Toast Message                       Funding Request
      Current Page Should Be                     Details           Funding_Request__c
      Validate Field Value                       Funding Request Name    contains    ${fr_name}

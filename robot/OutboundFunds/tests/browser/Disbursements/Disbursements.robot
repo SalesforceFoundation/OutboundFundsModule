@@ -45,6 +45,7 @@ Create Disbursement on a Funding Request
     click button                                Calculate
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
+    Verify Toast Message                        Disbursements
     Current Page Should Be                      Details          Funding_Request__c
     Validate Field Value                        Unpaid Disbursements    contains    $80,000.00
     Validate Field Value                        Available for Disbursement  contains    $20,000.00
