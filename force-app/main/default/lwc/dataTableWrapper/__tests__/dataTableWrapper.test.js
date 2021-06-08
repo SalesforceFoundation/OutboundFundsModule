@@ -1,8 +1,6 @@
 import { createElement } from "lwc";
 import DataTableWrapper from "c/dataTableWrapper";
 
-//jest.mock("lightning/datatable");
-
 describe("c/dataTableWrapper", () => {
     let component;
 
