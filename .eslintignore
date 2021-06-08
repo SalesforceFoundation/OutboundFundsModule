@@ -1,5 +1,8 @@
+# Only run eslint on LWCs
 *
 !**/
 !**/lwc/**/*.js
+
+# Extra
 node_modules
 .cci
