@@ -35,9 +35,14 @@ class FundingRequestDetailPage(BaseOutboundFundsPage, DetailPage):
 
     def save_funding_request_role(self):
         """save funding request role"""
-        locator = outboundfunds_lex_locators["funding_req_role"]["save_button"]
-        self.selenium.set_focus_to_element(locator)
-        self.selenium.get_webelement(locator).click()
+        if self.OutboundFunds.latest_api_version == 52.0:
+            locator = outboundfunds_lex_locators["funding_req_role"]["save_button"]
+            self.selenium.set_focus_to_element(locator)
+            self.selenium.get_webelement(locator).click()
+        else:
+            locator = outboundfunds_lex_locators["funding_req_role"]["save_button_old"]
+            self.selenium.set_focus_to_element(locator)
+            self.selenium.get_webelement(locator).click()
 
     def click_funding_request_role_link(self):
         """click on a link in right panel for funding request role"""

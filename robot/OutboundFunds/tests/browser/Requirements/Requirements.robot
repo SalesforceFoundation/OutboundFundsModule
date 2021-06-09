@@ -28,7 +28,7 @@ Setup Test Data
     Set suite variable                ${funding_request}
     ${req_name} =                     Generate New String
     Set suite variable                ${req_name}
-    ${date_2} =                       Get current date    result_format=%m/%d/%Y  increment=240 days
+    ${date_1} =                       Get current date    result_format=%m/%d/%Y  increment=60 days
     Set suite variable                ${date_2}
 
 

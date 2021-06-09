@@ -61,6 +61,7 @@ outboundfunds_lex_locators = {
         "select_dropdown": "//div[contains(@class, 'uiInput')][.//span[contains(@class, 'inputLabel')]]//span[text()='{}']/../following-sibling::div//a[@class='select']",
         "save_button": "//footer/button/span[text()='Save']",
         "fr_link": "//div//a//span[contains(text(),'FR-')]",
+        "save_button_old": "//div[contains(@class, 'modal-footer')]//button/span[text()='Save']",
     },
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
