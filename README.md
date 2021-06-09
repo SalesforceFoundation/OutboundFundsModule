@@ -2,6 +2,46 @@
 
 ![Outbound Funds Logo](https://github.com/SalesforceFoundation/OutboundFundsModule/blob/master/images/Outbound%20Funds%20OSC%20Logo%20250x250.png)
 
+
+# Project Overview
+## Vision & Goals
+Please replace with your projects vision.
+* Goal 1
+* Goal 2
+
+## Project Vertical
+Nonprofit, Education or Other 
+Outbound Funds Module is package neutral. 
+
+## Hub Group Link
+https://powerofus.force.com/s/group/0F980000000CvlMCAS/outbound-funds-module-sfdo-product
+
+# Current Project Team & Accomplishments
+
+Full Name            | Team Role     | Github Username                                    | Working Group? 
+------------         | ------------- | -------------                                      |-------------   
+Enter persons name   | Group Leader  | [fakeusername](https://github.com/fakeusername)    | 
+Enter persons name   | Contributor   |                                                    | Enter working group name
+
+## Sprint 6/9/2021-6/10/2021
+
+### Project Team Accomplishments
+Please replace with the tasks you team was able to accomplish during the Sprint event.
+
+Full Name            | Team Role     | Github Username                                    | Working Group? 
+------------         | ------------- | -------------                                      |-------------   
+Enter persons name   | Group Leader  | [fakeusername](https://github.com/fakeusername)    | 
+Enter persons name   | Contributor   |                                                    | Enter working group name
+
+# Past Project Teams
+We recommend creating a Wiki page for past Sprint Event volunteers (per Sprint), and that Sprints goals, accomplishments, etc. Here's a good example: https://github.com/SFDO-Community-Sprints/DataGenerationToolkit. If you prefer to add this information to the readme file, here's a good example of formatting you can use: https://github.com/SFDO-Community-Sprints/Admin-Skills-and-Nonprofit-Salesforce-Teams
+
+# Project Resources and Documentation
+Documentation can be found in the repository [wiki] (URL for wiki where docs are stored)
+
+# Future Contributions (AKA what were you unable to finish at the Sprint)
+Replace with the goals your team would like to continue working on next time.
+
 The Outbound Funds app is a community developed and maintained Open Source Commons project. It is a customizable foundation for managing funds awarded by your organization, like grants, scholarships or internal funding.
 
 Links:
