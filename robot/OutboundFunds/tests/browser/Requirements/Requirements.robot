@@ -28,8 +28,8 @@ Setup Test Data
     Set suite variable                ${funding_request}
     ${req_name} =                     Generate New String
     Set suite variable                ${req_name}
-    ${date_1} =                       Get current date    result_format=%m/%d/%Y  increment=60 days
-    Set suite variable                ${date_2}
+    ${date} =                       Get current date    result_format=%m/%d/%Y  increment=60 days
+    Set suite variable                ${date}
 
 
 *** Test Case ***
@@ -47,7 +47,7 @@ Add a Requirement on a Funding Request
     Populate New Record Form                    Requirement Name=${req_name}
     ...                                         Primary Contact=${contact}[Name]
     ...                                         Type=Letter of Intent
-    ...                                         Due Date=${date_1}
+    ...                                         Due Date=${date}
     ...                                         Status=Open
     ...                                         Assigned=PermsTestingUser RobotUser
     Click Save
