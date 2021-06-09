@@ -16,7 +16,7 @@ describe("c/dataTableWrapper", () => {
         component = null;
     });
 
-    it("FIXME should get code coverage for handleRowChange", () => {
+    it("should get code coverage for handleRowChange", () => {
         // Fires lightning-datatable cellchange event.
         const draftValueChangedHandler = jest.fn();
         component.addEventListener("draftvaluechange", draftValueChangedHandler);
@@ -40,6 +40,13 @@ describe("c/dataTableWrapper", () => {
             "detail",
             draftValues[0]
         );
+    });
+    it("should display the lightning-datatable", () => {
+        const checksTable = component.shadowRoot.querySelector("lightning-datatable");
+
+        expect(checksTable.columns).not.toBe(null);
+        expect(checksTable.records).not.toBe(null);
+        expect(checksTable.keyField).toBe("id");
     });
 
     it("should be accessible", async () => {
