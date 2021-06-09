@@ -35,6 +35,9 @@ Setup Test Data
     ${req_name} =                       Generate New String
     Set suite variable                  ${req_name}
 
+*** Variables ***
+${test_user}             permtest
+
 *** Test Case ***
 Create Funding Request Via API
     [Documentation]                             Creates a Funding Request via API.
@@ -63,3 +66,18 @@ Create Funding Request via UI in Outbound Funds
      wait until modal is closed
      Current Page Should Be                     Details           Funding_Request__c
      Validate Field Value                       Funding Request Name    contains    ${fr_name}
+
+Share a Funding Request
+    [Documentation]                             Creates a Funding Request via API and Share
+    ...                                         Verifies that Funding Request is created and
+    ...                                         Share Funding Request
+    [tags]                                      feature:FundingRequest
+    Go To Page                                  Details          Funding_Request__c   object_id=${funding_request}[Id]
+    Share A Record
+    Close Browser
+    Open test browser                           useralias=${test_user}
+    Go To Page                                  Details          Funding_Request__c   object_id=${funding_request}[Id]
+    Validate Field Value                        Status  contains    In progress
+    Validate Field Value                        Funding Request Name    contains
+    ...                                         ${funding_request}[Name]
+    Page Should Not Contain Element             OutboundFunds:object_button

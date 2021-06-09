@@ -2,6 +2,7 @@ import logging
 import random
 import string
 import warnings
+import time
 
 from BaseObjects import BaseOutboundFundsPage
 from selenium.common.exceptions import NoSuchWindowException
@@ -9,6 +10,7 @@ from robot.libraries.BuiltIn import RobotNotRunningError
 from locators_52 import outboundfunds_lex_locators as locators_52
 from locators_51 import outboundfunds_lex_locators as locators_51
 from cumulusci.robotframework.utils import selenium_retry, capture_screenshot_on_error
+from selenium.webdriver.common.keys import Keys
 
 locators_by_api_version = {
     51.0: locators_51,  # Spring '21
@@ -225,3 +227,32 @@ class OutboundFunds(BaseOutboundFundsPage):
             value
         )
         self.salesforce._jsclick(value_loc)
+
+    def share_a_record(self):
+        """Click on Sharing link on Funding Request and Requirement Record"""
+        locator_sharing = outboundfunds_lex_locators["sharing"]["sharing_button"]
+        self.selenium.click_element(locator_sharing)
+        locator_sharing_link = outboundfunds_lex_locators["sharing"]["sharing_link"]
+        self.selenium.wait_until_page_contains_element(
+            locator_sharing_link,
+            error="'Sharing' option is not available in the list of actions",
+        )
+        self.selenium.click_element(locator_sharing_link)
+        self.selenium.location_should_contain(
+            "recordShare?",
+            message="Current page is not Share",
+        )
+        locator = outboundfunds_lex_locators["header_title"].format("Share")
+        self.selenium.wait_until_page_contains_element(
+            locator, error="The header for this page is not 'Share' as expected"
+        )
+        user_locator = outboundfunds_lex_locators["sharing"]["search_user"]
+        set_user = self.selenium.driver.find_element_by_xpath(user_locator)
+        set_user.click()
+        time.sleep(1)
+        set_user.send_keys("PermsTestingUser RobotUser")
+        time.sleep(2)
+        set_user.send_keys(Keys.ENTER)
+        save_locator = outboundfunds_lex_locators["sharing"]["save_share"]
+        self.selenium.set_focus_to_element(save_locator)
+        self.selenium.click_element(save_locator)

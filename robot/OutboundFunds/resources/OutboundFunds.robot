@@ -102,18 +102,18 @@ API Create Funding Request
 
 API Create Requirement on a Funding Request
     [Documentation]                 Create a Requirement on a Funding Request via API
-    [Arguments]                     ${funding_request_id}  ${contact_id}    ${user_id}   &{fields}
-    ${ns} =                         Get Outfunds Namespace Prefix
+    [Arguments]                     ${funding_request_id}     &{fields}
     ${requirement_name} =           Generate New String
+    ${ns} =                         Get Outfunds Namespace Prefix
     ${due_date} =                   Get Current Date  result_format=%Y-%m-%d    increment=30 days
-    ${requirement_id} =             Salesforce Insert  outfunds__Requirement__c
+    ${contact_id} =                 API Get Contact Id for Robot User   Walker
+    ${requirement_id} =             Salesforce Insert  ${ns}Requirement__c
     ...                             Name=${requirement_name}
     ...                             ${ns}Primary_Contact__c=${contact_id}
     ...                             ${ns}Due_Date__c=${due_date}
-    ...                             ${ns}Assigned__c=${user_id}
     ...                             ${ns}Status__c=Open
     ...                             ${ns}Funding_Request__c=${funding_request_id}
-    ...                             ${ns}Type__c=Review
+    ...                             ${ns}Type__c=Letter of Intent
     ...                             &{fields}
     &{requirement} =                Salesforce Get  ${ns}Requirement__c  ${requirement_id}
     Store Session Record            ${ns}Requirement__c   ${requirement_id}
@@ -253,3 +253,19 @@ API Get User Id of Permissions Test User
     ...                     SELECT Id FROM User where Email LIKE '%testingperms%' and IsActive=True
     &{Id} =                 Get From List  ${result['records']}  0
     [return]                ${Id}[Id]
+
+API Get Contact Id for Robot User
+    [Documentation]         Returns the ID of a Robot Test User
+    [Arguments]             ${last_name}    &{fields}
+    ${result} =             API Get Id      Contact         LastName=${last_name}
+    [return]                ${result}
+
+API Get Id
+    [Documentation]                 Returns the ID of a record identified by the given field_name
+    ...                             and field_value input for a specific object
+    [Arguments]                     ${obj_name}    &{fields}
+    @{records} =                    Salesforce Query      ${obj_name}
+    ...                             select=Id
+    ...                             &{fields}
+    &{Id} =                         Get From List  ${records}  0
+    [return]                        ${Id}[Id]
