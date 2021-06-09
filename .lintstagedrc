@@ -6,7 +6,7 @@
         "cspell"
     ],
     "*.js": [
-        "eslint --max-warnings 0"
+        "eslint"
     ],
     "yarn.lock": [
         "lockfile-lint"

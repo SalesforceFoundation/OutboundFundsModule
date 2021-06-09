@@ -7,10 +7,10 @@ setupFilesAfterEnv.push("<rootDir>/jest.setup.js");
 // Require 100% LWC code coverage
 const coverageThreshold = jestConfig.coverageThreshold || {};
 coverageThreshold.global = {
-    branches: 50,
+    branches: 100,
     functions: 100,
-    lines: 50,
-    statements: 0,
+    lines: 100,
+    statements: 100,
 };
 
 module.exports = {
