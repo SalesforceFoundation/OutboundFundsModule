@@ -25,5 +25,9 @@
     },
     "jest": {
         "preset": "@lwc/jest-preset"
+    },
+    "scripts": {
+        "test:unit": "lwc-jest",
+        "test:unit:coverage": "lwc-jest --coverage"
     }
 }
