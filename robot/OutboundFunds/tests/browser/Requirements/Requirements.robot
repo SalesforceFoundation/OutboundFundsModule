@@ -3,6 +3,7 @@ Documentation  Create a Requirement on a Funding Request.
 Resource       robot/OutboundFunds/resources/OutboundFunds.robot
 Library        cumulusci.robotframework.PageObjects
 ...            robot/OutboundFunds/resources/FundingRequestPageObject.py
+...            robot/OutboundFunds/resources/RequirementPageObject.py
 ...            robot/OutboundFunds/resources/OutboundFunds.py
 
 Suite Setup     Run keywords
