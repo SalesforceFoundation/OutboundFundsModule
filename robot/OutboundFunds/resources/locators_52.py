@@ -72,7 +72,7 @@ outboundfunds_lex_locators = {
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
     "header_title": "//h2[(contains(@class, 'inlineTitle') or contains(@class, 'slds-text-heading') or contains(@class, 'listTitle') or contains(@class, 'slds-hyphenate')) and contains(text(),'{}')]",
-    "object_button": "//div[contains(@class, 'slds-page-header')]//*[self::a[@title='Edit'] or self::button[@name='Edit']]"
+    "object_button": "//div[contains(@class, 'slds-page-header')]//*[self::a[@title='Edit'] or self::button[@name='Edit']]",
     "toast_message": "//div[contains(@class,'toastContent')]/child::div/span[contains(text(),\"{}\")]",
-    "toast_close":  "//span[contains(@class, 'toastMessage') and text()=\"{}\"]/ancestor::div//button[@title='Close']",
+    "toast_close": "//span[contains(@class, 'toastMessage') and text()=\"{}\"]/ancestor::div//button[@title='Close']",
 }
