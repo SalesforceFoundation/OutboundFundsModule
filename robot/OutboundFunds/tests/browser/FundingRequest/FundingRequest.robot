@@ -95,7 +95,6 @@ Add New Funding Request Role
      Current Page Should Be                      Details          Funding_Request_Role__c
      Validate Field Value                        Status     contains    Current
 
-
 Share a Funding Request
     [Documentation]                             Creates a Funding Request via API and Share
     ...                                         Verifies that Funding Request is created and

@@ -321,6 +321,7 @@ class OutboundFunds(BaseOutboundFundsPage):
             self.salesforce._jsclick(locator)
             self.selenium.click_element(selection_value)
 
+    @capture_screenshot_on_error
     def share_a_record(self):
         """Click on Sharing link on Funding Request and Requirement Record"""
         locator_sharing = outboundfunds_lex_locators["sharing"]["sharing_button"]
@@ -331,10 +332,13 @@ class OutboundFunds(BaseOutboundFundsPage):
             error="'Sharing' option is not available in the list of actions",
         )
         self.selenium.click_element(locator_sharing_link)
-        self.selenium.location_should_contain(
-            "recordShare?",
-            message="Current page is not Share",
-        )
+        if self.latest_api_version == 52.0:
+            self.selenium.location_should_contain(
+                "recordShare?",
+                message="Current page is not Share",
+            )
+        else:
+            pass
         locator = outboundfunds_lex_locators["header_title"].format("Share")
         self.selenium.wait_until_page_contains_element(
             locator, error="The header for this page is not 'Share' as expected"
@@ -346,6 +350,11 @@ class OutboundFunds(BaseOutboundFundsPage):
         set_user.send_keys("PermsTestingUser RobotUser")
         time.sleep(2)
         set_user.send_keys(Keys.ENTER)
-        save_locator = outboundfunds_lex_locators["sharing"]["save_share"]
+        if self.latest_api_version == 52.0:
+            save_locator = outboundfunds_lex_locators["sharing"]["save_share"]
+        else:
+            save_locator = outboundfunds_lex_locators["funding_req_role"][
+                "save_button_old"
+            ]
         self.selenium.set_focus_to_element(save_locator)
         self.selenium.click_element(save_locator)
