@@ -25,6 +25,11 @@ Setup Test Data
     ...                                 ${fundingprogram}[Id]     ${contact}[Id]
     Store Session Record                ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                  ${funding_request}
+    ${awardedfunding_request} =         API Create Funding Request
+    ...                                 ${fundingprogram}[Id]      ${contact}[Id]
+    ...                                 ${ns}Status__c=Awarded  ${ns}Awarded_Amount__c=100000
+    Store Session Record                ${ns}Funding_Request__c  ${awardedfunding_request}[Id]
+    Set suite variable                  ${awardedfunding_request}
     ${fr_name} =                        Generate New String
     Set suite variable                  ${fr_name}
     ${req_name} =                       Generate New String
@@ -34,6 +39,9 @@ Setup Test Data
     ${contact_role} =                   API Create Contact
     Store Session Record                Contact                              ${contact_role}[Id]
     Set suite variable                  ${contact_role}
+
+*** Variables ***
+${test_user}             permtest
 
 *** Test Case ***
 Create Funding Request Via API
@@ -87,3 +95,17 @@ Add New Funding Request Role
      Current Page Should Be                      Details          Funding_Request_Role__c
      Validate Field Value                        Status     contains    Current
 
+Share a Funding Request
+    [Documentation]                             Creates a Funding Request via API and Share
+    ...                                         Verifies that Funding Request is created and
+    ...                                         Share Funding Request
+    [tags]                                      feature:FundingRequest
+    Go To Page                                  Details          Funding_Request__c   object_id=${funding_request}[Id]
+    Share A Record
+    Close Browser
+    Open test browser                           useralias=${test_user}
+    Go To Page                                  Details          Funding_Request__c   object_id=${funding_request}[Id]
+    Validate Field Value                        Status  contains    In progress
+    Validate Field Value                        Funding Request Name    contains
+    ...                                         ${funding_request}[Name]
+    Page Should Not Contain Element             OutboundFunds:object_button

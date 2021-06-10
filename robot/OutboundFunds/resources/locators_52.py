@@ -63,8 +63,16 @@ outboundfunds_lex_locators = {
         "fr_link": "//div//a//span[contains(text(),'FR-')]",
         "save_button_old": "//div[contains(@class, 'modal-footer')]//button/span[text()='Save']",
     },
+    "sharing": {
+        "sharing_link": "//a//span[contains(text(), 'Sharing')]",
+        "sharing_button": "//div[contains(@class, 'highlights slds-clearfix slds-page-header slds-page-header_record-home fixed-position')]//lightning-button-menu[contains(@class,'slds-dropdown-trigger')]/button[contains(@class, 'slds-button_icon-border-filled')]",
+        "search_user": "//label//span[text()='Search']/../../div//input",
+        "save_share": "//div[contains(@class, 'modal-footer')]//button[text()='Save']",
+    },
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
+    "header_title": "//h2[(contains(@class, 'inlineTitle') or contains(@class, 'slds-text-heading') or contains(@class, 'listTitle') or contains(@class, 'slds-hyphenate')) and contains(text(),'{}')]",
+    "object_button": "//div[contains(@class, 'slds-page-header')]//*[self::a[@title='Edit'] or self::button[@name='Edit']]",
     "toast_message": "//div[contains(@class,'toastContent')]/child::div/span[contains(text(),\"{}\")]",
     "toast_close": "//span[contains(@class, 'toastMessage') and text()=\"{}\"]/ancestor::div//button[@title='Close']",
 }
