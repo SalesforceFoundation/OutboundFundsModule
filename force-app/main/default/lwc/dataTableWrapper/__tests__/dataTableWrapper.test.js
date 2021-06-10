@@ -16,7 +16,7 @@ describe("c/dataTableWrapper", () => {
         component = null;
     });
 
-    it("should get code coverage for handleRowChange", () => {
+    it("should dispatch draftvaluechange on row change", () => {
         // Fires lightning-datatable cellchange event.
         const draftValueChangedHandler = jest.fn();
         component.addEventListener("draftvaluechange", draftValueChangedHandler);
@@ -43,12 +43,16 @@ describe("c/dataTableWrapper", () => {
     });
     it("should display the lightning-datatable", () => {
         const checksTable = component.shadowRoot.querySelector("lightning-datatable");
-
+        let expectedEmptyColumns = [];
         expect(checksTable.columns).not.toBe(null);
+        expect(checksTable.columns).toStrictEqual(expectedEmptyColumns);
         expect(checksTable.records).not.toBe(null);
         expect(checksTable.keyField).toBe("id");
+        //set columns
+        let expectedColumns = ["Name", "Phone"];
+        checksTable.columns = expectedColumns;
+        expect(checksTable.columns).toStrictEqual(expectedColumns);
     });
-
     it("should be accessible", async () => {
         await expect(component).toBeAccessible();
     });
