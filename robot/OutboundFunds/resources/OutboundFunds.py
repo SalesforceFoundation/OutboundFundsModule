@@ -225,3 +225,96 @@ class OutboundFunds(BaseOutboundFundsPage):
             value
         )
         self.salesforce._jsclick(value_loc)
+
+    def populate_new_record_form(self, **kwargs):
+        """Populate New Record Form with Key Value Pair"""
+        for key, value in kwargs.items():
+            if key in (
+                "Applying Contact",
+                "Applying Employee",
+                "Applying Organization",
+                "Funding Program",
+                "Assigned",
+                "Primary Contact",
+                "Assigned",
+                "Funding Request",
+                "Diisbursement",
+            ):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "lightning_lookup"
+                ].format(key)
+                self.check_if_element_exists(locator)
+                self.salesforce.scroll_element_into_view(locator)
+                self.selenium.set_focus_to_element(locator)
+                self.salesforce.populate_lookup_field(key, value)
+            elif key in (
+                "Requested Amount",
+                "Awarded Amount",
+                "Recommended Amount",
+                "Funding Request Name",
+                "Funding Program Name",
+                "Total Program Amount",
+                "Description",
+                "Requirement Name",
+            ):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "amount_field"
+                ].format(key)
+                self.check_if_element_exists(locator)
+                self.salesforce.scroll_element_into_view(locator)
+                self.selenium.get_webelement(locator).send_keys(value)
+            elif key in (
+                "Awarded Date",
+                "Close Date",
+                "Awarded Date",
+                "Application Date",
+                "Start Date",
+                "End Date",
+                "Due Date",
+                "Completed Date",
+            ):
+                locator = outboundfunds_lex_locators["new_record"]["date_field"].format(
+                    key
+                )
+                self.selenium.set_focus_to_element(locator)
+                self.selenium.clear_element_text(locator)
+                self.selenium.get_webelement(locator).send_keys(value)
+            elif key in ("Status", "Geographical Area Served", "Type"):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "dropdown_field"
+                ].format(key)
+                self.selenium.get_webelement(locator).click()
+                popup_loc = outboundfunds_lex_locators["new_record"]["dropdown_popup"]
+                self.selenium.wait_until_page_contains_element(
+                    popup_loc, error="Picklist dropdown did not open"
+                )
+                value_loc = outboundfunds_lex_locators["new_record"][
+                    "dropdown_value"
+                ].format(value)
+                self.salesforce._jsclick(value_loc)
+            else:
+                raise Exception(f"Field provided by name '{key}' does not exist")
+
+    @capture_screenshot_on_error
+    def verify_toast_message(self, value):
+        """Verifies the toast message"""
+        locator = outboundfunds_lex_locators["toast_message"].format(value)
+        self.selenium.wait_until_element_is_visible(locator)
+        try:
+            close_locator = outboundfunds_lex_locators["toast_close"].format(value)
+            self.selenium.wait_until_page_contains_element(close_locator)
+            self.selenium.click_element(close_locator)
+        except Exception:
+            self.builtin.log("The toast could not be closed.", "WARN")
+
+    def select_value_from_dropdown(self, dropdown, value):
+        """Select given value in the dropdown field"""
+        if dropdown in ("Role", "Status"):
+            locator = outboundfunds_lex_locators["funding_req_role"][
+                "select_dropdown"
+            ].format(dropdown)
+            selection_value = outboundfunds_lex_locators["funding_req_role"][
+                "select_value"
+            ].format(value)
+            self.salesforce._jsclick(locator)
+            self.selenium.click_element(selection_value)

@@ -31,6 +31,8 @@ outboundfunds_lex_locators = {
         "dropdown_value": "//div[contains(@class,'slds-listbox')]//lightning-base-combobox-item//span[text()='{}']",
         "modal_footer_button": "//*[@id='wrapper-body']/footer/button/span[text()='{}']",
         "modal_footer": "//footer[@class='slds-modal__footer']",
+        "amount_field": "//label[text()='{}']/..//*[self::input or self::textarea]",
+        "date_field": "//div[contains(@class,'slds-dropdown-trigger')][./label[text()='{}']]/div/input",
     },
     "confirm": {
         "check_value": "//div[contains(@class, 'forcePageBlockItem') or contains(@class, 'slds-form-element_stacked')][.//span[text()='{}']]//following-sibling::div[.//span[contains(@class, 'test-id__field-value')]]//*[text()='{}']",
@@ -54,6 +56,15 @@ outboundfunds_lex_locators = {
         "button": "//button[contains(@class, 'slds-button') and text() = '{}']",
         "header": "//h1//div[contains(@class, 'entityNameTitle') and contains(text(),'{}')]",
     },
+    "funding_req_role": {
+        "select_value": "//li/a[text()='{}']",
+        "select_dropdown": "//div[contains(@class, 'uiInput')][.//span[contains(@class, 'inputLabel')]]//span[text()='{}']/../following-sibling::div//a[@class='select']",
+        "save_button": "//footer/button/span[text()='Save']",
+        "fr_link": "//div//a//span[contains(text(),'FR-')]",
+        "save_button_old": "//div[contains(@class, 'modal-footer')]//button/span[text()='Save']",
+    },
     "link": "//a[contains(text(),'{}')]",
     "flexipage-popup": "//div[contains(@class, 'slds-is-open')][contains(@class, 'slds-combobox')]",
+    "toast_message": "//div[contains(@class,'toastContent')]/child::div/span[contains(text(),\"{}\")]",
+    "toast_close": "//span[contains(@class, 'toastMessage') and text()=\"{}\"]/ancestor::div//button[@title='Close']",
 }
