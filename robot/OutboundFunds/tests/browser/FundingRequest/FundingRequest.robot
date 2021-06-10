@@ -34,6 +34,11 @@ Setup Test Data
     Set suite variable                  ${fr_name}
     ${req_name} =                       Generate New String
     Set suite variable                  ${req_name}
+    ${date_1} =                         Get current date    result_format=%m/%d/%Y  increment=1 day
+    Set suite variable                  ${date_1}
+    ${contact_role} =                   API Create Contact
+    Store Session Record                Contact                              ${contact_role}[Id]
+    Set suite variable                  ${contact_role}
 
 *** Variables ***
 ${test_user}             permtest
@@ -59,13 +64,37 @@ Create Funding Request via UI in Outbound Funds
      Go To Page                                 Listing          ${ns}Funding_Request__c
      Click Object Button                        New
      wait until modal is open
-     Populate Field                             Funding Request Name    ${fr_name}
-     Populate Lookup Field                      Funding Program     ${fundingprogram}[Name]
-     Populate Lookup Field                      Applying Contact    ${contact}[Name]
+     Populate New Record Form                   Funding Request Name=${fr_name}
+     ...                                        Funding Program=${fundingprogram}[Name]
+     ...                                        Application Date=${date_1}
+     ...                                        Status=Submitted
+     ...                                        Geographical Area Served=State
+     ...                                        Applying Contact=${contact}[Name]
+     ...                                        Requested Amount=25000
      Click Save
-     wait until modal is closed
+     Verify Toast Message                       Funding Request
      Current Page Should Be                     Details           Funding_Request__c
      Validate Field Value                       Funding Request Name    contains    ${fr_name}
+
+Add New Funding Request Role
+    [Documentation]                             Add New Funding Request Role on a Funding Request
+     [tags]                                     feature:FundingRequest      feature:FundingRequestRole
+     Go To Page                                 Listing          ${ns}Funding_Request__c
+     Click Link With Text                        ${funding_request}[Name]
+     Wait Until Loading Is Complete
+     Current Page Should Be                      Details          Funding_Request__c
+     Click Button                                Create Funding Request Role
+     Wait Until Modal Is Open
+     Populate Lookup Field                       Contact    ${contact_role}[Name]
+     Select Value From Dropdown                  Status     Current
+     Select Value From Dropdown                  Role       Applicant
+     Save Funding Request Role
+     Verify Toast Message                        A new Funding Request Role has been created
+     Current Page Should Be                      Details          Funding_Request__c
+     Click Funding Request Role link
+     Current Page Should Be                      Details          Funding_Request_Role__c
+     Validate Field Value                        Status     contains    Current
+
 
 Share a Funding Request
     [Documentation]                             Creates a Funding Request via API and Share
