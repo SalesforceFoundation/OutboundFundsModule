@@ -52,10 +52,12 @@ Nick Lindberg   | Group Leader  | [Nickers3](https://github.com/Nickers3)     |
 Shari Carlson   | Group Leader  | [sharicarlson13](https://github.com/sharicarlson13)     | 
 Crystal Matthews   | Contributor   |    [crystalmathews](https://github.com/crystalmathews)          | 
 Serkan Bilgi   | Contributor   |    [serkanbilgi](https://github.com/serkanbilgi)          | 
+Tammy Silverthorne   | Contributor   |    [tsilverthorne1](https://github.com/tsilverthorne1)          | 
 
 ### Project Team Accomplishments
 * Docket Manager Object Requirements and Proof of Concept
 * Finalize Reporting Workbook
+* Ammendment Reuqirements conversation
 
 # Past Sprint Project Teams and Accomplishments
 https://github.com/SFDO-Community-Sprints/OutboundFundsModule/wiki/Past-Sprint-Summaries
