@@ -333,7 +333,7 @@ private class disbursementsCreateController_TEST {
         System.assertNotEquals(
             disbursementWrapper.status,
             expectedDisbursement.Status__c,
-            'Status is hardcoded to SCHEDULED on mapDisbursment method'
+            'Status is hardcoded to SCHEDULED on mapDisbursement method'
         );
         System.assertEquals(
             disbursementWrapper.amount,
