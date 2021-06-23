@@ -126,7 +126,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         locator = outboundfunds_lex_locators["new_record"]["footer_button"].format(
             "Save"
         )
-        self.selenium.scroll_element_into_view(locator)
+        self.salesforce.scroll_element_into_view(locator)
         self.salesforce._jsclick(locator)
 
     def validate_field_value(self, field, status, value, section=None):
@@ -135,7 +135,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         """
         if section is not None:
             section = "text:" + section
-            self.selenium.scroll_element_into_view(section)
+            self.salesforce.scroll_element_into_view(section)
         list_found = False
         locators = outboundfunds_lex_locators["confirm"].values()
         if status == "contains":
@@ -182,18 +182,18 @@ class OutboundFunds(BaseOutboundFundsPage):
         )
         option = outboundfunds_lex_locators["span"].format(value)
         self.selenium.wait_until_page_contains_element(locator)
-        self.selenium.scroll_element_into_view(locator)
+        self.salesforce.scroll_element_into_view(locator)
         element = self.selenium.driver.find_element_by_xpath(locator)
         try:
             self.selenium.get_webelement(locator).click()
             self.wait_for_locator("flexipage-popup")
-            self.selenium.scroll_element_into_view(option)
+            self.salesforce.scroll_element_into_view(option)
             self.selenium.click_element(option)
         except Exception:
             self.builtin.sleep(1, "waiting for a second and retrying click again")
             self.selenium.driver.execute_script("arguments[0].click()", element)
             self.wait_for_locator("flexipage-popup")
-            self.selenium.scroll_element_into_view(option)
+            self.salesforce.scroll_element_into_view(option)
             self.selenium.click_element(option)
 
     def click_related_list_wrapper_button(self, heading, button_title):

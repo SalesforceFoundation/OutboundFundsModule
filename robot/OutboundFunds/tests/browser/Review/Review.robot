@@ -60,6 +60,13 @@ Add a Review on a Funding Request
     Populate Field                              Review Name        ${review_name1}
     Click Save
     Wait Until Modal is Closed
+    Current Page Should Be                      Details          Funding_Request__c
+    Click Tab                                   Reviews
+    # validtes column names
+    Page Should Contain Element                 //span[@title='Review Name']
+    Page Should Contain Element                 //span[@title='Status']
+    Page Should Contain Element                 //span[@title='Assigned To']
+    Page Should Contain Element                 //span[@title='Due Date']
     Click Related List Link                     ${review_name1}
     Validate Field Value                        Review Name   contains   ${review_name1}
 
