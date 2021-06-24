@@ -240,7 +240,7 @@ class OutboundFunds(BaseOutboundFundsPage):
                 "Primary Contact",
                 "Assigned",
                 "Funding Request",
-                "Diisbursement",
+                "Disbursement",
             ):
                 locator = outboundfunds_lex_locators["new_record"][
                     "lightning_lookup"
