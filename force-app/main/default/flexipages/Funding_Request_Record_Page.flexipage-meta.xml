@@ -8,6 +8,10 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+			<name>enableActionsConfiguration</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                     <name>hideChatterActions</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -89,6 +93,35 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Funding_Request__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Reviews__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-3e434ff4-6a9b-4377-b354-0951fe451efb</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -131,6 +164,19 @@
                     <value>Disbursements</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+            </componentInstance>
+        </itemInstances>
+	<itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                	<name>body</name>
+                	<value>Facet-3e434ff4-6a9b-4377-b354-0951fe451efb</value>
+            	</componentInstanceProperties>
+            	<componentInstanceProperties>
+                	<name>title</name>
+                	<value>Reviews</value>
+           	 </componentInstanceProperties>
+            	<componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
         <name>facet-b1444878-6707-43f0-8ada-196082626d67</name>

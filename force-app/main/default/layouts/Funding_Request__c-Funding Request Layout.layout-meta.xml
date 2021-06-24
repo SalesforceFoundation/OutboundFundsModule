@@ -200,11 +200,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Funding_Request__c.Create_Bulk_Disbursements</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -244,6 +239,16 @@
             <actionType>StandardButton</actionType>
             <sortOrder>8</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Share</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
@@ -267,6 +272,13 @@
         <relatedList>Disbursement__c.Funding_Request__c</relatedList>
         <sortField>Scheduled_Date__c</sortField>
         <sortOrder>Asc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>AssignedTo__c</fields>
+        <fields>DueDate__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Review__c.FundingRequest__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -303,7 +315,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hP0000000nX06</masterLabel>
+        <masterLabel>00h2D000002AEXN</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

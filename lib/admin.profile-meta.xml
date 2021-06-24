@@ -12,11 +12,16 @@
         <members>Contact</members>
         <members>Lead</members>
         <members>Opportunity</members>
+        <members>%%%NAMESPACE%%%Funding_Request__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Admin</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
     </types>
     <version>48.0</version>
 </Package>

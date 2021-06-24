@@ -230,6 +230,37 @@
                                 </td>
                             </tr>
 
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.py.Click Related List Link"
+                            >
+                                <td class="kwname">Click Related List Link</td>
+                                <td class="kwargs">
+                                    <i>text</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>Click on link with passed text</p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.py.Click Related List Wrapper Button"
+                            >
+                                <td class="kwname">Click Related List Wrapper Button</td>
+                                <td class="kwargs">
+                                    <i>heading</i>,
+
+                                    <i>button_title</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>
+                                        loads the related list and clicks on the button on
+                                        the list
+                                    </p>
+                                </td>
+                            </tr>
+
                             <tr class="kwrow" id="OutboundFunds.py.Click Save">
                                 <td class="kwname">Click Save</td>
                                 <td class="kwargs"></td>
@@ -266,7 +297,12 @@
                                 <td class="kwargs">
                                     <i>name</i>
                                 </td>
-                                <td class="kwdoc"></td>
+                                <td class="kwdoc">
+                                    <p>
+                                        This is a helper function to capture the namespace
+                                        prefix of the target org
+                                    </p>
+                                </td>
                             </tr>
 
                             <tr
@@ -275,7 +311,9 @@
                             >
                                 <td class="kwname">Get Outfunds Namespace Prefix</td>
                                 <td class="kwargs"></td>
-                                <td class="kwdoc"></td>
+                                <td class="kwdoc">
+                                    <p>Get outfunds__ prefix for custom objects</p>
+                                </td>
                             </tr>
 
                             <tr class="kwrow" id="OutboundFunds.py.New Random String">
@@ -305,6 +343,21 @@
                                         suffix: str :returns: The fake email address.
                                         :rtype: str
                                     </p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.py.Select Value From Picklist"
+                            >
+                                <td class="kwname">Select Value From Picklist</td>
+                                <td class="kwargs">
+                                    <i>dropdown</i>,
+
+                                    <i>value</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>Select given value in the dropdown field</p>
                                 </td>
                             </tr>
 
@@ -494,6 +547,36 @@
 
                             <tr
                                 class="kwrow"
+                                id="OutboundFunds.robot.API Create Review on a Funding Request"
+                            >
+                                <td class="kwname">
+                                    API Create Review on a Funding Request
+                                </td>
+                                <td class="kwargs">
+                                    <i>funding_request_id</i>,
+
+                                    <i>**fields</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>Create a Review on a Funding Request via API</p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.robot.API Get User Id of Permissions Test User"
+                            >
+                                <td class="kwname">
+                                    API Get User Id of Permissions Test User
+                                </td>
+                                <td class="kwargs">
+                                    <i>**fields</i>
+                                </td>
+                                <td class="kwdoc"><p>Returns the ID of a User</p></td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
                                 id="OutboundFunds.robot.Capture Screenshot and Delete Records and Close Browser"
                             >
                                 <td class="kwname">
@@ -506,6 +589,90 @@
                                         This keyword will capture a screenshot before
                                         closing the browser and deleting records when test
                                         fails
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.robot.Change Field Permissions"
+                            >
+                                <td class="kwname">Change Field Permissions</td>
+                                <td class="kwargs">
+                                    <i>action</i>,
+
+                                    <i>objectapiname</i>,
+
+                                    <i>fieldapiname</i>,
+
+                                    <i>permset</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>
+                                        Adds or removes the Create, Read, Edit and Delete
+                                        permissions for the specified object field on the
+                                        specified permission set.
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.robot.Change Object Permissions"
+                            >
+                                <td class="kwname">Change Object Permissions</td>
+                                <td class="kwargs">
+                                    <i>action</i>,
+
+                                    <i>objectapiname</i>,
+
+                                    <i>permset</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>
+                                        Adds or removes the Create, Read, Edit and Delete
+                                        permissions for the specified object on the
+                                        specified permission set..
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.robot.Field Permissions Cleanup"
+                            >
+                                <td class="kwname">Field Permissions Cleanup</td>
+                                <td class="kwargs">
+                                    <i>objectapiname</i>,
+
+                                    <i>fieldapiname</i>,
+
+                                    <i>permset</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>
+                                        Resets all field permissions in case a test fails
+                                        before they are restored. Skips the reset if the
+                                        permissions have already been added back.
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="OutboundFunds.robot.Object Permissions Cleanup"
+                            >
+                                <td class="kwname">Object Permissions Cleanup</td>
+                                <td class="kwargs">
+                                    <i>objectapiname</i>,
+
+                                    <i>permset</i>
+                                </td>
+                                <td class="kwdoc">
+                                    <p>
+                                        Resets all object permissions in case a test fails
+                                        before they are restored. Skips the reset if the
+                                        permissions have already been added back.
                                     </p>
                                 </td>
                             </tr>
@@ -746,9 +913,122 @@
                     </table>
                 </div>
             </div>
+
+            <div class="file" id="file-robot/OutboundFunds/resources/ReviewPageObject.py">
+                <div class="file-header">
+                    <h2 title="robot/OutboundFunds/resources/ReviewPageObject.py">
+                        ReviewPageObject.py
+                    </h2>
+                    <div class="file-path">
+                        robot/OutboundFunds/resources/ReviewPageObject.py
+                    </div>
+                </div>
+
+                <div class="section" pageobject="Details-Review__c">
+                    <div class="pageobject-header">
+                        <table class="pageobject-header">
+                            <tbody>
+                                <tr class="data">
+                                    <td title="Page Type">Details</td>
+                                    <td title="Object Name">Review__c</td>
+                                </tr>
+                                <tr class="labels">
+                                    <td>Page Type</td>
+                                    <td>Object Name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="description" title="Description">
+                        <p>
+                            Documentation for library
+                            <code>ReviewPageObject.ReviewDetailPage</code>.
+                        </p>
+                    </div>
+                    <table class="kwtable" title="Table of keywords">
+                        <tbody>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Arguments</th>
+                                <th>Documentation</th>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="ReviewPageObject.py.Log Current Page Object"
+                            >
+                                <td class="kwname">Log Current Page Object</td>
+                                <td class="kwargs"></td>
+                                <td class="kwdoc">
+                                    <p>Logs the name of the current page object</p>
+                                    <p>
+                                        The current page object is also returned as an
+                                        object
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="kwrow" id="ReviewPageObject.py.Submit Review">
+                                <td class="kwname">Submit Review</td>
+                                <td class="kwargs"></td>
+                                <td class="kwdoc"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section" pageobject="Listing-Review__c">
+                    <div class="pageobject-header">
+                        <table class="pageobject-header">
+                            <tbody>
+                                <tr class="data">
+                                    <td title="Page Type">Listing</td>
+                                    <td title="Object Name">Review__c</td>
+                                </tr>
+                                <tr class="labels">
+                                    <td>Page Type</td>
+                                    <td>Object Name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="description" title="Description">
+                        <p>
+                            Documentation for library
+                            <code>ReviewPageObject.ReviewListingPage</code>.
+                        </p>
+                    </div>
+                    <table class="kwtable" title="Table of keywords">
+                        <tbody>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Arguments</th>
+                                <th>Documentation</th>
+                            </tr>
+
+                            <tr
+                                class="kwrow"
+                                id="ReviewPageObject.py.Log Current Page Object"
+                            >
+                                <td class="kwname">Log Current Page Object</td>
+                                <td class="kwargs"></td>
+                                <td class="kwdoc">
+                                    <p>Logs the name of the current page object</p>
+                                    <p>
+                                        The current page object is also returned as an
+                                        object
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="footer">
-            Generated on Tuesday February 23, 04:08 PM - cumulusci v3.29.0
+            Generated on Wednesday May 19, 01:42 PM - cumulusci v3.35.0
         </div>
     </body>
 </html>

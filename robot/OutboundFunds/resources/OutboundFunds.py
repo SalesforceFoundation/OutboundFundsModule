@@ -2,15 +2,19 @@ import logging
 import random
 import string
 import warnings
+import time
 
 from BaseObjects import BaseOutboundFundsPage
 from selenium.common.exceptions import NoSuchWindowException
 from robot.libraries.BuiltIn import RobotNotRunningError
+from locators_52 import outboundfunds_lex_locators as locators_52
 from locators_51 import outboundfunds_lex_locators as locators_51
 from cumulusci.robotframework.utils import selenium_retry, capture_screenshot_on_error
+from selenium.webdriver.common.keys import Keys
 
 locators_by_api_version = {
     51.0: locators_51,  # Spring '21
+    52.0: locators_52,  # Summer '21
 }
 # will get populated in _init_locators
 outboundfunds_lex_locators = {}
@@ -53,7 +57,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         outboundfunds_lex_locators.update(locators)
 
     def get_namespace_prefix(self, name):
-        """ This is a helper function to capture the namespace prefix of the target org """
+        """This is a helper function to capture the namespace prefix of the target org"""
         parts = name.split("__")
         if parts[-1] == "c":
             parts = parts[:-1]
@@ -85,7 +89,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         return True if elements > 0 else False
 
     def new_random_string(self, len=5):
-        """Generate a random string of fixed length """
+        """Generate a random string of fixed length"""
         return "".join(random.choice(string.ascii_lowercase) for _ in range(len))
 
     def generate_new_string(self, prefix="Robot Test"):
@@ -122,7 +126,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         locator = outboundfunds_lex_locators["new_record"]["footer_button"].format(
             "Save"
         )
-        self.selenium.scroll_element_into_view(locator)
+        self.salesforce.scroll_element_into_view(locator)
         self.salesforce._jsclick(locator)
 
     def validate_field_value(self, field, status, value, section=None):
@@ -131,7 +135,7 @@ class OutboundFunds(BaseOutboundFundsPage):
         """
         if section is not None:
             section = "text:" + section
-            self.selenium.scroll_element_into_view(section)
+            self.salesforce.scroll_element_into_view(section)
         list_found = False
         locators = outboundfunds_lex_locators["confirm"].values()
         if status == "contains":
@@ -178,22 +182,22 @@ class OutboundFunds(BaseOutboundFundsPage):
         )
         option = outboundfunds_lex_locators["span"].format(value)
         self.selenium.wait_until_page_contains_element(locator)
-        self.selenium.scroll_element_into_view(locator)
+        self.salesforce.scroll_element_into_view(locator)
         element = self.selenium.driver.find_element_by_xpath(locator)
         try:
             self.selenium.get_webelement(locator).click()
             self.wait_for_locator("flexipage-popup")
-            self.selenium.scroll_element_into_view(option)
+            self.salesforce.scroll_element_into_view(option)
             self.selenium.click_element(option)
         except Exception:
             self.builtin.sleep(1, "waiting for a second and retrying click again")
             self.selenium.driver.execute_script("arguments[0].click()", element)
             self.wait_for_locator("flexipage-popup")
-            self.selenium.scroll_element_into_view(option)
+            self.salesforce.scroll_element_into_view(option)
             self.selenium.click_element(option)
 
     def click_related_list_wrapper_button(self, heading, button_title):
-        """ loads the related list  and clicks on the button on the list """
+        """loads the related list  and clicks on the button on the list"""
         locator = outboundfunds_lex_locators["related"]["flexi_button"].format(
             heading, button_title
         )
@@ -207,3 +211,150 @@ class OutboundFunds(BaseOutboundFundsPage):
         self.selenium.wait_until_page_contains_element(locator)
         element = self.selenium.driver.find_element_by_xpath(locator)
         self.selenium.driver.execute_script("arguments[0].click()", element)
+
+    @capture_screenshot_on_error
+    def select_value_from_picklist(self, dropdown, value):
+        """Select given value in the dropdown field"""
+        locator = outboundfunds_lex_locators["new_record"]["dropdown_field"].format(
+            dropdown
+        )
+        self.selenium.get_webelement(locator).click()
+        popup_loc = outboundfunds_lex_locators["new_record"]["dropdown_popup"]
+        self.selenium.wait_until_page_contains_element(
+            popup_loc, error="Picklist dropdown did not open"
+        )
+        value_loc = outboundfunds_lex_locators["new_record"]["dropdown_value"].format(
+            value
+        )
+        self.salesforce._jsclick(value_loc)
+
+    def populate_new_record_form(self, **kwargs):
+        """Populate New Record Form with Key Value Pair"""
+        for key, value in kwargs.items():
+            if key in (
+                "Applying Contact",
+                "Applying Employee",
+                "Applying Organization",
+                "Funding Program",
+                "Assigned",
+                "Primary Contact",
+                "Assigned",
+                "Funding Request",
+                "Disbursement",
+            ):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "lightning_lookup"
+                ].format(key)
+                self.check_if_element_exists(locator)
+                self.salesforce.scroll_element_into_view(locator)
+                self.selenium.set_focus_to_element(locator)
+                self.salesforce.populate_lookup_field(key, value)
+            elif key in (
+                "Requested Amount",
+                "Awarded Amount",
+                "Recommended Amount",
+                "Funding Request Name",
+                "Funding Program Name",
+                "Total Program Amount",
+                "Description",
+                "Requirement Name",
+            ):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "amount_field"
+                ].format(key)
+                self.check_if_element_exists(locator)
+                self.salesforce.scroll_element_into_view(locator)
+                self.selenium.get_webelement(locator).send_keys(value)
+            elif key in (
+                "Awarded Date",
+                "Close Date",
+                "Awarded Date",
+                "Application Date",
+                "Start Date",
+                "End Date",
+                "Due Date",
+                "Completed Date",
+            ):
+                locator = outboundfunds_lex_locators["new_record"]["date_field"].format(
+                    key
+                )
+                self.selenium.set_focus_to_element(locator)
+                self.selenium.clear_element_text(locator)
+                self.selenium.get_webelement(locator).send_keys(value)
+            elif key in ("Status", "Geographical Area Served", "Type"):
+                locator = outboundfunds_lex_locators["new_record"][
+                    "dropdown_field"
+                ].format(key)
+                self.selenium.get_webelement(locator).click()
+                popup_loc = outboundfunds_lex_locators["new_record"]["dropdown_popup"]
+                self.selenium.wait_until_page_contains_element(
+                    popup_loc, error="Picklist dropdown did not open"
+                )
+                value_loc = outboundfunds_lex_locators["new_record"][
+                    "dropdown_value"
+                ].format(value)
+                self.salesforce._jsclick(value_loc)
+            else:
+                raise Exception(f"Field provided by name '{key}' does not exist")
+
+    @capture_screenshot_on_error
+    def verify_toast_message(self, value):
+        """Verifies the toast message"""
+        locator = outboundfunds_lex_locators["toast_message"].format(value)
+        self.selenium.wait_until_element_is_visible(locator)
+        try:
+            close_locator = outboundfunds_lex_locators["toast_close"].format(value)
+            self.selenium.wait_until_page_contains_element(close_locator)
+            self.selenium.click_element(close_locator)
+        except Exception:
+            self.builtin.log("The toast could not be closed.", "WARN")
+
+    def select_value_from_dropdown(self, dropdown, value):
+        """Select given value in the dropdown field"""
+        if dropdown in ("Role", "Status"):
+            locator = outboundfunds_lex_locators["funding_req_role"][
+                "select_dropdown"
+            ].format(dropdown)
+            selection_value = outboundfunds_lex_locators["funding_req_role"][
+                "select_value"
+            ].format(value)
+            self.salesforce._jsclick(locator)
+            self.selenium.click_element(selection_value)
+
+    @capture_screenshot_on_error
+    def share_a_record(self):
+        """Click on Sharing link on Funding Request and Requirement Record"""
+        locator_sharing = outboundfunds_lex_locators["sharing"]["sharing_button"]
+        self.selenium.click_element(locator_sharing)
+        locator_sharing_link = outboundfunds_lex_locators["sharing"]["sharing_link"]
+        self.selenium.wait_until_page_contains_element(
+            locator_sharing_link,
+            error="'Sharing' option is not available in the list of actions",
+        )
+        self.selenium.click_element(locator_sharing_link)
+        if self.latest_api_version == 52.0:
+            self.selenium.location_should_contain(
+                "recordShare?",
+                message="Current page is not Share",
+            )
+        else:
+            pass
+        locator = outboundfunds_lex_locators["header_title"].format("Share")
+        self.selenium.wait_until_page_contains_element(
+            locator, error="The header for this page is not 'Share' as expected"
+        )
+        user_locator = outboundfunds_lex_locators["sharing"]["search_user"]
+        set_user = self.selenium.driver.find_element_by_xpath(user_locator)
+        set_user.click()
+        time.sleep(1)
+        set_user.send_keys("PermsTestingUser RobotUser")
+        time.sleep(2)
+        set_user.send_keys(Keys.ENTER)
+        if self.latest_api_version == 52.0:
+            save_locator = outboundfunds_lex_locators["sharing"]["save_share"]
+        else:
+            save_locator = outboundfunds_lex_locators["funding_req_role"][
+                "save_button_old"
+            ]
+        self.selenium.set_focus_to_element(save_locator)
+        self.selenium.click_element(save_locator)
