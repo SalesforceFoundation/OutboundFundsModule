@@ -49,10 +49,15 @@ class SubmitReviewPage(BaseOutboundFundsPage, BasePage):
 
     @capture_screenshot_on_error
     def submit_review(self):
-        footer_locator = outboundfunds_lex_locators["new_record"]["modal_footer"]
-        self.selenium.set_focus_to_element(footer_locator)
-        locator = outboundfunds_lex_locators["new_record"][
-            "modal_footer_button"
-        ].format("Save")
-        self.selenium.set_focus_to_element(locator)
-        self.salesforce._jsclick(locator)
+        if self.OutboundFunds.latest_api_version == 52.0:
+            footer_locator = outboundfunds_lex_locators["new_record"]["modal_footer"]
+            self.selenium.set_focus_to_element(footer_locator)
+            locator = outboundfunds_lex_locators["new_record"][
+                "modal_footer_button"
+            ].format("Save")
+            self.selenium.set_focus_to_element(locator)
+            self.salesforce._jsclick(locator)
+        else:
+            locator = outboundfunds_lex_locators["funding_req_role"]["save_button_old"]
+            self.selenium.set_focus_to_element(locator)
+            self.selenium.get_webelement(locator).click()
