@@ -26,13 +26,15 @@ Setup Test Data
     Set suite variable                ${contact}
     ${funding_request} =              API Create Funding Request           ${fundingprogram}[Id]
     ...                               ${contact}[Id]
-    ...                               ${ns}Status__c=In Progress
+    ...                               ${ns}Status__c=Not Started
     ...                               ${ns}Awarded_Amount__c=100000
     Store Session Record              ${ns}Funding_Request__c         ${funding_request}[Id]
     Set suite variable                ${funding_request}
     &{review} =                       API Create Review on a Funding Request
     ...                               ${funding_request}[Id]
     Set Suite Variable                &{review}
+    ${submitted_date} =               Get current date    result_format=%m/%d/%Y
+    Set suite variable                ${submitted_date}
     Close Browser
 
 *** Test Case ***
@@ -46,15 +48,15 @@ Submit a Review
     Current Page Should Be                      Details             Review__c
     Click Button                                Edit
     Wait until modal is open
-    Select Value from Picklist                  Status          Submitted
+    Select Value from Picklist                  Status          In Progress
     Click Save
-    Wait Until Modal Is Closed
+    Verify Toast Message                        Review
     Current Page Should Be                      Details             Review__c
-    Validate Field Value                        Status    contains    Submitted
+    Validate Field Value                        Status    contains    In Progress
     Click Button                                Submit Review
     Wait until modal is open
     Current page should be                      SubmitReview        Review__c
     Submit Review
-    Wait Until Modal Is Closed
+    Verify Toast Message                        Review submitted.
     Current Page Should Be                      Details             Review__c
-    Validate Field Value                        Submitted Date    contains    ${today}
+    Validate Field Value                        Status    contains     Submitted
