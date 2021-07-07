@@ -7,7 +7,7 @@
         "@sa11y/jest": "^0.3.1",
         "@salesforce/eslint-config-lwc": "^2.0.0",
         "@salesforce/eslint-plugin-lightning": "^0.1.1",
-        "@salesforce/sfdx-lwc-jest": "^0.12.6",
+        "@salesforce/sfdx-lwc-jest": "0.14.0",
         "babel-eslint": "^10.1.0",
         "cspell": "^5.6.0",
         "eslint": "^7.28.0",
@@ -25,8 +25,6 @@
     },
     "resolutions": {
         "yargs-parser": "^20.2.2",
-        "postcss": "^8.2.10",
-        "node-notifier": "^8.0.1",
         "trim-newlines": "^3.0.1"
     },
     "jest": {
