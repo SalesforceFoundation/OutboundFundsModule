@@ -1,0 +1,63 @@
+name: SFDO Codeowners Review Workflows
+on:
+  pull_request:
+    types:
+      - labeled
+      - review_requested
+
+env:
+  CODEOWNERS_TEAM: 'release-engineering-reviewers'
+  READY_FOR_REVIEW_COMMENT: |
+    This PR has been labeled as ready for Release Engineering review by
+  CODEOWNERS_COMMENT: |
+    Release Engineering asks that teams use the following process for routine reviews:
+
+    1. After creating a non-draft pull request that includes automation updates, a release engineer will be auto-assigned to the PR.
+    2. When dev review is complete and the PR is ready for the release engineer to review, add a "ready for RE review" label to the PR to let us know when the PR is ready for us to review.
+    3. If you've added the "ready for RE review" label but haven't received a review within a 36 hours, @-mention the assigned RE in a comment on the PR.
+    4. If you don't receive a response from the assigned RE by the end of the next business day (or your request is urgent), post a message to #sfdo-releng-support that includes a link to this PR and one of us will review as soon as we're able.
+
+jobs:
+  codeowners_workflow_comments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CODEOWNERS Review Requested
+        id: codeowners-comment
+        if: github.event.action == 'review_requested' &&
+            github.event.requested_team.slug == env.CODEOWNERS_team
+        uses: SalesforceFoundation/github-script@v4
+        with:
+          script: |
+            const comment_body = process.env.CODEOWNERS_COMMENT
+
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Hi 👋 @${context.payload.pull_request.user.login}! ${comment_body}`
+            })
+      - name: Labeled ready for CODEOWNERS Review
+        id: codeowners-labeled-ready
+        if: github.event.action == 'labeled' && contains(github.event.pull_request.labels.*.name, 'ready for RE review')
+        uses: SalesforceFoundation/github-script@v4
+        with:
+          script: |
+            const comment_body = process.env.READY_FOR_REVIEW_COMMENT
+            let mention_text = '';
+
+            let requested_reviewers = context.payload.pull_request.requested_reviewers
+              .map((reviewer) => reviewer.login)
+
+            if (requested_reviewers.length >= 1) {
+              let reviewer_mentions = requested_reviewers
+                .map((login) => `@${login}`)
+                .join(', ');
+                mention_text = `Reviews have been requested from: ${reviewer_mentions}.`
+            }
+
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `${comment_body} @${context.payload.sender.login}. ${mention_text}`,
+            });
