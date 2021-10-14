@@ -14,7 +14,7 @@ class RequirementListingPage(BaseOutboundFundsPage, ListingPage):
         """
         self.selenium.location_should_contain(
             "Requirement__c/list?",
-            message="Current page is not a Funding Program List view",
+            message="Current page is not a Requirement List view",
         )
 
 
