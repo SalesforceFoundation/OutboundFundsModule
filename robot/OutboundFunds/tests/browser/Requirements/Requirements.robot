@@ -59,7 +59,9 @@ Add a Requirement on a Funding Request
     ...                                         Assigned=PermsTestingUser RobotUser
     Click Save
     Verify Toast Message                        Requirement
+    Go to page                                  Listing          ${ns}Requirement__c
     Click Related List Link                     ${req_name}
+    Click Tab                                   Details
     Validate Field Value                        Requirement Name   contains   ${req_name}
     Validate Field Value                        Primary Contact    contains    ${contact}[Name]
 

@@ -207,10 +207,18 @@ class OutboundFunds(BaseOutboundFundsPage):
     @capture_screenshot_on_error
     def click_related_list_link(self, text):
         """Click on link with passed text"""
+        locator = outboundfunds_lex_locators["related"]["link"].format(text)
+        self.selenium.wait_until_page_contains_element(locator)
+        element = self.selenium.driver.find_element_by_xpath(locator)
+        self.selenium.driver.execute_script("arguments[0].click()", element)
+
+    def click_flexipage_related_list_link(self, text):
+        """Click on link with passed text"""
         locator = outboundfunds_lex_locators["related"]["flexi_link"].format(text)
         self.selenium.wait_until_page_contains_element(locator)
         element = self.selenium.driver.find_element_by_xpath(locator)
         self.selenium.driver.execute_script("arguments[0].click()", element)
+
 
     @capture_screenshot_on_error
     def select_value_from_picklist(self, dropdown, value):
@@ -218,6 +226,8 @@ class OutboundFunds(BaseOutboundFundsPage):
         locator = outboundfunds_lex_locators["new_record"]["dropdown_field"].format(
             dropdown
         )
+        self.selenium.wait_until_page_contains_element(locator)
+        self.selenium.get_webelement(locator).click()
         self.selenium.get_webelement(locator).click()
         popup_loc = outboundfunds_lex_locators["new_record"]["dropdown_popup"]
         self.selenium.wait_until_page_contains_element(
