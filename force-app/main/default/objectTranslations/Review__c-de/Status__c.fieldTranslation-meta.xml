@@ -9,10 +9,10 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>In Progress</masterLabel>
-        <translation>Wird ausgeführt</translation>
+        <translation>In Bearbeitung</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Submitted</masterLabel>
-        <translation>Abgesendet</translation>
+        <translation>Eingereicht</translation>
     </picklistValues>
 </CustomFieldTranslation>
