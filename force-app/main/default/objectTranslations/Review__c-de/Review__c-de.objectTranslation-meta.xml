@@ -3,7 +3,7 @@
     <layouts>
         <layout>Review Layout</layout>
         <sections>
-            <label>Überprüfung</label>
+            <label>√úberpr√ºfung</label>
             <section>Review</section>
         </sections>
         <sections>
@@ -11,50 +11,50 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Name der Überprüfung</nameFieldLabel>
+    <nameFieldLabel>Name der √úberpr√ºfung</nameFieldLabel>
     <standardFields>
         <name>Name</name>
-        <label>Name der Überprüfung</label>
+        <label>Name der √úberpr√ºfung</label>
     </standardFields>
     <gender>Feminine</gender>
     <caseValues>
         <plural>false</plural>
         <caseType>Nominative</caseType>
-        <value>Überprüfung</value>
+        <value>√úberpr√ºfung</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Accusative</caseType>
-        <value>Überprüfung</value>
+        <value>√úberpr√ºfung</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Dative</caseType>
-        <value>Überprüfung</value>
+        <value>√úberpr√ºfung</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Genitive</caseType>
-        <value>Überprüfung</value>
+        <value>√úberpr√ºfung</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Nominative</caseType>
-        <value>Überprüfungen</value>
+        <value>√úberpr√ºfungen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Accusative</caseType>
-        <value>Überprüfungen</value>
+        <value>√úberpr√ºfungen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Dative</caseType>
-        <value>Überprüfungen</value>
+        <value>√úberpr√ºfungen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Genitive</caseType>
-        <value>Überprüfungen</value>
+        <value>√úberpr√ºfungen</value>
     </caseValues>
 </CustomObjectTranslation>
