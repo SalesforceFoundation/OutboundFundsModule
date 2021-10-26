@@ -5,7 +5,7 @@
     <label>Statut</label>
     <picklistValues>
         <masterLabel>Not Started</masterLabel>
-        <translation>Non démarré</translation>
+        <translation>Pas commencé</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>In Progress</masterLabel>
