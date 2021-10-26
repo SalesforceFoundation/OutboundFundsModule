@@ -3,7 +3,7 @@
         "prettier --write"
     ],
     "*.{cls,apex,js,html,md,xml,sql,py,yml,yaml,cmp,design}": [
-        "cspell"
+        "cspell --no-must-find-files"
     ],
     "*.js": [
         "eslint"
