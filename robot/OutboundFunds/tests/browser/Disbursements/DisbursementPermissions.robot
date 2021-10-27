@@ -47,4 +47,4 @@ Disbursement FLS Check
     click button                                Calculate
     Wait Until Element Is Visible               text:Scheduled Date
     Save Disbursement
-    Wait Until Element Is Visible               text:Error
+    Wait Until Element Is Visible               text:Resolve error
