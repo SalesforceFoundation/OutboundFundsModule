@@ -45,13 +45,7 @@ Submit a Review
     ${today} =                                  Get current date        result_format=%-m/%d/%Y
     Go To Page                                  Details     Review__c
     ...                                         object_id=${review}[Id]
-    Current Page Should Be                      Details             Review__c
-    Click Button                                Edit
-    Wait until modal is open
-    Select Value from Picklist                  Status          In Progress
-    Click Save
-    Verify Toast Message                        Review
-    Current Page Should Be                      Details             Review__c
+    Current Page Should Be                      Details             Review__c    
     Validate Field Value                        Status    contains    In Progress
     Click Button                                Submit Review
     Wait until modal is open

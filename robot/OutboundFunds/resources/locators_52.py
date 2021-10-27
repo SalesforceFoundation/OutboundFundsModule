@@ -50,7 +50,8 @@ outboundfunds_lex_locators = {
         "button": "//div[contains(@class, 'forceRelatedListSingleContainer')][.//img][.//span[@title='{}']]//a[@title='{}']",
         "count": "//tbody/tr/td[1]",
         "flexi_button": "//div[@lst-listviewmanagerheader_listviewmanagerheader][.//span[@title='{}']]//lightning-button//button[text()='{}']",
-        "flexi_link": "//a//span[text()='{}']",
+        "flexi_link": "//a//span[contains(text(),'{}')]",
+        "link": "//a[contains(text(),'{}')]",
     },
     "details": {
         "button": "//button[contains(@class, 'slds-button') and text() = '{}']",

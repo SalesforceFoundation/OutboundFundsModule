@@ -66,8 +66,8 @@ Add a Review on a Funding Request
     Page Should Contain Element                 //span[@title='Review Name']
     Page Should Contain Element                 //span[@title='Status']
     Page Should Contain Element                 //span[@title='Assigned To']
-    Page Should Contain Element                 //span[@title='Due Date']
-    Click Related List Link                     ${review_name1}
+    Page Should Contain Element                 //span[@title='Due Date']    
+    Click Flexipage Related List Link           ${review_name1}
     Validate Field Value                        Review Name   contains   ${review_name1}
 
 Create a Review via Review Object Tab
