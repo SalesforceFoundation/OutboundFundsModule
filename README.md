@@ -9,7 +9,7 @@ The Outbound Funds app is a community developed and maintained Open Source Commo
 Links:
 
 -   [Documentation/Wiki](https://github.com/SalesforceFoundation/OutboundFundsModule/wiki)
--   [Power of Us Hub group](https://powerofus.force.com/s/group/0F980000000CvlMCAS/community-project-outbound-funds)
+-   [Power of Us Hub group](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE/community-project-outbound-funds)
 -   [Install Outbound Funds](https://install.salesforce.org/products/outbound-funds)
 
 ## Latest Release
