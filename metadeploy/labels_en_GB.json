@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "Welcome to the Outbound Funds Module installer!\r\n\r\nThe Outbound Funds Module gives you the tools to easily manage and track funding requests and outgoing funds.\r\n\r\n*IMPORTANT*: Salesforce does not recommend installing upgrades directly in production organisations. Instead, install Outbound Funds Module in one of your free sandbox environments or a developer organisation first.\r\n\r\nOnce you've installed Outbound Funds Module, check out the [Outbound Funds Module documentation](https://powerofus.force.com/s/article/OFM-Documentation) to get started. \r\n\r\nIf you're looking to extend Outbound Funds Module with the Fundseeker Starter Portal Template, check out the [Outbound Funds Module Fundseeker Starter Portal Template installer](https://install.salesforce.org/products/outbound-funds-portal/).\r\n\r\nQuestions? Become a member of the [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) community group in the Power of Us Hub.",
+            "message": "Welcome to the Outbound Funds Module installer!\r\n\r\nThe Outbound Funds Module gives you the tools to easily manage and track funding requests and outgoing funds.\r\n\r\n*IMPORTANT*: Salesforce does not recommend installing upgrades directly in production organisations. Instead, install Outbound Funds Module in one of your free sandbox environments or a developer organisation first.\r\n\r\nOnce you've installed Outbound Funds Module, check out the [Outbound Funds Module documentation](https://powerofus.force.com/s/article/OFM-Documentation) to get started. \r\n\r\nIf you're looking to extend Outbound Funds Module with the Fundseeker Starter Portal Template, check out the [Outbound Funds Module Fundseeker Starter Portal Template installer](https://install.salesforce.org/products/outbound-funds-portal/).\r\n\r\nQuestions? Become a member of the [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) community group in the Power of Us Hub.",
             "description": "shown on product detail page (markdown)"
         },
         "click_through_agreement": {
@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) community group on the Power of Us Hub for any questions about Outbound Funds Module.",
+            "message": "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) community group on the Power of Us Hub for any questions about Outbound Funds Module.",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {

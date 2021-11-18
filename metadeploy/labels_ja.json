@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "Outbound Funds Module インストーラをご利用いただきありがとうございます。\r\n\r\nOutbound Funds Module では、資金調達要求と出資金を容易に管理および追跡するためのツールが提供されます。\r\n\r\n*重要*: Salesforce は、本番組織にアップグレードを直接インストールすることを推奨しません。まず、Outbound Funds Module を無料の Sandbox 環境または Developer Edition 組織にインストールしてください。\r\n\r\nOutbound Funds Module のインストールが完了したら、 [Outbound Funds Module ドキュメント](https://powerofus.force.com/s/article/OFM-Documentation) を参照して使用を開始してください。 \r\n\r\nOutbound Funds Module に Fundseeker Starter Portal Template を追加して拡張する場合は、[Outbound Funds Module Fundseeker Starter Portal Template インストーラ](https://install.salesforce.org/products/outbound-funds-portal/) を参照してください。\r\n\r\nご不明な点がございましたら、Power of Us Hub の [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにご参加ください。",
+            "message": "Outbound Funds Module インストーラをご利用いただきありがとうございます。\r\n\r\nOutbound Funds Module では、資金調達要求と出資金を容易に管理および追跡するためのツールが提供されます。\r\n\r\n*重要*: Salesforce は、本番組織にアップグレードを直接インストールすることを推奨しません。まず、Outbound Funds Module を無料の Sandbox 環境または Developer Edition 組織にインストールしてください。\r\n\r\nOutbound Funds Module のインストールが完了したら、 [Outbound Funds Module ドキュメント](https://powerofus.force.com/s/article/OFM-Documentation) を参照して使用を開始してください。 \r\n\r\nOutbound Funds Module に Fundseeker Starter Portal Template を追加して拡張する場合は、[Outbound Funds Module Fundseeker Starter Portal Template インストーラ](https://install.salesforce.org/products/outbound-funds-portal/) を参照してください。\r\n\r\nご不明な点がございましたら、Power of Us Hub の [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) コミュニティグループにご参加ください。",
             "description": "shown on product detail page (markdown)"
         },
         "click_through_agreement": {
@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Outbound Funds Module をインストールしていただきありがとうございます。Outbound Funds Module に関するあらゆる質問については、Power of Us Hub の [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) コミュニティグループにアクセスしてください。",
+            "message": "Outbound Funds Module をインストールしていただきありがとうございます。Outbound Funds Module に関するあらゆる質問については、Power of Us Hub の [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) コミュニティグループにアクセスしてください。",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {
