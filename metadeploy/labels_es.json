@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "¡Le damos la bienvenida al instalador de Outbound Funds Module!\r\n\r\nOutbound Funds Module le da las herramientas para gestionar y seguir fácilmente las solicitudes de fondos y los fondos salientes.  \r\n\r\n*IMPORTANTE*: Salesforce no recomienda instalar actualizaciones directamente en organizaciones de producción. En su lugar, instale Outbound Funds Module en uno de sus entornos de sandbox gratuitos o en una organización de desarrollador primero.\r\n\r\nUna vez instalado Outbound Funds Module, consulte la [documentación de Outbound Funds Module](https://powerofus.force.com/s/article/OFM-Documentation) para empezar a trabajar.\r\n\r\nSi está buscando ampliar Outbound Funds Module con la Plantilla de portal de Fundseeker Starter, consulte el [instalador de la Plantilla de portal de Outbound Funds Module Fundseeker Starter](https://install.salesforce.org/products/outbound-funds-portal/).\r\n\r\n¿Preguntas? Conviértase en miembro del grupo de comunidad [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) en Power of Us Hub.",
+            "message": "¡Le damos la bienvenida al instalador de Outbound Funds Module!\r\n\r\nOutbound Funds Module le da las herramientas para gestionar y seguir fácilmente las solicitudes de fondos y los fondos salientes.  \r\n\r\n*IMPORTANTE*: Salesforce no recomienda instalar actualizaciones directamente en organizaciones de producción. En su lugar, instale Outbound Funds Module en uno de sus entornos de sandbox gratuitos o en una organización de desarrollador primero.\r\n\r\nUna vez instalado Outbound Funds Module, consulte la [documentación de Outbound Funds Module](https://powerofus.force.com/s/article/OFM-Documentation) para empezar a trabajar.\r\n\r\nSi está buscando ampliar Outbound Funds Module con la Plantilla de portal de Fundseeker Starter, consulte el [instalador de la Plantilla de portal de Outbound Funds Module Fundseeker Starter](https://install.salesforce.org/products/outbound-funds-portal/).\r\n\r\n¿Preguntas? Conviértase en miembro del grupo de comunidad [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) en Power of Us Hub.",
             "description": "shown on product detail page (markdown)"
         },
         "click_through_agreement": {
@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Gracias por instalar Outbound Funds Module. Visite el grupo de comunidad [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) en Power of Us Hub para formular cualquier pregunta sobre Outbound Funds Module.",
+            "message": "Gracias por instalar Outbound Funds Module. Visite el grupo de comunidad [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) en Power of Us Hub para formular cualquier pregunta sobre Outbound Funds Module.",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {

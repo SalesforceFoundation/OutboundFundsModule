@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "Welkom bij het installatieprogramma voor de Outbound Funds Module.\r\n\r\nMet de Outbound Funds Module beschikt u over alles wat u nodig hebt om financieringsaanvragen en uitgaand geld eenvoudig te beheren en volgen.\r\n\r\n*BELANGRIJK*: Salesforce beveelt niet aan om upgrades rechtstreeks in productieorganisaties te installeren. Installeer Outbound Funds Module in plaats daarvan eerst in een van uw gratis sandboxomgevingen of in een ontwikkelorganisatie.\r\n\r\nWanneer u Outbound Funds Module hebt geïnstalleerd, bekijkt u de [Outbound Funds Module-documentatie](https://powerofus.force.com/s/article/OFM-Documentation) om aan de slag te gaan:\r\n\r\nIndien u fondsenwerversportalsjabloon voor Outbound Funds Module wilt uitbreiden, bekijkt u het [installatieprogramma voor fondsenwerversportalsjabloon voor Outbound Funds Module](https://install.salesforce.org/products/outbound-funds-portal/)\r\n\r\nVragen? Word lid van de [Outbound Funds Module]-community (https://powerofus.force.com/s/group/0F980000000CvlMCAS) in de Power of Us Hub.",
+            "message": "Welkom bij het installatieprogramma voor de Outbound Funds Module.\r\n\r\nMet de Outbound Funds Module beschikt u over alles wat u nodig hebt om financieringsaanvragen en uitgaand geld eenvoudig te beheren en volgen.\r\n\r\n*BELANGRIJK*: Salesforce beveelt niet aan om upgrades rechtstreeks in productieorganisaties te installeren. Installeer Outbound Funds Module in plaats daarvan eerst in een van uw gratis sandboxomgevingen of in een ontwikkelorganisatie.\r\n\r\nWanneer u Outbound Funds Module hebt geïnstalleerd, bekijkt u de [Outbound Funds Module-documentatie](https://powerofus.force.com/s/article/OFM-Documentation) om aan de slag te gaan:\r\n\r\nIndien u fondsenwerversportalsjabloon voor Outbound Funds Module wilt uitbreiden, bekijkt u het [installatieprogramma voor fondsenwerversportalsjabloon voor Outbound Funds Module](https://install.salesforce.org/products/outbound-funds-portal/)\r\n\r\nVragen? Word lid van de [Outbound Funds Module]-community (https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) in de Power of Us Hub.",
             "description": "shown on product detail page (markdown)"
         },
         "click_through_agreement": {
@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Bedankt voor het installeren van de Outbound Funds Module. Ga naar de [Outbound Funds Module]-community (https://powerofus.force.com/s/group/0F980000000CvlMCAS) in de Power of Us Hub als u vragen hebt over Outbound Funds Module.",
+            "message": "Bedankt voor het installeren van de Outbound Funds Module. Ga naar de [Outbound Funds Module]-community (https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) in de Power of Us Hub als u vragen hebt over Outbound Funds Module.",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {
