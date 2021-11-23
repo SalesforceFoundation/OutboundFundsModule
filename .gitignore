@@ -1,6 +1,7 @@
-# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
-# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
-# For useful gitignore templates see: https://github.com/github/gitignore
+# Copyright (c) 2021, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
 # Salesforce cache
 .sfdx/
@@ -76,3 +77,6 @@ selenium-screenshot*.png
 
 # Research and Development scripts
 /test.apex
+
+# Husky
+.husky

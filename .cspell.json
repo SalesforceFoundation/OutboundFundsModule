@@ -68,6 +68,7 @@
         "localizable",
         "LGBTQ",
         "rollup",
+        "Astro",
         // Allowlist of variable names
         "Disps",
         "Progr",
