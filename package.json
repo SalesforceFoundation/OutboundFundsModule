@@ -9,7 +9,7 @@
         "@sa11y/jest": "^3.1.0",
         "@salesforce/eslint-config-lwc": "^3.2.0",
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "@salesforce/sfdx-lwc-jest": "^1.1.0",
+        "@salesforce/sfdx-lwc-jest": "^0.12.6",
         "cspell": "^5.13.0",
         "eslint": "^8.3.0",
         "eslint-config-prettier": "^8.3.0",
