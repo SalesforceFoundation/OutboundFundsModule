@@ -136,7 +136,7 @@ plans:
         tier: primary
         is_listed: True
         preflight_message: "This will install Outbound Funds Module into your org."
-        post_install_message: "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://powerofus.force.com/s/group/0F980000000CvlMCAS) community group on the Power of Us Hub for any questions about Outbound Funds Module."
+        post_install_message: "Thanks for installing Outbound Funds Module. Please visit the [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) community group on the Trailblazer Community for any questions about Outbound Funds Module."
         error_message: "To get help with this error, go to [help.salesforce.com](https://help.salesforce.com/), find the Support & Services area, and log a technical support ticket with Salesforce. Include “Outbound Funds Module” in the subject line and include in your comment the installation link shown here."
         checks:
             - when: "not tasks.check_chatter_enabled()"
