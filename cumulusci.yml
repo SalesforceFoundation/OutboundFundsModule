@@ -4,7 +4,7 @@ project:
     package:
         name: Outbound Funds (Core)
         namespace: outfunds
-        api_version: "51.0"
+        api_version: "52.0"
     git:
         repo_url: https://github.com/SalesforceFoundation/OutboundFundsModule
     dependency_resolutions:
