@@ -8,9 +8,12 @@
 #
 # Python
 *.py                  @SalesforceFoundation/release-engineering-reviewers
+requirements.txt      @SalesforceFoundation/release-engineering-reviewers
 
 # CumulusCI
 /cumulusci.yml        @SalesforceFoundation/release-engineering-reviewers
-/tasks/               @SalesforceFoundation/release-engineering-reviewers
+**/tasks/             @SalesforceFoundation/release-engineering-reviewers
 
-/.github              @SalesforceFoundation/release-engineering-reviewers
+# GitHub Actions
+.github/workflows/**  @SalesforceFoundation/release-engineering-reviewers
+package.json          @SalesforceFoundation/release-engineering-reviewers

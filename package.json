@@ -9,7 +9,7 @@
         "@sa11y/jest": "^3.1.0",
         "@salesforce/eslint-config-lwc": "^3.2.0",
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "@salesforce/sfdx-lwc-jest": "^0.12.6",
+        "@salesforce/sfdx-lwc-jest": "^0.14.0",
         "cspell": "^5.13.0",
         "eslint": "^8.3.0",
         "eslint-config-prettier": "^8.3.0",
@@ -24,6 +24,10 @@
         "prettier": "^2.4.1",
         "prettier-plugin-apex": "^1.10.0",
         "typescript": "^4.5.2"
+    },
+    "resolutions": {
+        "yargs-parser": "^20.2.2",
+        "trim-newlines": "^3.0.1"
     },
     "scripts": {
         "test:unit": "lwc-jest",
