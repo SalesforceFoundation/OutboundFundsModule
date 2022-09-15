@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Paid Disbursements --></label>
+    <label/>
     <name>Total_Disbursed__c</name>
 </CustomFieldTranslation>

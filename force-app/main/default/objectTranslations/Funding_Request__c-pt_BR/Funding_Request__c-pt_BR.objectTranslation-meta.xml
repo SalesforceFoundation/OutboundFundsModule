@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Funding Request Layout</layout>
+        <sections>
+            <label>Objetivo</label>
+            <section>Purpose</section>
+        </sections>
+        <sections>
+            <label>Solicitante</label>
+            <section>Applicant</section>
+        </sections>
+        <sections>
+            <label>Informações sobre prêmios</label>
+            <section>Award Information</section>
+        </sections>
+        <sections>
+            <label>Termos</label>
+            <section>Terms</section>
+        </sections>
+        <sections>
+            <label>Informações sobre desembolsos</label>
+            <section>Disbursement Information</section>
+        </sections>
+        <sections>
+            <label>Links personalizados</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nome da solicitação de financiamento</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nome da solicitação de financiamento</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Solicitação de financiamento</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Solicitações de financiamento</value>
+    </caseValues>
+</CustomObjectTranslation>
