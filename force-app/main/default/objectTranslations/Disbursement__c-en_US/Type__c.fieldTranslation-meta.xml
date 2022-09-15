@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Type --></label>
+    <label/>
     <name>Type__c</name>
     <picklistValues>
         <masterLabel>Amendment</masterLabel>
-        <translation><!-- Amendment --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Final</masterLabel>
-        <translation><!-- Final --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Initial</masterLabel>
-        <translation><!-- Initial --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Interim</masterLabel>
-        <translation><!-- Interim --></translation>
+        <translation/>
     </picklistValues>
 </CustomFieldTranslation>
