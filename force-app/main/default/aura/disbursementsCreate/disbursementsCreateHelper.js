@@ -104,7 +104,10 @@
                 // Calculated Properties
                 id: "" + i, // A workaround to force the datatable to see this id as a string
                 amount: thisPayment,
-                scheduleDate: $A.localizationService.formatDate(dateObject.toISOString(), 'YYYY-MM-DD'),
+                scheduleDate: $A.localizationService.formatDate(
+                    dateObject.toISOString(),
+                    "YYYY-MM-DD"
+                ),
                 requestId: m.request.recordId
             });
         }
