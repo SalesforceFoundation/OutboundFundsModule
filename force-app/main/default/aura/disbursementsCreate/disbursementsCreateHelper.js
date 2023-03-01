@@ -82,7 +82,7 @@
                 if (intervalType == WEEK) {
                     dateObject.setDate(dateObject.getDate() + interval * 7);
                 } else if (intervalType == MONTH) {
-                    dateObject.setMonth(dateObject.getMonth() + interval);
+                    dateObject = this.addMonths(dateObject, interval);
                 } else if (intervalType == YEAR) {
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
@@ -181,20 +181,12 @@
 
     addMonths: function (date, count) {
         if (date && count) {
-            console.log("184 date ", date);
             var m,
                 d = (date = new Date(+date)).getUTCDate();
-            console.log("getUTCMonth ", date.getUTCMonth());
-            console.log("count ", count);
-            console.log("d ", d);
+
             date.setUTCMonth(date.getUTCMonth() + count, 1);
-            console.log("188 date ", date);
             m = date.getUTCMonth();
             date.setUTCDate(d);
-            console.log("190 date ", date);
-            console.log("191 m ", m);
-            console.log("utc m ", date.getUTCMonth());
-
             if (date.getUTCMonth() !== m) date.setUTCDate(0);
         }
         return date;
