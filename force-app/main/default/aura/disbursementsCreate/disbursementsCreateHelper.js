@@ -82,7 +82,7 @@
                 if (intervalType == WEEK) {
                     dateObject.setDate(dateObject.getDate() + interval * 7);
                 } else if (intervalType == MONTH) {
-                    dateObject = this.addMonths(dateObject, interval);
+                    dateObject.setMonth(dateObject.getMonth() + interval);
                 } else if (intervalType == YEAR) {
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
