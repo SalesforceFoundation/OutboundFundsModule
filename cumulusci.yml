@@ -84,7 +84,6 @@ tasks:
                 release_content: |
                     Check out the Salesforce Release Notes on [Salesforce Help & Training](https://sfdc.co/bnL4Cb).
 
-
 flows:
     config_dev:
         steps:
