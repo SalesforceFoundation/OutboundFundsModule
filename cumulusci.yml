@@ -1,3 +1,4 @@
+minimum_cumulusci_version: 3.74.0
 project:
     name: OutboundFunds
     source_format: sfdx
@@ -78,6 +79,12 @@ tasks:
         options:
             path: robot/OutboundFunds/resources/unpackaged/qa
 
+    github_release:
+            options:
+                release_content: |
+                    Check out the Salesforce Release Notes on [Salesforce Help & Training](https://sfdc.co/bnL4Cb).
+
+
 flows:
     config_dev:
         steps:
@@ -123,6 +130,11 @@ flows:
                 flow: npsp:install_prod
             2:
                 task: bridge:install_managed
+
+    release_production:
+            steps:
+                3:
+                    task: None
 
 orgs:
     scratch:
