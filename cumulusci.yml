@@ -80,9 +80,9 @@ tasks:
             path: robot/OutboundFunds/resources/unpackaged/qa
 
     github_release:
-            options:
-                release_content: |
-                    Check out the Salesforce Release Notes on [Salesforce Help & Training](https://sfdc.co/bnL4Cb).
+        options:
+            release_content: |
+                Check out the Salesforce Release Notes on [Salesforce Help & Training](https://sfdc.co/bnL4Cb).
 
 flows:
     config_dev:
@@ -131,9 +131,9 @@ flows:
                 task: bridge:install_managed
 
     release_production:
-            steps:
-                3:
-                    task: None
+        steps:
+            3:
+                task: None
 
 orgs:
     scratch:
