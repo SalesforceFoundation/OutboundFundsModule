@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Status --></label>
+    <label/>
     <name>Status__c</name>
     <picklistValues>
         <masterLabel>Awarded</masterLabel>
-        <translation><!-- Awarded --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Closed</masterLabel>
-        <translation><!-- Closed --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Fully Disbursed</masterLabel>
-        <translation><!-- Fully Disbursed --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>In Review</masterLabel>
-        <translation><!-- In Review --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>In progress</masterLabel>
-        <translation><!-- In progress --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Invited</masterLabel>
-        <translation><!-- Invited --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Rejected</masterLabel>
-        <translation><!-- Rejected --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Reviewed</masterLabel>
-        <translation><!-- Reviewed --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Submitted</masterLabel>
-        <translation><!-- Submitted --></translation>
+        <translation/>
     </picklistValues>
     <picklistValues>
         <masterLabel>Withdrawn</masterLabel>
-        <translation><!-- Withdrawn --></translation>
+        <translation/>
     </picklistValues>
 </CustomFieldTranslation>
