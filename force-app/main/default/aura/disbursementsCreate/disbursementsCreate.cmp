@@ -120,7 +120,7 @@
                 <aura:iteration items="{!v.model.uiMessages}" var="m">
                     <ui:message
                         title="{!m.title}"
-                        severity="{!m.severity}"
+                        class="slds-theme_error"
                         closable="{!m.closeable}"
                     >
                         {!m.message}
