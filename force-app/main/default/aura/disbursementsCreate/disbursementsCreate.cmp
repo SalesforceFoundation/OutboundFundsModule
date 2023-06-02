@@ -18,7 +18,7 @@
 
         <div class="slds-section slds-is-open">
             <!-- Funding Request Data -->
-            <h3 class="slds-section__title slds-theme_shade">
+            <h3 class="slds-section__title">
                 <span
                     class="slds-truncate slds-p-horizontal_small"
                     title="{!$Label.c.disbursementsCreate_FundingRequestInformation}"
@@ -130,7 +130,7 @@
         </div>
 
         <div class="slds-section slds-is-open">
-            <h3 class="slds-section__title slds-theme_shade">
+            <h3 class="slds-section__title">
                 <span
                     class="slds-truncate slds-p-horizontal_small"
                     title="{!$Label.c.disbursementsCreate_CalculateDisbursements}"
