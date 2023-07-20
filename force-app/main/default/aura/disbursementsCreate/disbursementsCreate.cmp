@@ -28,19 +28,11 @@
             <div class="slds-section__content">
                 <div class="slds-grid slds-grid_pull-padded-medium slds-m-bottom_large">
                     <div
-                        class="
-                            slds-p-horizontal_medium
-                            slds-size_1-of-2
-                            slds-region_narrow
-                        "
+                        class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow"
                     >
                         <dl class="slds-dl_inline slds-wrap">
                             <dt
-                                class="
-                                    slds-dl_inline__label
-                                    slds-text-color_weak
-                                    slds-truncate
-                                "
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
                             >
                                 {!v.model.request.fundingRequestLabels.Applying_Contact__c}:
                             </dt>
@@ -48,11 +40,7 @@
                                 {!v.model.request.contactName}
                             </dd>
                             <dt
-                                class="
-                                    slds-dl_inline__label
-                                    slds-text-color_weak
-                                    slds-truncate
-                                "
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
                             >
                                 {!v.model.request.fundingRequestLabels.Awarded_Amount__c}:
                             </dt>
@@ -66,19 +54,11 @@
                     </div>
 
                     <div
-                        class="
-                            slds-p-horizontal_medium
-                            slds-size_1-of-2
-                            slds-region_narrow
-                        "
+                        class="slds-p-horizontal_medium slds-size_1-of-2 slds-region_narrow"
                     >
                         <dl class="slds-dl_inline slds-wrap">
                             <dt
-                                class="
-                                    slds-dl_inline__label
-                                    slds-text-color_weak
-                                    slds-truncate
-                                "
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
                             >
                                 {!v.model.request.fundingRequestLabels.Total_Disbursed__c}:
                             </dt>
@@ -89,11 +69,7 @@
                                 />
                             </dd>
                             <dt
-                                class="
-                                    slds-dl_inline__label
-                                    slds-text-color_weak
-                                    slds-truncate
-                                "
+                                class="slds-dl_inline__label slds-text-color_weak slds-truncate"
                             >
                                 {!v.model.request.fundingRequestLabels.Total_Remaining__c}:
                             </dt>
@@ -107,11 +83,7 @@
                     </div>
                 </div>
                 <div
-                    class="
-                        slds-grid slds-grid_pull-padded-medium
-                        slds-p-left_large
-                        slds-p-right_large
-                    "
+                    class="slds-grid slds-grid_pull-padded-medium slds-p-left_large slds-p-right_large"
                 ></div>
             </div>
 
@@ -231,11 +203,7 @@
 
             <!-- Footer -->
             <div
-                class="
-                    slds-section slds-is-open
-                    slds-text-align--center
-                    slds-m-top--medium
-                "
+                class="slds-section slds-is-open slds-text-align--center slds-m-top--medium"
             >
                 <lightning:button
                     label="{!$Label.c.Cancel}"
