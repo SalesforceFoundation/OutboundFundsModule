@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Gracias por instalar Outbound Funds Module. Visite el grupo de comunidad [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) en Power of Us Hub para formular cualquier pregunta sobre Outbound Funds Module.",
+            "message": "Gracias por instalar Outbound Funds Module. Visite el grupo de comunidad [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) en Trailblazer Community para formular cualquier pregunta sobre Outbound Funds Module.",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {

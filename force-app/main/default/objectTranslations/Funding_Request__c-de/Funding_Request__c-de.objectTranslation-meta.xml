@@ -27,50 +27,50 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Name der Finanzierungsanfrage</nameFieldLabel>
+    <nameFieldLabel>Name des Finanzierungsantrags</nameFieldLabel>
     <standardFields>
         <name>Name</name>
-        <label>Name der Finanzierungsanfrage</label>
+        <label>Name des Finanzierungsantrags</label>
     </standardFields>
     <gender>Masculine</gender>
     <caseValues>
         <plural>false</plural>
         <caseType>Nominative</caseType>
-        <value>Förderantrag</value>
+        <value>Finanzierungsantrag</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Accusative</caseType>
-        <value>Förderantrag</value>
+        <value>Finanzierungsantrag</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Dative</caseType>
-        <value>Förderantrag</value>
+        <value>Finanzierungsantrag</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Genitive</caseType>
-        <value>Förderantrags</value>
+        <value>Finanzierungsantrags</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Nominative</caseType>
-        <value>Förderanträge</value>
+        <value>Finanzierungsanträge</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Accusative</caseType>
-        <value>Förderanträge</value>
+        <value>Finanzierungsanträge</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Dative</caseType>
-        <value>Förderanträgen</value>
+        <value>Finanzierungsanträgen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Genitive</caseType>
-        <value>Förderanträge</value>
+        <value>Finanzierungsanträge</value>
     </caseValues>
 </CustomObjectTranslation>
