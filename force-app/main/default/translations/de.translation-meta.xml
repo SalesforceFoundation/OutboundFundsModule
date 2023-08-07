@@ -30,11 +30,11 @@
     </customLabels>
     <customLabels>
         <name>Error</name>
-        <label>Fehler</label>
+        <label>Fehler beheben</label>
     </customLabels>
     <customLabels>
         <name>Funding_Requests</name>
-        <label>Finanzierungsanfragen</label>
+        <label>Finanzierungsanträge</label>
     </customLabels>
     <customLabels>
         <name>Program_Analysis</name>
@@ -58,7 +58,7 @@
     </customLabels>
     <customLabels>
         <name>disbursementsCreate_FundingRequestInformation</name>
-        <label>Informationen zur Finanzierungsanfrage</label>
+        <label>Informationen zum Finanzierungsantrag</label>
     </customLabels>
     <customLabels>
         <name>disbursementsCreate_Interval</name>
@@ -102,13 +102,13 @@
     </customLabels>
     <reportTypes>
         <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
-        <label>Finanzierungsprogramme mit Finanzierungsanfragen mit Auszahlungen</label>
+        <label>Finanzierungsprogramme mit Finanzierungsanträgen mit Auszahlungen</label>
         <sections>
             <label>Finanzierungsprogramme</label>
             <name>Funding Programs</name>
         </sections>
         <sections>
-            <label>Finanzierungsanfragen</label>
+            <label>Finanzierungsanträge</label>
             <name>Funding Requests</name>
         </sections>
         <sections>
@@ -118,7 +118,7 @@
     </reportTypes>
     <reportTypes>
         <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
-        <label>Finanzierungsanfragen m. Finanzierungsprogrammen m. übergeordnetem Prog.</label>
+        <label>Finanzierungsanträge m. Finanzierungsprogrammen m. übergeordnetem Prog.</label>
         <sections>
             <label>Finanzierungsprogramme</label>
             <name>Funding Programs</name>
@@ -128,7 +128,7 @@
             <name>Subordinate Funding Programs</name>
         </sections>
         <sections>
-            <label>Finanzierungsanfragen</label>
+            <label>Finanzierungsanträge</label>
             <name>Funding Requests</name>
         </sections>
     </reportTypes>
@@ -137,23 +137,23 @@
         <label>Outbound Funds</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>Rolle für Finanzierungsanfragen erstellen</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>Auszahlungsinformationen</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Gesamtbeträge des Programms</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>Auszahlungen erstellen</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>Überprüfung einreichen</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Informationen zur Auszahlung</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Gesamtbeträge des Programms</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Rolle für Finanzierungsanträge erstellen</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Überprüfung einreichen</label>
     </quickActions>
 </Translations>
