@@ -24,41 +24,41 @@
     <caseValues>
         <plural>false</plural>
         <caseType>Nominative</caseType>
-        <value>Förderprogramm</value>
+        <value>Finanzierungsprogramm</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Accusative</caseType>
-        <value>Förderprogramm</value>
+        <value>Finanzierungsprogramm</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Dative</caseType>
-        <value>Förderprogramm</value>
+        <value>Finanzierungsprogramm</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Genitive</caseType>
-        <value>Förderprogramms</value>
+        <value>Finanzierungsprogramms</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Nominative</caseType>
-        <value>Förderprogramme</value>
+        <value>Finanzierungsprogramme</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Accusative</caseType>
-        <value>Förderprogramme</value>
+        <value>Finanzierungsprogramme</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Dative</caseType>
-        <value>Förderprogrammen</value>
+        <value>Finanzierungsprogrammen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Genitive</caseType>
-        <value>Förderprogramme</value>
+        <value>Finanzierungsprogramme</value>
     </caseValues>
 </CustomObjectTranslation>

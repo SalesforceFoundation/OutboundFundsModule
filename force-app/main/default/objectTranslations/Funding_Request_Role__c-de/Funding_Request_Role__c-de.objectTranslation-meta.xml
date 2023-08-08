@@ -7,50 +7,50 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel>Name der Rolle für die Finanzierungsanfrage</nameFieldLabel>
+    <nameFieldLabel>Name der Rolle für den Finanzierungsantrag</nameFieldLabel>
     <standardFields>
         <name>Name</name>
-        <label>Name der Rolle für die Finanzierungsanfrage</label>
+        <label>Name der Rolle für den Finanzierungsantrag</label>
     </standardFields>
     <gender>Feminine</gender>
     <caseValues>
         <plural>false</plural>
         <caseType>Nominative</caseType>
-        <value>Förderantragsrolle</value>
+        <value>Finanzierungsantragsrolle</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Accusative</caseType>
-        <value>Förderantragsrolle</value>
+        <value>Finanzierungsantragsrolle</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Dative</caseType>
-        <value>Förderantragsrolle</value>
+        <value>Finanzierungsantragsrolle</value>
     </caseValues>
     <caseValues>
         <plural>false</plural>
         <caseType>Genitive</caseType>
-        <value>Förderantragsrolle</value>
+        <value>Finanzierungsantragsrolle</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Nominative</caseType>
-        <value>Förderantragsrollen</value>
+        <value>Finanzierungsantragsrollen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Accusative</caseType>
-        <value>Förderantragsrollen</value>
+        <value>Finanzierungsantragsrollen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Dative</caseType>
-        <value>Förderantragsrollen</value>
+        <value>Finanzierungsantragsrollen</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
         <caseType>Genitive</caseType>
-        <value>Förderantragsrollen</value>
+        <value>Finanzierungsantragsrollen</value>
     </caseValues>
 </CustomObjectTranslation>

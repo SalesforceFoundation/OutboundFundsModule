@@ -1,0 +1,72 @@
+{
+    "product": {
+        "title": {
+            "message": "Outbound Funds Module",
+            "description": "name of product"
+        },
+        "short_description": {
+            "message": "Rastreie e gerencie programas de financiamento de saída.",
+            "description": "tagline of product"
+        },
+        "description": {
+            "message": "Bem-vindo ao instalador do Outbound Funds Module!\r\n \r\nO Outbound Funds Module oferece as ferramentas para gerenciar e rastrear facilmente solicitações de financiamento e fundos de saída.\r\n \r\n*IMPORTANTE*: A Salesforce não recomenda a instalação de atualizações diretamente em organizações de produção. Em vez disso, instale o Outbound Funds Module em um de seus ambientes gratuitos de sandbox ou uma organização do desenvolvedor.\r\n \r\nDepois de instalar o Outbound Funds Module, verifique a [documentação do Outbound Funds Module](https://powerofus.force.com/s/article/OFM-Documentation) para começar. \r\n \r\nCaso esteja procurando estender o Outbound Funds Module com o Fundseeker Starter Portal Template, confira o [instalador Outbound Funds Module Fundseeker Starter Portal Template](https://install.salesforce.org/products/outbound-funds-portal/).\r\n \r\nDúvidas? Torne-se membro do grupo comunitário do [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) na Trailblazer Community.",
+            "description": "shown on product detail page (markdown)"
+        },
+        "click_through_agreement": {
+            "message": "A tecnologia Outbound Funds Module (“OFM”) é um pacote de código aberto licenciado pela salesforce.com, Inc. ou uma de suas Afiliadas (“SFDC”) sob a Licença de Cláusula BSD-3, existente em https://opensource.org/licenses/BSD-3-Clause. Quando você instalar o pacote OFM, o pacote SFDO Base, uma tecnologia de código fechado licenciada pela SFDC sob uma licença proprietária de uso limitado, será automaticamente instalada em sua organização do Salesforce. \r\n\r\nAO INSTALAR O OFM, VOCÊ CONCORDA COM SUA LICENÇA (https://github.com/SalesforceFoundation/OutboundFunds/blob/master/LICENSE) E COM A LICENÇA DO SFDO BASE (https://github.com/SalesforceFoundation/ProductLicenses/blob/master/SFDOBase.md).\r\n\r\nQUALQUER CONTRATO DE ASSINATURA MESTRE QUE VOCÊ OU SUA ENTIDADE POSSA TER COM A SFDC NÃO SE APLICA AO SEU USO DO OFM OU DO SFDO BASE. UM “AFILIADO” SIGNIFICA QUALQUER ENTIDADE QUE CONTROLE DIRETA OU INDIRETAMENTE, SEJA CONTROLADA OU ESTEJA SOB CONTROLE COMUM COM A ENTIDADE EM CAUSA. “CONTROLE”, PARA FINS DESSA DEFINIÇÃO, SIGNIFICA PROPRIEDADE DIRETA OU INDIRETA OU CONTROLE DE MAIS DE 50% DOS DIREITOS DE VOTO DA ENTIDADE EM CAUSA. SALESFORCE.ORG LLC É UMA AFILIADA DA SALESFORCE.COM, INC. \r\n\r\nO OFM E O SFDO BASE SÃO APLICAÇÕES NÃO SFDC OU APLICAÇÕES DE TERCEIROS, E NÃO SERVIÇOS, SOB QUALQUER CONTRATO DE ASSINATURA MASTER QUE VOCÊ TENHA COM A SFDC. O OFM E O SFDO BASE SÃO FORNECIDOS “COMO ESTÃO” E CONFORME DISPONÍVEIS. A SFDC NÃO OFERECE QUALQUER TIPO DE GARANTIA EM RELAÇÃO AO OFM OU SFDO BASE, SEJA EXPRESSA, IMPLÍCITA, ESTATUTÁRIA OU OUTRA, INCLUINDO, MAS NÃO SE LIMITANDO A QUAISQUER GARANTIAS IMPLÍCITAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO PARA UM PROPÓSITO ESPECÍFICO, LIBERDADE DE DEFEITOS OU NÃO INFRAÇÃO, NO LIMITE MÁXIMO PERMITIDO PELA LEI APLICÁVEL. SE VOCÊ ENVIAR QUAISQUER DADOS CONFIDENCIAIS OU REGULAMENTADOS AO OFM, VOCÊ É O ÚNICO RESPONSÁVEL POR GARANTIR QUE O USO DO OFM PARA PROCESSAR ESSAS INFORMAÇÕES ESTÁ EM CONFORMIDADE COM TODAS AS LEIS E OS REGULAMENTOS APLICÁVEIS. \r\n\r\nA SFDC NÃO TERÁ QUALQUER RESPONSABILIDADE, DECORRENTE DO OU RELACIONADA AO SEU USO DO OFM OU SFDO BASE, POR QUAISQUER DANOS DIRETOS OU POR QUAISQUER LUCROS PERDIDOS, RECEITAS, ÁGIO OU DANOS INDIRETOS, ESPECIAIS, INCIDENTAIS, CONSEQUENTES, EXEMPLARES, COMPENSATÓRIOS, DE INTERRUPÇÃO DE NEGÓCIOS OU PUNITIVOS, SEJA POR CONTRATO OU DELITO E INDEPENDENTEMENTE DA TEORIA DA RESPONSABILIDADE, MESMO QUE SEJA INFORMADA DA POSSIBILIDADE DE TAIS DANOS OU SE UMA REPARAÇÃO NÃO ALCANÇAR DE OUTRA FORMA O SEU PROPÓSITO ESSENCIAL. A ISENÇÃO DE RESPONSABILIDADE ANTERIOR NÃO SE APLICARÁ NA MEDIDA PROIBIDA POR LEI. A SFDC SE ISENTA DE TODAS AS OBRIGAÇÕES DE RESPONSABILIDADE E INDENIZAÇÃO POR QUAISQUER DANOS OU PREJUÍZOS CAUSADOS POR QUAISQUER PROVEDORES DE HOSPEDAGEM DE TERCEIROS. \r\n\r\nESTE ACORDO SERÁ REGIDO EXCLUSIVAMENTE PELAS E INTERPRETADO EXCLUSIVAMENTE DE ACORDO COM AS LEIS DOS ESTADOS UNIDOS E DO ESTADO DA CALIFÓRNIA, SEM CONSIDERAR CONFLITOS DE DISPOSIÇÕES LEGAIS. OS TRIBUNAIS ESTADUAIS E FEDERAIS LOCALIZADOS EM SÃO FRANCISCO, CALIFÓRNIA, TERÃO JURISDIÇÃO EXCLUSIVA PARA JULGAR QUALQUER LITÍGIO DECORRENTE DESTE OU RELACIONADO A ESTE ACORDO. AS PARTES CONCORDAM COM A JURISDIÇÃO DE TAIS TRIBUNAIS E RENUNCIAM A QUALQUER DIREITO QUE POSSAM TER DE CONTESTAR A ADEQUAÇÃO DE TAIS FÓRUNS.",
+            "description": "legal text shown in modal dialog"
+        },
+        "error_message": {
+            "message": "Para obter ajuda com esse erro, vá até [help.salesforce.com](https://help.salesforce.com/), encontre a área de Suporte e serviços e registre um tíquete de suporte técnico para a Salesforce. Inclua “Outbound Funds Module” no assunto e inclua em seu comentário o link de instalação mostrado aqui.",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Instalar o Outbound Funds Module",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "Isso instalará o Outbound Funds Module em sua organização.",
+            "description": "shown before user starts installation (markdown)"
+        },
+        "post_install_message": {
+            "message": "Agradecemos a instalação do Outbound Funds Module. Visite o grupo comunitário do [Outbound Funds Module](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE) na Comunidade Trailblazer para obter respostas a dúvidas sobre o Outbound Funds Module.",
+            "description": "shown after successful installation (markdown)"
+        },
+        "error_message": {
+            "message": "Para obter ajuda com esse erro, vá até [help.salesforce.com](https://help.salesforce.com/), encontre a área de Suporte e serviços e registre um tíquete de suporte técnico para a Salesforce. Inclua “Outbound Funds Module” no assunto e inclua em seu comentário o link de instalação mostrado aqui.",
+            "description": "shown after failed installation (markdown)"
+        }
+    },
+    "checks": {
+        "Outbound Funds Module requires Chatter. Please enable Chatter in your org and try again.": {
+            "message": "O Outbound Funds Module requer o Chatter. Habilite o Chatter em sua organização e tente novamente.",
+            "description": "shown if validation fails"
+        },
+        "Please enable My Domain in your org prior to installing.": {
+            "message": "Ative o Meu domínio na sua organização antes de instalar.",
+            "description": "shown if validation fails"
+        }
+    },
+    "steps": {
+        "Install {product} {version}": {
+            "message": "Instalar {product} {version}",
+            "description": "title of installation step"
+        }
+    },
+    "plan:upgrade": {
+        "title": {
+            "message": "Atualização do produto",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "Este instalador atualiza este pacote e quaisquer dependências necessárias para a versão mais recente em sua organização. Este instalador não é compatível e possui riscos. Não execute este instalador, a menos que você esteja ciente de seus casos de uso e considerações específicos.",
+            "description": "shown before user starts installation (markdown)"
+        },
+        "post_install_message": {
+            "message": "A instalação foi concluída e o pacote tem a versão mais recente.",
+            "description": "shown after successful installation (markdown)"
+        }
+    }
+}

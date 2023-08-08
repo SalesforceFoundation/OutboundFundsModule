@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <name>Funding_Program_Manager__c</name>
-    <help>Diese Person ist der Verwalter/Leiter/Manager des Finanzierungsprogramms und häufig auch für die endgültige Genehmigung von Finanzierungsanfragen zuständig.</help>
+    <help>Diese Person ist der Verwalter/Leiter/Manager des Finanzierungsprogramms und häufig auch für die endgültige Genehmigung von Finanzierungsanträgen zuständig.</help>
     <label>Manager des Finanzierungsprogramms</label>
 </CustomFieldTranslation>

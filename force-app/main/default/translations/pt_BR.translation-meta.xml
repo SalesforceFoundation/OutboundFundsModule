@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>Calculate</name>
+        <label>Calcular</label>
+    </customLabels>
+    <customLabels>
+        <name>Cancel</name>
+        <label>Cancelar</label>
+    </customLabels>
+    <customLabels>
+        <name>DatabaseService_NoInsertFlsException</name>
+        <label>Você não tem acesso no nível do campo para criar este registro. Peça ajuda ao seu administrador do Salesforce.</label>
+    </customLabels>
+    <customLabels>
+        <name>DatabaseService_NoUpdateFlsException</name>
+        <label>Você não tem acesso no nível do campo para editar este registro. Peça ajuda ao seu administrador do Salesforce.</label>
+    </customLabels>
+    <customLabels>
+        <name>DatabaseService_NoDeleteAccessException</name>
+        <label>Você não tem acesso de exclusão a este objeto. Peça ajuda ao seu administrador do Salesforce.</label>
+    </customLabels>
+    <customLabels>
+        <name>Details</name>
+        <label>Detalhes</label>
+    </customLabels>
+    <customLabels>
+        <name>Disbursements</name>
+        <label>Desembolsos</label>
+    </customLabels>
+    <customLabels>
+        <name>Error</name>
+        <label>Resolver erro</label>
+    </customLabels>
+    <customLabels>
+        <name>Funding_Requests</name>
+        <label>Solicitações de financiamento</label>
+    </customLabels>
+    <customLabels>
+        <name>Program_Analysis</name>
+        <label>Análise do programa</label>
+    </customLabels>
+    <customLabels>
+        <name>Requirements</name>
+        <label>Requisitos</label>
+    </customLabels>
+    <customLabels>
+        <name>Save</name>
+        <label>Salvar</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_CalculateDisbursements</name>
+        <label>Calcular desembolsos</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FirstDate</name>
+        <label>Primeira data</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_FundingRequestInformation</name>
+        <label>Informações da solicitação de financiamento</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_Interval</name>
+        <label>Intervalo</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType</name>
+        <label>Período</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Month</name>
+        <label>Mês</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Week</name>
+        <label>Semana</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_IntervalType_Year</name>
+        <label>Ano</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NoFundsRemaining</name>
+        <label>Não há fundos suficientes para criar desembolsos.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_NumberOfDisbursements</name>
+        <label>Número de desembolsos</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_PaymentsExceedFunds</name>
+        <label>A quantidade de pagamentos não pode exceder os fundos disponíveis.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_SavedMessage</name>
+        <label>Desembolsos salvos com sucesso.</label>
+    </customLabels>
+    <customLabels>
+        <name>disbursementsCreate_ScheduleDisbursements</name>
+        <label>Agendar desembolsos</label>
+    </customLabels>
+    <reportTypes>
+        <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
+        <label>Programas de financiamento com solicitações de financiamento com desembolsos</label>
+        <sections>
+            <label>Programas de financiamento</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Solicitações de financiamento</label>
+            <name>Funding Requests</name>
+        </sections>
+        <sections>
+            <label>Desembolsos</label>
+            <name>Disbursements</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
+        <label>Solicitações de financiamento com programas de financiamento com programas pai</label>
+        <sections>
+            <label>Programas de financiamento</label>
+            <name>Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Programas de financiamento subordinados</label>
+            <name>Subordinate Funding Programs</name>
+        </sections>
+        <sections>
+            <label>Solicitações de financiamento</label>
+            <name>Funding Requests</name>
+        </sections>
+    </reportTypes>
+    <customApplications>
+        <name>Outbound_Funds</name>
+        <label>Fundos de saída</label>
+    </customApplications>
+    <quickActions>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Total do programa</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Create_Bulk_Disbursements</name>
+        <label>Criar desembolsos</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Informações sobre desembolsos</label>
+    </quickActions>
+    <quickActions>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Criar função de solicitação de financiamento</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Enviar para revisão</label>
+    </quickActions>
+</Translations>

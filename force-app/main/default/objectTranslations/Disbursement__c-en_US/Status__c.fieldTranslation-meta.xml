@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label><!-- Status --></label>
+    <label></label>
     <name>Status__c</name>
     <picklistValues>
         <masterLabel>Approved</masterLabel>
-        <translation><!-- Approved --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Cancelled</masterLabel>
-        <translation><!-- Cancelled --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Paid</masterLabel>
-        <translation><!-- Paid --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Pending Approval</masterLabel>
-        <translation><!-- Pending Approval --></translation>
+        <translation></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Scheduled</masterLabel>
-        <translation><!-- Scheduled --></translation>
+        <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>
