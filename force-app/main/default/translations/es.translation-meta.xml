@@ -30,7 +30,7 @@
     </customLabels>
     <customLabels>
         <name>Error</name>
-        <label>Error</label>
+        <label>Resolver error</label>
     </customLabels>
     <customLabels>
         <name>Funding_Requests</name>
@@ -137,23 +137,23 @@
         <label>Fondos salientes</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>Crear función de solicitud de fondos</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>Información de desembolso</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Totales de programa</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>Crear desembolsos</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>Enviar revisión</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Información de desembolso</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Totales de programa</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Crear función de solicitud de fondos</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Enviar revisión</label>
     </quickActions>
 </Translations>
