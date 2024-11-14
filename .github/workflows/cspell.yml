@@ -2,7 +2,7 @@ name: Spell Checking
 on: [push]
 jobs:
   cspell:
-    runs-on: ubuntu-latest
+    runs-on: SalesforceFoundation-ubuntu
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2-beta

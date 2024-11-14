@@ -102,9 +102,9 @@
     </customLabels>
     <reportTypes>
         <name>Funding_Programs_with_Funding_Requests_with_Disbursements</name>
-        <label>Financieringsprogramma&apos;s met financieringsaanvragen met uitbetalingen</label>
+        <label>Financieringsprogramma's met financieringsaanvragen met uitbetalingen</label>
         <sections>
-            <label>Financieringsprogramma&apos;s</label>
+            <label>Financieringsprogramma's</label>
             <name>Funding Programs</name>
         </sections>
         <sections>
@@ -118,13 +118,13 @@
     </reportTypes>
     <reportTypes>
         <name>Funding_Requests_w_Funding_Programs_w_Parent_Progr</name>
-        <label>Financieringsaanvragen met financieringsprogramma&apos;s met bovenliggend programma</label>
+        <label>Financieringsaanvragen met financieringsprogramma's met bovenliggend programma</label>
         <sections>
-            <label>Financieringsprogramma&apos;s</label>
+            <label>Financieringsprogramma's</label>
             <name>Funding Programs</name>
         </sections>
         <sections>
-            <label>Onderliggende financieringsprogramma&apos;s</label>
+            <label>Onderliggende financieringsprogramma's</label>
             <name>Subordinate Funding Programs</name>
         </sections>
         <sections>
@@ -137,23 +137,23 @@
         <label>Uitgaand geld</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>Financieringsaanvraagrol maken</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>Uitbetalingsgegevens</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Programmatotalen</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>Uitbetalingen aanmaken</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>Beoordeling indienen</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Uitbetalingsgegevens</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Programmatotalen</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Financieringsaanvraagrol maken</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Beoordeling indienen</label>
     </quickActions>
 </Translations>

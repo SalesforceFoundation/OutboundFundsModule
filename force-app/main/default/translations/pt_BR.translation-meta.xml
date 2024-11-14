@@ -137,23 +137,23 @@
         <label>Fundos de saída</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>Criar função de solicitação de financiamento</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>Informações sobre desembolsos</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Total do programa</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>Criar desembolsos</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>Enviar para revisão</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Informações sobre desembolsos</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Total do programa</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Criar função de solicitação de financiamento</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Enviar para revisão</label>
     </quickActions>
 </Translations>

@@ -10,15 +10,15 @@
     </customLabels>
     <customLabels>
         <name>DatabaseService_NoInsertFlsException</name>
-        <label>You don&apos;t have field-level access to create this record. Ask your Salesforce admin for help.</label>
+        <label>You don't have field-level access to create this record. Ask your Salesforce admin for help.</label>
     </customLabels>
     <customLabels>
         <name>DatabaseService_NoUpdateFlsException</name>
-        <label>You don&apos;t have field-level access to edit this record. Ask your Salesforce admin for help.</label>
+        <label>You don't have field-level access to edit this record. Ask your Salesforce admin for help.</label>
     </customLabels>
     <customLabels>
         <name>DatabaseService_NoDeleteAccessException</name>
-        <label>You don&apos;t have delete access to this object. Ask your Salesforce admin for help.</label>
+        <label>You don't have delete access to this object. Ask your Salesforce admin for help.</label>
     </customLabels>
     <customLabels>
         <name>Details</name>
@@ -137,6 +137,10 @@
         <label>Outbound Funds</label>
     </customApplications>
     <quickActions>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Programs Totals</label>
+    </quickActions>
+    <quickActions>
         <name>Funding_Request__c.New_Funding_Request_Role</name>
         <label>Create Funding Request Role</label>
     </quickActions>
@@ -151,9 +155,5 @@
     <quickActions>
         <name>Review__c.SubmitReview</name>
         <label>Submit Review</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Programs Totals</label>
     </quickActions>
 </Translations>
