@@ -11,20 +11,20 @@
     <layouts>
         <layout>Funding Program Layout</layout>
         <sections>
-            <label/>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Description</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Program Totals</section>
         </sections>
     </layouts>
     <quickActions>
-        <label/>
+        <label></label>
         <name>Program_Totals</name>
     </quickActions>
     <startsWith>Consonant</startsWith>

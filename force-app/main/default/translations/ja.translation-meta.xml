@@ -137,23 +137,23 @@
         <label>Outbound Funds</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>資金調達要求の役割を作成</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>支払金情報</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>プログラム合計</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>支払金を作成</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>レビューを送信</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>支払金情報</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>プログラム合計</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>資金調達要求の役割を作成</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>レビューを送信</label>
     </quickActions>
 </Translations>
