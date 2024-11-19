@@ -31,7 +31,7 @@
             "description": "shown before user starts installation (markdown)"
         },
         "post_install_message": {
-            "message": "Outbound Funds Module をインストールしていただきありがとうございます。Outbound Funds Module に関するあらゆる質問については、Power of Us Hub の[「Outbound Funds Module」] (https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE)コミュニティグループにアクセスしてください。",
+            "message": "Outbound Funds Module をインストールしていただきありがとうございます。Outbound Funds Module に関するあらゆる質問については、Power of Us Hub の[「Outbound Funds Module」](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHi0SAE)コミュニティグループにアクセスしてください。",
             "description": "shown after successful installation (markdown)"
         },
         "error_message": {

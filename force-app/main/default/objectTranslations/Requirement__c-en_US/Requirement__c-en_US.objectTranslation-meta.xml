@@ -11,15 +11,15 @@
     <layouts>
         <layout>Requirement Layout</layout>
         <sections>
-            <label/>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Requirements</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Status</section>
         </sections>
     </layouts>

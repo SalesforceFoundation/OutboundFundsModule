@@ -137,23 +137,23 @@
         <label>Fonds sortants</label>
     </customApplications>
     <quickActions>
-        <name>Funding_Request__c.New_Funding_Request_Role</name>
-        <label>Créer un rôle de demande de subvention</label>
-    </quickActions>
-    <quickActions>
-        <name>Funding_Request__c.Disbursment_Information</name>
-        <label>Informations sur le versement</label>
+        <name>Funding_Program__c.Program_Totals</name>
+        <label>Totaux du programme</label>
     </quickActions>
     <quickActions>
         <name>Funding_Request__c.Create_Bulk_Disbursements</name>
         <label>Créer des versements</label>
     </quickActions>
     <quickActions>
-        <name>Review__c.SubmitReview</name>
-        <label>Soumettre l’examen</label>
+        <name>Funding_Request__c.Disbursment_Information</name>
+        <label>Informations sur le versement</label>
     </quickActions>
     <quickActions>
-        <name>Funding_Program__c.Program_Totals</name>
-        <label>Totaux du programme</label>
+        <name>Funding_Request__c.New_Funding_Request_Role</name>
+        <label>Créer un rôle de demande de subvention</label>
+    </quickActions>
+    <quickActions>
+        <name>Review__c.SubmitReview</name>
+        <label>Soumettre l’examen</label>
     </quickActions>
 </Translations>

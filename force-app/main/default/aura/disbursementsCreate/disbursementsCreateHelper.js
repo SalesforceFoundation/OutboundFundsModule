@@ -82,7 +82,7 @@
                 if (intervalType == WEEK) {
                     dateObject.setDate(dateObject.getDate() + interval * 7);
                 } else if (intervalType == MONTH) {
-                    dateObject = this.addMonths(dateObject, interval);
+                    dateObject.setMonth(dateObject.getMonth() + interval);
                 } else if (intervalType == YEAR) {
                     dateObject.setFullYear(dateObject.getFullYear() + interval);
                 }
@@ -104,7 +104,10 @@
                 // Calculated Properties
                 id: "" + i, // A workaround to force the datatable to see this id as a string
                 amount: thisPayment,
-                scheduleDate: dateObject.toISOString().split("T")[0],
+                scheduleDate: $A.localizationService.formatDate(
+                    dateObject.toISOString(),
+                    "YYYY-MM-DD"
+                ),
                 requestId: m.request.recordId
             });
         }

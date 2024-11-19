@@ -11,40 +11,40 @@
     <layouts>
         <layout>Funding Request Layout</layout>
         <sections>
-            <label/>
+            <label></label>
             <section>Applicant</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Award Information</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Disbursement Information</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Purpose</section>
         </sections>
         <sections>
-            <label/>
+            <label></label>
             <section>Terms</section>
         </sections>
     </layouts>
     <quickActions>
-        <label/>
+        <label></label>
         <name>Create_Bulk_Disbursements</name>
     </quickActions>
     <quickActions>
-        <label/>
+        <label></label>
         <name>Disbursment_Information</name>
     </quickActions>
     <quickActions>
-        <label/>
+        <label></label>
         <name>New_Funding_Request_Role</name>
     </quickActions>
     <startsWith>Consonant</startsWith>
